@@ -183,11 +183,50 @@ prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
 
         /*[atributo |="valor"] - A las que  tengan  en  el  atributo  especificado  una 
         palabra exacta o una palabra seguida por un guion. */
-        *[title|=”45”]{font-family:verdana} /*Los que empiezan por 45 seguido de un guión*/
+        *[title|="45"]{font-family:verdana} /*Los que empiezan por 45 seguido de un guión*/
 
         /*[atributo ~="valor"] - A las que tengan en  el  atributo una palabra exacta
         o una palabra seguida por un espacio en blanco.*/
-        *[title~=”a”]{font-family:verdana} 
+        *[title~="a"]{font-family:verdana} 
+
+/*Reglas de orden*/
+
+        /*Limpiar y mantener economizado el código. Se pueden comentar o poner un guión delante de
+        las líneas de código para deshabilitarlas y ver si tienen efecto en el código o no.*/
+
+        /*Organizar la colocación de selectores con un criterio concreto*/
+            /*Alfabético*/
+            /*Orden de aparición*/
+            /*Según su función: 
+                -Cambios de bordes
+                -Cambios de colores
+                -Cambios de fuentes
+                -Etc...*/
+            /*Del exterior del elemento al interior*/  
+            
+        /*Usar colores con sistema hexadecimal*/
+            /*#77aa22 - RGB con dos números por color:
+            77 -cantidad de rojo
+            aa - cantidad de verde
+            22 - cantidad de azul
+            /*Si estuviesen repetidos por par, se podría poner abreviado: #7a2*/
+            /*  #FF0000: Rojo
+                #00FF00: Verde
+                #0000FF: Azul
+                #FFFF00: Amarillo
+            /*Rango: Cada par de caracteres puede variar de 00 (0) a FF (255), donde 00 es la ausencia del color y FF es la máxima intensidad.
+            Van de 0-9 y luego siguen de a-f
+        
+        /*Y canal alfa para transparencias: 
+        rgba(rojo,verde,azul, transparencia) 
+        rgba(0-255,0-255,0-255,0.0 a 1.0)
+        rgba(6,78,123,0.75)
+        
+        
+
+
+
+
       
  
 
