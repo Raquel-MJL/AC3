@@ -1,13 +1,13 @@
 /*APUNTES CSS*/
 /*Para consultar el nivel de reconocimiento para cada navegador y si hay que usar, o no, un 
-prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
+prefijo, se puede consultar en  https://caniuse.com/*/
 
 /*----VINCULAR HTML CON CSS----*/
     /*Se coloca en el HEAD del archivo HTML a través de un <link>*/
     /*<link rel = "stylesheet" href ="css/estilos.css">*/
 
     /*Hay otros modos, a través de un @import o usarlo para cargar 
-    archivos de estilo, local o remoto, esta debe ser la primera instrucción*/
+    archivos de estilo, local o remoto. Los IMPORT deben ser la primera instrucción*/
     /*  @import url(http://www.estilos.com/estilos/maquetacion.css);  */
 
     /*O añadiendo etiquetas <style> dentro del HEAD directamente*/
@@ -53,7 +53,7 @@ prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
 /*SELECTORES JERÁRQUICOS*/
 
     /*DESCENDIENTES - Separados por espacios*/
-    /*Selecciona cualquier elemento que sea descendiente del elemento A*/
+    /*Selecciona todos los descendientes del primer parámetro que sean del tipo indicado en el segundo*/
     #div1 h1 {color:orange} /*Afecta a todos los h1 que sean descendientes de lo que tenga el ID div1*/
 
     /*DESCENDIENTES DIRECTOS O HIJOS - Separados por >  */
