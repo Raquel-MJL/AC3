@@ -1,0 +1,196 @@
+/*APUNTES CSS*/
+/*Para consultar el nivel de reconocimiento para cada navegador y si hay que usar, o no, un 
+prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
+
+/*----VINCULAR HTML CON CSS----*/
+    /*Se coloca en el HEAD del archivo HTML a través de un <link>*/
+    /*<link rel = "stylesheet" href ="css/estilos.css">*/
+
+    /*Hay otros modos, a través de un @import o usarlo para cargar 
+    archivos de estilo, local o remoto, esta debe ser la primera instrucción*/
+    /*  @import url(http://www.estilos.com/estilos/maquetacion.css);  */
+
+    /*O añadiendo etiquetas <style> dentro del HEAD directamente*/
+
+/*SINTAXIS*/
+
+/*Al nombrar selectores conviene evitar espacios, caracteres especiales y valores numéricos en el primer caracter*/
+
+/* selector {
+            propiedad1 : valor;
+            propiedad2 : valor;
+            propiedad3 : valor;
+    }
+            
+/*TIPOS DE SELECTOR*/
+
+	/*De tipo o elemento.*/
+        /*Hacen mención a las etiquetas que ya existen en HTML*/
+        p{font-size:30px}
+
+    /*De clase*/
+        /*Para las etiquetas HTML que incorporan el atributo global class.
+        Nombre del selector precedido por un punto*/
+        .texto{font-weight:bold;color:red}
+        /*Y en la etiqueta HTML se incluye <class="texto">
+    
+    /*De identificación*/
+        /*Misma mecánica pero actúa con los ID en vez de con las clases
+        Almohadilla en vez de punto*/
+        #p4{font-family:georgia;font-size:30px}
+
+    /*Combianción de selectores*/
+    			
+        span.uno{color:red;} /*Tipo y clase*/
+        p#negrita{font-weight:bold} /*Tipo e ID*/
+        .negrita#li1{font-weight:bold} /*Clase e ID*/
+
+    /*Selectores Independientes, separados con comas. Aplica por separado a cada uno de ellos*/
+			
+        div, h1, p ,ul ,#l1, .texto{font-weight:bold}
+        /*Los div, los h1, los p, las ul, lo que tenga el ID l1 y la clase texto*/
+
+/*SELECTORES JERÁRQUICOS*/
+
+    /*DESCENDIENTES - Separados por espacios*/
+    /*Selecciona cualquier elemento que sea descendiente del elemento A*/
+    #div1 h1 {color:orange} /*Afecta a todos los h1 que sean descendientes de lo que tenga el ID div1*/
+
+    /*DESCENDIENTES DIRECTOS O HIJOS - Separados por >  */
+    /*Afecta solo a una generación de distancia, hijos inmediatos*/
+    #div1 > h1 {color:orange} /*Afecta sólo a los h1 que estén a una tabulación hacia el interior respecto a lo que tenga el ID div1, aunque haya otros a otros niveles*/
+
+    /*CONTIGUOS O HERMANOS ADYACENTES - Separados por + */
+    /*Afecta a lo señalado en la misma línea de tabulación y esté contiguo*/
+    p + img {font-family:helvetica; font-size:22px} /*Afecta a los p que tengan inmediatamente encima una imagen a su mismo nivel*/
+
+    /*HERMANOS - Separados por ~ */
+    /*Afecta a lo señalado que se encuentre en el mismo nivel*/
+    #div1>h1 ~ p{color:red} /*A todos los H1 y P al mismo nivel que sean descendientes de un elemento con ID div1*/
+
+/*
+
+/*OTROS SELECTORES*/
+
+    /*UNIVERSAL - Usando el asterisco *   */
+    /*Afecta a TODAS las etiquetas señaladas.*/
+    /*También sirve para resetear los valores por defecto de los navegadores*/
+    *{margin:0;  padding:0} /*Anula los márgenes internos y externos por defecto de los navegadores*/
+
+    /*DE NEGACIÓN - not */
+    /*Añade excepciones para que no se vean afectados por el estilo*/
+    h1 ~ p:not(.texto1){color:red} /*Todos los párrafos hermanos del h1, salvo los que tengan la clase texto 1*/
+    li:not(:last of type){color:black} /*Todos los elementos de una lista menos el último*/
+    
+    /*DE SELECCIÓN - ::selection */
+    /*Añade estilo al texto seleccionado por el usuario. Puede ser color, background color y text-shadow*/
+    *::selection {color:green} /*Se pondrá verde todo lo seleccionado por el usuario*/    
+    
+
+/*PSEUDOCLASES, PSEUDOESTILOS, PSEUDOELEMENTOS, PSEUDOSELECTORES*/
+
+    /*DE ENLACES O LINKS*/
+    /*Tienen un orden concreto: link,visited, hover, active.*/ 
+    a:link{color:brown}
+    a:visited{color:blueviolet}
+    a:hover{color:bisque}
+    a:active{color:aqua}
+    /*Se pueden concatenar si comparten estilos, pero para indicar las diferencias
+    deben ir indicados por separado*/
+    a:link, a:visited, a:hover, a:active {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        }
+
+    /*DE TECLADO O FORMULARIO*/
+
+        /*Focus - Permite  saltar  de  control  en  control  de  un  formulario  usando el teclado y resalta el apartado específico del formulario*/
+        a:focus{color:blue; text-decoration:none}
+
+        /*Check - Afecta a botones de opción y casillas de verificación ya seleccionadas.*/ 
+        input[type=radio]:checked {color:blue; text-decoration:none}
+
+    /*DE PÁRRAFO*/
+
+        /*first-letter*/
+        p::first-letter{margin-right: 20px; font-size: 40px; color:blue;}
+        
+        /*first-line*/
+        div p::first-line{margin-right: 20px; font-size: 40px; color:blue;}
+
+    /*DE INSERCIÓN*/
+
+        /*Inserta un texto o una imagen delante o detrás de un elemento*/
+        h1::before{content: "Hola" }
+        h1::after{content: "Hola" }
+
+    /*DE SELECCIÓN*/
+
+        /*Se  usan  con  cualquier  tipo  de  elemento  HTML,  más común con listas para acceder a algún <li> a través de su posición*/
+        
+        /*first-child*/
+        #div1 :first-child{font-family:comic sans ms} /*Selecciona al primer descendiente*/
+        
+        /*first-of-type*/
+        #div1 p:first-of-type{font-family:comic sans ms}/*Primer descendiente de un tipo concreto, en este caso <p> */
+        
+        /*last-child*/
+        #div1 :last-child{font-family:comic sans ms} /*Último hijo*/
+        
+        /*last-of-type*/
+        #div1 p:last-oft-type{font-family:comic sans ms} /*Último hijo de un tipo*/
+       
+        /*nth-child*/
+        /*Selecciona todos los elemento de nivel inferior o hijos según un valor. (Número, Odd o Even) (Numérico, impar o par)
+        Entre el elemento y la pseudoclase debe haber un espacio en blanco*/
+        ul :nth-child(odd){color:green}
+
+        /*nth-of-type*/
+        /*Selecciona los elementos del tipo especificado según un valor.*/
+        div p:nth-of-type(even){color:green}
+
+        /*nth-last-child*/
+        /*Selecciona un descendiente empezando por el final, según un valor.*/
+        ul :nth-last-child(even){color:green}
+
+        /*nth-las-of-type*/
+        /*Selecciona  un  elemento  del  tipo  especificado  según  un  valor  empezando 
+        por el final. */
+        div p:nth-last-of-type(4){color:green}
+
+    /*DE ATRIBUTOS*/
+
+        /*Aplican estilos a aquellas etiquetas que tengan un determinado atributo
+        Se escriben con []*/
+
+        /*De atributo - A todas las etiquetas que tengan el atributo indicado*/
+        p[title]{font-family:verdana}
+
+        /*[atributo= "valor"] - A las etiquetas que tengan un valor concreto en el atributo*/
+        a[title="titulo1"]{font-family:verdana}
+
+        /*[atributo ^= "valor"] - A las que tengan en el atributo especificado valores 
+        que empiecen por los caracteres indicados.*/
+        *[title^="h"]{font-family:verdana} 
+
+        /*[atributo $="valor"] - A las que tengan en el atributo especificado valores 
+        que terminen por los caracteres indicados*/
+        *[title$="45"]{font-family:verdana}
+
+        /*[atributo *="valor"] -  A las que  tengan  en  el  atributo  especificado  (en 
+        cualquier posición) valores con los caracteres indicados.*/
+        p[title*="os"]{font-family:verdana} /*Todos los párrafos que tengan "os" en el title*/
+
+        /*[atributo |="valor"] - A las que  tengan  en  el  atributo  especificado  una 
+        palabra exacta o una palabra seguida por un guion. */
+        *[title|=”45”]{font-family:verdana} /*Los que empiezan por 45 seguido de un guión*/
+
+        /*[atributo ~="valor"] - A las que tengan en  el  atributo una palabra exacta
+        o una palabra seguida por un espacio en blanco.*/
+        *[title~=”a”]{font-family:verdana} 
+      
+ 
+
+
+
+ 

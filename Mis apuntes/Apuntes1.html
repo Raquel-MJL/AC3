@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Diferencias entre lenguaje compilado y lenguaje interpretado. El compilado va más rápido pero necesitas compilador, máquina virtual y un conjunto de programas, los interpretados solo necesitan intérprete-->
+    <!--Estructuras de una página web:
+        <header> <main> y <footer> dentro de <body>
+        <nav> para barras de navegación
+        <aside> contenido lateral 
+        <section> y <article> para estructurar contenido-->
+    
+    <!--Las etiquetas suelen clasificarse con id (nombre de ese elemento en concret) y class (nombre de su grupo o clase)-->
+    
+    <!--Títulos y niveles de encabezado-->
+        <!--Elementos en bloque, hay hasta h6 y su importancia es descendente así como su tamaño. Influencia en SEO y posicionamiento-->
+    <h1>Apuntes HTML</h1>
+    
+    <!--Estilo de marco y borde-->
+    <h2 style="border:1px solid navy">Titulo2</h2> <!--Parámetros: Grosor, estilo (esencial para visualizarlo) y color.-->
+    
+    <!--Barra separadora-->
+    <hr width="300px" size="20px" color="red"> <!--Atributo tamaño, grosor y color -->
+    
+    <!--Párrafo y texto-->
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nesciunt doloribus eligendi totam obcaecati
+        natus laboriosam blanditiis <br> <!--BR incluye salto de línea en la vista final--> reiciendis ut sint pariatur quia labore nobis voluptate hic nisi est, quisquam a!</p> 
+
+    <pre>Para textos que queremos que mantengan cierto formato establecido (margen, estructura etc)</pre>
+
+    <!-- Etiquetas estilísticas de texto (a futuro se aplicará con CSS)-->
+    
+        <!--Alineación del párrafo-->
+        <p style="text-align:justify">Sadfrafg gfsdf gs s erseg df g </p>
+     
+        Ejemplo de <strong>negrita</strong> y <em>cursiva</em>
+        <!--Estas etiquetas en concreto pueden tener otras aplicaciones que no son sólo visuales o de diseño. Si tuviesemos por ejemplo un lector de la página para personas con problemas de visión, la voz las reproduciría distintas-->
+        
+        <p>H<sub>2</sub>O</p> <!--Desplazamiento hacia abajo respecto a la línea de texto-->
+        <p>Referencia<sup>2</sup></p> <!--Hacia arriba-->
+        <p style="font-variant: small-caps">Ejemplo Versalitas</p> <!--Mayúsculas del mismo tamaño que las minúsculas-->
+        
+        <!--Fuentes-->
+        <p style="font-family: Arial, Helvetica, sans-serif ; font-size: 12pt; font-variant:small-caps">Ssdfdf  frisforn iojfnmd  eirjf soif jiresoifjsr rm </p> 
+            <!--Se indica la familia tipográfica, se ordenan según disponibilidad en la web y si no estuviese pasaría a la siguiente fuente de la misma familia-->
+    
+        <!--Acciones sobre un solo fragmento del texto-->
+        <p>Lorem <span style="color:cadetblue">ipsum dolor sit amet, consectetur</span> adipisicing elit. Doloribus qui non ratione fuga alias sunt aut, et mollitia neque porro, praesentium quo dicta tempore! Dolores laborum nam ut sit esse.</p>
+    
+        <!-- Para utilizar caracteres reservados en el lenguaje concreto, en este caso HTML, como "<" o ">" hay que "escaparlos".
+            Apertura < se codifica como &lt 
+            Cierre > se codifica como &gt 
+            Comillas " se codifica como &quot -->
+        <p>Las &lt;etiquetas&gt;</p>
+    
+
+    <!--DIVS - Con la etiqueta div generamos contenedores en bloque con contenido y desde ahí podemos modificar aspectos estilísticos como margin (margen externo) y padding (margen interno)-->
+    
+    <div style="border:1px solid;border-color:red ; margin:5px; padding:10px">
+        <p style="text-align:justify;font-family: Arial, Helvetica, sans-serif;"><b>Contenedores</b></p>
+    </div>
+
+    <!--Listas-->
+
+        <!--Ordenadas, numeradas-->
+    
+        <ol> Título lista
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ol>
+
+        <ol type="A"> <!--Desde type se despliegan distintos tipos de numeración-->
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ol>
+
+        <ol type="I"> 
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ol>
+        
+        <!--Lista anidada-->
+        <ol type="a">Lista anidada
+            <li>Abcde</li>
+            <li>sdgsfg</li>
+            <li>sdfsdsfdf</li>
+                <ul>
+                    <li>sdfsdf</li>
+                    <li>sdfjkjfnkj</li>
+                </ul>
+        </ol>
+
+        <!--Listas desordenadas (con puntos, pero sin un orden concreto)-->
+
+        <ul>
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ul>
+
+        <ul type="square"><!--El type especifica distintos iconos para señalizar los puntos de esa lista-->
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ul>
+
+        <!--Listas de definición-->
+        <dl>
+            <dt>Altavoz</dt> <!--Especifica el término a definir-->
+            <dd>Aparato electrónico empleado para la reproducción de audios.</dd> <!--Crear la definición del término-->
+        </dl> 
+
+    
+    <!--En la etiqueta de la lista se puede añadir los atributos "reverse" o "start" para que empiece a partir de un número en concreto en vez de desde el 1 o para que vayan a la inversa-->
+    
+    <!--Tablas-->
+
+    <table border = "1" cellspacing="0"> <!-- Borde el grosor, por defecto negro y celsspacing la distancia entre los bordes. Puesto en 0 queda como una línea fina-->
+        <tr>
+            <th colspan="2">Tipos de contenedores</th> <!--Combina columnas. rawspan combina filas.Tantas como se indiquen en el número-->
+        </tr>                       
+        
+        <tr>
+            <td>Genéricos</td>
+            <td>Semánticos</td>
+        </tr>
+        <tr>
+            <td>SPAN</td>
+            <td>HEADER</td>
+        </tr>
+        <tr>
+            <td>DIV</td>
+            <td>MAIN</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>FOOTER</td>
+        </tr>
+    </table>
+
+    <!-- Enlaces -->
+        <!-- Dentro de la etiqueta <body> se pueden configurar colores distintos de enlace a-link (Activo, al clickar) vlink (visitado) link (normal)-->
+
+
+    <a href="direccion_del_enlace">Y aquí el título del enlace</a> 
+    
+    <!--Atributos de enlace-->
+        <!--Target: Indica dónde se abrirá el enlace. "Self" para esa misma página o "blank" para una nueva-->
+        <!--Title: muestra texto descriptivo al pasar por el enlace-->
+        <!--Hreflang: para indicar el idioma de la página a la que se va a nivel código, no a nivel usuario-->
+        <!--Type: informa del formato de archivo que se va a abrir (mp3, texto, etc)-->
+    
+    <!--Enlaces de dirección relativa (desde la posición presente)-->
+    <a href = “nombre archivo.extensión”> <!--Para archivos en la misma carpeta-->
+    <a href = “nombre_carpeta1/nombre_carpeta2/..................../nombre_archivo.extensión”> <!--Para enlaces a nivel inferior-->
+    <a href = “../../../.........................../nombre archivo.extensión”> <!--Para enlaces a archivos a nivel superior donde cada /.. representa una subida de nivel.--> 
+
+    <!--Enlace de descarga-->
+    <a href="ruta_de_acceso_al_archivo/nombre_de_archivo.extensión">Texto del enlace</a>
+
+    <!--Anclas-->
+        <!--Para enlazar posiciones en la misma web. Primero se colocan y luego se hace alusión a ellas:-->
+    <a id="final_de_pagina"> <!--Lo posicionamos en el código como referencia a donde queremos que nos conduzca-->  
+    <a href=#final_de_pagina> <!--Y luego le hacemos referencia con el ID-->
+
+    <!--Enlaces de correo-->
+    <a href="mailto:ramón@gmail.com?bcc=rocio@gmail.com&subject=Asunto%20del%20correo">Enviar correo</a>
+    <!--Ejemplo con dirección ppal y otra con copia oculta donde además se indica el asunto del correo-->
+        <!--Para indicar espacios en los asuntos hay dos indicaciones
+            %20 ➔ Añadir espacio en blanco. 
+            %0D%0A ➔ Dar un salto de línea.-->
+    
+    <!--Enlace a un teléfono-->
+    <a href="tel:+34914568922">Llámanos</a>
+
+    <!--Enlace a un favicon (imagen miniatura de las pestañas de las webs. Máximo 16x16 píxeles)-->
+    <!--El formato de estos archivos de imagen es .ico y debe ir en HEAD no en BODY-->
+    <link rel="icon" href = ”ruta_de_enlace_/_Nombre_Archivo” type="image/ico">
+    <!--Del mismo modo con las hojas de estilO CSS-->
+    <link rel="stylesheet" href = ”ruta_de_enlace_/_Nombre_Archivo” type="text/css">
+
+
+    <!--MULTIMEDIA-->
+    <!--Hay que tener en cuenta los tipos de licencia:
+        BY: Atribución - Mencionar al autor
+        SA: Contribuir igual - Distribuir con la misma licencia que el original
+        NC: No comercial - No puede ser usada para fines comerciales
+        ND: No derivada - Se puede comercializar y distribuir libremente pero sin modificar la obra original
+        CC0: Creative Commons 0 (de dominio público) 
+        A raíz de aquí se cominan los tipos de licencia: CC BY-NC-ND-->
+
+    <!--IMÁGENES - por defecto son elementos en línea-->
+
+    <img src="ruta y nombre del archivo.formato" alt="Descripción de la imagen" width="300" height="200"> <!--No tiene cierre. Con los parámetros width y height no hace falta especificar, por defecto funciona en px-->
+
+    <figcaption>Texto de la leyenda</figcaption> <!--Añade una leyenda a la imagen-->
+    
+    <figure> <!--Texto descriptivo asociado a la imagen-->
+        <img src = ”imagen. extensión> 
+        <figcaption>Texto de la leyenda</figcaption> 
+        </figure> 
+
+
+    <!--Imagen como enlace, para que nos lleve a otra página al clicar-->
+    <a href = "https://www.elcorteingles.es/moda/hombre/accesorios-de-hombre/gafas-de-sol/"> 
+        <img src ="gafas.jpg"></a><!--src es source, la fuente en local del archivo-->
+    
+    
+    <!--Texto alternativo si no carga la imagen-->
+    <img src = "coche.jpg" width = "200px" alt = "Coche de la marca Seat participando en el 
+    Paris-Dakar">
+
+    <!--El atributo title sirve para especificar un texto al pasar el cursor por la imagen-->
+    <img src="9040.png" title="Seat 2056 mhg">
+
+    
+    
+    <!--MAPAS DE IMÁGENES-->
+    <map name = "nombre del mapa"></map> <!--Cada mapa tiene que tener un ID-->
+    
+    <!--Hay que establecer un área enlazable, dentro de map-->
+        <area shape = "forma" coords = "coordenadas" href ="enlace" alt ="Texto alternativo.">
+    <!-- Se coloca entre <map>AQUÍ</map>-->
+    
+    <!--Podemos encontrar las coordenadas de una imagen desde cualquier editor de imágenes (Paint, Photoshop etc) con la imagen a tamaño 100%-->
+    <!--Ejemplos:-->
+        <!--Área circular--><area shape = "circle" coords ="451,332,50" href="inicio.html"> <!--Las dos primeras son las coordenadas y el último valor el radio-->
+        <!--Rectangular--><area shape = "rect" coords ="471,15,661,95" href="inicio.html"><!--Se utilizan las coordenadas x1 e y1 para la esquina superior izquierda, y x2 e y2 para 
+        la esquina inferior derecha-->
+        <!--Polígonos--> <area shape = "poly" coords ="471,15,78,90,661,95,67,34,123,45,471,15" 
+        href="inicio.html"> <!--Coordenadas X e Y para cada vértice del polígono-->
+        <!--El resto inespecífico de la imagen--><area shape ="default" href= "inicio.html">
+    
+    <!--Una vez esté el área definida, asociamos el mapa a una imagen-->
+    <img src = "archivo de imagen.extension" usemap ="#nombre del mapa">
+
+    <!--AUDIOS-->
+    <audio>direccion_del_archivo</audio>
+    <!--Para evitar incompatibilidades de formato es recomendable src:-->
+    <audio src="direccion_del_archivo"></audio>
+        <!--controls - incluye los botones de control del audio-->
+        <!--loop - Bucle-->
+        <!--muted - Audio silenciado-->
+        <!--preload - Precarga el archivo sin haber pulsado play para evitar ralentizaciones -->
+        <audio src = "playa.mp3" controls loop preload ="auto"> </audio>
+
+    
+    <!--VIDEO-->
+    <!--Funcionan igual que audio con un par de parámetros más-->
+    <video src = "playa.mp4" poster="fotos/playa de San Juan.jpg#t=20" 
+    controls width="500" height="350"> </video> 
+    <!--Poster representa la miniatura, si no por defecto se pone el primer fotograma del vídeo-->
+    <!--#t=20 justo después del nombre para indicar que el vídeo empiece a partir del segundo 20-->
+    <!-- Y para marcar un intervalo concreto #t=20, 50-->
+    <!--Etiqueta track permite cargar disintos elementos en el video-->
+        <!--subtitles- subtítulos de diálogo-->
+        <!--captions - información relevante del audio (descripción de lo que ocurre)-->
+        <!--descriptions - descripción del contenido del vídeo-->
+        <!--chapters - títulos de capítulos interactivos para navegar-->
+        <!--metadata - para los metadatos del archivo-->
+    <!--Y a estas opciones se debe añadir una src con el archivo pertinente-->
+        <!--srclang - referencia al lenguaje del contenido añadido-->
+        <!--label - etiqueta informativa sobre el vídeo-->
+        <video src = "sonidos/pajaro.avi">  
+            <track kind="caption" label= "Subtítulos en 
+            español" src = "pajaritos.srt" srclang ="es"> 
+        </video>  
+        
+
+
+    <!--MARCOS IFRAME
+    Permite especificar el objeto o documento a insertar y su ruta de acceso.-->
+    <!--Scrolling añade barras de desplazamiento-->
+    <!--Frameborder muestra un marco respecto al contenido-->
+    <!--Allowfullscreen permite pantalla completa-->
+    <iFrame scrolling frameborder allowfullscreen width=500 height=500 src = "http://nombre dominio/ ruta de acceso/nombre 
+archivo.extensión"></iFrame > 
+
+
+
+
+
+    </body>
+
+</html>

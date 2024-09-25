@@ -1,0 +1,28 @@
+div 
+    { 
+         border:5px double red;
+         width:500px;
+         background-color: grey;
+         margin-left:50px;
+    } 
+
+    h1 ~ h2 ~ p {
+    padding:20px;
+    color:blue;
+}
+
+h1,h2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1{
+    font-size:18;
+}
+
+h2{
+    font-size:16;
+}
+
+p{
+    font-family: Arial;
+}

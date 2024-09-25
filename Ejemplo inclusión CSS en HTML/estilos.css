@@ -1,0 +1,7 @@
+		
+		/* Hoja de estilos */
+		@import url(estilos3.css);
+		h1,p{font-family: arial, verdana, calibri;font-size: 50px;background-color: blue;color: green;}
+		h1{text-align:center;}
+		p{text-align:justify;}
+		
