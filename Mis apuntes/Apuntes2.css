@@ -189,7 +189,7 @@ prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
         o una palabra seguida por un espacio en blanco.*/
         *[title~="a"]{font-family:verdana} 
 
-/*Reglas de orden*/
+/*REGLAS DE ORDEN*/
 
         /*Limpiar y mantener economizado el código. Se pueden comentar o poner un guión delante de
         las líneas de código para deshabilitarlas y ver si tienen efecto en el código o no.*/
@@ -204,71 +204,124 @@ prefijo, se puede consultar una propiedad concreta en  https://caniuse.com/*/
                 -Etc...*/
             /*Del exterior del elemento al interior*/  
             
-        /*COLORES*/
-            /* https://htmlcolorcodes.com/es/ Como referencia para los valores*/ 
+/*COLORES*/
+
+    /* https://htmlcolorcodes.com/es/ Como referencia para los valores*/ 
             
-            /*SISTEMA HEXAGESIMAL - #77aa22 - RGB con dos números por color:
-            77 -cantidad de rojo
-            aa - cantidad de verde
-            22 - cantidad de azul
-            /*Si estuviesen repetidos por par, se podría poner abreviado: #7a2*/
-            /*  #FF0000: Rojo
-                #00FF00: Verde
-                #0000FF: Azul
-                #FFFF00: Amarillo
-            /*Rango: Cada par de caracteres puede variar de 00 (0) a FF (255), donde 00 es la ausencia del color y FF es la máxima intensidad.
-            Van de 0-9 y luego siguen de a-f
+    /*SISTEMA HEXAGESIMAL - #77aa22 - RGB con dos números por color:
+        77 -cantidad de rojo
+        aa - cantidad de verde
+        22 - cantidad de azul
+        /*Si estuviesen repetidos por par, se podría poner abreviado: #7a2*/
+        /*  #FF0000: Rojo
+            #00FF00: Verde
+            #0000FF: Azul
+            #FFFF00: Amarillo
+        /*Rango: Cada par de caracteres puede variar de 00 (0) a FF (255), donde 00 es la ausencia del color y FF es la máxima intensidad.
+        Van de 0-9 y luego siguen de a-f
         
         /*Y canal alfa para transparencias: 
         rgba(rojo,verde,azul, transparencia) 
         rgba(0-255,0-255,0-255,0.0 a 1.0)
         rgba(6,78,123,0.75)
 
-        /*UNIDADES*/
-            /*VALORES ABSOLUTOS*/
-                /*Punto (pt): 0,35 mm */
-                /*Pica (pc): 12 pt */
-                /*Píxeles (px): 16px=12pt */
+/*UNIDADES Y MEDIDAS*/
 
-            /*VALORES RELATIVOS (más utilizados para responsive)*/
-                /*em - basada  en  el  tamaño  del  tipo  de  fuente  usado  en  la  página  o  en  el 
-                elemento padre.
-                En una fuente de 15pt, otros  elementos  basados  en  ella tendrán: 
-                    1em * 15pt = 15pt. 
-                    0.5em * 15pt = 7,5pt. 
-                    4em * 15pt = 60pt.
+    /*VALORES ABSOLUTOS*/
+        /*Punto (pt): 0,35 mm */
+         /*Pica (pc): 12 pt */
+        /*Píxeles (px): 16px=12pt */
 
-                /*rem - Basada en el tamaño de la fuente usado en el elemento raíz de la página*/ 
-                /*Se multiplica el valor en rem por el del tamaño de fuente*/
-                /*Si fuente 15pt en el elemento raíz, otros elementos tendrán:
+    /*VALORES RELATIVOS (más utilizados para responsive)*/
+        /*em - basada  en  el  tamaño  del  tipo  de  fuente  usado  en  la  página  o  en  el 
+        elemento padre.
+        En una fuente de 15pt, otros  elementos  basados  en  ella tendrán: 
+            1em * 15pt = 15pt. 
+            0.5em * 15pt = 7,5pt. 
+            4em * 15pt = 60pt.
+
+        /*rem - Basada en el tamaño de la fuente usado en el elemento raíz de la página*/ 
+        /*Se multiplica el valor en rem por el del tamaño de fuente*/
+        /*Si fuente 15pt en el elemento raíz, otros elementos tendrán:
  
-                    1rem * 15pt = 15pt. 
-                    0.5rem * 15pt = 7,5pt. 
-                    4rem * 15pt = 60pt.
-                /*
+            1rem * 15pt = 15pt. 
+            0.5rem * 15pt = 7,5pt. 
+            4rem * 15pt = 60pt.
+        /*
 
-                /*ex - Basado en el tamaño de las fuentes según la altura de la minúscula en el elemento seleccionado*/
-                /*1ex = 0.5 em*/
-                /*Si fuente 15pt, otros elementos basados en ella tendrán:*/
-                /*
-                    1ex equivaldría a 7,5pt. 
-                    0.5ex equivaldría a 3,7pt. 
-                    4ex equivaldría 30pt. 
+        /*ex - Basado en el tamaño de las fuentes según la altura de la minúscula en el elemento seleccionado*/
+        /*1ex = 0.5 em*/
+        /*Si fuente 15pt, otros elementos basados en ella tendrán:*/
+        /*
+            1ex equivaldría a 7,5pt. 
+            0.5ex equivaldría a 3,7pt. 
+            4ex equivaldría 30pt. 
 
-                /*Porcentual %  Basado en el tamaño del elemento padre o contenedor*/
-                    /*width: 50%*/
+        /*Porcentual %  Basado en el tamaño del elemento padre o contenedor*/
+            /*width: 50%*/
 
-                /*vw - Especifica anchura visible del navegador. Viewport es la región visible de la página en el navegador.*/
-                    /*width: 1vw - Equivale al 1% del ancho del navegador.*/
+        /*vw - Especifica anchura visible del navegador. Viewport es la región visible de la página en el navegador.*/
+            /*width: 1vw - Equivale al 1% del ancho del navegador.*/
                 
-                /*vh - La altura visible del navegador*/
-                    /*height:100vh - 100% del alto del navegador*/
+        /*vh - La altura visible del navegador*/
+            /*height:100vh - 100% del alto del navegador*/
      
-/* 
+/*FUENTES*/
 
+    /*IMPORTACIÓN DE FUENTES*/
+    /*  <style> 
+            @import url(http://www.estilos.com/estilos/roboto.ttf); 
+            p{font-family: roboto , sans-serif} 
+        </style> 
+                
+        <link href= “protocolo://nombre de dominio/ruta de acceso/archivo de 
+        fuentes.extensión”>*/
+    /*Para aplicar cualidades estilísticas en una tipografía, la propia fuente tiene que tener esa versión (italic, negrita..)*/
+    /*Font-family utiliza las fuentes de la carpeta fonts, si estuviese guardada en otro sitio habría que usar font-face*/
         
-        
+    /*ATRIBUTOS DE FUENTES*/
 
+    /*  {font-style:oblique}
+        {font-style:italic}
+        {font-style:normal} */
+        
+    /*  {font-variant:small-caps} - Versalitas
+        {font-variant:normal} */
+
+    /*  {font-weight:normal}
+        {font-weight:Bold}
+        {font-weight:lighter} 
+        Se pueden aplicar con valores numéricos también de 100-900
+        500 = normal 
+        700 = bold 
+        900 = bolder */
+
+    /*  {font-size: 30pt} 
+        {font-size: 130px} 
+        {font-size: 2em} 
+        {font-size: xx-large} */
+        
+    /*  {Text-decoration: underline overline line-trough none } */
+
+    /* {text-transform: capitalize} - Primera letra de cada palabra en Mayúsculas
+    /* {text-transform: uppercase, lowercase, none} - Todas mayus, todas minus y ninguna */
+        
+    /* {text-indent:30px o 20%} - Simula sangría de primera línea */
+
+    /* { letter-spacing: 30px o -10px} - Modifica el tracking. */
+
+    /* { word-spacing: 30px} - Distancia entre palabras. */
+
+    /* { Text-align:justify left right center none} */
+
+    /* { text-shadow: -34px 28px 10px blue} - Añade sombreado a un texto. 
+    Sus valores son: derecha, izquierda, blurr y color. */
+        
+    /*  { line-height: 2.5}    - El interlineado 
+        { line-height: 20px} 
+        { line-height: 5%}  */
+            
+        
 
 
 
