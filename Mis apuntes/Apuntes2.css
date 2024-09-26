@@ -320,8 +320,112 @@ prefijo, se puede consultar en  https://caniuse.com/*/
     /*  { line-height: 2.5}    - El interlineado 
         { line-height: 20px} 
         { line-height: 5%}  */
-            
+
+/*LISTAS*/
+
+    /*{list-style-type: valores} - Cambia el símbolo de la lista*/
+        /*Valores:
+            Disc - Círculo relleno
+            Circle - Círculo vacío 
+            Square - Cuadrado
+            Decimal - Números
+            Decimal-leading-zero - Números con un cero delante
+            Upper-roman - Números romanos en mayúsculas
+            Lower-roman - Números romanos en minúsculas
+            upper-alpha o upper-latin - Letras Mayúsculas
+            lower-alpha o lower-latin - Letras minúsculas
+            None - Quita el elemento
+            Lower-greek - Griegas en minúscula
+            Armenian - Símbolos armenios
+            Georgian - Símbolos georgianos */
+    
+    /*{List-style-image: url(imagenes/icono.ico)} - Cambia los marcadores de las listas por símbolos gráficos
+
+    /*{List-style-position: valores} - Desplaza los marcadores a otra posición*/
+        /*Valores:
+            outside - Valor por defecto, se desplaza a la izquierda fuera del cuadro de texto
+            inside - Las líneas de texto se adaptan como en la mayúscula de inicio de un capítulo nuevo de un libro.
+    
+    
+    /*TABLAS*/
         
+        /*Propiedades de la tabla (no del contenido)*/
+        /* {border-spacing: 20px o 20%} */
+        /* {border-collapse: collapse o separate} - Fusiona bordes */
+        /* {caption-side: bottom o top} - Cambia colocación de la leyenda */
+        /* {empty-cells:hide o show} - Determina comportamiento con las celdas vacías */
+            
+    /*APUNTES TEXTO EN COLUMNAS PASAR A LIMPIO AQUÍ pag 31
+
+    /*CAJAS*/
+
+        /*Tienen cuatro características: Margin, padding, border y contenido.
+        Pueden apilarse, yuxtaponerse o superponerse*/
+        /*{display:valores} - Define o convierte el tipo de caja que se aplica*/
+            /*Valores:
+                Block o Inline - Convierte en bloque o en línea
+                Inline-block - elementos de bloque en línea
+                none - Oculta un elemento y el resto rellenan su hueco 
+                otros: grid, flexbox, table...
+
+        /*PROPIEDADES*/
+
+            /*TAMAÑOS {width y height}*/
+            /*O limitando: max-width, max-height, min-width, min-height*/
+
+            /*BORDES {border: grosor estilo color}
+                Atributos de estilo:
+                solid - trazo continuo
+                dashed - discontinuo guiones
+                dotted - discontinuo puntos
+                none - sin borde
+                groove - borde tallado
+                ridge - borde esculpido
+                inset - parece que el div está hundido
+                outset - parece que está saliente
+                hidden - sin borde visiple pero influyen sobre borde adyacente */
+
+                /*{border-width: 1 valor o 2 valores o 3 valores o 4 valores.} 
+                    1 valor: todos los bordes de ese valor
+                    2 valores: verticales (superior e inferior) y horizontal (izquierdo y derecho)
+                    3 valores: superior, laterales e inferior
+                    4 valores: superior, derecho, inferior, izquierdo.
+                
+                /*{border-style: valores} - Igual que border-width pero con estilos*/
+
+                /*{border-color:valores} - Igual pero con colores}
+
+                /*{border-radius:valores/valores} - Bordes redondeados: Si pones solo un punto de referencia centrado, esquina redonda. 
+                Si se ponen dos con distinto valor, se modula para que curve más de un eje que de otro. 
+                {border-radius: lista de valores eje horizontal:superior, derecha, inferior, izquierda / eje vertical superior, derecha, inferior, izquierda} 
+                {border-radius:50px 20px 5px 68px / 10px 10px 10px 10px} Se pueden poner con % también */
+                      
+            /*MÁRGENES*/
+                /*{margin: 45px 30px 20px 50px} - Igual pero con márgenes */
+                /*{padding: 45px 54px 52px 48px} - Igual pero con margin */
+
+            /*PROPORCIONES*/
+                /*{box-sizing} Se puede, o no, incluir las medidas de los márgenes y bordes en la medida del contenido.*/
+                    /*conent-box: El  cálculo  de  la  anchura  y  altura  de  la  caja  se  realiza  con  los  valores  de  las 
+                    propiedades  width  y  height,  a  los  que  se  le añaden  los valores  de  anchura  del 
+                    borde y el relleno (padding). 
+                    /*border-box: El cálculo de la anchura y altura de la caja se realiza solo con los valores de las 
+                    propiedades  width  y  height,  no  se  tiene  en  cuenta  la  anchura  del  borde  y  el 
+                    relleno (padding) 
+
+
+
+
+
+        
+
+
+
+
+                 
+
+
+
 
 
 
