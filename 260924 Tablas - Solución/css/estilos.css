@@ -1,0 +1,29 @@
+
+	/* Estilos para ejercicios Tablas. */
+	
+		table{
+			margin:auto;
+			border:1px solid #000;
+			border-collapse:collapse;
+			font-family:helvetica,sans-serif;
+		}
+		
+		th,td{
+			border:1px solid #000;
+			width:150px;
+			height:45px;
+			text-align:center;
+		}
+		th{
+			font-size:18px;
+			color:#fff;
+			background-color: #252525;
+		}
+
+		tr:nth-child(even) {
+			background-color:#eee;
+		}
+					
+		caption{caption-side:bottom}
+
+	

@@ -1,0 +1,8 @@
+        @import url(css/bordes.css);			
+			body{background-color:yellow;color:navy}
+			h1,h2{font-family:georgia;}
+			h1{font-size:18pt}
+			h2{font-size:16pt}
+			p{font-family:arial,verdana;}
+			
+			span{font-weight:bold;}

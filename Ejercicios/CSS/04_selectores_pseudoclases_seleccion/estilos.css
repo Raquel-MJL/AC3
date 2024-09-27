@@ -1,0 +1,16 @@
+#lista li:first-of-type{font-style: italic, bold; text-decoration:underline;}
+#lista li:last-of-type{text-decoration:line-through;}
+#Título2{color:magenta;}
+#lista li:nth-of-type(2){font-variant:small-caps;}
+#lista li:nth-of-type(even){color:red;}
+#lista li:nth-of-type(odd){background-color:orange;}
+#division 
+#division > :nth-child(3){font-size:20px;}
+#division :nth-child(odd){text-decoration:underline;}
+#division p:nth-of-type(2){font: size 9pt; font-family: Georgia, 'Times New Roman', Times, serif;}
+#division h1:first-of-type{background-color: pink;}
+#lista li:last-of-type(2){color:yellow;background-color: navy;}
+#lita li:last-of-type(4){ letter-spacing: 20px}
+ 
+    
+ 

@@ -8,7 +8,7 @@ prefijo, se puede consultar en  https://caniuse.com/*/
 
     /*Hay otros modos, a través de un @import o usarlo para cargar 
     archivos de estilo, local o remoto. Los IMPORT deben ser la primera instrucción*/
-    /*  @import url(http://www.estilos.com/estilos/maquetacion.css);  */
+    /* <style> @import url(http://www.estilos.com/estilos/maquetacion.css); </style>  */
 
     /*O añadiendo etiquetas <style> dentro del HEAD directamente*/
 
@@ -208,7 +208,7 @@ prefijo, se puede consultar en  https://caniuse.com/*/
 
     /* https://htmlcolorcodes.com/es/ Como referencia para los valores*/ 
             
-    /*SISTEMA HEXAGESIMAL - #77aa22 - RGB con dos números por color:
+    /*SISTEMA HEXADECIMAL - #77aa22 - RGB con dos números por color:
         77 -cantidad de rojo
         aa - cantidad de verde
         22 - cantidad de azul
@@ -224,6 +224,11 @@ prefijo, se puede consultar en  https://caniuse.com/*/
         rgba(rojo,verde,azul, transparencia) 
         rgba(0-255,0-255,0-255,0.0 a 1.0)
         rgba(6,78,123,0.75)
+
+    /*EJEMPLOS APLICACIÓN COLORES*/
+    div [id="verde"]{background-color:chartreuse} /*Nombre*/
+    div [id="verde"]{background-color:rgb(127, 255, 0, 0.70)} /*RGB*/
+    div [id="verde"]{background-color:#7FFF00} /*Hexadecimal*/
 
 /*UNIDADES Y MEDIDAS*/
 
@@ -414,7 +419,13 @@ prefijo, se puede consultar en  https://caniuse.com/*/
                     relleno (padding) 
     
 
-    /*FLOAT APUNTES*/
+    /*FLOAT*/
+        /*Textos floten dentro de su contenedor hasta el límite de él*/
+        /*{float: left o right o none}*/ 
+        /*Se puede impedir que un elemento flote: 
+        {clear: left, right, both, none}*/ 
+    
+    /*COSAS NUEVAS DEL 270924
 
 
 

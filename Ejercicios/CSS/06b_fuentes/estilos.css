@@ -1,0 +1,29 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+				
+    @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+            
+    @font-face{src:url(Akronim-Regular.ttf);
+           font-family:Ak;}
+    @font-face{src:url(Pacifico-Regular.ttf);
+           font-family:Pacifico;}
+    
+    
+    h1,h3{font-family:Calibri,sans-serif;}
+	#p1{font-family:Verdana,sans-serif;}
+	#p2{font-family:Didot,serif;}
+	#p3{font-family:FreeMono,monospace;}
+	#p4{font-family:"Roboto Mono",sans-serif;}
+	#p5{font-family:Ak,cursive;}
+	#p6{font-family:Montserrat,sans-serif ;}
+	#p7{font-family:"Comic Sans MS",cursive ;}
+	#p8{font-family:Palatino,"Book Antiqua", serif ;}
+	#p9{font-family:Arial,Helvetica,sans-serif ;}
+	#p10{font-family:"Courier New",Consolas, monospace ;}
+	#p11{font-family:Windings,fantasy ;}
+	#p12{font-family:Chiller,cursive ;}
+	#p13{font-family:Alcubierre, sans-serif ;}
+	#p14{font-family:Butler,Fakedes,Forum, serif  ;}
+	#p15{font-family:"Architects Daughter",cursive ;}
+	#p16{font-family:Pacifico, cursive; ;}
+	#p17{font-family:Dancing Script, cursive ;}

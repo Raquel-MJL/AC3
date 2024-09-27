@@ -1,0 +1,35 @@
+div{
+    width:300px;
+    height:16px;
+    border:1px solid #000;
+    margin:1px;
+}
+
+
+/* Verde Claro con Varios Modelos de Color */
+
+#verde-colorSeguro{background-color:LightGreen;}
+#verde-rgb{background-color:rgb(144, 238, 144);}
+#verde-rgba{background-color:rgba(144, 238, 144,0.70);}
+#verde-hex{background-color:#90EE90;}
+
+/* Rojo con Varios Modelos de Color */
+
+#rojo-colorSeguro{background-color:red;}
+#rojo-rgb{background-color:rgb(255, 0, 0);}
+#rojo-rgba{background-color:rgba(255, 0, 0,.7);}
+#rojo-hex{background-color:#F00;}
+
+
+/* RGBa Canal Alfa */
+
+#azul1{background-color:rgba(9,23,249,1);}
+#azul2{background-color:rgba(9,23,249,.9);}
+#azul3{background-color:rgba(9,23,249,.8);}
+#azul4{background-color:rgba(9,23,249,.7);}
+#azul5{background-color:rgba(9,23,249,.6);}
+#azul6{background-color:rgba(9,23,249,.5);}		
+#azul7{background-color:rgba(9,23,249,.4);}
+#azul8{background-color:rgba(9,23,249,.3);}
+#azul9{background-color:rgba(9,23,249,.2);}
+#azul10{background-color:rgba(9,23,249,.1);}

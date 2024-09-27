@@ -1,0 +1,33 @@
+p ::first-letter{text-transform:capitalize;}
+.pdiv1 ::first-line{color:blue;}
+h1::before{content:url(../imagenes/guitarra.png);}
+h1::after{content:url(../imagenes/guitarra.png);}
+.pdiv1::before{content:"El científico ";}
+#lista1 :first-child{font-weight:bold ; text-decoration:underline;}
+ul :first-child{color:navy;}
+#lista2 li:first-child{color:#5ba0e2 ; font-style:italic;}
+#lista1 :last-child{color:orange;}
+#lista1 li:last-child{color:orange;}
+#lista1 li:nth-of-type(5){color:lime;}
+#lista1 li:nth-of-type(even){color:lime;}
+#lista1 li:nth-of-type(odd){color:lime;}
+#lista2 > :nth-child(3){color:green;}
+#lista2 > :nth-child(even){font-size:18pt;}
+#lista2 > :nth-child(even){text-decoration:underline;}
+#div1 p:nth-of-type(2){color:#864cda;}
+#div1 p {color:lime ; background-color: black ; padding:5px;}
+#div1 p:last-of-type{color:lime ; background-color: black ; padding:5px;}
+#div1 :first-child {color: white;  background-color: black;}
+ul :nth-last-child(4){background-color:#da4cd8;}
+#lista2 li:nth-last-of-type(2){background-color:orange;}
+ul[title]{background-color:orange;}
+ul[title^="lis"]{text-decoration:overline;}
+div[title="contenedor 1"]{font-size:20pt;}
+div[title^="cont"]{text-decoration:overline;}
+div[title$="2"]{font-family:verdana;font-size:8pt;}
+*[title$="1"]{font-style:italic;}
+*[title*="do"]{color:#5ba0e2;}
+*[title*="te"]{border: 2px dotted black;}
+div:not(#div1){color:pink}
+p::selection{background-color: yellow;}
+*[title~="primero"]{text-decoration: underline;}

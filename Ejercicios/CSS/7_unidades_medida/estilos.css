@@ -1,0 +1,41 @@
+#primeroEM {
+    font-size: 16px;
+    margin-left: 1em;
+}
+
+#segundoEM {
+    font-size: 32px;
+    margin-left: 0.5em
+}
+
+#terceroEM {
+    font-size: 8px;
+    margin-left: 2em;
+}
+
+#div1 p{
+    border: 1px red solid;
+}
+
+#primeroPT {
+    font-size: 16px;
+    margin-left: 15pt;
+}
+
+#segundoPT {
+    font-size: 32px;
+    margin-left: 15pt;
+}
+
+#terceroPT {
+    font-size: 8px;
+    margin-left: 15pt;
+}
+
+#div2 p{
+    border: 1px black solid;
+}
+
+h3 {
+    margin-left: 1em;
+}

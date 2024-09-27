@@ -55,6 +55,10 @@
         <!-- Para utilizar caracteres reservados en el lenguaje concreto, en este caso HTML, como "<" o ">" hay que "escaparlos".
             Apertura < se codifica como &lt 
             Cierre > se codifica como &gt 
+            Y para hacerlos dobles << >> 
+            &laquo;
+            &raquo;
+
             Comillas " se codifica como &quot -->
         <p>Las &lt;etiquetas&gt;</p>
     
@@ -164,12 +168,13 @@
     <a href = “../../../.........................../nombre archivo.extensión”> <!--Para enlaces a archivos a nivel superior donde cada /.. representa una subida de nivel.--> 
 
     <!--Enlace de descarga-->
-    <a href="ruta_de_acceso_al_archivo/nombre_de_archivo.extensión">Texto del enlace</a>
+    <a href="ruta_de_acceso_al_archivo/nombre_de_archivo.extensión" download="ruta_de_acceso_al_archivo/nombre_de_archivo.extensión">Texto del enlace</a>
 
     <!--Anclas-->
         <!--Para enlazar posiciones en la misma web. Primero se colocan y luego se hace alusión a ellas:-->
     <a id="final_de_pagina"> <!--Lo posicionamos en el código como referencia a donde queremos que nos conduzca-->  
     <a href=#final_de_pagina> <!--Y luego le hacemos referencia con el ID-->
+    <a href="./../tipos_enlaces.html#final_pag_inicio">Final página de inicio</a> <!--Si hacemos referencia a un ancla en otro archivo-->
 
     <!--Enlaces de correo-->
     <a href="mailto:ramón@gmail.com?bcc=rocio@gmail.com&subject=Asunto%20del%20correo">Enviar correo</a>
@@ -281,8 +286,8 @@
     <!--Scrolling añade barras de desplazamiento-->
     <!--Frameborder muestra un marco respecto al contenido-->
     <!--Allowfullscreen permite pantalla completa-->
-    <iFrame scrolling frameborder allowfullscreen width=500 height=500 src = "http://nombre dominio/ ruta de acceso/nombre 
-archivo.extensión"></iFrame > 
+    <iframe scrolling frameborder allowfullscreen width=500 height=500 src = "http://nombre dominio/ ruta de acceso/nombre 
+archivo.extensión"></iframe > 
 
 
 

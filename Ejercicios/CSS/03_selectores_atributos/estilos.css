@@ -1,0 +1,20 @@
+*[class]{
+    font-weight: bold;
+}
+
+a[title] {
+    text-decoration:none;
+}
+
+*[class="ptexto"]{
+    color:red;
+}
+
+p [class^= "t"] {
+    text-decoration:line-through;
+}
+
+
+p [id^= "t"] {
+    text-decoration:line-through;
+}
