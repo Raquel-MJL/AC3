@@ -1,0 +1,43 @@
+#contenedor{
+    width:60%;
+    margin:auto;
+    font-family:calibri,sans-serif;
+}
+#izquierda{
+    width:20%;
+    float:left;
+
+}
+#derecha{
+    width:80%;
+    float:left;
+    padding:20px;
+    border-left:1px solid black;
+    box-sizing:border-box; /* Si no se incluye esta propiedad, la anchura debe ser menor del 80%. */
+}
+
+#izquierda a{
+    
+    font-size: 20px;
+    text-decoration:none;
+    color:black;
+    padding:18px;
+    display:block;
+}
+#izquierda a:hover{
+    color:maroon;
+    font-weight:bold;
+}
+#izquierda img{
+    padding:20px;
+}
+ul{
+    list-style-type:none;
+}
+nav{
+    border-top:1px solid black;
+}
+p{
+    text-align:justify;
+    color:gray;
+}

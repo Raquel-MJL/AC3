@@ -1,0 +1,24 @@
+		
+		/* Flexbox 1. */
+		
+		
+			body{margin:0px;padding:0px;font-family:verdana;}
+			header{margin:5px; padding:30px;background:#333;color:#fff;font-size:2em;font-weight:bold;}
+			nav a{text-decoration:none;color:#555;padding:15px;}
+			nav a:hover{background:#555;color:#ccc;}
+			
+		/* Barra de navegación con enlaces centrados. */
+		
+			#n1{display:flex;justify-content:center;background-color:#ccc;}
+		
+		/* Barra de navegación con enlaces a la izquierda. */
+		
+			#n2{display:flex;justify-content:flex-start;background-color:#ccc;}
+		
+		/* Barra de navegación con espacio entre enlaces. */
+		
+			#n3{display:flex;justify-content:space-between;background-color:#ccc;}
+		
+		/* Barra de navegación con espacio alrededor de los enlaces. */
+		
+			#n4{display:flex;justify-content:space-around;background-color:#ccc;}

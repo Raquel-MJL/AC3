@@ -1,0 +1,36 @@
+		
+		/* Flexbox 2. */
+				
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		
+		body{
+			background-image:url(../imagenes/bosque.jpg);
+			background-size:cover;
+		}
+		#contenedor-flexible{
+			width: 100vw;
+			height: 100vh;
+			display:flex;
+			flex-direction: column;
+			justify-content:center;
+			align-items:center;
+			gap:20px;
+		}
+		h1, h3, a{
+			font-family:verdana;
+			color:#fff;
+		}
+		#info{
+			border:2px solid #fff;
+			border-radius: 5px;
+			padding:5px;
+			
+		}
+		a{
+			text-decoration:none;
+			
+		}
+			

@@ -1,0 +1,137 @@
+
+
+
+	/* Ejercicio Cajas y Tipos de Posicionamiento - Solución. */
+	
+			/* Formato de las cajas. */
+			
+				div
+				{
+					width:200px;
+					height:200px;
+					background:lightblue;
+					font-size:30px;
+				}
+			
+			/* Caja C3 al centro con posicionamiento relativo */
+			
+				-.c3
+				{
+					position: relative;
+					margin:auto;
+					-top:50%;
+					-left:50%;
+				}
+			
+			/* Cajas a cada esquina con posicionamiento absoluto */
+			
+				
+				-.c1
+				{
+					position: absolute;
+					top:0px;
+					left:0px;
+				}
+				
+				-.c2
+				{
+					position: absolute;
+					top:0px;
+					right:0px;
+									
+				}
+				-.c3
+				{
+					position: absolute;
+					bottom:0px;
+					left:0px;
+				}
+				
+				-.c4
+				{
+					position: absolute;
+					bottom:0px;
+					right:0px;
+				}
+				
+			/* Caja C1 y C2 a la izquierda de la pantalla, y C3 y C4 a la derecha colocadas en vertical usando position absolute. */
+			
+				-.c1
+				{
+					position: absolute;
+					top:0px;
+					left:0px;
+					margin:5px;
+				}
+				
+				-.c2
+				{
+					position: absolute;
+					top:210px;
+					left:0px;
+					margin:5px;
+														
+				}
+				-.c4
+				{
+					position: absolute;
+					top:210px;
+					right:0px;
+					margin:5px;
+					
+				}
+				
+				-.c3
+				{
+					position: absolute;
+					top:0px;
+					right:0px;
+					margin:5px;
+				}
+			
+			/* Caja C1 y C2 a la izquierda de la pantalla, y C3 y C4 a la derecha colocadas en horizontal usando position absolute. */
+			
+				-.c1
+				{
+					position: absolute;
+					top:0px;
+					left:0px;
+					margin:5px;
+				}
+				
+				-.c2
+				{
+					position: absolute;
+					top:0px;
+					left:210px;
+					margin:5px;
+														
+				}
+				-.c4
+				{
+					position: absolute;
+					top:0px;
+					right:210px;
+					margin:5px;
+					
+				}
+				
+				-.c3
+				{
+					position: absolute;
+					top:0px;
+					right:0px;
+					margin:5px;
+				}
+			/* Caja C1 y C2 a la izquierda de la pantalla, y C3 y C4 a la derecha usando float */
+			
+				-.c1,-.c2
+				{
+					float:left;
+					-margin:0px 5px;
+				}
+				-.c3,-.c4
+				{
+					float:right;
+					-margin:0px 5px;
+				}
