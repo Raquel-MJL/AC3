@@ -500,7 +500,7 @@ se deshará al redimensionar la ventana del navegado*/
 *{flex-wrap: valores;} /*Controlar desborde o no de sus elementos contenidos*/
 
 
-
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----!!!!!!!!!!!!!!!!!!!!!!!*/
     
     /*Flex - Flexbox*/
 
@@ -518,8 +518,49 @@ se deshará al redimensionar la ventana del navegado*/
     
     /*{gap} - 
     flex: 0 1 auto; /* grow: 0, shrink: 1, basis: auto */
+    /*-------!!!!!!!!!!!!!!!!!!!!!!!!!Arregla esto con apuntes de flex!!!!!*/
 
 
+
+/*CONFIGURACIÓN DE IMÁGENES*/
+
+        *{opacity: valor} /*- (Como en el rgb pero de características concretas como borde)*/ 
+        *{background-image: url(imagenes/playa.jpg)} /*Pone img de fondo con su tamaño original por defecto*/
+        *{background-size: valores} 
+            /*cover: se redimensiona hasta ocupar el contenedor*/
+            /*tamaño x (anchura) e y (altura): Por defecto se redimensiona en base a X*/ 
+                /*Se puede poner según el vw y el vh*/
+            /*contain: Escala la imagen haciendo que cubra el 100% de la anchura o la altura del tamaño 
+                de la ventana o contenedor, por lo que pueden quedar huecos y se duplica la imagen*/
+        *{background-repeat: valores} /*Por defecto la img se repite hasta llenar espacio*/
+            no-repeat /*Para que no se repita*/ 
+            repeat-y /*Se repita en vertical*/ 
+            repeat-x /*Se repita en horizontal*/
+        {background-position: valor eje x valor eje y} No funciona si está repetida
+        {background-attachment: scroll o fixed} Para si la imagen se mueve o no con el fondo. 
+
+/*FILTROS DE IMAGEN*/
+    img{ filter: tipo de efecto(valor);}
+    img:hover { filter: tipo de efecto(valor);} 
+    img{filter:blur(3px);}  /*Desenfoque*/
+    img:hover{filter:grayscale(75%);} /*Escala de grises*/
+    img{filter:sepia(0%);} /*Sepia*/
+    img{filter:opacity(1);} /*Opacidad 0=invisible y 1=opaco. Va con decimales*/
+    img{filter:saturate(100%);} /*Saturación*/
+    img{filter:hue-rotate(222deg);}  /*Rotación de color*/
+    img{filter:invert(45%);} /*Inversión color*/
+    img{filter: brightness(45%);} /*Brillo*/
+    img{filter: contrast(45%);} /*Contraste*/
+    img{filter: drop-shadow (-34px 28px 10px blue);}  /*Sombreado*/
+    /*Valor X negativo a izquierda, positivo a derecha. El siguiente igual con arriba y abajo*/
+    /*Concatenación*/ img:hover {filter: saturate(80%) contrast(120%) brightness(56%);} 
+
+/*TRANSFORMACIONES*/
+    img:hover{transform: scale(1.3);} /*Escalar imagen*/
+    img:hover{transform: translate(50px, 150px);}  /*Desplazar la imagen*/
+    img{box-shadow: -34px 28px 10px blue} /*Sombreado*/
+
+/*DEGRADADOS*/
 
 
 
