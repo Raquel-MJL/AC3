@@ -1,0 +1,20 @@
+		
+		/* Flexbox 3. */
+		
+		
+			body{margin:0px;padding:0px;font-family:"comic sans ms", cursive;}
+			header{border-radius:5px;background-color: #d8dcbe;margin:5px;height:80px;}
+			#contenedor2{display:flex;background-size:cover;justify-content:space-around}
+			#lateral{display:flex;flex-direction:column;width:15%;}
+			#a1,#a2{display:flex;flex-direction:column;height:50%;border-radius:5px;}
+			#a1{background-color:#eedec5;margin-bottom:5px;}
+			#a2{border:2px solid #eedec5;margin-top:5px;}
+			main{background-image:url(../imagenes/fondo.jpg); background-size:cover;width:85vw;border-radius:5px;}
+			#lateral,main{margin:5px;height:85vh;}
+			h1{text-align:center;padding-top:25px;}
+			img{margin:auto;}
+			p,a{font-size:24px;color:maroon;}
+			p{margin:10px;}
+			a{text-decoration:none;margin:10px 15px;}
+			a:hover{font-size:25px;color:navy;}
+			img:hover{transform:scale(1.3);}

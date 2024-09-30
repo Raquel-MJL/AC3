@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(179, 178, 178);
+}
+
+*{margin:0; padding:0}
+
+#listabarra{
+    display:flex;
+    flex-direction: row;
+    list-style-type:none;
+    
+
+}
+
+header{
+    background-color:rgb(119, 161, 252);
+    display:flex;
+}
+
+h1{
+    display:inline-block;
+}
+
+#principal{
+    display:flex;
+}
+
+#secciones > div{
+    width:300px;
+    height:200px;
+}
+
+#principal div{
+    border-radius: 10px;
+    display:flex;
+    flex-direction:column;
+    box-shadow: 10 0 2 grey;
+}
+
+#secciones >img{
+    width:300px;
+    height:200px;
+
+}
+
+#listabarra a:hover{
+    color:red;
+    
+}
+
+#listabarra a{
+    margin-top:40px;
+}
+
+img{
+    display:flex;
+
+}

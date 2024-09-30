@@ -424,8 +424,106 @@ prefijo, se puede consultar en  https://caniuse.com/*/
         /*{float: left o right o none}*/ 
         /*Se puede impedir que un elemento flote: 
         {clear: left, right, both, none}*/ 
+
+/*POSICIONAMIENTO CAJAS*/
+    /*Estático*/*{position:static} /*Asegurar que un elemento se mantenga en su posición natural en el flujo del documento*/
+
+    /*Relativa*/ 
+    *{position: relative; 
+        top: 50px; 
+        left:100px 
+        } 
+    /*El elemento deja un hueco que no se ocupa por el resto de los elementos. 
+        • Posicionamiento definido mediante coordenadas:*/
+        
+    *{position:absolute;
+        top:50px;
+        left:100px;}
+    /*Posicionamiento respecto a la esquina superior izquierda del navegador o del elemento padre. 
+    • El elemento deja un hueco que es ocupado por el resto de los elementos. 
+    • Posicionamiento definido mediante coordenadas*/
     
-    /*COSAS NUEVAS DEL 270924
+    *{position: fixed;  
+        top: 50px; 
+        left:100px}
+    /*El elemento deja un hueco que es ocupado por el resto de los elementos. 
+• Posicionamiento definido mediante coordenadas: 
+o Eje x: 
+▪ Distancia respecto del borde izquierdo o derecho de la ventana del navegador. 
+o Eje y: 
+▪ Distancia respecto del borde superior o inferior de la ventana del navegador*/
+/*Sticky a posición de un elemento pasa a ser de relativa a fija. 
+• Al desplazarse el elemento se mueve hasta que queda fijo en un punto. 
+• El elemento deja un hueco que es ocupado por el resto de los elementos. 
+• Posicionamiento definido mediante coordenadas*/
+*{visibility:visible o hidden};
+
+/*DISPLAY*existen otros valores para componer 
+o maquetar una página web.
+
+/*TABLAS*/
+/*display  permite  maquetar  contenidos  parecidos  las  tablas  HTML,  sin  perder  el  significado  del 
+documento HTML al usar contenedores semánticos. 
+• Se pueden usar con contenedores <div>, <section>, <main>, <article>, etc. 
+• Los  elementos  se  muestran  como  si  fueran  parte  de  una  tabla,  fila,  columna  o  grupo  de  filas-
+columnas. 
+• La  estructura  de  una  página  usando  esta  propiedad  será  la  de  una  tabla,  pero  diseñada  con  CSS. 
+Todas las columnas de la página tendrán las mismas dimensiones (altura o anchura) y el diseño no 
+se deshará al redimensionar la ventana del navegado*/
+
+/*FLEXBOX*/
+
+/*Permite que los items flexibles de un contenedor alteren sus dimensiones para llenar el espacio disponible*/
+/*Estructura:*/
+    /*Contenedor*/
+        /*Eje principal - Por defecto horizontal - row*/
+        /*Eje secundario - Por defecto vertical - column*/
+ 
+    /*Contenido*/
+        /*Item: hijos del contenedor*/
+
+/*Propiedades: 
+ display:flex - Lo convierte en contenedor flexible*/
+ *{flex-direction:valores;} /*Establece cómo se ubican los items dentro del contenedor
+/*row. 
+• Elementos en horizontal en el orden que cada uno tiene. 
+• Alineación izquierda de los ítems. 
+▪ column. 
+• Elementos en vertical en su orden de creación.  
+• Alineación superior de los ítems. 
+▪ row-reverse. 
+• Elementos en horizontal en orden inverso al de su creación. 
+• Alineación derecha de los ítems. 
+▪ column-reverse. 
+• Elementos en vertical en orden inverso al de su creación. 
+• Alineación inferior.*/
+*{flex-wrap: valores;} /*Controlar desborde o no de sus elementos contenidos*/
+
+
+
+    
+    /*Flex - Flexbox*/
+
+    /*El viernes se quedaron en propiedades de los hijos o items del contenedor*/
+    *{align_self:center} /*Para un item en concreto*/
+    *{flex-grow: 0;} /*Aumenta tamaño con múltiplos de crecimiento.
+    En función de los hermanos y de si hay hueco en el contenedor principal. Su valor por defecto
+    es cero y eso implica que no puede cambiar de tamaño. Se usa con wrap. Hay que anular el tamaño del elemento para que funcione*/
+    div{flex-shrink: 1;} /*Admite negativos, es como grow pero para disminuir tamaño.
+    Valor por defecto:1. DEBE estar el tamaño establecido para que funcione*/
+    *{flex-basis:valorpx} /*Aplica mismo tamaño a todos los elementos seleccionados*
+    {order} Establece orden de colocación de los elementos donde 0 es los que no se mueven
+    */
+    *{display:flex;flex-direction:column;width:15%;} 
+    
+    /*{gap} - 
+    flex: 0 1 auto; /* grow: 0, shrink: 1, basis: auto */
+
+
+
+
+
+
 
 
 
