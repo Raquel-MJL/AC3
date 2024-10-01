@@ -1,0 +1,29 @@
+#divppalA{
+    width: 60%;
+}
+
+#tablaMovil{
+    font-family: Calibri, Verdana, Sans-serif;
+    background-color: orange;
+    border:1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    margin:auto;
+    width:100%;
+
+}
+td{
+    border:1px solid black;
+}
+#encabezadoTabla , #pieTabla{
+    color:white;
+    font-weight:bold ;
+    background-color:black;
+    font-size:20px;
+
+}
+
+#tablaMovil img{
+    width:130px;
+    height:190px;
+}
