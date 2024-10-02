@@ -9,10 +9,10 @@
 
 }
 
-/* #listaPpal>li{   
+ #listaPpal>li{   
     font-weight: bold;
     color:maroon;
-}*/
+}
 
 /*No entiendo por qué me lo aplica a todos los <li>*/
 
@@ -20,13 +20,13 @@
 
 
 /*Como alternativa he aplicado una clase manualmente pero me lo aplica igual 
-a todos los li*/
+a todos los li
 
 .li1{
     font-weight: bold;
     color:maroon;
 }
-
+*/
 
 
 

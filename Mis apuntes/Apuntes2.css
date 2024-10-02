@@ -562,6 +562,12 @@ se deshará al redimensionar la ventana del navegado*/
 
 /*DEGRADADOS*/
 
+/*FORMULARIOS*/
+Para que el usuario pueda modificar el tamaño de los cuadros de texto.
+     
+    *{resize:both , none , vertical , horizontal}
+    
+
 
 
 
