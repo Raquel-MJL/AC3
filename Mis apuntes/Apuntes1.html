@@ -801,8 +801,127 @@ o Valor por defecto.
 o Permite redimensionar un elemento en vertical. 
 • horizontal: 
 o Permite redimensionar un elemento en horizontal
+
+el value aunque suene redundante con el texto que le ponemos al usuario, es necesario porque es lo que iría a la base de datos 
+a excepción de los radiobotones donde todas las opciones tienen que tener el mismo name 
+
+<fieldset>...</fieldset> <!--Separaciones de formulario-->
+ 
+• Permite diferenciar un formulario de otro y/o agrupar de campos de formularios. 
+• Un conjunto de campos puede agruparse para organizar el formulario de forma lógica, sobre todo si son 
+largos y complejos. 
+• El agrupamiento puede tener o no un nombre. 
+• Los campos agrupados aparecen rodeados por un borde. 
+• Sintaxis: 
+o <fieldset>...</fieldset> 
+o Dentro debe incluirse el formulario a agrupar. 
+• Ejemplo: 
+<fieldset> 
+<form> 
+<fieldset> 
+ 
+<input....> 
+</fieldset> 
+<fieldset> 
+<input....> 
+</fieldset> 
+ 
+</form> 
+</fieldset> 
+ 
+ 
+• Atributos: 
+o name, disabled, form.
+
+<legend>...</legend>  <!--Leyendas para los fieldset-->
+ 
+• Etiqueta usada para especificar un nombre para el agrupamiento. 
+• Por defecto aparece a la izquierda, pero su alineación se puede cambiar con CSS. 
+• La etiqueta se sitúa después de <fieldset> 
+• Sintaxis: 
+o <legend>Nombre</legend> 
+• Ejemplo: 
+<fieldset> 
+<legend>Formulario 1</legend> 
+<fieldset> 
+<form> 
+<fieldset> 
+<legend> Nombre agrupamiento 1</legend> 
+<input....> 
+</fieldset> 
+<fieldset> 
+<legend>Nombre agrupamiento 2</legend> 
+<input....> 
+</fieldset> 
+ 
+</form> 
+</fieldset> 
+</fieldset>
+
+<!--LISTAS DESPLEGABLES--> 
+ 
+<select> 
+<option>opción 1</option> 
+<option>opción 2</option> 
+<option>opción N</option> 
+</select> 
+ 
+<!--Grupos de opciones: Los nombres de los grupos no son seleccionables para el usuario pero ofrecen apoyo visual.--> 
+
+<select> 
+<optgroup label = “nombre del grupo1”> 
+<option>opción 1</option> 
+<option>opción 2</option> 
+</optgroup> 
+<optgroup label = “nombre del grupo2”> 
+<option>opción 1</option> 
+<option label =”opción2”></option> 
+<option>opción 3</option> 
+</optgroup> 
+</select> 
+
+
+Atributos de <select>  
+- autofocus, disabled, required, form, name. 
+- size. - Especifica nº de elementos visibles en el menú, por defecto 1
+<select size =”número”> 
+- multiple - Para seleccionar varios elementos a la vez de una lista. 
+<select multiple=”multiple”> 
+Para enviar correctamente la información al servidor hay que dejar espacio para el array de valores
+<select name =”varios[]” multiple> 
+
+Atributos de <option> 
+-disabled, value 
+-selected: Preselecciona un elemento de la lista, por defecto el primero.
+<option selected> opción 5</option> 
+-label : Indica el texto de la opción
+<option label = “opción1”> </option>  
+o esta forma
+<option>opción 1 </option> 
+
+Atributos de <optgroup> 
+disabled, label.
+
+Para alinear elementos de formularios cuando quedan descuadrados podemos meter 
+cada input en un div para alinearlos. Y usar float. 
+<!--
+    #d2 label , #d3 label{
+    float:left
+    width:40%;     
     
-    
+    } 
+
+O separarlo por etiquetas en un div e inputs por otro. Float para las etiquetas
+y display-block para los inputs. 
+
+O con un flex.
+
+O etiquetas por un lado en un div flexible con un gap
+Inputs por otro en un div flex 
+Y aplico flex a un tercer div que los contiene
+
+<!--HAZTE UN FORMULARIO COMPLETO A MODO APUNTES-->
     </body>
+
 
 </html>
