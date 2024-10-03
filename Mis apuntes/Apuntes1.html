@@ -320,10 +320,789 @@
     <iframe scrolling frameborder allowfullscreen width=500 height=500 src = "http://nombre dominio/ ruta de acceso/nombre 
 archivo.extensión"></iframe > 
 
+    <!--FORMULARIOS-->
+    <form action =” ” method=”post” target =”_blank” name=”formulario_prueba”>
+        <!--Atributos-->
+            obligatorio<!--action - Indica ubicación el programa para procesar la información enviada.-->
+            <!--enctype - Especifica en que formato informático (tipo MIME) se transmitirán los datos-->     
+            obligatorio<!--method= - Especifica la forma de envío del formulario.
+                get: Datos son visibles en la URL, se  pasan  variables  (nombre+valor) 
+                    concatenados  con  el  operador  &,  la  URL  y  el  archivo  de  procesamiento 
+                    unidos por una interrogación (?). En ASCII, hasta 100 caracteres, menos seguridad por la visibilidad de los datos en la URL. 
+                post: No visibles, se envían con el cuerpo del formulario. Más seguro, no codificados con ASCII, sin límite
+                de caracteres. Puede enviar archivos al servidor. Típico en registros de usuario.-->
+            <!--name = “nombre” - Nombre del formulario-->
+            <!--accept-charset = "utf-8"  -  Tipo de codificación -->
+            <!-- novalidate - booleano para validar o no los datos durante el envío-->
+             <!--target - mismos atributos que un enlace (blank, self, etc) para los resultados-->
+        <!--Campos de formularios-->
+        <form> <!--Especifica el tipo de entrada de dato del formulario-->
+            <input name=""> 
+            <input class=""> 
+            <input id=""> 
+        </form>
+        <!--Y cuenta con las distintas opciones:-->
+        type= text, password, checkbox, radio, submit, reset, file, hidden, image, button.
+        disabled="disabled" 
+        text: texto
+password: contraseña
+checkbox: casilla de verificación 
+radio: botón de opción (solo 1 opción es la buena genero:Hombre mujer)
+submit: enviar
+reset: reiniciar
+file: archivo
+hidden: oculto
+image: imagen
+button: botón
+<!--Desactiva el campo en concreto. -->
+        <!--type = “text”-->
+        name. 
+▪ form. 
+• Indica  a  qué  formulario  pertenece  un  campo,  si  hay  varios  campos  tipo  text  con  el 
+mismo nombre.  
+• Sintaxis: 
+o form  =”nombre  del  formulario  incluido  en  el  atributo  id  de  la  etiqueta 
+<form>” 
+▪ size. 
+• Especifica la anchura del campo de texto. 
+• Define el tamaño en caracteres del campo, no el total de caracteres a introducir. 
+• Tamaño especificado con un numero entero. 
+• Valor por defecto es de 20 caracteres. 
+• Sintaxis: 
+o size = “número” 
+▪ maxlength. 
+• Máximo número de caracteres a introducir en el campo. 
+• Valor es un número entero. 
+•  Sintaxis: 
+o maxlength = “numero” 
+▪ min o minlenght según versión. 
+• Mínimo número de caracteres a introducir en el campo. 
+• Valor es un número entero. 
+•  Sintaxis: 
+o minlength = “numero” 
+▪ value. 
+• Indica el valor campo y se utiliza para informar sobre qué es lo que se pide. 
+• Sintaxis: 
+o value =”texto” 
+▪ placeholder. 
+• Permite incluir una sugerencia acerca del valor a introducir. 
+• Aparece atenuado (gris). 
+• Desaparece al situar el cursor o el foco en el campo. 
+• Sintaxis: 
+o placeholder =”texto” 
+• Se pueden incluir también dibujos y, en general, cualquier carácter Unicode. 
+• Sintaxis: 
+o placeholder="&#x valor Unicode" 
+• Ejemplo: 
+o placeholder="&#x2315" 
+• Sitios con tablas de caracteres Unicode: 
+o https://unicode-table.com/es/#basic-latin 
+o https://www.mclibre.org/consultar/htmlcss/html/html-unicode-
+simbolos.html 
+▪ readonly. 
+• Campo de sólo lectura. 
+• No se puede editar o modificar el valor que por defecto tenga el campo. 
+• Sintaxis: 
+o readonly =”readonly” 
+o readonly  
+▪ autofocus. 
+• Sitúa el foco en un campo al cargar la página. 
+• Sintaxis: 
+o autofocus =”autofocus” 
+o autofocus 
+▪ required. 
+• Convierte un campo en obligatorio. 
+• Sintaxis: 
+o required = ”required” 
+o required 
+▪ pattern. 
+• Permite crear un patrón que especifica que contenido puede incluirse en el campo. 
+• Expresión de validación de datos en los campos. 
+• Expresiones: 
+o []: 
+▪ Especifica que valores son permitidos. 
+▪ Ejemplos: 
+• [A-Z] Permitidas todas las letras mayúsculas. 
+• [A-L] Permitidas todas las letras mayúsculas entre la A y la L. 
+• [0-9] Sólo números. 
+• [A-Za-z] todas las letras mayúsculas y minúsculas. 
+o {}: 
+▪ Especifica el total de caracteres o dígitos a incluir. 
+▪ Sintaxis: 
+• {número} 
+• {número inicial, número final} 
+▪ Ejemplo: 
+• [0-9] {9}   823542352 --- correcto ya que el número total son 
+9 dígitos. 
+• [0-9] {3,9}   98375 --- correcto ya que el número mínimo son 
+3 dígitos. 
+• [a-z] {5,20} --- “ana” no es válido y “antonio” si, por tener 7. 
+▪ Ejemplo con pattern: 
+• <input type = “text” pattern =”[A-Za-z] {5,20}”> 
+• <input type = “text” pattern =”[0-9] {10,20}”> 
+▪ list. 
+• Permite asociar un control a un <datalist> 
+• Sintaxis: 
+o list =”nombre del datalist aplicado con el atributo id” 
+▪ autocomplete. 
+autocomplete =”on” - Autocompletar formulario si el usuario ha esrito antes. 
+o autocomplete "off"
+
+Campos de contraseña: 
+o Campo de texto donde los caracteres escritos se sustituyen en la visualización por otros para que no 
+sean legibles. 
+o Se usan puntos o asteriscos. 
+o Protege la visualización no los datos, que se transmiten sin cifrar. 
+o Sintaxis: 
+▪ type = “password” 
+o Atributos. 
+▪ name, size, maxlenght, minlenght, id, disabled, autofocus, pattern, placeholder, readonly y 
+form. 
+• Campo de texto oculto: 
+o Almacenan datos no visibles para los usuarios. 
+o A veces es necesario enviar información anexa a los formularios que no necesita ser introducida por 
+el usuario. 
+o Uso por programadores, sobre todo con JavaScript. 
+o Usos: 
+▪ Tiempo que tarda el usuario en rellenar y enviar el formulario. 
+▪ Almacenar datos de formularios anteriores. 
+▪ Almacenar datos que proviene de otro script. 
+▪ Almacenar datos en bruto. 
+o Sintaxis: 
+▪ type =”hidden” 
+o Atributos: 
+▪ id, name, form, autofocus, disabled. 
+▪ value. 
+• atributo debe ir relleno ya que no lo introduce el usuario.
+   <!--Readonly, autofocus...
+   -->
+   
+   <!--
+   Botones de acción. 
+ 
+<button>...</button> 
+ 
+• Permiten ejecutar una acción al hacer clic en el botón. 
+• La acción la define el desarrollador usando un lenguaje de programación como JavaScript. 
+• Se pueden usar como botones de envío o anulación. 
+• Sintaxis: 
+o <button>Texto del botón</button> 
+• Atributos: 
+o Sólo para el tipo submit: 
+▪ formaction, formenctype, formtarget, formethod, formnovalidate. 
+o Comunes a submit, reset y button: 
+▪ autofocus, disabled, name, value, form, type. 
+▪ type 
+• Permite especificar el tipo de botón 
+• Sintaxis: 
+o type=”valores” 
+• Valores: 
+o submit, reset. 
+o button. 
+▪ Sirve para crear un botón de acción. 
+▪ Necesita un programa con el código de la acción que va a realizar. 
+o Sólo para el tipo button. 
+▪ onClick. 
+o Evento de ratón que, al producirse, desencadena una acción. 
+o Sintaxis: 
+▪ onClick= “nombre de programa/código a ejecutar” 
+o Ejemplos: 
+▪ <button type = “button” onClick=”abrir.js”> 
+ 
+ 
+• Añadir una imagen en la etiqueta de un botón. 
+• Hay que usar la etiqueta <img> anidada a la etiqueta <button>. 
+• Sintaxis: 
+<button> 
+<img> 
+</button> 
+• Ejemplo: 
+<button type =”submit”> 
+<img src =”guitarra.png” alt=”Imagen de una guitarra” width =”20px” height 
+=”20px”> 
+</button> 
+ 
+NUEVOS ELEMENTOS PARA FORMULARIO EN HTML5. 
+ 
+COLORES - Para que el usuario seleccione de un círculo cromático  
+type =”color” 
+
+    Atributos. 
+    - autofocus, disabled, form, name, autocomplete. 
+    - value : Permite definir color principal, por defecto negro.
+ 
+CUADRO DE BÚSQUEDA - Represena un capo de txt de una linea para buscar 
+type =”search” 
+
+    Atributos. 
+    - size, maxlength, min o minlength, autofocus, disabled, form, name, pattern, placeholder, readonly, 
+required, value, autocomplete. 
+    - placeholder : incluye icono en el cuadro. Especificar valor hexadecimal o unicode
+    Web para iconos: 
+    https://www.mclibre.org/consultar/htmlcss/html/html-unicode-simbolos.html 
+    Valores hexadecimales para una lupa: 
+    &#128270, &#x1f50d, &#xfe0e 
+ 
+Fechas y horas. 
+ 
+Fechas. 
+• Para fechas se utiliza el valor date en el atributo “type”. 
+• Sintaxis: 
+o type=”date” 
+• Formato de fecha: 
+o dd/mm/aaaa 
+o Otros formatos deben crearse con lenguajes de programación. 
+• Selección de la fecha: 
+o Escribiéndola. 
+o Seleccionándola de un calendario. 
+• Atributos: 
+o autofocus, disabled, form, name, readonly, value, required, autocomplete. 
+o max, min y step. 
+▪ Sirven para restringir las fechas a introducir. 
+▪ Pueden usarse juntos o por separado. 
+▪ min.  
+• Especifica una fecha mínima o inicial. 
+▪ max. 
+• Especifica una fecha máxima o final. 
+▪ step. 
+• Indica la distancia entre la fecha seleccionable y la siguiente.  
+o Sintaxis: 
+▪ min = “fecha inicial” max =”fecha final” step= “numero”. 
+o Ejemplo: 
+▪ min =”2018-02-20” max =”2018-04-24” step =”7”. 
+Horas. 
+• Para las horas se usa el valor time. 
+• Sintaxis: 
+o type=”time” 
+• Formato de hora: 
+o hh:mm:ss 
+• Atributos: 
+o autofocus, disabled, form, name, readonly, value, required, autocomplete. 
+o max, min y step. 
+▪ Sirven para restringir las horas a introducir. 
+▪ min.  
+• Especifica una fecha mínima o inicial. 
+▪ max. 
+• Especifica una fecha máxima o final. 
+▪ step. 
+• Indica la distancia en segundos entre 2 valores permitidos. 
+▪ Sintaxis: 
+• min = “hora inicial” max =”hora final” step= “número de segundos” 
+▪ Ejemplo: 
+• min =”18:00” max =”22:00” step =”3600” 
+ 
+Fecha y Hora. 
+• Permite introducir en un campo una fecha y una hora a la vez. 
+• Sintaxis: 
+o type=”datetime-local” 
+• Formato de fecha y hora: 
+o dd/mm/aaaa 
+o hh:mm 
+o Otros formatos deben crearse con lenguajes de programación. 
+• Selección de la fecha y hora: 
+o Escribiéndolas. 
+o Seleccionándola de un calendario. 
+• Atributos: 
+o autofocus, disabled, form, name, readonly, value,required, autocomplete. 
+o max, min y step. 
+▪ Sirven para restringir las fechas y las horas a introducir. 
+▪ min.  
+• Especifica una fecha/hora mínima o inicial. 
+▪ max. 
+• Especifica una fecha/hora máxima o final. 
+▪ step. 
+• Indica la distancia entre una fecha seleccionable y la siguiente o, si es para las horas, 
+los segundos entre 2 valores permitidos. 
+• Con un valor bajo en step los saltos afectan a la hora. 
+• Con un valor muy alto en step los saltos afectan a la fecha. 
+▪ Sintaxis: 
+• min="fecha inicialThora inicial" max=" fecha incialThora inicial " step=“número de 
+segundos” 
+▪ Ejemplo: 
+• min="2015-02-20T10:00" max="2015-04-24T10:00" step="3600" 
+Meses. 
+• Se puede introducir una fecha especificando el mes y el año. 
+• El mes se puede introducir con texto. 
+• Sintaxis: 
+o type=”month” 
+• Formato de fecha: 
+o mm/aaaa 
+o Otros formatos deben crearse con lenguajes de programación. 
+• Selección de la fecha: 
+o Escribiéndola. 
+o Seleccionándola de un calendario. 
+• Atributos: 
+o autofocus, disabled, form, name, readonly, value, required, autocomplete. 
+o max, min y step. 
+o Sirven para restringir las fechas a introducir. 
+▪ min.  
+• Especifica una fecha mínima o inicial. 
+▪ max. 
+• Especifica una fecha máxima o final. 
+▪ step. 
+• Indica la distancia entre la fecha seleccionable y la siguiente de mes en mes.  
+o Sintaxis: 
+▪ min = “fecha inicial” max =”fecha final” step= “numero”. 
+o Ejemplo: 
+▪ min =”2018-02” max =”2018-04” step =”7”. 
+Semanas. 
+• Representa un campo para la entrada de una semana. 
+• Selección de la semana: 
+o Escribiéndola 
+o Seleccionándola de un calendario. 
+• Sintaxis: 
+o type = “week” 
+• Formato para atributos: 
+o “aaaa-wnúmero” 
+▪ w: week 
+▪ número: Número entre 1 y 52 o 53. 
+• Atributos: 
+o list, autofocus, disabled, form, name, readonly, required, value, autocomplete. 
+o max, min y step. 
+▪ Permiten acotar la semana. 
+▪ min.  
+• Especifica una fecha mínima o inicial. 
+▪ max. 
+• Especifica una fecha máxima o final. 
+▪ step. 
+• Indica la distancia entre la fecha seleccionable y la siguiente de semana en semana. 
+▪ Ejemplo: 
+• max =”2021-w30” min =”2021-w10” step = “3”. 
+ 
+TELÉFONOS 
+Atributos: 
+- list, size, maxlength, min o minlength, autofocus, disabled, form, name, pattern, placeholder, 
+readonly, required, value, autocomplete. 
+-Pattern con JavaScript para validarlo
+ 
+<input type="tel" pattern = "[0-9]{9}"> 
+ 
+EMAIL
+Sólo valida si detecta un @ o si se usa pattern con JavaScript
+• Atributos: 
+o list, size, maxlength, min o minlength, autofocus, disabled, form, name, pattern, placeholder, 
+readonly, required, value, autocomplete. 
+
+<input type="email" pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> 
+ 
+Direcciones de Internet. 
+ 
+• Cuadro de texto que permite introducir una dirección web. 
+• Se realizado una validación automática del campo, por si la URL enviada no es correcta. 
+• La validación por defecto detecta la falta de protocolos o los espacios en blanco como fallos en la dirección. 
+• Sintaxis: 
+o type =”url” 
+• Atributos: 
+o list,  size,  maxlength,  min  o  minlength,  autofocus,  disabled,  form,  name,  pattern,  placeholder, 
+readonly, required, value, autocomplete. 
+• Ejemplo de validación de un campo para direcciones de Internet con un patrón: 
+o <input type="url" pattern = “(ftp|http|https)://(w+:{0,1}w*@)?(S+)(:[0-9]+)?(/|/([w#!:.?+=&%@!-
+/]))?”> 
+Números. 
+ 
+• Campo para la entrada de números. 
+• Aparecen botones de incremento y decremento para aumentar o reducir la cifra de unida en unidad. 
+• Permite  incluir  un  intervalo  entre  un  valor  máximo  y  otro  mínimo,  así  como  establecer  los  saltos  entre 
+valores. 
+• Validación: 
+o Uso del punto (.) para posiciones decimales. 
+o Se puede usar el signo menos (-) para números negativos. 
+o Se puede usar la letra E para notación científica. 
+• Sintaxis: 
+o type =”number” 
+• Atributos: 
+o list, ,autofocus, disabled, form, name,   readonly, required, value. 
+o max, min y step. 
+▪ Sirven  para especificar rangos  o intervalos numéricos y el valor de los incrementos  o 
+decrementos. 
+▪ min.  
+• Especifica un valor mínimo o inicial. 
+▪ max. 
+• Especifica un valor máximo o final. 
+▪ step. 
+• Indica los saltos numéricos. 
+▪ Sintaxis: 
+• min = “valor mínimo” max =”valor máximo” step= “saltos numéricos” 
+▪ Ejemplo: 
+o min =”5” max =”100” step =”5-->
+
+<!--botón de envío con imagen
+< input type=”image” src = ”playa.jpg”>--> 
+
+Botón de acción o button. 
+▪ Representa un botón sin una acción predefinida asociada, lo que significa que, por defecto, el 
+botón no producirá ningún efecto cuando se pulse.  
+▪ Normalmente son utilizados con programas del lado cliente como JavaScript, que son 
+ejecutados cuando el usuario los presiona. 
+▪ Sintaxis: 
+• type=”button” 
+▪ Atributos: 
+• id, autofocus, form, name, disabled. 
+• value. 
+o Especifica el texto o etiqueta del botón
+
+Área de Texto. 
+ 
+<textarea>...</textarea> 
+ 
+• Permite crear cuadros de texto multilínea para que el usuario pueda editar múltiples líneas de texto. 
+• Saltos de línea pulsando la tecla de Intro. 
+• Utilidad: 
+o Editar mensajes, comentarios, sugerencias, contenido de archivos, listas, reseñas, artículos, etc. 
+• Atributos: 
+o name, placeholder, readonly, maxlength, minlegth, required, autofocus, disabled, form. 
+o cols. 
+▪ Especifica el ancho del área en número de caracteres. 
+▪ Sintaxis: 
+• cols=”número” 
+• Valor por defecto son 20 caracteres. 
+o rows. 
+▪ Número de líneas visibles para el área de texto. 
+▪ Si se escriben más de las especificadas, aparecerá una barra de desplazamiento. 
+• Sintaxis: 
+o rows=”número” 
+• Valor por defecto son 2 líneas. 
+o wrap. 
+▪ Especifica  cómo  se  van  a  gestionar  los  saltos  automáticos  de  línea  cuando  se  envíe  el 
+formulario. 
+▪ Sintaxis: 
+• wrap =”valores” 
+▪ Valores: 
+• hard: 
+o Se inserta un carácter de salto de línea junto con el texto. 
+o Si se utiliza, es obligatorio usar el atributo cols. 
+• soft: 
+o No se inserta ningún carácter de salto de línea. 
+ 
+• Un área de texto puede redimensionarse con la propiedad de CSS resize: 
+o resize. 
+▪ Permite cambiar el tamaño de un elemento. 
+▪ Sintaxis: 
+• resize: valores. 
+▪ Valores: 
+• none: 
+o Impide cambiar las dimensiones de un elemento. 
+• both: 
+o Permite redimensionar un elemento en horizontal y vertical. 
+o Valor por defecto. 
+• vertical: 
+o Permite redimensionar un elemento en vertical. 
+• horizontal: 
+o Permite redimensionar un elemento en horizontal
+
+el value aunque suene redundante con el texto que le ponemos al usuario, es necesario porque es lo que iría a la base de datos 
+a excepción de los radiobotones donde todas las opciones tienen que tener el mismo name 
+
+<fieldset>...</fieldset> <!--Separaciones de formulario-->
+ 
+• Permite diferenciar un formulario de otro y/o agrupar de campos de formularios. 
+• Un conjunto de campos puede agruparse para organizar el formulario de forma lógica, sobre todo si son 
+largos y complejos. 
+• El agrupamiento puede tener o no un nombre. 
+• Los campos agrupados aparecen rodeados por un borde. 
+• Sintaxis: 
+o <fieldset>...</fieldset> 
+o Dentro debe incluirse el formulario a agrupar. 
+• Ejemplo: 
+<fieldset> 
+<form> 
+<fieldset> 
+ 
+<input....> 
+</fieldset> 
+<fieldset> 
+<input....> 
+</fieldset> 
+ 
+</form> 
+</fieldset> 
+ 
+ 
+• Atributos: 
+o name, disabled, form.
+
+<legend>...</legend>  <!--Leyendas para los fieldset-->
+ 
+• Etiqueta usada para especificar un nombre para el agrupamiento. 
+• Por defecto aparece a la izquierda, pero su alineación se puede cambiar con CSS. 
+• La etiqueta se sitúa después de <fieldset> 
+• Sintaxis: 
+o <legend>Nombre</legend> 
+• Ejemplo: 
+<fieldset> 
+<legend>Formulario 1</legend> 
+<fieldset> 
+<form> 
+<fieldset> 
+<legend> Nombre agrupamiento 1</legend> 
+<input....> 
+</fieldset> 
+<fieldset> 
+<legend>Nombre agrupamiento 2</legend> 
+<input....> 
+</fieldset> 
+ 
+</form> 
+</fieldset> 
+</fieldset>
+
+<!--LISTAS DESPLEGABLES--> 
+ 
+<select> 
+<option>opción 1</option> 
+<option>opción 2</option> 
+<option>opción N</option> 
+</select> 
+ 
+<!--Grupos de opciones: Los nombres de los grupos no son seleccionables para el usuario pero ofrecen apoyo visual.--> 
+
+<select> 
+<optgroup label = “nombre del grupo1”> 
+<option>opción 1</option> 
+<option>opción 2</option> 
+</optgroup> 
+<optgroup label = “nombre del grupo2”> 
+<option>opción 1</option> 
+<option label =”opción2”></option> 
+<option>opción 3</option> 
+</optgroup> 
+</select> 
 
 
+Atributos de <select>  
+- autofocus, disabled, required, form, name. 
+- size. - Especifica nº de elementos visibles en el menú, por defecto 1
+<select size =”número”> 
+- multiple - Para seleccionar varios elementos a la vez de una lista. 
+<select multiple=”multiple”> 
+Para enviar correctamente la información al servidor hay que dejar espacio para el array de valores
+<select name =”varios[]” multiple> 
 
+Atributos de <option> 
+-disabled, value 
+-selected: Preselecciona un elemento de la lista, por defecto el primero.
+<option selected> opción 5</option> 
+-label : Indica el texto de la opción
+<option label = “opción1”> </option>  
+o esta forma
+<option>opción 1 </option> 
 
+Atributos de <optgroup> 
+disabled, label.
+
+Para alinear elementos de formularios cuando quedan descuadrados podemos meter 
+cada input en un div para alinearlos. Y usar float. 
+<!--
+    #d2 label , #d3 label{
+    float:left
+    width:40%;     
+    
+    } 
+
+O separarlo por etiquetas en un div e inputs por otro. Float para las etiquetas
+y display-block para los inputs. 
+
+O con un flex.
+
+O etiquetas por un lado en un div flexible con un gap
+Inputs por otro en un div flex 
+Y aplico flex a un tercer div que los contiene-->
+
+<!--HAZTE UN FORMULARIO COMPLETO A MODO APUNTES-->
+
+VALIDACIÓN DE FORMULARIOS EN HTML. 
+• Es  necesario validar  los  datos  introducidos  por  un  usuario  en  un  formulario  para  asegurarnos,  por  ejemplo, 
+que tengan el formato correcto, estén incluidos dentro de un rango válido de valores o no contengan código 
+malicioso. 
+• La validación se puede realizar en el lado cliente o en el lado servidor: 
+o En el lado cliente se utiliza JavaScript, reglas CSS y atributos HTML. 
+o En el lado servidor se utilizan lenguajes como PHP, Python, etc. 
+• Datos a validar: 
+o El  formato  de  campos  como  los  nombres,  apellidos,  contraseñas,  cuentas  de  correo  electrónico, 
+teléfonos, códigos postales, etc., es decir, datos personales. 
+o Campos obligatorios. 
+o Tipo de datos, es decir, si un campo debe sólo recibir cadenas de caracteres, números o ambas cosas 
+como, por ejemplo, un DNI. 
+o Asegurarse de que el dato introducido sea válido como, por ejemplo, una fecha, una ciudad, etc. 
+• Validación lado cliente usando HTML. 
+• Para ello se utilizan los siguientes atributos en los campos de los formularios: 
+o required. 
+▪ Para hacer que los campos sean obligatorios. 
+▪ Ejemplo: 
+▪ <input type=”date” required> / Campo de tipo fecha obligatorio. 
+o minlength y maxlength. 
+▪ Restringir la longitud de los datos de tipo alfanumérico. 
+▪ Ejemplo: 
+▪ <input type=”text” minlength =”10” maxlength =”100” required> / Campo de 
+texto  obligatorio  en  el  que  hay  que  escribir  un  mínimo  de  10  caracteres  y  un 
+máximo de 100. 
+o min y max. 
+▪ Restringir el rango de valores permitido en campos de tipo numérico o de fecha y hora. 
+▪ Ejemplo: 
+▪ <input type=”number” min=”2” max  =”8”> / Los valores permitidos para este 
+campo de tipo numérico están comprendidos ente el valor 2 y el valor 8, ambos 
+inclusive. 
+▪ <input  type=”date”  min=”2022-06-21”  max  =”2022-09-21”>  /  Las fechas 
+permitidas son sólo del verano del año 2022. 
+o step. 
+▪ Para campos numéricos establece el salto de números permitido. Por defecto,1. 
+▪ Para campos fecha establece el salto de días permitido. Por defecto,1. 
+▪ Para campos hora establece el salto en segundos permitido. Por defecto 1. 
+▪ Ejemplo: 
+▪ <input type=”number” step  =  “5”> / Los  valores  permitidos  para  este campo  de 
+tipo numérico se muestran de 5 o en 5, o sólo está permitido introducir números 
+múltiplos de 5. 
+▪ <input type=”date” step =”7” / Las fechas permitidas se muestran de 7 en 7 días, 
+por lo que sólo se pueden seleccionar o escribir fechas de semana en semana. 
+▪ <input type=”time” step =”900” / Las horas permitidas se muestran de 15 en 15 
+minutos, por lo que sólo se pueden escribir horas en ese rango de valores. 
+o type. 
+▪ Restringir el tipo de datos a utilizar. 
+▪ Ejemplo: 
+▪ <input  type="text">  /  El  campo  admite  cadenas  de  caracteres  alfanuméricos. 
+<input  type="email">  /  El  campo  solo  admite  una  cadena  de  caracteres  con  el 
+formato de una cuenta de correo electrónico. 
+o pattern. 
+▪ Permite especificar un patrón que los datos introducidos deben cumplir para ser válidos. 
+▪ Ejemplo: 
+▪ <input type=”text” pattern =”[A-Z]{1}[A-Za-z]{0,19}” > / En este campo de texto, 
+se  pueden  introducir  entre  1  y  20  letras,  siendo  la  primera  obligatoriamente 
+mayúsculas y el resto, mayúsculas o minúsculas indistintamente.  
+▪ <input type=”text” pattern =”[0-9]{2}[A-Z]{2}” > / Este campo sólo permite 4 
+caracteres. Los 2 primeros deben ser números y, los 2 últimos, letras mayúsculas. 
+PSEUDOCLASES DE VALIDACIÓN. 
+• Se  puede  hacer  que  un  campo  tenga  un  estilo,  aspecto  o  formato  cuando  el  dato  introducido  en  éste  sea 
+válido y otro diferente, cuando no. 
+• Para ellos se usan las siguientes pseudoclases CSS. 
+o :valid. 
+▪ El campo presentará un estilo cuando el dato introducido sea válido. 
+▪ Sintaxis: 
+▪ Elemento de formulario:valid{estilos CSS;} 
+▪ Ejemplo: 
+▪ input:valid{color:red;} / El texto se verá de color rojo cuando se introduzca 
+correctamente. 
+o :invalid. 
+▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  sea  inválido,  es  decir,  no  cumpla 
+con las reglas de validación establecidas. 
+▪ Sintaxis: 
+▪ Elemento de formulario:invalid{estilos CSS;} 
+▪ Ejemplo: 
+▪ textarea:invalid{background-color:#ddd;}  /  El  color  del  fondo  del  área  de  texto  se 
+verá gris claro si el dato introducido es incorrecto. 
+o :in-range. 
+▪ El campo presentará un estilo cuando el dato introducido esté comprendido dentro del rango 
+de valores incluidos con los atributos min y max. 
+▪ Sintaxis: 
+▪ Elemento de formulario:in-range{estilos CSS;} 
+▪ Ejemplo: 
+▪ input:in-range{color:white;background-color:black;} / El texto se verá de color blanco 
+y el fondo negro cuando se introduzca un valor numérico dentro del rango de valores 
+establecido entre un mínimo y máximo. 
+o :out-of-range. 
+▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  sea  incorecto  por  estar  fuera  del 
+rango de valores incluidos con los atributos min y max. 
+▪ Sintaxis: 
+▪ Elemento de formulario:out-of-range{estilos CSS;} 
+▪ Ejemplo: 
+▪ input:out-of-range{color:blue;background-color:red;}  /  El  texto  se  verá  de  color  azul 
+y  el  fondo  rojo  cuando  se  introduzca  un  valor  numérico  fuera  del  rango  de  valores 
+establecido entre un mínimo y máximo. 
+o :required. 
+▪ El campo presentará un estilo cuando el dato introducido  sea obligatorio por haber incluido 
+en él atributo required. 
+▪ Sintaxis: 
+▪ Elemento de formulario:required{estilos CSS;} 
+▪ Ejemplo: 
+▪ input:required{border:1px  solid  red;}  /  Todos  los  campos  obligatorios  mostrarán  un 
+borde rojo. 
+o :optional. 
+▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  no  sea  obligatorio,  es  decir,  no 
+incluyen atributo required. 
+▪ Sintaxis: 
+▪ Elemento de formulario:optional{estilos CSS;} 
+▪ Ejemplo: 
+▪ input:optional{border:1px  solid  blue;}  /  Todos  los  campos  opcionales  mostrarán  un 
+borde azul. 
+o label::after. 
+▪ El pseudo estilo ::after (no es una pseudo clase de validación), permite añadir una imagen o 
+un texto después de un elemento. 
+▪ Utilizado  con  el  elemento  label,  también  se  puede  añadir  texto,  o  una  imagen  del  tamaño 
+adecuado, a continuación de un campo, si se ha incluido una etiqueta tras él. 
+▪ Útil para añadir un texto que  indique  si, en un campo, se  han introducido datos correctos o 
+no. 
+▪ Para  ello,  a  continuación  de  la  pseudo  clase  de  validación  se  incluye  el  pseudo  estilo  after 
+separados ambos por un signo más (+). 
+▪ Para añadir el texto o imagen se usa la propiedad content. 
+▪ Sintaxis: 
+▪ Elemento  de  formulario:pseudo  clase  de  validación  +  label::after{content=”Texto 
+para la etiqueta”;} 
+▪ Ejemplo: 
+▪ input:out-of-range + label::after{content: “Fecha fuera de rango.”;}  
+▪ input:in-range  +  label::after{content: “Números en el rango admitido.”;}  / Menos 
+común el uso cuando el dato introducido es correcto. 
+o label::before. 
+▪ El pseudo estilo ::before (no es una pseudo clase de validación), permite añadir una imagen o 
+un texto antes de un elemento. 
+▪ Utilizado  con  el  elemento  label,  también  se  puede  añadir  texto,  o  una  imagen  del  tamaño 
+adecuado, delante de un campo, si se ha incluido una etiqueta tras él. 
+▪ Útil para añadir un texto que  indique  si, en un campo, se  han introducido datos correctos o 
+no.  
+▪ Para  ello,  a  continuación  de  la  pseudo  clase  de  validación  se  incluye  el  pseudo  estilo  after 
+separados ambos por un signo más (+). 
+▪ Para añadir el texto o imagen se usa la propiedad content. 
+▪ No  es  tan  común  utilizar  esta  pseudo  estilo ya  que,  delante  de  los  campos  se  suelen  incluir 
+las etiquetas que identifican a éstos. 
+▪ Sintaxis: 
+▪ Elemento  de  formulario:pseudo clase de validación + label::before{content=”Texto 
+para la etiqueta”;} 
+▪ Ejemplo: 
+▪ input:out-of-range + label::before{content: “Fecha fuera de rango.”;}  
+▪ input:in-range + label::before{content: “Números en el rango admitido.”;}  / Menos 
+común el uso cuando el dato introducido es correcto.
+<!--A limpio-->
+
+FORMULARIOS Y ACCESIBILIDAD. 
+• Para garantizar la independencia de dispositivo en el ámbito de la accesibilidad se puede acceder a los campos 
+de un formulario usando el teclado, en concreto, usando la tecla del tabulador y atajos de teclado. 
+• Posibilidad uso del teclado independientemente del ratón para acceder al sitio web. 
+• Tabulador. 
+o Permite desplazarse por algunos elementos web como controles de formulario y enlaces. 
+o Dentro de  un formulario, cada toque  a la tecla permite ir saltando de campo en campo en el orden 
+de creación de estos y así, ir activándolos para poder utilizarlos. 
+o El orden de activación se puede modificar para ir avanzando por los campos según nos interese. 
+▪ tabindex. 
+• Atributo global que permite establecer el orden de activación de un control al pulsar 
+el tabulador. 
+• Sintaxis: 
+o tabindex = “valor” 
+o Valor: 
+▪ Numero entero que indica el orden de activación, así, un 1 indica que 
+será  el  primero  en  activarse  al  pulsar  el  tabulador  y  un  8,  que  ese 
+elemento se activará en octava posición. 
+• Ejemplo: 
+o <input type =”text “ tabindex=”1”> 
+o <input type =”number“ tabindex=”2”> 
+• Atajos de teclado. 
+o Se puede acceder directamente a un elemento concreto de un formulario o un enlace usando atajos 
+de teclado o teclas de acceso rápido. 
+o Existen combinaciones por defecto definidas por el navegador. 
+▪ accesskey. 
+• Atributo  global  que  permite  definir  una  tecla  de  acceso  directo  a  dichos  elementos 
+combinándola con otras definidas por el navegador. 
+• Sintaxis: 
+o accesskey = ”tecla” 
+o Tecla: 
+▪ Tecla de acceso que debe tener sentido en el idioma actual en el que 
+se  esté  mostrando  el  contenido,  a  no  ser  que,  por  defecto  se  use 
+para otra función. 
+▪ Para usar la tecla definida o asignada hay que consultar con cuál hay 
+que combinarla en cada navegador: 
+• Firefox utiliza Alt + Mayus + tecla definida. 
+• Chrome o Edge utilizan Alt + tecla definida. 
+• Ejemplo: 
+o <input type =”text “ acceskey =”ñ”>  /  Alt  +  ñ  accederían  directamente  al 
+elemento. 
     </body>
+
 
 </html>

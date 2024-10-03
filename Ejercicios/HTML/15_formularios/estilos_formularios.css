@@ -1,0 +1,55 @@
+*{
+    font-family: sans-serif;
+    
+}
+#div1, #div2{
+    margin:1% 30% 1% 25%;
+    border:5px double maroon;
+    background-color: rgb(218, 219, 219);
+    width:50%;
+}
+
+h1{
+    margin:1%;
+    text-align: center;
+
+}
+
+legend{
+    font-weight: bold;
+    color:blue
+}
+
+#flex1{
+    display:flex;
+    gap:30px;
+}
+#dlabels, #dinputs{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+#telefono{
+    width:10%;
+}
+
+#nss{
+    width:20%;
+}
+
+#nombre , #apellidos , #direccion{
+    width:55%;
+}
+
+#email{
+    width:60%;
+}
+
+#selector{
+   
+    
+}
+
+
+

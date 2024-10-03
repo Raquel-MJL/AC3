@@ -1,0 +1,48 @@
+div{
+    margin:auto;
+    border:5px maroon double;
+    width:40%;
+    text-align:center;
+}
+
+h1{
+    font-family: Calibri, verdana, sans-serif;
+    color:navy;
+    text-align:center;
+    font-style: italic;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+        
+}
+
+
+a:hover{
+    color:black;
+    
+}
+
+.enlaceIndex{
+    background-color:green;
+}
+
+.enlace1nivel{
+    background-color: red;
+}
+
+.enlace2nivel{
+    background-color: orange;
+}
+
+.enlace3nivel{
+    background-color: maroon;
+}
+
+.enlace4nivel{
+    background-color:rgb(0, 81, 128)
+}
+
+
+

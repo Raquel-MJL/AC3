@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid black;
+            margin:auto;
+            width:70vw;
+            padding:2%;
+        }
+        
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset{
+            padding:4%;
+        }
+    </style>
+</head>
+<body>
+    <div><h1>Sección de Novedades</h1></div>
+    <br>
+    <div>
+        <form action="#" method="post" id="formregistro">
+
+            <fieldset> 
+                <legend>Formulario de registro</legend> 
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"> 
+                <br><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos">
+
+                <p>Sexo:
+                <label for="sexo">Mujer</label>
+                <input type="radio" value="mujer" name="sexo">
+
+                <label for="sexo">Hombre</label>
+                <input type="radio" value="hombre" name="sexo"></p>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email">
+                <br><br>
+
+                <label for="poblacion">Población:</label>
+                <select value="poblacion"> 
+                    <option>Alicante</option> 
+                    <option>Madrid</option> 
+                    <option>Sevilla</option> 
+                    <option>Valencia</option> 
+                    <option>Toledo</option> 
+                    <option>Santander</option> 
+                </select>
+                <br><br>
+                <label for="comentarios">Comentarios:</label> <br>
+                <textarea id="comentarios" name="comentarios" rows="8" col="50"></textarea>
+                <br><br>
+                <input type="checkbox" name="suscripcion">Deseo recibir información sobre novedades y ofertas</checkbox>
+                <br><br>
+                <input type="checkbox" name="politicas" required>Declaro haber leído y aceptar las condiciones generales del programa y la normativa sobre protección de datos</checkbox>
+                <br><br>
+                <input type="submit" value="Enviar">
+
+
+
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>
