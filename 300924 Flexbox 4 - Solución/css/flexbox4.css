@@ -1,0 +1,29 @@
+		
+		/* Ejercicio Flexbox 4. */
+				
+			body{margin:0px;padding:0px;background:#bbb;font-family:verdana,sans-serif;}
+			
+			#cabecera{display:flex;justify-content:space-around;background-color:navy;}
+			nav{display:flex;justify-content:center;gap:40px;}
+			
+			#contenedor{display:flex;justify-content:space-around; margin:80px auto 0px;width:95vw;}
+			main{display:flex;flex-wrap:wrap;gap:30px;}
+			
+			
+			#d1,#d2,#d3,#d4,#d5,#d6{width:350px;height:200px;border-radius:10px;box-shadow:5px 5px 2px #555;}
+			aside{border-radius:10px;box-shadow:5px 5px 2px #555;}
+			#d1{background-image:url(../imagenes/bloques.jpg);background-size:cover;}
+			#d2{background-image:url(../imagenes/coches.jpg);background-size:cover;}
+			#d3{background-image:url(../imagenes/puzzle.jpg);background-size:cover;}
+			#d4{background-image:url(../imagenes/muñecas.jpg);background-size:cover;}
+			#d5{background-image:url(../imagenes/peluche.jpg);background-size:cover;}
+			#d6{background-image:url(../imagenes/juguetes_playa.jpg);background-size:cover;}
+			aside{background-image:url(../imagenes/peluches.jpg);background-size:cover;}
+			
+			
+			#t1,h3,p{color:gold;}
+			h3,p{margin-left:10px;}
+			p{text-align:justify;font-weight:bold;}
+			a{font-weight:bold;margin-top:40px;}
+			a:link{color:gold;text-decoration:none;}
+			nav a:hover{color:red;}

@@ -473,39 +473,22 @@ se deshará al redimensionar la ventana del navegado*/
 
 /*FLEXBOX*/
 
-/*Permite que los items flexibles de un contenedor alteren sus dimensiones para llenar el espacio disponible*/
-/*Estructura:*/
-    /*Contenedor*/
-        /*Eje principal - Por defecto horizontal - row*/
-        /*Eje secundario - Por defecto vertical - column*/
- 
-    /*Contenido*/
-        /*Item: hijos del contenedor*/
+/*Propiedades del contenedor*/
+    #contenedor {display:flex flex-direction:row o column; }
+    /*Permite que los elementos (items) dentro de un contenedor alteren su disposición y dimensiones*/
+    *{flex-wrap: valores;} /*Controlar comportamiento de items en caso de desborde*/
+    /*Los valores  de  flex-wrap y flex-direction  se  pueden  concatenar con flex-flow.*/  
+    #erd{flex-flow: row wrap;} 
+    *{justify-content: flex start, flex-end, center,space-between, space-evenly, space-around;} /*Alineación respecto al eje principal*/
+    *{align-items:flex start, flex-end, center, stretch, baseline;} /*Respecto al eje secundario*/
+    {row-gap: 10px} /*Espaciado entre items*/
+    {column-gap:10px}
 
-/*Propiedades: 
- display:flex - Lo convierte en contenedor flexible*/
- *{flex-direction:valores;} /*Establece cómo se ubican los items dentro del contenedor
-/*row. 
-• Elementos en horizontal en el orden que cada uno tiene. 
-• Alineación izquierda de los ítems. 
-▪ column. 
-• Elementos en vertical en su orden de creación.  
-• Alineación superior de los ítems. 
-▪ row-reverse. 
-• Elementos en horizontal en orden inverso al de su creación. 
-• Alineación derecha de los ítems. 
-▪ column-reverse. 
-• Elementos en vertical en orden inverso al de su creación. 
-• Alineación inferior.*/
-*{flex-wrap: valores;} /*Controlar desborde o no de sus elementos contenidos*/
+/*Propiedades de los items, elementos o contenido*/
 
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----!!!!!!!!!!!!!!!!!!!!!!!*/
-    
-    /*Flex - Flexbox*/
 
     /*El viernes se quedaron en propiedades de los hijos o items del contenedor*/
-    *{align_self:center} /*Para un item en concreto*/
+    *{align_self:center, flex-start, flex-end, auto, baseline, stretch} /*Para un item en concreto*/
     *{flex-grow: 0;} /*Aumenta tamaño con múltiplos de crecimiento.
     En función de los hermanos y de si hay hueco en el contenedor principal. Su valor por defecto
     es cero y eso implica que no puede cambiar de tamaño. Se usa con wrap. Hay que anular el tamaño del elemento para que funcione*/
@@ -516,8 +499,8 @@ se deshará al redimensionar la ventana del navegado*/
     */
     *{display:flex;flex-direction:column;width:15%;} 
     
-    /*{gap} - 
-    flex: 0 1 auto; /* grow: 0, shrink: 1, basis: auto */
+    
+    /*flex: 0 1 auto; /* grow: 0, shrink: 1, basis: auto */
     /*-------!!!!!!!!!!!!!!!!!!!!!!!!!Arregla esto con apuntes de flex!!!!!*/
 
 
