@@ -63,14 +63,27 @@ const REFERENCIA = 8547223;
     //GLOBAL: En cualquier lugar del programa. 
     //DE BLOQUE: Sólo existen en el bloque en el que han sido definidas. Let.   
     
+/*FUNCIONES*/   
+edad = prompt("Escriba aquí su edad"); //Cargan a la variable vacía lo introducido por el usuario (Alfanumérico)
+document.write(variable1); //Imprimir por pantalla. "<br>"para saltos de línea
+console.log ("Tú te llamas:  " + nombre); "\n" //Muestra en la consola del navegador los resultados de la ejecución de un script.
+//Permite consultar error si los ha habido y depurarlos. 
+
+    //CONVERSIÓN
+    edad = prompt("Escriba su edad: ",""); 
+    edad = parseInt(edad); //De string con números a número entero 
+
+    sueldo = prompt("Escriba el Sueldo: ",""); 
+    sueldo = parseFloat(sueldo);  //De String con número a decimal
+    sueldo= parseFloat(prompt("Escriba su sueldo:","")); //Concatenado  
     
+    var numero = 30; 
+    var texto = numero.toString(); //De número (entero o decimal) a string
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//edad = prompt(“Escriba aquí su edad”,””); PARA RECIBIR ALGO DE ENTRADA
-//document.write() - imprimir por pantalla "<br>" para saltos de línea"
-//console.log ()- "\n" para saltos de línea Hay que inspeccionar para verlo en el navegador. 
- 
+
+
+    /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
 
 
 

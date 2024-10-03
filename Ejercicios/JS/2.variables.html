@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        //Ejercicio 1
         var nombreEmpleado ="Joaquín Pérez";
         var sueldo = 1500;
         document.write("El empleado: "+ nombreEmpleado + "<br>"+ "Su nómina: "+sueldo+"€"+"<br>");
        
-
+        //Ejercicio 2 !!!!!!!!!!!!!!!!!CORREGIR
         var numeroEntero=400;
-        document.write("El valor del número entero es: " + numeroEntero);
+        document.write("El valor del número entero es: " + numeroEntero + "<br>");
+
+        alert("El nuevo valor del número entero es: " + numeroEntero);
         
+        
+    
+
+        //Ejercicio 3
+        
+        var lado = parseFloat(prompt("Escriba el valor del lado del cuadrado:", ""));
+        var perimetro = lado * 4;
+
+        alert("El perímetro del cuadrado es: " + perimetro);
+
+        //Ejercicio 4
+
+        var radio=25;
+        const PI=3.14;
+        area= (radio*radio)*PI; //radio *radio es lo mismo que radio**2
+        alert("El área del círculo es: " + area);
+
+            //Math.round(PI*radio**2) - Para redondear decimales 
+            //area.toFixed(3) - Para que muestre 3 decimales o el número deseado 
+
 
         
 
