@@ -31,13 +31,25 @@ legend{
 }
 
 #telefono{
-    width:50%;
+    width:10%;
 }
 
 #nss{
-    width:70%;
+    width:20%;
 }
 
+#nombre , #apellidos , #direccion{
+    width:55%;
+}
+
+#email{
+    width:60%;
+}
+
+#selector{
+   
+    
+}
 
 
 

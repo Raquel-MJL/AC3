@@ -27,10 +27,17 @@
                         </div>
 
                         <div id="dinputs">
-                            <input type="text" id="prestaciones" name="prestaciones"> 
-                            <input type="date" id="fecha" name="fecha">
-                            <input type="time" id="hora" name="hora"> 
-                            <input type="color" id="color" name="color"> 
+                            <input type="text" list="prestacionestipo" id="prestaciones" name="prestaciones" required> 
+                                <datalist id="prestacionestipo">
+                                    <option value="Medicina general">
+                                    <option value="Especialista">
+                                    <option value="Enfermería">
+                                    <option value="Pediatría">
+                                    <option value="Vacunación">
+                                </datalist>
+                            <input type="date" id="fecha" name="fecha" required>
+                            <input type="time" id="hora" name="hora" required> 
+                            <input type="color" id="color" name="color" required> 
 
 
                         </div>
@@ -55,11 +62,11 @@
                     </div>
 
                     <div id="dinputs">
-                        <input type="text" id="nss" name="nss"> 
-                        <input type="text" id="nombre" name="nombre">
-                        <input type="text" id="apellidos" name="apellidos"> 
-                        <input type="text" id="direccion" name="direccion"> 
-                        <input type="tel" id="telefono" name="telefono">
+                        <input type="text" id="nss" name="nss" required> 
+                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="apellidos" name="apellidos" required> 
+                        <input type="text" id="direccion" name="direccion" required> 
+                        <input type="tel" id="telefono" name="telefono" required>
                     </div>
                 </div>     
             </fieldset>
@@ -70,15 +77,26 @@
                 <div id="flex1">
                     <div id="dlabels">
                         <label for="email">Correo electrónico:</label>
+                        <label for="edad">¿Cuál es su edad?:</label>
 
 
                     </div>
                     <div id="dinputs">
-                        <input type="email" id="email" name="email">
-
+                        <input type="email" id="email" name="email" required>
+                        <input type="number" id="edad" name="edad" min="18" max="120"required>
                         
                     </div>
-
+                    
+                    
+                </div>
+                <br>
+                <div id="selector">
+                    <label for="servicio">Si ya ha sido atendido con con anterioridad, señale cuál es su grado de satisfacción con el servicio:</label>
+                    <br>
+                    <input type="radio" id="malo" name="servicio" >Malo
+                    <input type="radio" id="regular" name="servicio" >Regular
+                    <input type="radio" id="bueno" name="servicio" >Bueno
+                    <input type="radio" id="muybueno" name="servicio">Muy bueno
 
                 </div>
 
