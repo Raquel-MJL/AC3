@@ -910,199 +910,24 @@ Y aplico flex a un tercer div que los contiene-->
 
 <!--HAZTE UN FORMULARIO COMPLETO A MODO APUNTES-->
 
-VALIDACIÓN DE FORMULARIOS EN HTML. 
-• Es  necesario validar  los  datos  introducidos  por  un  usuario  en  un  formulario  para  asegurarnos,  por  ejemplo, 
-que tengan el formato correcto, estén incluidos dentro de un rango válido de valores o no contengan código 
-malicioso. 
-• La validación se puede realizar en el lado cliente o en el lado servidor: 
-o En el lado cliente se utiliza JavaScript, reglas CSS y atributos HTML. 
-o En el lado servidor se utilizan lenguajes como PHP, Python, etc. 
-• Datos a validar: 
-o El  formato  de  campos  como  los  nombres,  apellidos,  contraseñas,  cuentas  de  correo  electrónico, 
-teléfonos, códigos postales, etc., es decir, datos personales. 
-o Campos obligatorios. 
-o Tipo de datos, es decir, si un campo debe sólo recibir cadenas de caracteres, números o ambas cosas 
-como, por ejemplo, un DNI. 
-o Asegurarse de que el dato introducido sea válido como, por ejemplo, una fecha, una ciudad, etc. 
-• Validación lado cliente usando HTML. 
-• Para ello se utilizan los siguientes atributos en los campos de los formularios: 
-o required. 
-▪ Para hacer que los campos sean obligatorios. 
-▪ Ejemplo: 
-▪ <input type=”date” required> / Campo de tipo fecha obligatorio. 
-o minlength y maxlength. 
-▪ Restringir la longitud de los datos de tipo alfanumérico. 
-▪ Ejemplo: 
-▪ <input type=”text” minlength =”10” maxlength =”100” required> / Campo de 
-texto  obligatorio  en  el  que  hay  que  escribir  un  mínimo  de  10  caracteres  y  un 
-máximo de 100. 
-o min y max. 
-▪ Restringir el rango de valores permitido en campos de tipo numérico o de fecha y hora. 
-▪ Ejemplo: 
-▪ <input type=”number” min=”2” max  =”8”> / Los valores permitidos para este 
-campo de tipo numérico están comprendidos ente el valor 2 y el valor 8, ambos 
-inclusive. 
-▪ <input  type=”date”  min=”2022-06-21”  max  =”2022-09-21”>  /  Las fechas 
-permitidas son sólo del verano del año 2022. 
-o step. 
-▪ Para campos numéricos establece el salto de números permitido. Por defecto,1. 
-▪ Para campos fecha establece el salto de días permitido. Por defecto,1. 
-▪ Para campos hora establece el salto en segundos permitido. Por defecto 1. 
-▪ Ejemplo: 
-▪ <input type=”number” step  =  “5”> / Los  valores  permitidos  para  este campo  de 
-tipo numérico se muestran de 5 o en 5, o sólo está permitido introducir números 
-múltiplos de 5. 
-▪ <input type=”date” step =”7” / Las fechas permitidas se muestran de 7 en 7 días, 
-por lo que sólo se pueden seleccionar o escribir fechas de semana en semana. 
-▪ <input type=”time” step =”900” / Las horas permitidas se muestran de 15 en 15 
-minutos, por lo que sólo se pueden escribir horas en ese rango de valores. 
-o type. 
-▪ Restringir el tipo de datos a utilizar. 
-▪ Ejemplo: 
-▪ <input  type="text">  /  El  campo  admite  cadenas  de  caracteres  alfanuméricos. 
-<input  type="email">  /  El  campo  solo  admite  una  cadena  de  caracteres  con  el 
-formato de una cuenta de correo electrónico. 
-o pattern. 
-▪ Permite especificar un patrón que los datos introducidos deben cumplir para ser válidos. 
-▪ Ejemplo: 
-▪ <input type=”text” pattern =”[A-Z]{1}[A-Za-z]{0,19}” > / En este campo de texto, 
-se  pueden  introducir  entre  1  y  20  letras,  siendo  la  primera  obligatoriamente 
-mayúsculas y el resto, mayúsculas o minúsculas indistintamente.  
-▪ <input type=”text” pattern =”[0-9]{2}[A-Z]{2}” > / Este campo sólo permite 4 
-caracteres. Los 2 primeros deben ser números y, los 2 últimos, letras mayúsculas. 
-PSEUDOCLASES DE VALIDACIÓN. 
-• Se  puede  hacer  que  un  campo  tenga  un  estilo,  aspecto  o  formato  cuando  el  dato  introducido  en  éste  sea 
-válido y otro diferente, cuando no. 
-• Para ellos se usan las siguientes pseudoclases CSS. 
-o :valid. 
-▪ El campo presentará un estilo cuando el dato introducido sea válido. 
-▪ Sintaxis: 
-▪ Elemento de formulario:valid{estilos CSS;} 
-▪ Ejemplo: 
-▪ input:valid{color:red;} / El texto se verá de color rojo cuando se introduzca 
-correctamente. 
-o :invalid. 
-▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  sea  inválido,  es  decir,  no  cumpla 
-con las reglas de validación establecidas. 
-▪ Sintaxis: 
-▪ Elemento de formulario:invalid{estilos CSS;} 
-▪ Ejemplo: 
-▪ textarea:invalid{background-color:#ddd;}  /  El  color  del  fondo  del  área  de  texto  se 
-verá gris claro si el dato introducido es incorrecto. 
-o :in-range. 
-▪ El campo presentará un estilo cuando el dato introducido esté comprendido dentro del rango 
-de valores incluidos con los atributos min y max. 
-▪ Sintaxis: 
-▪ Elemento de formulario:in-range{estilos CSS;} 
-▪ Ejemplo: 
-▪ input:in-range{color:white;background-color:black;} / El texto se verá de color blanco 
-y el fondo negro cuando se introduzca un valor numérico dentro del rango de valores 
-establecido entre un mínimo y máximo. 
-o :out-of-range. 
-▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  sea  incorecto  por  estar  fuera  del 
-rango de valores incluidos con los atributos min y max. 
-▪ Sintaxis: 
-▪ Elemento de formulario:out-of-range{estilos CSS;} 
-▪ Ejemplo: 
-▪ input:out-of-range{color:blue;background-color:red;}  /  El  texto  se  verá  de  color  azul 
-y  el  fondo  rojo  cuando  se  introduzca  un  valor  numérico  fuera  del  rango  de  valores 
-establecido entre un mínimo y máximo. 
-o :required. 
-▪ El campo presentará un estilo cuando el dato introducido  sea obligatorio por haber incluido 
-en él atributo required. 
-▪ Sintaxis: 
-▪ Elemento de formulario:required{estilos CSS;} 
-▪ Ejemplo: 
-▪ input:required{border:1px  solid  red;}  /  Todos  los  campos  obligatorios  mostrarán  un 
-borde rojo. 
-o :optional. 
-▪ El  campo  presentará  un  estilo  cuando  el  dato  introducido  no  sea  obligatorio,  es  decir,  no 
-incluyen atributo required. 
-▪ Sintaxis: 
-▪ Elemento de formulario:optional{estilos CSS;} 
-▪ Ejemplo: 
-▪ input:optional{border:1px  solid  blue;}  /  Todos  los  campos  opcionales  mostrarán  un 
-borde azul. 
-o label::after. 
-▪ El pseudo estilo ::after (no es una pseudo clase de validación), permite añadir una imagen o 
-un texto después de un elemento. 
-▪ Utilizado  con  el  elemento  label,  también  se  puede  añadir  texto,  o  una  imagen  del  tamaño 
-adecuado, a continuación de un campo, si se ha incluido una etiqueta tras él. 
-▪ Útil para añadir un texto que  indique  si, en un campo, se  han introducido datos correctos o 
-no. 
-▪ Para  ello,  a  continuación  de  la  pseudo  clase  de  validación  se  incluye  el  pseudo  estilo  after 
-separados ambos por un signo más (+). 
-▪ Para añadir el texto o imagen se usa la propiedad content. 
-▪ Sintaxis: 
-▪ Elemento  de  formulario:pseudo  clase  de  validación  +  label::after{content=”Texto 
-para la etiqueta”;} 
-▪ Ejemplo: 
-▪ input:out-of-range + label::after{content: “Fecha fuera de rango.”;}  
-▪ input:in-range  +  label::after{content: “Números en el rango admitido.”;}  / Menos 
-común el uso cuando el dato introducido es correcto. 
-o label::before. 
-▪ El pseudo estilo ::before (no es una pseudo clase de validación), permite añadir una imagen o 
-un texto antes de un elemento. 
-▪ Utilizado  con  el  elemento  label,  también  se  puede  añadir  texto,  o  una  imagen  del  tamaño 
-adecuado, delante de un campo, si se ha incluido una etiqueta tras él. 
-▪ Útil para añadir un texto que  indique  si, en un campo, se  han introducido datos correctos o 
-no.  
-▪ Para  ello,  a  continuación  de  la  pseudo  clase  de  validación  se  incluye  el  pseudo  estilo  after 
-separados ambos por un signo más (+). 
-▪ Para añadir el texto o imagen se usa la propiedad content. 
-▪ No  es  tan  común  utilizar  esta  pseudo  estilo ya  que,  delante  de  los  campos  se  suelen  incluir 
-las etiquetas que identifican a éstos. 
-▪ Sintaxis: 
-▪ Elemento  de  formulario:pseudo clase de validación + label::before{content=”Texto 
-para la etiqueta”;} 
-▪ Ejemplo: 
-▪ input:out-of-range + label::before{content: “Fecha fuera de rango.”;}  
-▪ input:in-range + label::before{content: “Números en el rango admitido.”;}  / Menos 
-común el uso cuando el dato introducido es correcto.
-<!--A limpio-->
+<!--VALIDACIÓN DE FORMULARIOS EN HTML. -->
+<input type="date" required> <!--Campos obligatorios en los formularios -->
+<input type="text" minlength ="10" maxlength ="100" required> <!--Restringe longitud alfanumérica-->
+<input type="number" min="2" max  ="8"> <!--Restringe valores numéricos, fecha, hora...-->
+<input  type="date"  min="2022-06-21"  max  ="2022-09-21">
+<input type="number" step  =  "5"> <!--Igual pero con un intervalo, iría de cinco en cinco-->
+<input type="text" pattern ="[A-Z]{1}[A-Za-z]{0,19}"> <!--Establece un patrón que se debe cumplir-->
+<!--En este caso enttre 1-2o letras, siendo la primera mayúscul obligada-->
+<input type="text" pattern ="[0-9]{2}[A-Z]{2}"> <!--4 caracteres, dos primeros num y los dos últimos mayus-->
 
-FORMULARIOS Y ACCESIBILIDAD. 
-• Para garantizar la independencia de dispositivo en el ámbito de la accesibilidad se puede acceder a los campos 
-de un formulario usando el teclado, en concreto, usando la tecla del tabulador y atajos de teclado. 
-• Posibilidad uso del teclado independientemente del ratón para acceder al sitio web. 
-• Tabulador. 
-o Permite desplazarse por algunos elementos web como controles de formulario y enlaces. 
-o Dentro de  un formulario, cada toque  a la tecla permite ir saltando de campo en campo en el orden 
-de creación de estos y así, ir activándolos para poder utilizarlos. 
-o El orden de activación se puede modificar para ir avanzando por los campos según nos interese. 
-▪ tabindex. 
-• Atributo global que permite establecer el orden de activación de un control al pulsar 
-el tabulador. 
-• Sintaxis: 
-o tabindex = “valor” 
-o Valor: 
-▪ Numero entero que indica el orden de activación, así, un 1 indica que 
-será  el  primero  en  activarse  al  pulsar  el  tabulador  y  un  8,  que  ese 
-elemento se activará en octava posición. 
-• Ejemplo: 
-o <input type =”text “ tabindex=”1”> 
-o <input type =”number“ tabindex=”2”> 
-• Atajos de teclado. 
-o Se puede acceder directamente a un elemento concreto de un formulario o un enlace usando atajos 
-de teclado o teclas de acceso rápido. 
-o Existen combinaciones por defecto definidas por el navegador. 
-▪ accesskey. 
-• Atributo  global  que  permite  definir  una  tecla  de  acceso  directo  a  dichos  elementos 
-combinándola con otras definidas por el navegador. 
-• Sintaxis: 
-o accesskey = ”tecla” 
-o Tecla: 
-▪ Tecla de acceso que debe tener sentido en el idioma actual en el que 
-se  esté  mostrando  el  contenido,  a  no  ser  que,  por  defecto  se  use 
-para otra función. 
-▪ Para usar la tecla definida o asignada hay que consultar con cuál hay 
-que combinarla en cada navegador: 
-• Firefox utiliza Alt + Mayus + tecla definida. 
-• Chrome o Edge utilizan Alt + tecla definida. 
-• Ejemplo: 
-o <input type =”text “ acceskey =”ñ”>  /  Alt  +  ñ  accederían  directamente  al 
-elemento. 
+<!--ACCESIBILIDAD FORMULARIOS-->
+
+    <input type ="text" tabindex="1"> <!--El un indica el orden de activación con tabulación-->
+    <input type ="number" tabindex="8"> 
+
+    <!--Cada navegador ofrece aparte unos atajos de teclado para el usuario-->
+
+    <input type ="text" acceskey ="ñ"> <!--Define una tecla de acceso a los elementos combinánola con otras predefinidas por el navegador-->
+    
     </body>
-
-
 </html>

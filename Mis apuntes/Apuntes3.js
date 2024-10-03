@@ -26,6 +26,63 @@ JavaScript. Si lo has deshabilitado intencionadamente, por favor vuelve a
 activarlo.</p> 
 </noscript> 
 
+/*OPERADORES
+
+    Aritméticos
+    + - //Suma y resta
+    * / //Multiplicación y División 
+    % //Módulo 
+    ** //Exponenciación 
+
+    //Asignación 
+    = //Asignación 
+    += //Asignación y suma 
+    -= //Asignación y resta 
+    *= //Asignación y multiplicación 
+    /= //Asignación y división 
+    %= //Asignación y módulo 
+    **= //Asignación y exponenciación 
+
+    //Operadores de comparación 
+    == //Igualdad no estricta 
+    === //Igualdad estricta 
+    != //Desigualdad no estricta 
+    !== //Desigualdad estricta 
+    > //Mayor que
+    < //Menor que
+    >= //Mayor o igual que 
+    <= //Menor o igual que
+
+    //Operadores Lógicos 
+    &&: //Y 
+    || : O 
+    ! : Negación
+
+    //Bit a Bit 
+    & : Y bit a bit
+    | : O bit a bit
+    ^ : O exclusivo bit a bit
+    ~ : Negación bit a bit
+    << : Desplazamiento a la izquierda
+    >> : Desplazamiento a la derecha
+    >>> : Desplazamiento a la derecha sin signo
+
+    //De Tipo 
+    typeof: Devuelve el tipo de una variable
+    instanceof: Verifica si un objeto es una instancia de una clase
+
+    //De espaciado
+    in : Verifica si una propiedad existe en un objeto
+    delete : Elimina una propiedad de un objeto
+    
+    //Unarios
+    ++ : Incremento
+    -- : Decremento
+    + : Convertir a número
+    - : Negación
+    9. Operadores Ternarios
+    ? : : Operador condicional (ternario </: Desplazamiento>
+
 /*VARIABLES*/
 //Para declarar: Alfanuméricos y - _ $ 
 //No puede empezar con un número
@@ -80,13 +137,6 @@ console.log ("Tú te llamas:  " + nombre); "\n" //Muestra en la consola del nave
     var numero = 30; 
     var texto = numero.toString(); //De número (entero o decimal) a string
 
-
-
-
-    /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
-    //CORRIGE LOS EJERCICIOS DE JS
-    //MÉTETE RESUMEN DE LOS OPERADORES AQUÍ EN APUNTES
-
     /*Postincremento - Primero muestra y luego incrementa*/
         var a = 4;
 	    	document.write("Postincremento " + a++ + "<br>"); //Muestra 4;
@@ -103,4 +153,6 @@ console.log ("Tú te llamas:  " + nombre); "\n" //Muestra en la consola del nave
 
     //Preincremento: ++variable
     //Predecremento: --variable
-    
+
+    /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
+    //CORRIGE LOS EJERCICIOS DE JS

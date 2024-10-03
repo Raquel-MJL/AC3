@@ -549,7 +549,20 @@ se deshará al redimensionar la ventana del navegado*/
 Para que el usuario pueda modificar el tamaño de los cuadros de texto.
      
     *{resize:both , none , vertical , horizontal}
-    
+
+    /*PSEUDOCLASES DE VALIDACIÓN.*/
+    /*Se  puede  hacer  que  un  campo  tenga  un  estilo,  aspecto  o  formato  cuando  el  dato  introducido  en  éste  sea 
+    válido y otro diferente, cuando no.*/
+   
+    input:valid{color:red;} /* El texto se verá de color rojo cuando se introduzca bien*/
+    textarea:invalid{background-color:#ddd;}  /*  El  color  del  fondo  del  área  de  texto  se 
+    verá gris claro si el dato introducido es incorrecto.*/
+    input:in-range{color:white;background-color:black;} /*El campo presentará un estilo cuando el dato introducido esté comprendido dentro del rango 
+    de valores incluidos con los atributos min y max.*/
+    input:out-of-range{color:blue;background-color:red;} /*Igual pero fuera de rango*/
+    input:required{color:white;} /*Cuando sea obligatorio mostrará el estilo*/
+    input:optional{border:1px  solid  blue;}  /*Cuando sea opcional*/
+
 
 
 
