@@ -84,6 +84,23 @@ console.log ("Tú te llamas:  " + nombre); "\n" //Muestra en la consola del nave
 
 
     /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
+    //CORRIGE LOS EJERCICIOS DE JS
+    //MÉTETE RESUMEN DE LOS OPERADORES AQUÍ EN APUNTES
 
+    /*Postincremento - Primero muestra y luego incrementa*/
+        var a = 4;
+	    	document.write("Postincremento " + a++ + "<br>"); //Muestra 4;
+	    	document.write("Valor actual de la variable a " + a + "<br>");//Muestra 5;
+	    	document.write("Nuevo valor de la variable a es " + a * 4  + "<br>");//Muestra 20;
+	    	document.write("Preincremento " + ++a + "<br>" ); // Muestra 6;
 
+    /*Postdecremento - Incrementa primero y luego muestra*/
+        var a = 4;
+	    	document.write("Postdecremento " + a-- + "<br>");//Muestra 4;
+	    	document.write("Valor actual de la variable a " + a + "<br>");//Muestra 3;
+	    	document.write("Nuevo valor de la variable a es " + a * 4+ "<br>");//Muestra 12;
+	    	document.write("Predecremento " + --a);//Muestra 2;
 
+    //Preincremento: ++variable
+    //Predecremento: --variable
+    
