@@ -68,8 +68,11 @@ activarlo.</p>
     >>> : Desplazamiento a la derecha sin signo
 
     //De Tipo 
-    typeof: Devuelve el tipo de una variable
+    typeof: Devuelve el tipo de dato de una variable
     instanceof: Verifica si un objeto es una instancia de una clase
+
+    //Condicional
+    var mayoriaEdad = (edad >=18)? “Si”: “No”;
 
     //De espaciado
     in : Verifica si una propiedad existe en un objeto
@@ -86,11 +89,15 @@ activarlo.</p>
 /*VARIABLES*/
 //Para declarar: Alfanuméricos y - _ $ 
 //No puede empezar con un número
-var nombre, apellido1, apellido2; //Locales y globales
-var nombreCompleto; 
-let suma; //Locales en bloque de código 
-let nombreVariable1, nombreVariable2, nombreVariable3; 
-//Si  se  declara  una  variable  más  de  una  vez prevalece el último valor. 
+/*Si  se  declara  una  variable  más  de  una  vez prevalece el último valor.*/
+    var nombre, apellido1, apellido2; //Locales y globales
+    var nombreCompleto; 
+    let suma; //Locales en bloque de código 
+    let nombreVariable1, nombreVariable2, nombreVariable3; 
+ 
+    /*Local: Declaradas dentro de bloques de código(dentro de un método  o  un  bucle)
+    Siendo  solo  accesibles  para  ser  leídas  o  modificadas  desde  el bloque. */
+    /* Global:  Fuera de un bloque de código y a la cual pueden acceder todos los métodos, procedimientos y funciones de una aplicación.*/
 
 /*CONSTANTES*/
 //Su valor no puede cambiar. Se asigna a la vez que se declara. Nombre en mayúsculas
@@ -154,5 +161,62 @@ console.log ("Tú te llamas:  " + nombre); "\n" //Muestra en la consola del nave
     //Preincremento: ++variable
     //Predecremento: --variable
 
-    /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
-    //CORRIGE LOS EJERCICIOS DE JS
+//CONCEPTOS BÁSICOS PROGRAMACIÓN
+/*
+Lenguaje de programación - Software que sirve para crear otros programas.
+    Bajo nivel: Ensamblador, máquina
+    Alto nivel: Más evolucionados y adaptados a un lenguaje más accesible
+Traductor - Traducen  programas  escritos  en  un  lenguaje  de  programación  al  lenguaje  máquina  de  la 
+    computadora y a medida que va siendo traducida, se ejecuta.
+Compilador - Permite  traducir  todo  un  programa  de  una  sola vez, haciendo  una  ejecución  más  rápida y 
+    puede almacenarse para usarse luego sin volver a hacer la traducción. 
+Librerías (Bibliotecas)
+    Archivo o conjunto de archivos que se utilizan para facilitar la programación. 
+    Incluyen código que alguien ha realizado para poder reutilizarlo dentro de otros proyectos. 
+    JQuery, Mootools y Prototype. 
+Frameworks
+    Estructura previa que se puede aprovechar para desarrollar un proyecto. 
+    Esquema conceptual que simplifica la elaboración de una tarea. 
+    Puede  incluir  soporte  de  programas,  bibliotecas,  y  un  lenguaje  interpretado,  entre  otras ayudas.
+    AngularJS, React y Backbone.js. 
+API’s - Application Programming Interfaces - Interfaz de Programación de Aplicaciones. 
+    Conjunto  de  definiciones  y  protocolos  que  especifican  cómo  las  aplicaciones  de  software 
+    deben comunicarse o interactuar entre sí para realizar una o varias funciones. 
+    API  del DOM,  API  de  geolocalización,  API  Canvas  y WebGL,  API  de  audio  y video. */
+
+//ESTRUCTURAS CONDICIONALES
+
+    let a = 7; 
+    let b = 5; 
+
+    if (a>b) //Si la condición es verdadera se ejecuta, si no no hace nada.
+        { 
+        document.write ("a es mayor que b"); 
+        }  
+        
+    let c = 7; 
+    var d = 5; 
+    if (c>d) 
+        {  
+        document.write ("a es mayor que b"); 
+        } 
+    else //Se ejecutan otras si la primera condición no es verdadera 
+        { 
+        document.write ("a no es mayor que b"); 
+        } 
+    
+    let e = 5.6; 
+    let f = 8.9; 
+    if(e>f) 
+        { 
+        document.write ("a es mayor que b"); 
+        } 
+    else if(a==b) 
+        { 
+        document.write ("a es igual que b"); 
+        } 
+    else 
+        { 
+        document.write ("a es menor que b"); 
+        }
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/
