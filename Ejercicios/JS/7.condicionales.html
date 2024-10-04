@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Ejercicio 1 
+
+        let sueldo = parseFloat(prompt("Introduzca su sueldo:"));
+        let antiguedad = parseInt(prompt("Introduzca su antigüedad:"));
+
+        if (sueldo < 1200.00 && antiguedad >= 10) 
+        {
+            document.write("Sueldo total: " + (sueldo * 1.10));
+        } 
+        else if (sueldo < 1200.00 && antiguedad < 10) {
+            document.write("Sueldo total: " + (sueldo * 1.05));
+        } 
+        else if (sueldo >= 1200.00) {
+            document.write("Sueldo total: " + sueldo);
+        } 
+        else {
+            document.write("Introduzca valores óptimos.");
+        }
+
+        //Ejercicio 2
+        
+        let dia = parseInt(prompt("Introduzca día (con número):"));
+        let mes = parseInt(prompt("Introduzca mes (con número):"));
+        let anio = parseInt(prompt("Introduzca año (con número):"));
+
+        if (((dia>26)&&(dia<31)&& mes==12)) 
+        {
+            document.write("La Navidad ya pasó");
+        } 
+        else if (dia==25 && mes==12) {
+            document.write("Es Navidad");
+        } 
+        else {
+            document.write("Todavía no es Navidad");
+        }
+
+
+
+ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

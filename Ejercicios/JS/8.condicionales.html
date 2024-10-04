@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Ejercicio 1 Semáforo
+        let color = prompt("Introduzca color del semáforo: ","").toLowerCase();
+
+        function normalizarCadena(color) {
+            return color
+                .normalize('NFD') // Normaliza a forma de descomposición
+                .replace(/[\u0300-\u036f]/g, '') // Elimina los acentos
+        }
+
+        color=normalizarCadena(color);
+      
+        switch (color) 
+        { 
+
+        case "rojo": document.write("Alto");
+        break;
+        
+        case "ambar":document.write("Preacución");
+        break;
+
+        case "verde": document.write("Adelante");
+        break;
+
+        default: document.write("Color incorrecto")
+        case "azul": 
+        case "rojo": 
+        
+        }
+         
+
+        //Ejercicio2
+        let palabra1 = prompt("Escriba una: casa, coche, sol, luna o amigo: " + "").toLowerCase();
+        
+        switch(palabra1)
+        {
+            case "casa": document.write("House");
+            break;
+            case "coche": document.write("Car");
+            break;
+            case "sol": document.write("Sun");
+            break;
+            case "luna": document.write("Moon");
+            break;
+            case "amigo": document.write("Friend");
+            break;
+            default:document.write("No hay traducción disponible para la palabra " + "'" + palabra1+"'")
+        }
+
+        //Ejercicio 3
+
+        let mes = prompt("Escriba un mes: " + "").toLowerCase();
+
+        switch(mes){
+            case "enero":
+            case "marzo":
+            case "mayo":
+            case "julio":
+            case "agosto":
+            case "octubre":
+            case "diciembre":
+            document.write("Tiene 31 días");
+            break;
+
+            case "abril":
+            case "junio":
+            case "septiembre":
+            case "noviembre":
+            document.write("Tiene 30 días");
+            break;
+
+            case "febrero":
+                document.write("Tiene 28 o 29 días");
+            break;
+
+            default:document.write("El mes introducido no existe.");
+
+        
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

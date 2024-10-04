@@ -205,18 +205,109 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
         document.write ("a no es mayor que b"); 
         } 
     
-    let e = 5.6; 
+    let e = 5.6; //Anidadas 
     let f = 8.9; 
     if(e>f) 
         { 
-        document.write ("a es mayor que b"); 
+        document.write ("e es mayor que f"); 
         } 
     else if(a==b) 
         { 
-        document.write ("a es igual que b"); 
+        document.write ("e es igual que f"); 
         } 
     else 
         { 
-        document.write ("a es menor que b"); 
+        document.write ("e es menor que f"); 
         }
+
+    let g = 150; //Múltiple sin anidación 
+    if(g>=100 && g <=200) 
+    { 
+    document.write ("g está entre 100 y 200"); 
+    } 
+    else 
+    { 
+    document.write ("g no está en el intervalo"); 
+    } 
+     
+    if(a==150) 
+    { 
+    document.write ("g es igual a 150"); 
+    } 
+    if(a>=201 && a <=2000) 
+    { 
+    document.write ("g está entre 201 y 2000"); 
+    }
+
+    var color; //Switch - Varias opciones condicionales en una sola declaración 
+    color = prompt("¿Cuál es tu color favorito?",""); 
+    switch (color) 
+    { 
+
+    case "verde": 
+    case "azul": 
+    case "rojo": 
+    
+    document.write("El " + color + " es muy bonito"); 
+    break;  //Para detener o romper la comprobación de datos y meter otros resultados 
+
+    case "negro": 
+    case "marrón": 
+    
+    document.write("El " + color + " no me gusta"); 
+    break; 
+
+    default: //Para que por defecto, si no encuentra coincidencias, muestre una respuesta predeterminada
+    document.write("Prefiero otro color"); 
+    break; 
+    } 
+
+    var n1 = 67; //Ejemplo con boolean
+    var n2 = 56; 
+    switch(true) 
+    {  
+    case (n1 > n2): 
+    document.write("El primer número es mayor que el segundo"); 
+    break; 
+    case (n1 == n2): 
+    document.write("Ambos números son iguales"); 
+    break; 
+    case (n1<n2): 
+    document.write("El segundo número es mayor que el primero"); 
+    break; 
+     } //Si no hay un caso verdadero (salvo que haya un default), no se mostrará nada
+
+//BUCLES
+
+    //WHILE - Mientras se cumpla una condición, actúa el contenido especificado
+
+    let z = prompt("Escribe hola:"); 
+    document.write ("Has escrito " + z + "<br>"); 
+    while(z != "hola") 
+    { 
+    let z = prompt("Escribe hola:"); 
+    document.write (z); 
+    } 
+    document.write ("Fin del bucle" + z);
+
+    //Ejemplo con contador
+    let contador1 = 1; 
+
+    while (contador1 <= 5) { 
+    document.write(contador1); 
+    contador1++; 
+    }
+
+//NORMALIZAR CADENAS / MINÚSCULA / MAYÚSCULA / ACENTUADAS
+
+let color = prompt("Introduzca color del semáforo: ","").toLowerCase(); //lower a minus, Upper a mayus
+
+        function normalizarCadena(color) {
+            return color
+                .normalize('NFD') // Normaliza la forma de descomposición
+                .replace(/[\u0300-\u036f]/g, '') // Elimina los acentos
+        }
+
+        color=normalizarCadena(color);
+
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!Código de país - Código idioma*/

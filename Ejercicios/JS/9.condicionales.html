@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Ejercicio 1 con anidadas
+        
+        let nota1 =parseInt (prompt("Introduzca su nota ",""));
+        let nota2 = parseInt (prompt("Introduzca su segunda nota ",""));
+        let nota3 = parseInt (prompt("Introduzca su tercera nota ",""));
+
+        let media = Math.round((nota1+nota2+nota3)/3) ;
+
+        if (media==9 || media==10 ) //Cuando se cumple una condición ya no entra en las demás
+        {
+            document.write("Sobresaliente");
+        } 
+        else if (media==8 || media==7) {
+            document.write("Notable");
+        } 
+        else if (media==6) {
+            document.write("Bien");
+        } 
+        else if (media==5)
+        {
+            document.write("Suficiente");
+        }
+        else if (media==4 || media==3 || media==2 || media==1 || media==0)
+        {
+            document.write("Suspenso");
+        }
+        else{
+            document.write("El alumno no ha realizado los exámenes");
+        }
+
+        //Ejercicio 2 con switchcase
+
+        let nota4 = parseInt(prompt("Introduzca su nota: "));
+        let nota5 = parseInt(prompt("Introduzca su segunda nota: "));
+        let nota6 = parseInt(prompt("Introduzca su tercera nota: "));
+
+        let media2 = Math.round((nota4 + nota5 + nota6) / 3);
+
+        switch (true) {
+            case (media2 === 9 || media2 === 10): //Necesita el break porque aunque se cumpla una, analiza las demás
+                document.write("Sobresaliente");
+                break;
+            case (media2 === 8 || media2 === 7):
+                document.write("Notable");
+                break;
+            case (media2 === 6):
+                document.write("Bien");
+                break;
+            case (media2 === 5):
+                document.write("Suficiente");
+                break;
+            case (media2 <= 4 && media2 >= 0): // Para notas de 0 a 4
+                document.write("Suspenso");
+                break;
+            default:
+                document.write("El alumno no ha realizado los exámenes");
+}
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
