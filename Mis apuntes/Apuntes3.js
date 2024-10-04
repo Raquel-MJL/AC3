@@ -281,22 +281,75 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
 
     //WHILE - Mientras se cumpla una condición, actúa el contenido especificado
 
-    let z = prompt("Escribe hola:"); 
-    document.write ("Has escrito " + z + "<br>"); 
-    while(z != "hola") 
-    { 
-    let z = prompt("Escribe hola:"); 
-    document.write (z); 
-    } 
-    document.write ("Fin del bucle" + z);
+        let z = prompt("Escribe hola:"); 
+        document.write ("Has escrito " + z + "<br>"); 
+        while(z != "hola") 
+        { 
+        let z = prompt("Escribe hola:"); 
+        document.write (z); 
+        } 
+        document.write ("Fin del bucle" + z);
 
-    //Ejemplo con contador
-    let contador1 = 1; 
+        //Ejemplo con contador
+        let contador1 = 1; 
 
-    while (contador1 <= 5) { 
-    document.write(contador1); 
-    contador1++; 
-    }
+        while (contador1 <= 5) { 
+        document.write(contador1); 
+        contador1++; 
+        }
+
+    //DO-WHILE - Hacer hasta que 
+        do 
+        { 
+            var y = prompt("Escribe:"); 
+            document.write (y); 
+        } 
+        while(y != "hola") 
+            document.write ("Fin del bucle" + y);
+
+        //Con contador
+
+        var x = 0; 
+        do  
+        { 
+            document.write (x); 
+            x++ ; // x=x+1 // x+=1  Formas de poner incrementos de unidad en unidad. 
+                                    //x=x+5 / x+=5  incrementos de 5 en 5. 
+        } while(x<=9) 
+        document.write ("Fin del bucle" + x);
+
+
+    //FOR Sólo con contadoras
+
+        //Anidado
+        var w; 
+        var v; 
+        for(w = 1; w <=10;w++) 
+        { 
+        for(v = 1; v <=3;v++) 
+        { 
+        document.write("valor de w: " + w+ "valor de v: "+ v); 
+        } 
+        }
+
+    //BREAK Y CONTINUE 
+        //Las usamos en los bucles
+        // break;  - Rompe prematuramente la iteración de un bucle 
+        // continue; - Salta ignorando una iteración. Tras el salto el bucle continua funcionando normal. 
+        var u; 
+        for(u = 1; u <=10;u++) 
+        { 
+            if (u==5) //La línea que imprime "la variable x vale:5" No se mostraría en pantalla
+                { 
+                continue; 
+                } 
+        document.write("la variable x vale: " + u); 
+        } 
+
+
+
+
+
 
 //NORMALIZAR CADENAS / MINÚSCULA / MAYÚSCULA / ACENTUADAS
 
