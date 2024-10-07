@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //Ejercicio 1
+
+        /*let correcta = "contraseña"; 
+        let ingresada = ""; 
+
+        while (ingresada !== correcta) {
+            ingresada = prompt("Introduce la clave:");
+            if (ingresada === correcta) {
+                alert("Clave Correcta. Acceso Permitido");
+            } else {
+        alert("Clave Incorrecta. Inténtalo de nuevo.");
+    }
+        }*/
+
+        //Ejercicio 2
+        /*let claveCorrecta = "contraseña";
+        let claveIngresada;
+
+        do {
+            claveIngresada = prompt("Introduce la clave:");
+            if (claveIngresada === claveCorrecta) {
+                alert("Clave Correcta. Acceso Permitido");
+            } else {
+                alert("Clave Incorrecta. Inténtalo de nuevo.");
+            }
+        } while (claveIngresada !== claveCorrecta);*/
+
+        //Ejercicio 3
+
+        /*let claveCorrecta = "contraseña"; 
+        let claveIngresada = ""; 
+        let intentos = 0; // Contador de intentos
+
+        while (claveIngresada !== claveCorrecta && intentos < 3) {
+            claveIngresada = prompt("Introduce la clave:");
+            intentos++; // Incrementamos el contador de intentos
+        
+            if (claveIngresada === claveCorrecta) {
+                alert("Clave Correcta. Acceso Permitido");
+            } else {
+                if (intentos < 3) {
+                    alert("Clave Incorrecta. Inténtalo de nuevo.");
+                }
+            }
+        }
+
+        if (intentos === 3) {
+            alert("Clave Incorrecta. Acceso Denegado");
+        }*/
+
+        //Ejercicio 4
+        let claveCorrecta = "contraseña"; 
+        let claveIngresada; 
+        let intentos = 0; 
+
+        do {
+            claveIngresada = prompt("Introduce la clave:");
+            intentos++; // Incrementamos el contador de intentos
+        
+            if (claveIngresada === claveCorrecta) {
+                alert("Clave Correcta. Acceso Permitido");
+            } else {
+                if (intentos < 3) {
+                    alert("Clave Incorrecta. Inténtalo de nuevo.");
+                }
+            }
+        } while (claveIngresada !== claveCorrecta && intentos < 3);
+
+        if (intentos === 3 && claveIngresada !== claveCorrecta) {
+            alert("Clave Incorrecta. Acceso Denegado");
+        }
+
+
+    
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

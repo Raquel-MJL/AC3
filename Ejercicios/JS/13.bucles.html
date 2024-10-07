@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let sumaUltimosCinco = 0;
+        for (let i = 1; i <= 10; i++) {
+            let numero = parseFloat(prompt("Introduce el número " + i + ":"))
+            // Sumar solo si estamos en los últimos 5 números
+            if (i > 5) {
+                sumaUltimosCinco += numero;
+            }
+                        
+        }
+        document.write("La suma es de: "+sumaUltimosCinco + "<br>");
+        
+        
+        //Ejericio 2
+
+        /*let claveCorrecta = "contraseña"; 
+        let claveIngresada; 
+
+        // Usamos un bucle for para permitir hasta 3 intentos
+        for (let intentos = 0; intentos < 3; intentos++) {
+            claveIngresada = prompt("Introduce la clave:");
+
+            if (claveIngresada === claveCorrecta) {
+                alert("Clave Correcta. Acceso Permitido");
+                break; // Salimos del bucle si la clave es correcta
+            } else {
+                if (intentos < 2) { // Solo avisar si no es el último intento
+                    alert("Clave Incorrecta. Inténtalo de nuevo.");
+                }
+            }
+        }
+
+        // Si hemos llegado aquí y no se ha acertado la clave, se deniega el acceso
+        if (claveIngresada !== claveCorrecta) {
+            alert("Clave Incorrecta. Acceso Denegado");
+        }*/
+
+        //Ejercicio 3
+
+        // Usamos un bucle for para contar hasta 5
+        /*for (let contador = 1; contador <= 5; contador++) {
+            let numero = parseFloat(prompt("Introduce un número:"));
+
+            // Si el número es menor que 10
+            if (numero < 10) {
+                document.write("El número introducido es: " + numero + "<br>");
+                document.write("El valor del contador es: " + contador + "<br>");
+            } else {
+                // Si el número es mayor o igual a 10
+                document.write("Fin del programa<br>");
+                break; // Salir del bucle
+            }
+        }*/
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

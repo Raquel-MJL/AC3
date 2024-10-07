@@ -298,7 +298,7 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
         contador1++; 
         }
 
-    //DO-WHILE - Hacer hasta que 
+    //DO-WHILE - Hacer hasta que. Mínimo una vez se realiza la instrucción de dentro.
         do 
         { 
             var y = prompt("Escribe:"); 
@@ -326,10 +326,10 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
         var v; 
         for(w = 1; w <=10;w++) 
         { 
-        for(v = 1; v <=3;v++) 
-        { 
-        document.write("valor de w: " + w+ "valor de v: "+ v); 
-        } 
+            for(v = 1; v <=3;v++) //Da 3 vueltas por cada vuelta del anterior
+            { 
+                document.write("valor de w: " + w+ "valor de v: "+ v); 
+            } 
         }
 
     //BREAK Y CONTINUE 
@@ -346,8 +346,38 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
         document.write("la variable x vale: " + u); 
         } 
 
+//FUNCIONES
 
+    /*Conjunto de instrucciones u operaciones en un solo bloque, se ejecutan desde cualquier parte del programa
+    y pueden o no devolver valores. Las hay predefinidas pero también creadas*/ 
 
+    function nombreFunción(argumento1, argumento2,argumentoN) 
+    { 
+    Instrucciones; 
+    }
+
+    //Hay que "llamar" una función para ejecutarla.No se puede llamar a una función que no esté definida.
+    //Colocándolas en el script (Se pueden definir ahí también)
+    //Uso href 
+    <a href="javascript:void(window.open(‘https://www.renfe.com/es/es’));">Renfe</a>
+    //Ejecutar al cargar la web, con el atributo onload en el body
+    //<body onload = ”sumar ();”>
+    //Al producirse un evento: 
+    /*
+    fuction pulsar() 
+        { 
+        alert(“¡Has pulsado el botón!”); 
+        } 
+    <input type =”button” name = “boton1” value = “Pulsar” onclick = “pulsar()”> */
+
+    //TIPOS DE FUNCIÓN 
+    //Sin parámetros ni retorno de datos 
+    function restar() // Con función prompt(). 
+    { 
+        let n1 = prompt("Introduce un número",""); 
+        let n2 = prompt("Introduce otro número",""); 
+        document.write("El  resultado  de  la  resta  es:  "  +  (n1-n2)  + "<br>"); 
+    } 
 
 
 
