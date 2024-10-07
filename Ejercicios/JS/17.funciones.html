@@ -7,25 +7,28 @@
 </head>
 <body>
     <script>
+        const PI=3.14;
 
+        
         function radius(a){
-            const PI=3.14;
+            return (4/3 * PI) * (a**3)
+            
 
         }
-        resultado=radius(parseFloat(prompt("Escriba número: "+"")).toFixed(2));
+        
+        radio=parseFloat(prompt("Escriba número: "+""));
+        resultado=radius(radio);
+
+        document.write("El valor del radio es "+radio+ "y el volumen"+resultado.toFixed(2));
+        
+
 
 
 
 
         /*Ejercicio 1. 
-• Que  calcule  el  volumen  de  una  esfera  para  cualquiera  unidad  de 
-medida. 
-• La fórmula para el cálculo es: 
-o 4/3πr3 (4/3 por PI por el radio al cubo). 
- 
-• Para  la  potencia,  se  pueden  usar  operadores  aritméticos  o  la  función  pow(base, 
-exponente) del objeto Math. 
-• Introduce el radio por teclado y pásalo como parámetro a la función. 
+  
+
 • La  función  retornara  el  valor  del  volumen  que  será  mostrado  por  pantalla  con  un 
 mensaje que incluya también el valor del radio. 
 • Muestra el resultado final redondeado con sólo 2 decimales. 
