@@ -348,40 +348,144 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
 
 //FUNCIONES
 
-    /*Conjunto de instrucciones u operaciones en un solo bloque, se ejecutan desde cualquier parte del programa
-    y pueden o no devolver valores. Las hay predefinidas pero también creadas*/ 
+    /*Conjunto de instrucciones u operaciones en un solo bloque, desde cualquier parte del programa
+    y pueden o no devolver valores.*/ 
 
     function nombreFunción(argumento1, argumento2,argumentoN) 
     { 
     Instrucciones; 
     }
 
-    //Hay que "llamar" una función para ejecutarla.No se puede llamar a una función que no esté definida.
-    //Colocándolas en el script (Se pueden definir ahí también)
-    //Uso href 
-    <a href="javascript:void(window.open(‘https://www.renfe.com/es/es’));">Renfe</a>
-    //Ejecutar al cargar la web, con el atributo onload en el body
-    //<body onload = ”sumar ();”>
-    //Al producirse un evento: 
-    /*
-    fuction pulsar() 
-        { 
-        alert(“¡Has pulsado el botón!”); 
-        } 
-    <input type =”button” name = “boton1” value = “Pulsar” onclick = “pulsar()”> */
+    //Llamadas - Ejecutan la función, no se puede si la función no está definida.
+        //Colocándolas en el script (Se pueden definir ahí también)
+        //Uso href 
+            // <a href = "javascript: sumar()">Calcular suma</a>
+            // <a href="javascript:void(window.open(‘https://www.renfe.com/es/es’));">Renfe</a>
+        //Ejecutar al cargar la web, con el atributo onload en el body
+            //<body onload = ”sumar ();”>
+        //Al producirse un evento: 
+            /*
+            fuction pulsar() 
+                { 
+                alert(“¡Has pulsado el botón!”); 
+                } 
+            <input type =”button” name = “boton1” value = “Pulsar” onclick = “pulsar()”> */
+
+        //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //Por defecto hay que indicar el número de parámetros que la función requiere en su declaración
+        //salvo que se use el operador rest (...)
+        //Acepta un número variable de argumentos como un array
+        function sumar(...numeros) {
+            return numeros.reduce((acumulado, actual) => acumulado + actual, 0);
+        } //reduce - Junta los valores del array en 1 solo
+        
+        console.log(sumar(1, 2, 3)); // Salida: 6
+        console.log(sumar(1, 2, 3, 4, 5)); // Salida: 15
+        //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     //TIPOS DE FUNCIÓN 
     //Sin parámetros ni retorno de datos 
-    function restar() // Con función prompt(). 
-    { 
-        let n1 = prompt("Introduce un número",""); 
-        let n2 = prompt("Introduce otro número",""); 
-        document.write("El  resultado  de  la  resta  es:  "  +  (n1-n2)  + "<br>"); 
-    } 
+        function restar() // Con función prompt(). 
+        { 
+            let n1 = prompt("Introduce un número",""); 
+            let n2 = prompt("Introduce otro número",""); 
+            document.write("El  resultado  de  la  resta  es:  "  +  (n1-n2)  + "<br>"); 
+        } 
+    
+    //Sin retorno, con parámetros
+        function sumar3(numero1, numero2, numero3) 
+        { 
+            document.write("El resultado de la suma es: " + 
+            (numero1+numero2+numero3) + "<br>"); 
+        }
+    
+    //Con retorno, sin parámetros
+        function sumar() 
+        { 
+            var a = 7; 
+            var b = 5; 
+                  return a+b; //Sólo un dato, salvo que le pidamos devolver un array
+        }  
+            var suma1; 
+            suma1 = sumar(); //Se crea una variable que sea = a la función
+            document.write(suma1)
+
+    //Con retorno y parámetros 
+
+        function sumar3(a,b,c) 
+        { 
+            var d = a+b+c; 
+            return d; 
+            //return a+b+c;  
+        }
 
 
 
-//NORMALIZAR CADENAS / MINÚSCULA / MAYÚSCULA / ACENTUADAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //NORMALIZAR CADENAS / MINÚSCULA / MAYÚSCULA / ACENTUADAS
 
 let color = prompt("Introduzca color del semáforo: ","").toLowerCase(); //lower a minus, Upper a mayus
 

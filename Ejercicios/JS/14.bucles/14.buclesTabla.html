@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+        
+</head>
+<body>
+    <script> //Usando For 
+
+        //Ejercicio 1 
+        
+        /*for(let i=1; i<100; i++){ //declaración y asignación, condición, incremento
+            
+            if(i%5==0){
+                document.write(i + "<br>"+"<hr>");
+            }
+            
+            else if(i%6==0){
+                document.write(i + "--Múltiplo de 6"+"<br>");
+            }
+            else if(i%9==0){
+                document.write(i + "--Múltiplo de 9" + "<br>");
+
+            }
+
+            else{
+                document.write(i + "<br>");
+            }
+           
+        }*/
+
+        //Ejercicio 2
+
+       
+        
+        let filas = parseInt(prompt("¿De cuántas filas quieres la tabla?"));
+        let columnas = parseInt(prompt("¿Y cuántas columnas?"));
+        let tabla = "<table border='1'>"; // Inicia la tabla con borde
+
+        
+        
+        for (let r = 1; r <= filas; r++) { // Bucle para las filas
+            tabla += "<tr>"; // Inicia una nueva fila
+
+            // Bucle para las columnas
+            for (let c = 1; c <= columnas; c++) {
+                tabla +=  `<td>Fila ${r}, Columna ${c}</td>`; // Plantilla literal (permite incluir variables en string)
+            }
+
+            tabla += "</tr>"; // Cierra la fila
+        }
+
+        tabla += "</table>"; // Cierra la tabla
+
+        document.write(tabla);
+        
+
+
+
+
+            
+    </script>
+
+    
+</body>
+</html>

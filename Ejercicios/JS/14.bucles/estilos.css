@@ -1,0 +1,20 @@
+*{font-family:calibri,sans-serif;}
+
+
+tr:first-of-type{
+   
+    background-color: black;
+    color:white;
+    font-weight:bold;
+}
+
+tr:last-of-type{
+   
+    background-color: black;
+    color:white;
+}
+
+tr{
+    background-color: orange;
+    color:black;
+}
