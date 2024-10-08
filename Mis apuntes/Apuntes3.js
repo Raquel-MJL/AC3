@@ -419,6 +419,35 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
             //return a+b+c;  
         }
 
+//Valores por defecto, podemos preguntar por ellos con typeof dentro de la función
+
+    { 
+        if( typeof parametro2 == "undefined") 
+        { 
+            parámetro2 = valorPorDefecto; 
+        } 
+        instrucciones; 
+    }
+
+    /*Al llamar la función se pueden o no incluir los parámetros 
+opcionales.  Si  no se incluyen, se  utilizan  los  valores  definidos  como  valores  por 
+defecto.*/
+ 
+    function calcular (n1, n2, n3, n4) 
+    { 
+        if( typeof n3 == "undefined") 
+        { 
+            n3 = 20; 
+        } 
+        if( typeof n4 == "undefined") 
+        { 
+            n4 = 120; 
+        } 
+        return n1 + n2 + n3 + n4; 
+    } 
+    var a = calcular (20,50,70,30); 
+    var b1 = calcular (30,50); //Equivale a calcular (30,50,20,120);
+
 
 
 

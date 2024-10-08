@@ -7,6 +7,9 @@
 </head>
 <body>
     <script>
+        
+        //Ejercicio 1
+        /*
         const PI=3.14;
 
         
@@ -21,38 +24,51 @@
 
         document.write("El valor del radio es "+radio+ "y el volumen"+resultado.toFixed(2));
         
+        */
+
+        //Ejercicio 2
+
+        /*
+        function frases() {
+            for (let n = 1; n <= 6; n++) {
+                document.write("<h" + n + ">Esto es un encabezado H" + n + "</h" + n + ">");
+            }
+        }
+
+        frases()  */
+
+        //Ejercicio 3
+
+        /* 
+        function frases(a) {
+            for (let n = 1; n <= 6; n++) {
+                document.write("<h" + n + ">"+a+ + n + "</h" + n + ">");
+            }
+        }
+
+        frases(prompt("Introduzca frase para encabezado", "")); 
+        */
+
+        //Ejercicio 4
+
+        let precio=parseFloat(prompt("Introduzca precio",""));
+        let descuento=parseFloat(prompt("Introduzca descuento en euros",""));
+
+        function calculo(a,b){
+            let c= a-b
+            let d=c*0.15
+            let e= c+d
+            document.write("Precio neto: "+ c.toFixed(2)+"<br>");
+            document.write("Cantidad IVA: "+ d.toFixed(2)+"<br>");
+            document.write("PVP: "+ e.toFixed(2));
+
+        }
+
+        calculo(precio,descuento);
 
 
 
-
-
-        /*Ejercicio 1. 
-  
-
-• La  función  retornara  el  valor  del  volumen  que  será  mostrado  por  pantalla  con  un 
-mensaje que incluya también el valor del radio. 
-• Muestra el resultado final redondeado con sólo 2 decimales. 
-Ejercicio 2. 
-• Crea  una  función  que  escriba  6  frases  idénticas  en  la  página  Web  con  los 
-distintos tamaños que HTML usa para establecer un título, es decir desde <H1> 
-hasta <H6>. 
-• La frase que debe mostrase es: 
-o Esto es un encabezado hnº 
-• La función no devuelve ningún valor. 
- 
-Ejercicio 3. 
-• Modifica  el  ejercicio  anterior  y  ahora,  introduce  la  frase  anterior,  o  cualquier 
-otra, por teclado y pásasela después a la función como parámetro. 
- 
- 
-Ejercicio 4. 
-• Introducir  por  teclado  el  precio  de  un  producto  y  un  descuento  aplicable  a  éste  en 
-euros. 
-• Crear una función que calcule y devuelva realizados los siguientes cálculos: 
-o Precio neto (precio con el descuento, pero sin el IVA calculado).  
-o Cantidad correspondiente al IVA (éste será del 15%). 
-o PVP (Precio final, es decir, el precio neto con el IVA incluido). 
-• Mostrar por pantalla los 3 cálculos con un mensaje relacionado.*/
+    
     </script>
     
 </body>
