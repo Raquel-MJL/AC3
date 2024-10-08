@@ -552,6 +552,22 @@ function iniciarMensaje() {
 
 iniciarMensaje(); //Llamada a la función 
 
+//FUNCIONES PREDEFINIDAS 
+
+    (isNaN(valor) == false) //Averigua si es un número o no (NotaNumber)
+    (isNaN(valor) == true) 
+
+
+    isInfinite(valor) //Comprobar si un número es muy muy grande (exponentes inmensos)
+
+
+    //Decodificar o incodificar para obtener datos estadísticos
+        var miURL = decodeURI("https://www.sitio.com/enviar%20correo%20web.html");
+        //Decodificar URL 
+        var miURL = document.write("Direccion codificada: " + encodeURI(fotos[2].src) + 
+        "<br>" ); //Codifica URL
+
+
 
 
 
