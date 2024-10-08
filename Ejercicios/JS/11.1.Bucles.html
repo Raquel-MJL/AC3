@@ -7,24 +7,51 @@
 </head>
 <body>
     <script>
+
+        //Ejercicio1
         /*
-        Uso instrucción while y do...while. 
- 
-Ejercicio 1. 
- 
-• Usar la instrucción do...while. 
-• Introducir por teclado la altura en centímetros de 5 personas. 
-• Mostrar la altura media de esas 5 personas por pantalla. 
-Ejercicio 2. 
-• Usar la instrucción while. 
-• En una empresa trabajan 5 empleados cuyos sueldos oscilan entre 900,00 y los 
-1.500,00 euros. 
-• Realizar un programa que lea los sueldos que cobra cada empleado al 
-introducirlos por teclado y muestre por pantalla el siguiente informe: 
-▪ Número de trabajadores que cobran entre 900,00 y 1.200,00 euros. 
-▪ Número de empleados que cobran entre 1.201,00 y 1.500,00 euros. 
-▪ Cantidad que la empresa gasta en sueldos para el personal. 
- */
+        let totalAltura = 0;
+        let contador = 0;
+        let altura;
+
+        do {
+            altura = parseFloat(prompt("Introduce la altura en centímetros de la persona " + ": "));
+            totalAltura += altura;
+            contador++;
+        } while (contador < 5);
+
+        let alturaMedia = totalAltura / contador;
+        document.write("La altura media de las 5 personas es: " + alturaMedia.toFixed(2) + " cm"); */
+
+        //Ejercicio 2
+
+        let contador900a1200 = 0;
+        let contador1201a1500 = 0;
+        let totalSueldos = 0;
+        let contador = 0;
+        let sueldo;
+
+        while (contador < 5) {
+            sueldo = parseFloat(prompt("Introduce el sueldo del empleado " + " <br>"));
+        
+            if (sueldo >= 900 && sueldo <= 1500) {
+                totalSueldos += sueldo;
+            
+                if (sueldo >= 900 && sueldo <= 1200) {
+                    contador900a1200++;
+                } else if (sueldo >= 1201 && sueldo <= 1500) {
+                    contador1201a1500++;
+                }
+            
+                contador++;
+            } else {
+                alert("El sueldo debe estar entre 900,00 y 1.500,00 euros. Inténtalo de nuevo.");
+            }
+        }
+document.write("Número de trabajadores que cobran entre 900,00 y 1.200,00 euros: " + contador900a1200 + "<br>");
+document.write("Número de empleados que cobran entre 1.201,00 y 1.500,00 euros: " + contador1201a1500 + "<br>");
+document.write("Cantidad que la empresa gasta en sueldos para el personal: " + totalSueldos + " euros");       
+
     </script>
     
 </body>

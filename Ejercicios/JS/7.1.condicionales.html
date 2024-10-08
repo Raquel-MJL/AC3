@@ -7,27 +7,44 @@
 </head>
 <body>
     <script>
-        /*
-        Ejercicio 1. 
-• Crear un script que pida un número. 
-• Comprobar si el número es divisible por 2, 3, 5 o 7. 
-• Mostrar por pantalla uno de los siguientes mensajes: 
-• "El número "+ numero + "introducido es divisible por 2, 3, 5 o 7." 
-• "El número "+ numero + "introducido no es divisible por 2, 3, 5 o 7" 
-• Usar un “if” completo y sólo mostrar que es o no divisible, es decir, no hay que indicar 
-por cuál de los números es divisible. 
-Ejercicio 2. 
-• Repetir el ejercicio anterior, pero indicando ahora por cuál de los números indicados es 
-divisible el número introducido. 
-• El número podría ser divisible por varios números a la vez, por lo que deben mostrarse 
-los mensajes correspondientes. 
-• Si no es divisible por ninguno de ello, indicarlo también con un mensaje alusivo. 
-Ejercicio 3. 
-• Repetir el ejercicio anterior, pero sólo mostrar por pantalla los mensajes relativos a que 
-el número introducido es divisible por 2, 3, 5 o 7.  
-• Si no es divisible por ninguno de ellos, no mostrar ningún mensaje.
-*/
+
+        //Ejercicio 1
         
+        /*
+        let n = prompt("Introduce un número: ","");
+
+        if (n%2==0 || n%3==0 || n%5==0 || n%7==0){
+            document.write("El número " + n + " es divisible por 2,3,5 o 7"+"<br>")
+        }
+        else {
+            document.write("El número no es divisible por 2,3,5 o 7")
+        }
+        */
+
+        //Ejercicio 2
+
+        let m = prompt("Introduce un número: ","");
+
+        if (m%2==0 || m%3==0 || m%5==0 || m%7==0){
+
+        
+        
+            if (m%2==0){
+                document.write("El número " + m + " es divisible por 2"+"<br>")
+            }
+            if(m%3==0){
+                document.write("El número es divisible por 3"+"<br>")
+            }
+            if(m%5==0){
+                document.write("El número es divisible por 5"+"<br>")
+            }
+            if(m%7==0){
+                document.write("El número es divisible por 7"+"<br>")
+            }
+        }
+        else{
+            document.write("El número no es divisible por ningún número indicado")
+        }        
     </script>
     
 </body>

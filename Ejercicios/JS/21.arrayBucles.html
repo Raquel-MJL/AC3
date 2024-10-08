@@ -9,15 +9,42 @@
 
     <script>
         //Ejercicio1
-        var array1= new Array(8);
-        array1.splice(0,8,"Raquel",18,"Idiota",30,"Parejo",15.30,80.65,"Puñetazo");
+        var array2=["Raquel",2.56,true,568,"Miscelánea",52,86.9,false];
+        var array1= [];
+             
 
         
-        for (i = 0; i < array1.length; i++) //Bucle for clásico
+        for (var i = 0; i < array2.length; i++) { // Inicializa i en 0
+            array1.push(array2[i]);
+            console.log(array1);
+        }
+        //console.log(array1);
+            
+        
+        
+        /*for (i = 0; i < array1.length; i++) //Bucle for clásico
         { 
             document.write(array1[i]+"<br>"); 
-        }
+        } */
 
+        /*let i; //For In 
+        for (i in array1){
+            document.write(array1[i]+"<br>")
+        }*/
+
+        /*
+        var i; //For Of
+        for (i of array1) 
+        { 
+            document.write(i+"<br>")
+        }
+        */
+        
+        /*
+        array1.forEach(function(elemento) { //ForEach
+            document.write(elemento + "<br>"); 
+        });
+        */
 
 
 
@@ -25,17 +52,8 @@
         /*
         
         Introduce en él, datos de distintos tipos usando un bucle for. 
-        Muestra por pantalla el contenido usando: 
-       
-        Un bucle for... in. 
-        Un bucle for...of. 
-        La función forEach().
-*/
         
-        
-        
-        //FOR CLÁSICO
-        
+*/        
     </script>
     
 </body>

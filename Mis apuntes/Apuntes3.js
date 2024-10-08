@@ -698,7 +698,7 @@ iniciarMensaje(); //Llamada a la función
         }
 
     //Bucles en Arrays 
-    //for...in → No muestra vacíos ni undefined
+    //for...in → No muestra vacíos ni undefined y hace referencia al índice en si, a la posición. 
         let rios = new Array(); 
         rios[0]="Ebro"; 
         rios[2]="Guadalquivir"; 
@@ -714,7 +714,7 @@ iniciarMensaje(); //Llamada a la función
         { 
             document.write("Rios:"+ rios[i]); 
         }
-    //for...of → Sí muestra undefined
+    //for...of → Sí muestra undefined y hace referencia al valor del índice
         var i; 
         for (i of numeros) 
         { 
