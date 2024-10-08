@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Ejercicio 1 
+
+        /*
+
+        var socios = [];
+
+
+        for(let x=0;x<6;x++){
+            var nombre =prompt("Introduzca nombre de socio:" , "");
+            socios.push(nombre);
+
+        }
+
+       
+        document.write("Nombres de socios: " + socios.join(", ") + "<br>");
+        document.write("Cantidad de socios: " + socios.length + "<br>");
+        document.write("Socios en orden: " + socios.sort());
+        document.write("Socios en orden inverso: " + socios.reverse().join(", "));
+
+        
+        
+        */
+
+        //Ejercicio 2
+
+        var clasificaciones=[];
+
+        clasificaciones.unshift("Rosa","Luis Miguel","Cristina","Eugenia","Carmen","José");
+        
+        for (let i = 0; i < clasificaciones.length; i++) 
+        {
+            document.write((i+1) + clasificaciones[i]+ "<br>");
+        }
+
+        clasificaciones.splice(2,2,"Eugenia","Cristina");
+        clasificaciones.splice(4,1);
+        clasificaciones.splice(2,0,"Inma","Ángel")
+        clasificaciones.pop();
+        clasificaciones.unshift("Lola");
+
+        for (let i = 0; i < clasificaciones.length; i++) 
+        {
+            document.write((i+1) + clasificaciones[i]+ "<br>");
+        }
+        
+        
+        
+
+
+    </script>
+    
+</body>
+</html>

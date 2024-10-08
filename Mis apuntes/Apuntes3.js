@@ -691,14 +691,37 @@ iniciarMensaje(); //Llamada a la función
     var nombres = new Array ("Ana", "Juan", "Pepe"); 
 
     nombres.forEach(funcionArray); 
-       function funcionArray(valor, indice) 
+       function funcionArray(valor, indice) //(valor,índice,array)
         { 
             document.write("En  la  posición  "  +  indice  +  "  está  el  nombre  "  + 
             valor + "<br>"); 
         }
 
+    //Bucles en Arrays 
+    //for...in → No muestra vacíos ni undefined
+        let rios = new Array(); 
+        rios[0]="Ebro"; 
+        rios[2]="Guadalquivir"; 
+        var i; 
+        for (i in rios) 
+        { 
+            document.write("Rios:" + rios[i]); 
+        } 
 
-
+        //Equivale a: 
+        var i; 
+        for (i = 0; i < rios.length; i++) 
+        { 
+            document.write("Rios:"+ rios[i]); 
+        }
+    //for...of → Sí muestra undefined
+        var i; 
+        for (i of numeros) 
+        { 
+        document.write(i);  // Muestra datos contenidos en el  array. 
+        document.write(numeros.indexOf(i));  // Muestra índices o posiciones del array. 
+        
+        } 
     
 
 
