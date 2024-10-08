@@ -448,10 +448,109 @@ defecto.*/
     var a = calcular (20,50,70,30); 
     var b1 = calcular (30,50); //Equivale a calcular (30,50,20,120);
 
+//RETURN ALTERNATIVOS
+
+    //Resultados excluyentes
+
+        function comparar(n1, n2) 
+        { 
+            if (n1 >n2) 
+            { 
+                return "n1 es mayor"; 
+            } 
+            else if (n1 <n2) 
+            { 
+                return "n2 es mayor"; 
+            } 
+            else if (n1 == n2) 
+            { 
+                return n1 + n2; 
+            } 
+        }
+
+    //Resultados múltiples, con un array de datos
+
+        function crearArray() {
+            return [1, 2, 3, 4, 5];
+        }
+        let numeros = crearArray();
+        document.write(numeros); // Salida: [1, 2, 3, 4, 5]
+
+//FUNCIONES ANÓNIMAS 
+    //Variables con una función asignada 
+    //Uso frecuente como parámetro de otra función o dato a pasar como parámetro. 
+
+        
+    var sumar = function (n1, n2) 
+    { 
+        return n1 + n2; 
+    } 
+
+    var restar = function () 
+    { 
+        var n1 = 4; 
+        var n2 = 2; 
+        var n3 = n1 - n2; 
+        document.write("Resultado resta: " + n3); 
+    } 
 
 
 
+    restar(); //Llamada
+    
+    var resultado; 
+    resultado = sumar(4,2); 
+    document.write("Resultado suma: " + resultado);
 
+//FUNCIONES FLECHA
+    //Funciones abreviadas, usamos => en vez de function
+    //Siempre son anónimas, hay que cargarlas en una variable
+    /*Consideraciones; 
+    Si el cuerpo de la función sólo tiene una línea pueden omitirse las llaves {}
+    y omitirse return. 
+    Si la función no tiene parámetros, se indica () = > 
+    Si solo tiene un parámetro, se indica sólo el nombre de este sin paréntesis:*/
+
+    var sumar1 =  (n1, n2) => 
+    { 
+    return n1 + n2; // Al tener sólo una línea de código, return se puede quitar. 
+    } 
+     
+    var sumar2 = (n1, n2) => n1 + n2 ; 
+     
+    var sumar3 =  () => 
+    { 
+    var n1 = 4; 
+    var n2 = 3; 
+    return n1 + n2;  
+    }
+
+    var restar = () => 
+        { 
+        var n1 = 4; 
+        var n2 = 2; 
+        var n3 = n1 - n2; 
+        document.write("Resultado resta: " + n3); 
+        } 
+
+//FUNCIONES CALLBACK
+
+/*O retrollamada. Se incluyen como argumento en otras funciones. 
+La que "acoge" a otra en sus argumentos se la llama orden-superior (high-order)
+Si la callback no tiene parámetros se pasa como (). 
+Uso habitual en operaciones asíncronas. 
+
+*/
+
+function mostrarMensaje() {
+    document.write("hola mundo");
+}
+
+function iniciarMensaje() {
+    setInterval(mostrarMensaje, 2000); // Llama a mostrarMensaje cada 2000 ms (2 segundos)
+}
+
+iniciarMensaje(); //Llamada a la función 
 
 
 

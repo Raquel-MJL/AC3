@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejercicio 1
+
+        /*
+        var solicitud = () =>
+        {
+            let nombre=prompt("Indique nombre producto: ","");
+            let precio=parseFloat(prompt("Indique precio: ",""));
+            document.write(nombre + " " + precio + "€")
+
+        }
+        solicitud(); 
+        */
+
+        //Ejercicio 2
+
+        var calculo = function (n1) 
+        { 
+            n1 = parseFloat(prompt("Escriba su número: ",""));
+            if (n1>200){
+                let result1= n1*1.10;
+
+                document.write("El número introducido es "+n1+"<br>"+"El nuevo cálculo es: "+ result1)
+            }
+            if (n1<200){
+
+                let result2= n1*0.9;
+                document.write("El número introducido es "+n1+"<br>"+"El nuevo cálculo es: "+ result2)
+
+            }
+        } 
+        
+        calculo()
+        
+
+ 
+ 
+
+ 
+ 
+            
+    </script>
+    
+</body>
+</html>
