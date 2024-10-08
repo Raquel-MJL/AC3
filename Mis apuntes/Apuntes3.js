@@ -568,7 +568,227 @@ iniciarMensaje(); //Llamada a la función
         "<br>" ); //Codifica URL
 
 
+//CLASES U OBJETOS PROTOTÍPICOS
+//Nativos de JavaScript
+    /* Envoltorios o Wrappers (Boolean, String, Number...). 
+       Utilidades (Date, Math, RegExp, JSON, Object, Set, Map, ...)
+       Vectores (Array)  
+       Características del navegador. (navigator)
+       Objetos DOM.(window, document, frame, location, history, screen, ...) 
+            De document 
+                image, applet, link, form, ... 
+            De form - Formularios: 
+                radio, button, textarea, ...
+    */
 
+//ARRAYS -Estructura de datos que permite almacenar un conjunto de datos
+//Cada vez que creemos un objeto nuevo le pondremos el new. 
+//Su primera posición siempre es 0 
+
+    var menu = new Array();
+    var menu = new Array(3); //Con 3 posiciones pero vacías
+    var menu = new Array("Paella", "Pollo al ajillo", "Flan"); //Con valores
+    var números = [10, 45.78,78, 90, 34.23, 89]; 
+
+    números[2] = null; //Eliminar datos de una posición del array
+    números[3] = "";
+
+    //Acceso a datos del array:
+    document.write("El primer plato de hoy es: " + menu[0]); 
+    var plato1 = menu[0]; 
+    document.write("El primer plato de hoy es: " + plato1); 
+    var calculo = numeros[6] + numeros[20];
+
+    //Length (Propiedad de array)
+    document.write("En el menú hay" + menu.length + "opciones"); 
+
+    //Imprimir posiciones con mensaje - bucle 
+    for (let i = 0; i < cuarAr.length; i++) 
+        {
+            document.write("En la posición " + i + " el valor almacenado es " + cuarAr[i] + "<br>");
+        }
+
+    //Métodos
+    document.write(datos5.sort()); //.sort() Muestra en orden alfabético los datos
+
+    numeros.join("/"); //.join Muestra un  listado de  los valores separados por el caracter indicado
+
+    numeros.reverse(); //.reverse Invierte orden del array
+
+    var numerosa = new Array(34,67,45); //.push Añade al final del array el valor indicado
+    numerosa.push(20,10,50); //Resultado  34, 67, 45, 20, 10, 50
+
+    var numeros1 = new Array(34,67,45); // .pop Elimina último elemento de Array
+    numeros1.pop(); //Resultado → 34, 67 . Muestra lo eliminado. 
+
+    var numeros2 = new Array(34,67,45); //.unshift → Añade al principio
+    numeros2.unshift(20,10,50); //Resultado → 20, 10, 50, 34, 67, 45
+
+    var numeros3 = new Array(34,67,45); //Elimina primer elemento del Array
+    numeros3.shift(); //Resultado → 67,45
+
+    //.indexOf → Muestra la posición del elemento, preguntando por el contenido. 
+    //Si es string con comillas. Si no existe muestra -1
+    var numeros4 = new Array(34,67,45); 
+    numeros4.indexOf(34); //Resultado → 0 (Primera posición) 
+    numeros4.indexOf(45); //Resultado → 2 (Tercera posición)
+    numeros4.indexOf(89); //Resultado → -1 (No existe)
+
+    
+    //.splice() → Modifica elementos de un array en una posición concreta
+
+    /*
+    → Eliminar: 
+        nombre  del  array.splice(posición  primer  elemento  a eliminar  inclusive,  número de 
+        elementos a eliminar); 
+    → Insertar eliminando elementos (sobreescribir)
+        nombre  del  array.splice(posición  de  inserción,  número  de  elementos  a  eliminar, 
+        valor a insertar 1, valor a insertar 2,..valor a insertar N); 
+    → Insertar  sin  eliminar  elementos: Desplaza y los añade delante lo nuevo 
+        nombre del array.splice(posición delante de la cual se insertarán los nuevos 
+        elementos, 0, valor a insertar 1, valor a insertar 2,..valor a insertar N);*/ 
+
+        var  colores  =  new  Array("Rojo",  "Verde",  "Azul",  "Violeta",  "Naranja",  "Amarillo", 
+        "Marrón"); 
+        document.write(colores.join()+ "<br>"); //Muestra lista de valores
+        document.write(colores.splice(1,2,"Rosa","Blanco","Negro")+ "<br>"); 
+        //Se insertan “Rosa","Blanco","Negro  y  se  eliminan  "Verde",  "Azul" 
+        // 2 elementos a partir de la posición 1 a eliminar). 
+        document.write(colores.splice(1,0,"Rosa","Blanco","Negro")+ "<br>");
+        //Se insertan “Rosa","Blanco","Negro" sin eliminar nada, desplazan los existentes. 
+        document.write(colores.splice(2,1)+ "<br>"); 
+        //  Se  elimina  un  color  a  partir  de  la posición 2, inclusive
+
+    //slice(). → Copia Array a una variable o muestra lo especificado
+
+    /*
+    → Copiar 
+    nombre del array.slice();
+    → Mostrar valores entre posición inicial y otra final -1 
+    nombre del array.slice(posición inicial inclusive, posición final no incluida);
+    → Mostrar a partir de una posición específica 
+    nombre del array.slice(posición inicial inclusive); */
+    
+
+    //concat(). → Une o concatena un array a otros. Al que utilice la función se le añade a continuación de sus datos los datos de los incluidos  
+    
+    let numeros1 = new Array(34,67,45); 
+    let numeros2 = new Array(80,32,27); 
+    let palabras = new Array("Hola", "Adiós"); 
+    numeros1.concat(palabras); //Resultado: 34,67,45, “Hola”, “Adiós”. 
+    palabras.concat(numeros1); //Resultado: “Hola”, “Adiós”, 34,67,45. 
+    numeros1.concat(palabras,  numeros2,  "hola",89);  //Resultado:  34,67,45,  “Hola”,  “Adiós”,80, 32, 27,"hola",89. 
+ 
+    //includes(). → Determina si un dato o elemento está en el array especificado
+        //Devuelve booleano
+
+    let palabras1 = new Array("Hola", "Adiós"); 
+    palabras.includes("Hola"); //True 
+    palabras.includes("Buenos días");//False
+
+    //forEach(). → Llama a la función pasada como parámetro para cada elemento del array, como un bucle. 
+
+    var nombres = new Array ("Ana", "Juan", "Pepe"); 
+
+    nombres.forEach(funcionArray); 
+       function funcionArray(valor, indice) 
+        { 
+            document.write("En  la  posición  "  +  indice  +  "  está  el  nombre  "  + 
+            valor + "<br>"); 
+        }
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function Coche() //This. Referencia miembros o elementos de un objeto o al objeto mismo.
+    // Diferencia entre parámetros o valores de parámetros y miembros 
+
+    { 
+    this.marca ; 
+    this.modelo; 
+    this.color; 
+    this.precio; 
+    this.cilindrada; 
+    
+    this.acelerar = function() 
+    { 
+    document.write("Estoy acelerando") 
+    } 
+    this.frenar = function() 
+    { 
+    document.write("Estoy frenando") 
+    } 
+    this.cambiarMarcha = function(marcha) 
+    { 
+    document.write("Cambiando de marcha") 
+    //return algo; 
+    } 
+    
+    }*/
 
 
 
