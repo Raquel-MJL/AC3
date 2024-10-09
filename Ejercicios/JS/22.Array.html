@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //!!!!!!!!!!!!!!!!!!!!!REVISAR CORRECCIÓN - arrays 7
+        //Ejercicio 1
+        /*
+        let array1=[3,52,75];
+        document.write("Números introducidos: " +array1+"<br>");
+        document.write("Números multiplicados: "+array1[0]*array1[1]*array1[2]+"<br>");
+        */
+        
+        //Ejercicio 2
+        /*
+        let mayor = array1[0]; // Asumimos que el primero es el mayor
+
+        for (let i = 1; i < array1.length; i++) {
+            if (array1[i] > mayor) {
+                mayor = array1[i]; // Actualizamos el mayor si encontramos uno más grande
+            }
+        }
+
+        if (array1[0]==array1[1] && array1[0]==array1[2]){
+            document.write("Los tres números son iguales");
+        }
+
+        document.write("Número mayor: " + mayor);
+
+        //Si hay 2 iguales y son los mayores, mostrar su valor.
+        */
+
+        //Ejercicio 3
+
+        /*
+
+        let continentes=[];
+        let numeros=[2,3,4,96,54];
+        let continentes2=[];
+        let numeros2=[];
+        let arrayCompleto=[];
+
+
+        for (let i=0; i<5;i++){   //Pido datos continentes
+            continente=prompt("Escriba el nombre de los continentes uno a uno: ","");
+            continentes.push(continente);
+        }
+
+        continentes2=continentes.slice(); //Copio a otros arrays
+        numeros2=numeros.slice(); 
+
+        
+        arrayCompleto=continentes2.concat(numeros2); //Concateno
+        document.write(arrayCompleto.sort()); //Muestro ordenado
+        arrayCompleto.includes("Europa","europa"); //Compruebo si está Europa
+        arrayCompleto.push("Antártida");
+        document.write("El array tiene "+ (arrayCompleto.length -1) + " elementos"+"<br>");
+        
+        
+        for (let i=0; i<5;i++){
+            document.write(arrayCompleto.join("<br>"));        
+        }
+
+        */
+
+
+        //Ejercicio 4
+
+        let arrayA = new Array(5);
+        let arrayB=new Array(5);
+        let arrayC=[];
+
+        for (let i=0; i<5;i++){
+            let dato = parseInt(prompt("Escribe número para el primer array:","")); 
+            arrayA.push(dato);       
+        }
+
+        for (let i=0; i<5;i++){
+            let dato = parseInt(prompt("Escribe número para el segundo array:","")); 
+            arrayB.push(dato);       
+        }
+
+        arrayB.reverse();
+        for (let i=0; i<5; i++){
+            
+            arrayC[i]= arrayA[i] + arrayB[i];
+            
+        }
+
+        document.write(arrayA.join(","));
+        document.write(arrayB.join(","));
+
+
+        
+        /* 
+ 
+
+Ejercicio 4. 
+• Introduce en el Array C la suma de los números de los Arrays A y B en sentido 
+inverso, es decir, el primer elemento del Array A con el último de array B, y así 
+sucesivamente, usando también en este caso otro bucle. 
+• Muestra el contenido de cada Array en una línea. */
+    </script>
+    
+</body>
+</html>

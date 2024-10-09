@@ -569,7 +569,7 @@ iniciarMensaje(); //Llamada a la función
 
 
 //CLASES U OBJETOS PROTOTÍPICOS
-//Nativos de JavaScript
+    //Nativos de JavaScript
     /* Envoltorios o Wrappers (Boolean, String, Number...). 
        Utilidades (Date, Math, RegExp, JSON, Object, Set, Map, ...)
        Vectores (Array)  
@@ -580,6 +580,59 @@ iniciarMensaje(); //Llamada a la función
             De form - Formularios: 
                 radio, button, textarea, ...
     */
+    
+    //CREACIÓN Y DEFINICIÓN
+
+    //Con función constructora:
+
+    /*function Coche() //This. Referencia miembros o elementos de un objeto o al objeto mismo.
+        // Diferencia entre parámetros o valores de parámetros y miembros 
+
+        { 
+        this.marca ; 
+        this.modelo; 
+        this.color; 
+        this.precio; 
+        this.cilindrada; 
+
+        this.acelerar = function() 
+        { 
+        document.write("Estoy acelerando") 
+        } 
+        this.frenar = function() 
+        { 
+        document.write("Estoy frenando") 
+        } 
+        this.cambiarMarcha = function(marcha) 
+        { 
+        document.write("Cambiando de marcha") 
+        //return algo; 
+        } 
+
+        }*/
+
+    //Creación directa de una instancia – Objeto literal
+    //Puede ser genérica o específica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //ARRAYS -Estructura de datos que permite almacenar un conjunto de datos
 //Cada vez que creemos un objeto nuevo le pondremos el new. 
@@ -787,31 +840,7 @@ iniciarMensaje(); //Llamada a la función
 
 
 
-/*function Coche() //This. Referencia miembros o elementos de un objeto o al objeto mismo.
-    // Diferencia entre parámetros o valores de parámetros y miembros 
 
-    { 
-    this.marca ; 
-    this.modelo; 
-    this.color; 
-    this.precio; 
-    this.cilindrada; 
-    
-    this.acelerar = function() 
-    { 
-    document.write("Estoy acelerando") 
-    } 
-    this.frenar = function() 
-    { 
-    document.write("Estoy frenando") 
-    } 
-    this.cambiarMarcha = function(marcha) 
-    { 
-    document.write("Cambiando de marcha") 
-    //return algo; 
-    } 
-    
-    }*/
 
 
 
