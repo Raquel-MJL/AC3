@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        //Objetos - Instancias y métodos 
+        //Objetos - Instancias y métodos !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!CORRECCION 
 
         function trabajadores(nombre,apellidos,nhijos,sueldoBruto){ //FUNCIÓN constructor=listado características del objeto
 
@@ -24,17 +24,14 @@
 
             if (this.nhijos >= 3){
                 sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.06) - segsocial;
-                return sueldoNeto;
             
             } 
             else if (this.nhijos == 1 || this.nhijos==2){
                 sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.12) - segsocial;
-                return sueldoNeto;
             
             } 
             else{
                 sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.18) - segsocial;
-                return sueldoNeto;
             
             }
 
@@ -47,9 +44,7 @@
             var empleado2 = new trabajadores("María", "Gómez", 1, 3500);
             var empleado3 = new trabajadores("Carlos", "Sánchez", 0, 4000);        
             
-
-            
-
+        
             empleado1.nomina();
             empleado2.nomina();
             empleado3.nomina();
