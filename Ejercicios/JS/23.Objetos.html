@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos1</title>
+</head>
+<body>
+    <script>
+        //Objetos literales - Declaración, asignación y acceso a sus datos 
+
+        //Ejercicio 1 
+        /*
+        var cliente = { //Declaración y asignación del objeto
+            nombre: "Juan",
+            apellidos: "Pérez Gómez",
+            direccion: "Calle Falsa 123, Ciudad",
+            telefono: "555-1234",
+            numeroCuenta: "ES1234567890123456789012",
+            formaPago: "Tarjeta de crédito"
+        };
+
+        document.write("Nombre: "+ cliente.nombre + "<br>" );
+        document.write("Apellido: "+ cliente.apellidos + "<br>" );
+        document.write("Domicilio: "+ cliente.direccion + "<br>" );
+        document.write("Teléfono: "+ cliente.telefono + "<br>" );
+        document.write("Cuenta bancaria: "+ cliente.numeroCuenta + "<br>" );
+        document.write("Método de pago: "+ cliente.formaPago + "<br>" );
+        */
+
+        //Ejercicio 2
+
+        /*
+        var casa={}
+
+        casa.tipo= "Piso familiar"; //Asignando valores fuera del objeto 
+        casa.numeroHabitaciones= 4;
+        casa.metrosCuadrados= 85;
+
+
+        document.write("Tipo de vivienda: "+ casa.tipo + "<br>" );
+        document.write("Número de habitaciones: "+ casa.numeroHabitaciones + "<br>" );
+        document.write("Medidas de la vivienda en metros cuadrados: "+ casa.metrosCuadrados + "<br>" );
+        */
+
+        //Ejercicio 3 
+        
+        /*
+        let movil1={
+            marca: "Samsung",
+            modelo: "XT-98",
+            precio: 280.90,
+
+        }
+
+        function mostrarDatos(){
+            document.write("La marca es: "+movil1.marca+"<br>");
+            document.write("El modelo es:"+movil1.modelo+"<br>");
+            document.write("El precio es: "+movil1.precio+"<br>");
+        }
+        
+        mostrarDatos();
+
+        */
+
+        //Ejercicio 4 
+
+        var añosTrabajados;
+        var empleados={};
+        empleados.nombre= "Raquel";
+        empleados.apellidos= "Martínez Jiménez";
+        empleados.categoria= "Encargada";
+        empleados.añoAlta= 2018;
+        empleados.sueldo= 2000.00;
+
+        function calcularAntiguedad(){
+            añosTrabajados=(2024 - empleados.añoAlta);
+        }
+
+        calcularAntiguedad();
+        document.write("Datos del empleado: "+"<br>"+empleados.nombre +" "+ empleados.apellidos + "<br>"+"Años trabajados: "+añosTrabajados);
+
+
+        
+    </script>
+    
+</body>
+</html>

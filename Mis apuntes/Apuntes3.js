@@ -613,7 +613,85 @@ iniciarMensaje(); //Llamada a la función
 
     //Creación directa de una instancia – Objeto literal
     //Puede ser genérica o específica
+    //No es un constructor, ya que no se pueden crear instancias a partir de esta estructura. 
+    //Es una especie de constructor de un solo uso. 
+        //Genérica
+        /*
 
+        var nombre de la instancia u objeto =  
+        { 
+        Propiedad 1; 
+        Propiedad 2; 
+        Propiedad N; 
+
+        método 1 = function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        }, 
+        método 2 = function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        }, 
+
+        método N = function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        } 
+
+        }; 
+        
+        //Específica. 
+        var nombre de la instancia u objeto =  
+        { 
+          Propiedad 1: valor, 
+        Propiedad 2: valor, 
+        Propiedad N: valor, 
+
+        método 1: function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        }, 
+        método 2: function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        }, 
+
+        método N: function (Pueden incluir o no parámetros) 
+        { 
+        instrucciones; 
+        } 
+
+        }; 
+        
+        //Vacío. 
+        o Después hay que asignar valores a propiedades y crear los 
+        métodos usando el operador punto. 
+         
+        var nombre de la instancia u objeto = {}; //Creación del objeto
+        nombre objeto.propiedad = valor;  //Asignación
+        nombre objeto.metodo = function()  //Creación método
+        { 
+        instrucciones; 
+        } 
+
+        //Ejemplo: 
+        var persona2 = {}; 
+    
+        persona2.nombre = "Juan"; 
+        persona2.apellidos = "Fernández García"; 
+        persona2.direccion = "C/ Toledo 12"; 
+        persona2.telefono = "123456789"; 
+        persona2.aficiones = "Bonsais"; 
+        persona2.mostrarDatos = function() 
+        { 
+         document.write(persona2.nombre + " " + persona2.aficiones+ "<br>"); 
+         document.write(persona2["apellidos"] + " " + persona2["telefono"]); 
+        } 
+         
+        persona2.mostrarCodigo = function(n) 
+        {  
+         document.write("El código de " + persona2.nombre + " es el " + n + "<br>"); 
+        }
 
 
 

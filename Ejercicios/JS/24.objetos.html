@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos5</title>
+</head>
+<body>
+    <script>
+        //Objetos - Instancias y métodos 
+
+        function trabajadores(nombre,apellidos,nhijos,sueldoBruto){ //FUNCIÓN constructor=listado características del objeto
+
+            this.nombre = nombre; //La función indica que al hacer referencia a estos atributos, se asignarán a cada valor del constructor
+            this.apellidos = apellidos;
+            this.nhijos = nhijos;
+            this.sueldoBruto = sueldoBruto;
+            }
+
+            var empleado1 = new trabajadores("Juan", "Pérez", 3, 3000); //Creación instancias 
+            var empleado2 = new trabajadores("María", "Gómez", 1, 3500);
+            var empleado3 = new trabajadores("Carlos", "Sánchez", 0, 4000);
+            var sueldoNeto;
+            var segsocial= sueldoBruto - (sueldoBruto*0.05);
+            
+
+            function nomina(a){
+                if (this.nhijos >= 3){
+                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.06) - segsocial;
+
+                } 
+                else if (this.nhijos == 1 || this.nhijos==2){
+                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.12) - segsocial;
+
+                } 
+                else{
+                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.18) - segsocial;
+
+                }
+
+                document.write(this.nombre+this.apellidos+sueldoNeto);
+
+            }
+
+            nomina(empleado1);
+            nomina(empleado2);
+            nomina(empleado3);
+
+
+        
+        
+
+        
+
+    </script>
+    
+</body>
+</html>
