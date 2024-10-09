@@ -15,39 +15,48 @@
             this.apellidos = apellidos;
             this.nhijos = nhijos;
             this.sueldoBruto = sueldoBruto;
+            this.sueldoNeto = sueldoNeto
+
+            this.nomina=function(){
+
+            var sueldoNeto;
+            var segsocial= this.sueldoBruto*0.05;
+
+            if (this.nhijos >= 3){
+                sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.06) - segsocial;
+                return sueldoNeto;
+            
+            } 
+            else if (this.nhijos == 1 || this.nhijos==2){
+                sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.12) - segsocial;
+                return sueldoNeto;
+            
+            } 
+            else{
+                sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.18) - segsocial;
+                return sueldoNeto;
+            
+            }
+
+            document.write(this.nombre+" "+this.apellidos+" "+sueldoNeto.toFixed(2)+"<br>");
+
+            }
             }
 
             var empleado1 = new trabajadores("Juan", "Pérez", 3, 3000); //Creación instancias 
             var empleado2 = new trabajadores("María", "Gómez", 1, 3500);
-            var empleado3 = new trabajadores("Carlos", "Sánchez", 0, 4000);
-            var sueldoNeto;
-            var segsocial= sueldoBruto - (sueldoBruto*0.05);
+            var empleado3 = new trabajadores("Carlos", "Sánchez", 0, 4000);        
             
 
-            function nomina(a){
-                if (this.nhijos >= 3){
-                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.06) - segsocial;
+            
 
-                } 
-                else if (this.nhijos == 1 || this.nhijos==2){
-                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.12) - segsocial;
-
-                } 
-                else{
-                    sueldoNeto=this.sueldoBruto - (this.sueldoBruto*0.18) - segsocial;
-
-                }
-
-                document.write(this.nombre+this.apellidos+sueldoNeto);
-
-            }
-
-            nomina(empleado1);
-            nomina(empleado2);
-            nomina(empleado3);
+            empleado1.nomina();
+            empleado2.nomina();
+            empleado3.nomina();
 
 
-        
+       
+
         
 
         
