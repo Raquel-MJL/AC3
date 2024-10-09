@@ -687,7 +687,7 @@ iniciarMensaje(); //Llamada a la función
          document.write(persona2.nombre + " " + persona2.aficiones+ "<br>"); 
          document.write(persona2["apellidos"] + " " + persona2["telefono"]); 
         } 
-         
+
         persona2.mostrarCodigo = function(n) 
         {  
          document.write("El código de " + persona2.nombre + " es el " + n + "<br>"); 
@@ -854,6 +854,8 @@ iniciarMensaje(); //Llamada a la función
         
         } 
     
+
+//EXPRESIONES REGULARES --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
