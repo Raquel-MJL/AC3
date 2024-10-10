@@ -7,14 +7,48 @@
 </head>
 <body>
     <script>
+
+        //Ejercicio 1
+
+        /*
+
         var cpIntroducido=prompt("Introduzca código postal: ","");
+        const patronCP=/^\d{5}$/;
 
         function validarCP(a){
-            patronCP=/\d{5}/
 
-            while 
-            
+            while(patronCP.test(a)==false){
+                a = prompt("El código postal " +a+" no es válido, vuelva a introducir código postal: ",""); 
+            }
 
+    
+            if (patronCP.test(a)){
+                document.write("El código postal "+a+" es válido");
+
+            }
+         
+               
+        }
+        
+
+        validarCP(cpIntroducido);
+
+        */
+
+        //Ejercicio 2
+
+        const semanal=/^(lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo)\s\d{1,2}$/i;
+
+        var diaIntroducido= prompt("Introduzca día en nombre y número:");
+
+        if(semanal.test(diaIntroducido)){
+
+
+            document.write("El contenido "+diaIntroducido+"  es CORRECTO");
+        }
+
+        else{
+            document.write("El contenido "+diaIntroducido+" no es correcto");
         }
     </script>
     

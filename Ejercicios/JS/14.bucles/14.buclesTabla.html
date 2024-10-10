@@ -56,6 +56,66 @@
         tabla += "</table>"; // Cierra la tabla
 
         document.write(tabla);
+
+
+
+        /*SOLUCIÓN OFICIAL
+
+        let i, j, filas, columnas;
+				filas = parseInt(prompt("Introduce el número de filas que tendrá la tabla",""));
+				columnas = parseInt(prompt("Introduce el número de columnas que tendrá la tabla",""));
+				
+				// Comienzo de la tabla con estilos CSS.
+				
+				document.write("<table border = '1' cellspacing ='0' style = 'background-color:orange ; font-family: calibri, sans-serif'>");
+				
+				//La variable i controla el numero de filas a crear.
+				
+				for (i = 1; i <= filas; i++)
+				{
+					// Comienzo de fila. Si es la primera, se pinta su fondo de negro y su contenido, de blanco y en negrita.
+					if (i == 1)
+					{
+						document.write("<tr style = 'background-color:#000; color: #fff; font-weight:bold;'>");
+					}
+					// Comienzo de fila. Si es la última, se pinta su fondo de negro y su contenido de blanco.
+					
+					else if (i == filas)
+					{
+						document.write("<tr style = 'background-color:#000; color: #fff;'>");
+					}
+					
+					// Comienzo de fila.
+					
+					else
+					{
+						document.write("<tr>");
+					}
+					
+					//La variable j controla el número de columnas/celdas a crear por cada fila.
+					
+					for (j = 1; j <= columnas; j++)
+					{
+						// Comienzo de celda.
+						
+						document.write("<td>");
+						
+						// Contenido de celda.
+						
+						document.write("Fila " + i + " , Columna " + j);
+						
+						// Fin de celda.
+						
+						document.write("</td>");
+					}
+					// Fin de fila.
+					
+					document.write("</tr>");
+				}
+				// Fin de tabla.
+				
+				document.write("</table>"); 
+                */
         
 
 

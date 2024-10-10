@@ -897,7 +897,7 @@ o var nombre = new RegExp(“patrón”);
                 /Java\BScript/ 
                 Coincidencias: 
                 JavaScript , Java8Script,  Java*Script,... 
-            . → Comodín excetpto salto de línea
+            . → Comodín excepto salto de línea
                 /.s/ 
                 Coincidencias: 
                 as, es, 3s, -s 
@@ -952,6 +952,7 @@ o var nombre = new RegExp(“patrón”);
     
     
     //OBJETO → RegExp ---!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //Validador RegExp → https://discordapp.com/channels/@me/799326024638529556/1294009151290081300
     var patron5 =new RegExp("\\d{2}-\\d{2}-\\d{4}"); //Fecha: 23-09-2021
     //Método .test()  → Comprueba si un string coincide con el patrón y devuelve true o false. 
     //Método .exec(). → Permite  aplicar  el  patrón  sobre  el  parámetro  “texto”  o  la  variable  que  lo contenga para mostrar:
