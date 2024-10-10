@@ -949,6 +949,12 @@ o var nombre = new RegExp(“patrón”);
             /sum(ar)+/  →  sumar, sumarar, sumararar
             /(ja)+/  → ja, jaja, jajaja */
     
+    
+    
+    
+    //Método .test()  → Comprueba si un string coincide con el patrón y devuelve true o false. 
+    
+    
     //EXPRESIONES REGULARES ÚTILES 
         let numeroTelefonico= /\d{9}/ 
         let DNI= /\d{8}[a-zA-Z]/ 
