@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Expresiones Regulares 2</title>
+		<meta charset="UTF-8">
+		
+		<script>
+		
+		// Patrón 1.
+	
+			document.write ("Patrón 1==> ");
+					
+			var patron1 = /^j/g;
+			var frase1 = "jamón ibérico";
+			if (patron1.test(frase1))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron1 + " en el texto "+ frase1 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron1 + " en el texto "+ frase1 + "<br>");	
+			}	
+			
+		// Patrón 2. Con patrón en objeto.
+		
+			document.write ("Patrón 2==> ");
+					
+			
+			var frase2 = "buenos días";
+			var patron2 = new RegExp("^buenos","g");
+			if (patron2.test(frase2))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron2 + " en el texto "+ frase2 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron2 + " en el texto "+ frase2 + "<br>");	
+			}	
+/*
+		// Patrón 3. Objeto RegExp y cadena de texto literal.
+	
+			document.write ("Patrón 3==> ");
+					
+			
+			var patron3 = new RegExp("s$","g");
+			if (patron3.test("buenas noches"))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron3 + " en el texto \"buenas noches\" <br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron3 + " en el texto \"buenas noches\" <br>");	
+			}
+
+		// Patrón 4.
+		
+			document.write ("Patrón 4==> ");
+					
+			var patron4 = /dez$/g;
+			var frase4 = "Fernández";
+			if (patron4.test(frase4))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron4 + " en el texto "+ frase4 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron4 + " en el texto "+ frase4 + "<br>");	
+			}
+		*/	
+		// Patrón 5.
+		/*
+			document.write ("Patrón 5==> ");
+					
+			var patron5 = /Castilla(?= La Mancha)/;
+			var frase5 = "La comunidad autónoma de Castilla La Mancha......";
+			if (patron5.test(frase5))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron5 + " en el texto "+ frase5 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron5 + " en el texto "+ frase5 + "<br>");	
+			}
+		*/	
+		// Patrón 6.
+		
+			document.write ("Patrón 6==> ");
+					
+			var patron6 = /Castilla(?=-León) | Castilla(?! La Mancha)/;
+			//var frase6 = "La comunidad autónoma de Castilla-León......"; //Hay coincidencias, está Castilla-León y aunque no esté Castilla La Mancha, no importa por estar excluida.
+			var frase6 = "La comunidad autónoma de Castilla La Mancha......"; // No hay coincidencias, no está Castilla-León y Castilla La Mancha está excluida.
+			if (patron6.test(frase6))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron6 + " en el texto "+ frase6 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron6 + " en el texto "+ frase6 + "<br>");	
+			}
+		
+		// Patrón 7.
+		
+			document.write ("Patrón 7==> ");
+					
+			var patron7 = /[a-z][áéíóú][a-z]/;
+			var frase7 = "más"; //Hay coincidencias.
+			//var frase7 = "mes"; //No hay coincidencias.
+			if (patron7.test(frase7))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron7 + " en el texto "+ frase7 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron7 + " en el texto "+ frase7 + "<br>");	
+			}
+			
+		// Patrón 8.
+		/*
+			document.write ("Patrón 8==> ");
+					
+			var patron8 = /[a-z][áéíóú]\d{2,7}/;
+			var frase8 = "mé678";
+			if (patron8.test(frase8))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron8 + " en el texto "+ frase8 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron8 + " en el texto "+ frase8 + "<br>");	
+			}
+
+		// Patrón 9.
+		
+			document.write ("Patrón 9==> ");
+					
+			var patron9 = /\d{3}[áéíóú]\d{3}/;
+			var frase9 = "333ó319";
+			if (patron9.test(frase9))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron9 + " en el texto "+ frase9 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron9 + " en el texto "+ frase9 + "<br>");	
+			}	
+		*/	
+		// Patrón 10.
+		
+			document.write ("Patrón 10==> ");
+					
+			var patron10 = /[vb]aca/i;   // /[v|b]aca/i;
+			//var frase10 = "vaca";
+			//var frase10 = "baca";
+			//var frase10 = "Vaca";
+			var frase10 = "Baca";
+			if (patron10.test(frase10))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron10 + " en el texto "+ frase10 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron10 + " en el texto "+ frase10 + "<br>");	
+			}
+			
+		// Patrón 11.
+		/*
+			document.write ("Patrón 11==> ");
+					
+			var patron11 = /.a.o/i;
+			var frase11 = "malo palo pato Dato maTo NATO gATo"; //Hay coincidencias.
+			//var frase = "neto"; //No hay coincidencias.
+			if (patron11.test(frase11))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron11 + " en el texto "+ frase11 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron11 + " en el texto "+ frase11 + "<br>");	
+			}	
+			
+		// Patrón 12.
+		
+			document.write ("Patrón 12==> ");
+					
+			var patron12 = /tiempo/g;
+			var frase12 = "El hombre del tiempo dice que va a hacer mal tiempo";
+			if (patron12.test(frase12))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron12 + " en el texto "+ frase12 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron12 + " en el texto "+ frase12 + "<br>");	
+			}	
+		*/	
+		// Patrón 13.
+	/*	
+			document.write ("Patrón 13==> ");
+					
+			var patron13 = /\d{8}[A-Z]/;
+			var frase13 = "01234567L";
+			if (patron13.test(frase13))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron13 + " en el texto "+ frase13 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron13 + " en el texto "+ frase13 + "<br>");	
+			}	
+*/
+		//Patrón 14.
+		
+		/*
+			document.write ("Patrón 14==> ");
+			
+			//var patron14 = /\w+@(\w+\.)\w{2,4}$/;
+			var patron14 = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/;
+			//var frase14 = "alguien@servidor.es";			
+			//var frase14 = "alguien@servidor.com";
+			//var frase14 = "adsdgsd@.com";
+			var frase14 = "alguien@servidor.com";
+			if (patron14.test(frase14))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron14 + " en el texto "+ frase14 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron14 + " en el texto "+ frase14 + "<br>");	
+			}
+		*/	
+		// Patrón 15.
+	
+			document.write ("Patrón 15==> ");
+					
+			var patron15 = /[0123456789][0123456789]/; // /[0-9][0-9]/; // /[0-9]{2}/; // /[0-9]\d/; // /\d\d/; // /\d{2}/; // /[0-9](?=[0-9])/;
+			var frase15 = "Hay 31 días en marzo";
+			if (patron15.test(frase15))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron15 + " en el texto "+ frase15 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron15 + " en el texto "+ frase15 + "<br>");	
+			}		
+		
+		</script>
+		
+		
+	</head>
+	<body>
+		
+	</body>
+</html> 

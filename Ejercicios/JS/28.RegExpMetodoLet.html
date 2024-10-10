@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones 4 </title>
+</head>
+<body>
+    <script>
+
+        // Patrón 1.
+	
+			document.write ("Patrón 1==> ");
+					
+			var patron1 = /^j/g;
+			var frase1 = "jamón ibérico";
+			if (patron1.test(frase1))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron1 + " en el texto "+ frase1 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron1 + " en el texto "+ frase1 + "<br>");	
+			}	
+			
+		// Patrón 2. Con patrón en objeto.
+		
+			document.write ("Patrón 2==> ");
+					
+			
+			var frase2 = "buenos días";
+			var patron2 = new RegExp("^buenos","g");
+			if (patron2.test(frase2))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron2 + " en el texto "+ frase2 + "<br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron2 + " en el texto "+ frase2 + "<br>");	
+			}	
+/*
+		// Patrón 3. Objeto RegExp y cadena de texto literal.
+	
+			document.write ("Patrón 3==> ");
+					
+			
+			var patron3 = new RegExp("s$","g");
+			if (patron3.test("buenas noches"))
+			
+			{
+				document.write("Si existen coincidencias del patrón "+ patron3 + " en el texto \"buenas noches\" <br>");
+			}
+			else
+			{
+				document.write("No existen coincidencias del patrón "+ patron3 + " en el texto \"buenas noches\" <br>");	
+			}*/
+
+    </script>
+    
+</body>
+</html>
