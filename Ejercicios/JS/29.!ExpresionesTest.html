@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones 5</title>
+
+</head>
+<body>
+    <script>
+
+    //Ejercicio 1
+
+    /*
+
+    const patron = new RegExp(/[t|c]asa([sr])?/gi);
+    document.write("¿Incluye búsqueda global? " + patron.global+"<br>"); 
+    document.write("¿Hace distinción entre mayúsculas y minúsculas? " + patron.ignoreCase+"<br>"); 
+    document.write("¿Busca coincidencias en varias líneas? " + patron.multiline+"<br>"); 
+    document.write("¿Qué modificadores incluye? " + patron.flags+"<br>"); 
+    document.write("¿Qué patrón se está utilizando? " + patron.source+"<br>"); 
+    
+    document.write(patron.test("Hola mundo"));
+
+    */
+
+    //Ejercicio 2 
+
+    // const patron2 = new RegExp(/ma(sti|ster|saje)/i);
+
+    //Ejercicio 3
+
+    const exp = /^[A-C]\w+\ses\s\w+/;
+
+    let frases = [
+        "Juan es guapo",
+        "Ana no es fea",
+        "Ana deja de ser guapa",
+        "Ana es guapa",
+        "No es ahora",
+        "Ahora es no",
+        "Ana es guapa",
+    ];
+
+    function verificar() {
+        for (let i = 0; i < frases.length; i++) {
+            let resultado = exp.test(frases[i]);
+            document.write("Frase: \"" + frases[i] + "\" - Coincide: " + resultado + "<br>");
+
+            if (resultado) {
+                
+                let coincidencias = frases[i].match(exp);
+                document.write("Parte que coincide: " + coincidencias + "<br><br>");
+            } else {
+                document.write("No hay coincidencias.<br><br>");
+            }
+        }
+    }
+
+    verificar();
+
+    //Ejercicio 4
+
+    /*
+
+    const horaPatron= /^(?:[01]\d|2[0-3]):[0-5]\d$/
+    let hora= prompt("Introduce hora en formato hh:mm :");
+    function validarHora(hora) {
+        if (horaPatron.test(hora)) {
+            document.write("La hora "+hora+" es válida");
+        } else {
+            document.write("La hora "+hora+" no es válida");
+        }
+    }
+   */
+
+
+        
+    //Ejercicio 5
+
+    const horaPatron = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+
+    function validarHora() {
+    let hora;
+    let esValida = false;
+
+    // Bucle que solicita la hora hasta que sea válida
+    while (!esValida) {
+            
+            hora = prompt("Introduce una hora en formato HH:MM:");
+
+            // Validar la hora
+            if (horaPatron.test(hora)) {
+                console.log(`La hora "${hora}" es válida.`);
+                esValida = true; // Cambiar a verdadero para salir del bucle
+            } else {
+                console.log(`La hora "${hora}" no es válida. Intenta de nuevo.`);
+            }
+        }
+    }
+
+validarHora();
+
+
+
+    </script>
+    
+</body>
+</html>
