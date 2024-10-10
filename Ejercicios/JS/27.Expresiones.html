@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones3</title>
+</head>
+<body>
+    <script>
+        
+
+        let p1=/^[j]/g; //Todas las palabras que empiecen por j
+        let p2=/^[buenos]/g; //Todas las que empiecen por "buenos"
+        let p3=/s$/g; //Todas las que terminen por "s"
+        let p4=/dez$/g; //Terminen por "dez"
+        let p5=/Castilla(?= La Mancha)/; //Que incluya "Castilla" y a continuación "La Mancha"
+        let p6=/Castilla(?=-León) | Castilla(?! La Mancha)/  // que incluya “Castilla” y a continuación “-León” pero no “La Mancha”.
+        let p7= /^([a-z][áéíóú][a-zA-Z])$/ ///primer carácter sea cualquier minúscula, la segunda cualquier vocal minúscula acentuada y a partir de la segunda cualquier letra minúscula o mayúscula
+        let p8= /[a-z][áéíóú][234567] [234567] [234567] [234567]/  //Primer carácter cualquier minúscula, la segunda cualquier vocal minúscula acentuada y a partir de la segunda 4 dígitos del 2 al 7 
+        let p9= /\d{3}áéíóú\d{3}/ //empiece por 3 dígitos cualquiera, el cuarto cualquier vocal minúscula acentuada y a partir de la cuarta otros 3 dígitos cualquiera
+        let p10= /[vb]aca/  //patrón para extraer conincidencias "vaca" o "baca"escritas indistintamente en mayúsculas o minúsculas 
+        let p11=  /.a.o/i  //palo, pato, Dato, maTo, NATO, gATo
+        let p12= /tiempo/g //Uno que incluya todas las coincidencias de la palabra "tiempo" en la frase “El hombre del tiempo dice que va a hacer mal tiempo”
+        let p13= /\d{8}[a-zA-Z]$/ //Un patrón para un DNI 
+        let p14= /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ //Escribe un patrón para una dirección de correo electrónico. 
+        let p15a=/[0123456789][0123456789]/ //Escribe un patrón que busque un número de 2 dígitos de todas las formas posibles que se te ocurran.   
+        let p15b=/[0-9][0-9]/ 
+        let p15c=/[0123456789]{2}]/   
+        let p15d=/[0-9]{2}/ 
+        let p15e=/[0-9]\d/ 
+        let p15f=/\d\d/ 
+        let p15g=/\d{2}/ 
+        let p15h=/[0-9](?=[0-9])/ 
+    </script>
+</body>
+</html>

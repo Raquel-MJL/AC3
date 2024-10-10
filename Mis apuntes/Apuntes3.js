@@ -951,9 +951,51 @@ o var nombre = new RegExp(“patrón”);
     
     
     
-    
+    //OBJETO → RegExp ---!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    var patron5 =new RegExp("\\d{2}-\\d{2}-\\d{4}"); //Fecha: 23-09-2021
     //Método .test()  → Comprueba si un string coincide con el patrón y devuelve true o false. 
-    
+    //Método .exec(). → Permite  aplicar  el  patrón  sobre  el  parámetro  “texto”  o  la  variable  que  lo contenga para mostrar:
+    /*null, si no hay coincidencia. 
+o La primera coincidencia, si la hay. 
+o Para mostrar más coincidencias hay que usar el modificador “g”. 
+o Si  “g”  está  activo,  actualiza  la  propiedad  lastIndex  y  deja  todo 
+preparado para que la siguiente ejecución del método exec() 
+comience  en  esa  posición  y  así,  a  partir  de  ella  busque  una  nueva 
+coincidencia*/
+
+//Propiedades:
+    /*
+    global. 
+• Indica si el modificador “g” está activo en el patrón. 
+▪ ignoreCase. 
+• Indica si el modificador “i” está activo en el patrón. 
+▪ multiline. 
+• Indica si el modificador “m” está activo en el patrón. 
+▪ flags. 
+• Devuelve una cadena con los modificadores presentes en el constructor. 
+▪ source. 
+• Devuelve la cadena correspondiente al patrón escrito. 
+▪ index. 
+• Representa la posición (índice), dentro del texto, donde empieza el primer 
+carácter de la coincidencia encontrada. 
+• Por defecto valor 0. 
+• Se actualiza automáticamente tras usar un método de búsqueda de RegExp 
+si se tiene activado el modificador “g”. 
+• También se puede asignar un valor manualmente. 
+• Debe incluirse junto con el método exec y el patrón de búsqueda: 
+o patron.exec(texto).index; 
+▪ lastIndex. 
+• Representa  la  posición  (índice),  dentro  del  texto,  del  último  carácter  de  la 
+coincidencia encontrada. 
+• Por defecto valor 0. 
+• Se actualiza automáticamente tras usar un método de búsqueda de RegExp 
+si se tiene activado el modificador “g”. 
+• También se puede asignar un valor manualmente. 
+▪ dotAll. 
+• Indica  si  el  carácter  de  punto  (.)  del  patrón  de  una  expresión  normal 
+coincide con un salto de línea (\n).  
+• Hay que incluir el modificador “s” en la expresión para que se obtenga un 
+valor verdadero. /*
     
     //EXPRESIONES REGULARES ÚTILES 
         let numeroTelefonico= /\d{9}/ 
