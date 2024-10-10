@@ -855,9 +855,107 @@ iniciarMensaje(); //Llamada a la función
         } 
     
 
-//EXPRESIONES REGULARES --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//EXPRESIONES REGULARES -
+
+/*Conjunto de caracteres para crear un patrón de cara a Strings.
+Formas de crear una expresión regular. 
+• Definir un patrón literal que se puede o no almacenar en una variable. 
+o var nombre = /patrón/; 
+• Utilizar la clase u objeto prototípico RegExp. 
+o var nombre = new RegExp(“patrón”);
+
+//Distinguen mayúscula y minúscula
+
+//Simples:
+
+        Los caracteres que se escriben se buscan directamente
+
+/*Complejos:
+        //→ Cuantificadores (cuántas repeticiones hay)
+            //Asterisco : El carácter que les precede
+            // → /mira*/   //Coincidencias: mir, mira, miraa, miraaaa
+            //Más: El carácter que les precede una o más veces
+            // → /mira+/ //Coincidencias: mira, miraa, miraaaaaa. 
+            //Interrogación: El que les precede puede aparecer cero o una sola vez
+            // → /mira?/ //Coincidencias: mir,mira
+            //Número entero positivo: El que le precede debe repetir el número de veces especificado
+            // → /mira{2}/ //Coincidencias: miraa, miraaaaa
+            //Número entero positivo 1, número entero positivo 2: se debe repetir el múmero de veces entre los dos números ambos inclusive
+            // → /mira{2,4}/ //Coincidencias: miraa, miraaa, miraaaa. 
+            //Combinación de caracteres: En un único patrón se pueden incluir más de un carácter de repetición. 
+            // → /mi+ra*/ // La i puede repetirse 1 o más veces.La "a" puede repetirse ninguna, 1 o más → mir, miir, mira, miraaaa
+        
+        //→ Caracteres especiales:Se deben incluir con un carácter de escape (\) antes del carácter a escapar
+            /* 
+            \n → Salto de línea
+            \t → Tabulador
+            \v → Tabulador vertical
+            \u → Coincidencia unicode definido por códigos de 4 dígitos hexadecimales XXXX → https://unicode-table.com/es/
+                /\u00f1/ representa al carácter ñ. 
+            \b → Espacio en blanco 
+            \B → Separador de palabra con un carácter que NO sea un espacio o salto de línea
+                /Java\BScript/ 
+                Coincidencias: 
+                JavaScript , Java8Script,  Java*Script,... 
+            . → Comodín excetpto salto de línea
+                /.s/ 
+                Coincidencias: 
+                as, es, 3s, -s 
+            \s → Carácter de separación que representa a tabulador, espacio o salto de línea. 
+            \S → Cualquier carácter de separación que NO sea un tabulador, espacio o salto de línea. 
+            \d → Dígito entre 0-9
+            \D → Separador que NO sea un dígito
+            \w → cualquier alfanumérico (letras, números y subrayado)
+                /Java\wScript/ 
+                Coincidencias: 
+                JavanScript, JavaMScript, Java7Script, Java_Script. 
+            \W → Cualquier carácter que NO sea un alfanumérico o un guion de subrayado. 
+                /Java\WScript/ 
+                Coincidencias: Java-Script, Java/Script, Java Script.
 
 
+        //Combinaciones:
+            [xxx] - Coincidencias especificadas 
+                /\d\d-\d\d-\d\d\d\d/ 
+                Una fecha como 23-07-1999.
+            
+                /[abc]a/ equivale a /[a-c]a/ 
+                aa, ba, ca. 
+
+            [^xxx] - que NO sean lo especificado
+                /gat[^ao]/
+                gati, gatu, gate
+            
+            [x|y] - Coincidencia con x o y, pero no con los dos. (equivale a || )
+                /gat[a|o]/
+                gato, gata.
+
+        //De posición 
+
+            /^b/  → Que empiece por b
+            /as$/ → La coincidencia empieza por el final del patrón → lunas, buenas, personas
+            /gat(?=[ao])/  → Tiene que seguir lo que hay tras la interrogación →  gata, gato
+            /gat(?![ao])/ → Lo contrario a lo indicado
+            
+        //Flags o Modificadores → Se colocan fuera de las barras
+
+            g → Busca patrones /ja/g → ja, jajeja, Jajeja, jamón, jarra.
+            i → Elimina la distinción entre mayúsculas y minúsculas. /ja/i
+            s → Permite  que  punto  (.)  pueda  ser  un  salto  de línea.
+            x → Fuerza a que los espacios en blanco sean ignorados.
+            m → Permite usar el patrón en varias líneas.
+
+        //Paréntesis → Permiten agrupar caracteres que serán tratados como un bloque.
+            /sum(ar)+/  →  sumar, sumarar, sumararar
+            /(ja)+/  → ja, jaja, jajaja */
+    
+    //EXPRESIONES REGULARES ÚTILES 
+        let numeroTelefonico= /\d{9}/ 
+        let DNI= /\d{8}[a-zA-Z]/ 
+        let fecha1= /\d{2}-\d{2}-\d{4}/ //(dd-mm-aaaa / mm-dd-aaaa).
+        let fecha2= /[0-3]\d-[0|1]\d-\d{4}/  //(dd-mm-aaaa). 
+        let hora1=/^(0[0-9]|1[0-2]|2[0-3]):([0-5]\d)(:([0-5]\d))?$/ // (hh:mm:ss formato 24horas con y sin segundos). 
+        let hora2=/^(0[0-9]|1[0-2]):([0-5]\d)(:([0-5]\d))?$/   // (hh:mm:ss  formato  12  horas  con  o sin segundos).
 
 
 
