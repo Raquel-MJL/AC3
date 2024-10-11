@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>Ejemplo expresiones con método exec() y bucles for y do..while</title>
+		<meta charset="UTF-8">
+			
+		
+		<script>
+	
+	// Buscando coincidencias con exec() y lastIndex.
+	
+		let patron = new RegExp("S","gi");
+		let frase = "Son buenos días";
+	
+		document.write("<br>=== Posición de inicio de nueva ejecución del método exec(). ===<br><br>");
+
+		document.write("Frase ==> " + frase + "<br>");
+		document.write("Patrón completo que se está utilizando: " + patron.source + patron.flags +"<br>");
+		document.write("Coincidencia==> " + patron.exec(frase) + "<br>");
+		document.write("Posición para empezar a buscar la siguiente coincidencia==> " + patron.lastIndex + "<br>");
+		document.write("Coincidencia==> " + patron.exec(frase) + "<br>");
+		document.write("Posición para empezar a buscar la siguiente coincidencia==> " + patron.lastIndex + "<br>");
+		document.write("Coincidencia==> " + patron.exec(frase) + "<br>");
+		document.write("Posición para empezar a buscar la siguiente coincidencia==> " + patron.lastIndex + "<br>");
+		document.write("Coincidencia==> " + patron.exec(frase) + "<br>");
+		document.write("Posición para empezar a buscar la siguiente coincidencia==> " + patron.lastIndex + "<br>");
+		
+
+
+	// Coincidencias y su número usando un bucle for y exec() con patrón más complejo.	
+		
+			document.write("<br><br>=== Método exec() y bucle for. ===<br><br>");
+		
+			let i,a;
+			let patron1 = new RegExp("[t|c]asa[sr]?","gi");
+			let frase1 = "La casa se tasa cuando hay que tasar las casas si te casas al casarse";
+			a = "";
+			for (i = 0; i<=frase1.length; i++)
+			{
+				
+				a = patron1.exec(frase1);
+				if (a!=null)
+				{
+					document.write("Coincidencia encontrada: " + a + "<br>");
+					document.write("Posición inicio coincidencia: " + a.index + "<br>");
+					document.write("Siguiente índice de búsqueda: " + patron1.lastIndex + "<br>");
+				}
+				else
+				
+				{
+					break;
+				}
+								
+			}
+			document.write("Número de coincidencias encontradas: " + i);
+		
+	// Coincidencias y su número usando un bucle do...while y exec() con patrón más complejo.	
+	
+			document.write("<br><br>=== Método exec() y bucle do..while. ===<br><br>")
+			
+			let patron2 = new RegExp("[t|c]asa[sr]?","gi");
+			let frase2 = "La casa se tasa cuando hay que tasar las casas si te casas al casarse";
+			let b = "";
+			do
+			{	
+				b = patron2.exec(frase2);
+				if (b!=null)
+				{
+					document.write("Coincidencia encontrada: " + b + "<br>");
+					document.write("Posición inicio coincidencia: " + b.index + "<br>");
+					document.write("Siguiente índice de búsqueda: " + patron2.lastIndex + "<br>");
+				}
+				else
+				
+				{
+					break;
+				}
+								
+			}while(b!=null)
+		
+		
+		</script>
+		
+	</head>
+	<body>
+	
+	</body>
+</html> 

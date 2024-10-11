@@ -994,7 +994,141 @@ o var nombre = new RegExp(“patrón”);
     document.write(patron.lastIndex); //Muestra índice 6. 
     document.write(patron.exec("Hola  Adiós"));  //Sin  coincidencias, muestra null. 
     document.write(patron.lastIndex); //Muestra índice 0
-    //Mejor usar match en vez de exec().
+    //Mejor usar match con objeto string en vez de exec().
+ 
+    const texto = "El perro juega en el parque. El perro también corre.";
+    const regex = /perro/g; // Expresión regular para buscar "perro"
+
+    const resultados = texto.match(regex);
+
+    console.log(resultados);
+
+    [ 'perro', 'perro' ] //Salida en consola 
+
+
+
+//OBJETO STRING 
+
+    var texto1 = new String (); // Cadena vacía. 
+    var texto2 = new String ("Hola mundo"); 
+    var texto4 = new String (false); 
+
+    //Métodos 
+
+    //length()
+    texto1 = "adiós"; 
+    document.write(texto1.length); //Muestra 5.
+
+    //match()
+    // Uso de "g" e "i" es casi obligatorio 
+    var texto = new String ("Coche"); //Declaración string
+    var patron=/a/;                   //Declaración del patrón 
+    document.write (texto.match(patron)); //Uso método → Devuelve null. 
+    document.write(texto.match(/c/)); //Declarando el patrón directamente → Devuelve c minúscula que se puede almacenar en una variable o en un array. 
+    document.write(texto.match(/c/gi)); //Devuelve C y c que se pueden almacenar en un array. 
+    var coincidencias = texto.match(/c/gi); 
+    document.write (coincidencias); //Devuelve C, c. 
+    document.write (coincidencias[1]); //Devuelve c. 
+    document.write (coincidencias.length); //Devuelve 2. 
+    texto = "Coche de carreras"; 
+    document.write (coincidencias.length); //Devuelve 3. 
+    for(var i = 0; i < coincidencias.length; i++) 
+    { 
+        document.write (coincidencias[i]); //Devolverá Ccc, está cada una guardada en una posición del array "coincidencias" 
+    } 
+
+    //search()
+    //Devuelve posición donde está la primera ocurrencia del patrón, tras comprobar si existe en el texto
+    //Primer índice es el 0, no permite búsquedas globales (g) y si no hay coincidencias devuelve -1 
+    var texto = "Esta Mancha no mancha"; 
+    var patron1 = /mancha/;  
+    var patron2 = /Mancha/; 
+    var patron3 = /mancha/gi; 
+    var patron4 = /manta/; 
+    var busqueda1 = texto.search(patron1); //Devuelve 15. 
+    var busqueda2 = texto.search(patron2); //Devuelve 5. 
+    var busqueda3 = texto.search(patron3); //Devuelve 5. 
+    var busqueda4 = texto.search(patron4); //Devuelve -1.
+
+    //replace()
+    //Realiza búsqueda de coincidencia y si la hay, reemplaza el contenido por lo indicado
+    //Si no hay coincidencias, no modifica texto.
+    //Si se usa "g" se reemplazan todas las coincidencias. Si no, sólo la primera.
+    textoOriginal.replace(búsqueda, reemplazo); 
+    var variableConTextoModificado = textOriginal.replace(búsqueda, reemplazo);
+
+    //split().
+    //Divide una cadena en subcadenas que se guardan en un array
+    texto.split (separador, límite); 
+    var nombreArray = texto.split (separador, límite); 
+    //Separador es: espacio en blanco,  expresión  regular,  patrón,  o  texto  que actúa como delimitador de las subcadenas. 
+    //Si  no  hay  separador  o  delimitador  en  la  cadena,  se  devuelve  un  array con la cadena completa. 
+    //El límite es opcional, un número entero. Devuelve tantas subcadenas como se indique en él. 
+
+    //toLowerCase()  o  toUpperCase()
+    //texto en minúsculas
+    var texto = "La catedral de Burgos"; 
+    document.write (texto.toLowerCase()); //Devuelve "la catedral de burgos". 
+    var frase = prompt("Escribe un texto",""). toLowerCase(); 
+    //texto en mayúsculas 
+    document.write (texto.toUpperCase()); //Devuelve "LA CATEDRAL DE BURGOS". 
+    var frase = prompt("Escribe un texto",""). toUpperCase(); 
+
+    //charAt()
+    //Muestra carácter especificado como parámetro, que representa la posición especificada mediante un int empezando por 0
+    document.write (texto.charAt(0)); //Devuelve "L". 
+    document.write (texto.charAt(8)); //Devuelve "r". 
+
+    //concat()
+    //concatena cadenas pasadas como parámetro. Equivale a +
+    document.write (texto.concat(" y la de Cuenca")); //Devuelve "La catedral de Burgos y la de Cuenca"
+
+    //includes()
+    //Indica si un texto está incluido en otro texto y devuelve booleano
+    var texto = "La catedral de Burgos"; 
+    document.write(texto.includes("catedral")); //Devuelve true. 
+    document.write(texto.includes("catedral",10)); //Devuelve false. 
+    
+    //indexOf() / lastIndexOf().
+    //Muestra la posición de la primera o última coincidencia 
+    var texto = "JavaScript";  
+    texto.indexOf("a");  //Devuelve 1. 
+    texto.indexOf("a",2);  //Devuelve 3. 
+    texto.indexOf("Script");  //Devuelve 4. 
+    texto.indexOf("T");  //Devuelve -1. 
+    texto.lastIndexOf("a");  //Devuelve 3. 
+    texto.lastIndexOf("Script");  //Devuelve 4. 
+    texto.lastIndexOf("R");  //Devuelve -1.
+
+    //substring()
+    //Muestra cadena ubicada en posición inicial y otra al final 
+    var texto = "JavaScript"; 
+    texto.substring(0);  //Devuelve JavaScript. 
+    texto.substring(0,2);  //Devuelve  Ja. 
+    
+    //repeat()
+    //Crea cadena repitiendo el nº de veces indicado el contenido del objeto o variable 
+    var texto = "JavaScript"; 
+    texto.repeat();  //Devuelve " ". 
+    texto.repeat(2);  //Devuelve  JavaScript JavaScript 
+
+    //trim()
+    //Elimina espacios en blanco ubicados al principio o al final de una cadena 
+    var texto = "        JavaScript                    "; 
+    texto.trim();  //Devuelve "JavaScript".  
+
+
+//OBJETO DOCUMENT 
+//MÉTODO GET 
+//→ Sirve para acceder al DOM y cargar contenido web en variables, arrays etc
+//Se usa junto con innerHTML para que pueda tener acceso   
+//Ejemplo respecto a un <p> con id parrafo en HTML 
+        var parrafo = document.getElementById("parrafo").innerHTML;
+        const patron3=/a/gim;
+        var coincidencias1=parrafo.match(patron3);  
+
+
+
     
 
 

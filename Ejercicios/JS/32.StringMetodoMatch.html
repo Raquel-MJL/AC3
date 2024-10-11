@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones 6</title>
+</head>
+<body>
+    <script>
+        //Ejercicio 1
+
+        
+        /*
+        const patron1 = /[a-zA-Z][aeiou][a-zA-Z]/g;
+        var texto1= "En un lugar de La Mancha, de cuyo nombre no quiero acordarme";
+        
+        var coincidencias=texto1.match(patron1);
+        
+        // ¿Por qué no imprimirlo así? document.write(coincidencias);
+        
+        if (coincidencias) { //Mostrar nº coincidencias
+            document.write("Número de coincidencias: " + coincidencias.length + "<br>");
+
+            // Mostrar el contenido del array
+            document.write("Coincidencias encontradas:<br>");
+            for (var i = 0; i < coincidencias.length; i++) {
+                document.write(coincidencias[i] + "<br>");
+            }
+        } else {
+            document.write("No se encontraron coincidencias.");
+        }
+        */
+
+        
+
+        //Ejercicio 2
+
+        /*
+
+        var texto2="Juan 23 Eva 34 Pepe 28 Cristina 24 Rosa 37 Luis Miguel 40";
+        const patron2=/\d{2}/g;
+        var array1=texto2.match(patron2);
+
+        if (array1){
+            document.write("Número de coincidencias: "+ array1.length +"<br>");
+
+            for(var i=0;i<array1.length;i++){
+                document.write(array1[i]+"<br>");
+            
+            }
+        } else{
+            document.write("No se encontraron coincidencias.");
+
+        }
+        */
+
+        //Ejercicio 3
+
+        
+
+
+    
+    
+    </script>
+    <p id="parrafo" style="color: red;">¡Abracadabra, patas de cabra! Ojos de sapo, patas de rana, ¡que tengas suerte toda la 
+        semana! Alas de murciélago, cola de lombriz, ¡que hoy y siempre seas muy feliz! Hilos de 
+        araña, escamas de dragón, ¡que nunca nadie hiera tu corazón! Cola de culebra, patas de 
+        chucho, ¡que siempre todos te quieran mucho! Conjuro: Sapo, sapito, que este año  me 
+        vaya mejorcito; Caldero, calderito, que me abunde el dinerito. ¡Con este conjuro todo 
+        has de lograr, y de tu Suerte nunca has de dudar...!</p>
+
+    <script>
+
+        var parrafo = document.getElementById("parrafo").innerHTML;
+        const patron3=/a/gim;
+        var coincidencias1=parrafo.match(patron3);
+
+        if (coincidencias1){
+
+            document.write("Número de coincidencias: "+coincidencias1.length+"<br>");
+
+            for(var i=0;i<coincidencias1.length;i++){
+                document.write(coincidencias1[i]+"<br>");
+            }
+
+        } else{
+            document.write("No se encuentran coincidencias.")
+        }
+        
+
+    
+    </script>
+    
+    
+</body>
+</html>
