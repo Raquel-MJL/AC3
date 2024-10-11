@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Encontrar grupos de letras</title>
+</head>
+<body>
+    <p id="parrafo">En un lugar de La Mancha, de cuyo nombre no quiero acordarme.</p>
+
+    <script>
+        const texto = document.getElementById("parrafo").innerText; // Obtener el texto del párrafo
+        const patron1 = /[a-zA-Z][aeiouáéíóú][a-zA-Z]/g;
+
+        let coincidencias = [];
+        let match;
+
+        
+        while ((match = patron1.exec(texto)) !== null) {
+            coincidencias.push(match[0]);
+            // Mover el índice de búsqueda una posición hacia adelante
+            patron1.lastIndex = match.index + 1;
+        }
+
+        document.write("Coincidencias encontradas: " + coincidencias.join(", "));
+    </script>
+</body>
+</html>
+
+    
+    
+</body>
+</html>

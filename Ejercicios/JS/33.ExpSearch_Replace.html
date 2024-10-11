@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones7</title>
+</head>
+<body>
+    <p id="parrafo">Estas  memorias  USB  se  han  convertido  en  el  sistema  de  almacenamiento  y  transporte 
+        personal de datos más utilizado, desplazando en este uso a los tradicionales disquetes y 
+        a los CD. Se pueden encontrar en el mercado fácilmente memorias USB de 1, 2, 4, 8, 16, 
+        32,  64,  128,  256,  512  GB,  y  hasta  1  TB  (1024  GB).  Las  memorias  USB  con  capacidades 
+        más altas pueden aún estar, por su precio, fuera del rango del "consumidor doméstico". 
+        Esto  supone,  como  mínimo,  el  equivalente  a  180  CD  de  700  MB  o  91000  disquetes  de 
+        1440 KiB aproximadamente.</p>
+    <script>
+
+    //Ejercicio 1 
+
+
+    
+    var texto = document.getElementById("parrafo").innerHTML; 
+
+    //Primer número encontrado y posición 
+    var patron1 = /\d/; 
+    var coincidenciaNum = texto.match(patron1); 
+    if (coincidenciaNum) {
+        document.write("El primer número encontrado es: " + coincidenciaNum+" y su posición es: " + texto.search(patron1)+"<br>"); 
+    } else {
+        document.write("No se encontraron números.");
+    }
+
+    //Primera mayúscula encontrada y posición: 
+    var patron2= /[A-Z]/;
+    var coincidenciaMayus = texto.match(patron2);
+    if (coincidenciaMayus) {
+        document.write("La primera mayúscula encontrada es: "+coincidenciaMayus +" y su posición es: " + texto.search(patron2)+"<br>"); 
+    } else {
+        document.write("No se encontró mayúscula");
+    }
+
+    //Posición de la palabra "USB"
+    var posicion=texto.search("USB");
+    if (posicion) {
+        document.write("La posición de la palabra USB es" + posicion+"<br>"); 
+    } 
+
+    //Número y posición de 3 dígitos que empiece por 2
+    var patron3= /2\d{2}/;
+    var coincidenciaNumGrande = texto.match(patron3);
+    document.write("El primer número de tres cifras que empieza por 2 es: "+coincidenciaNumGrande+ " y su posición: "+texto.search(patron3)+"<br>");
+
+    //Posición primer texto entrecomillado
+    var patron4= /"([^"]*)"/; //Captura cualquier texto que NO sean comillas
+    var posicionPrimerasComillas=texto.search(patron4);
+    document.write("La posición del primer texto entrecomillado es: "+posicionPrimerasComillas+"<br>")
+  
+    
+
+    //Ejercicio 2
+
+    /*
+
+    var frase="A buen entendedor, pocas palabras bastan";
+    const patron0=/entendedor/; 
+    var coincidencia=frase.search(patron0);
+
+    if (coincidencia){
+        document.write("El texto incluye la palabra");
+    }else{
+        document.write("El texto no incluye la palabra")
+    }
+
+    */
+
+    //Ejercicio 3
+
+    /*
+
+    var texto = "uno dos uno tres uno cuarenta uno doscientos diez uno mil";
+    var textoReemplazado = texto.replace(/uno/g, "1");
+    document.write("Texto original: "+texto+"<br>"+"Texto nuevo: "+textoReemplazado);
+    */
+
+    //Ejercicio 4
+
+    var texto1= "JavaScript es un lenguaje de guiones interpretado.";
+    var texto1Reemplazado = texto1.replace(/\s/g,"-");
+    document.write("Frase original: "+texto1+"<br>"+"Frase modificada: "+texto1Reemplazado)    
+
+    </script>
+    
+</body>
+</html>
