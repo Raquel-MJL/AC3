@@ -948,63 +948,58 @@ o var nombre = new RegExp(“patrón”);
         //Paréntesis → Permiten agrupar caracteres que serán tratados como un bloque.
             /sum(ar)+/  →  sumar, sumarar, sumararar
             /(ja)+/  → ja, jaja, jajaja */
-    
-    
-    
-    //OBJETO → RegExp ---!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //Validador RegExp → https://discordapp.com/channels/@me/799326024638529556/1294009151290081300
-    var patron5 =new RegExp("\\d{2}-\\d{2}-\\d{4}"); //Fecha: 23-09-2021
-    //Método .test()  → Comprueba si un string coincide con el patrón y devuelve true o false. 
-    //Método .exec(). → Permite  aplicar  el  patrón  sobre  el  parámetro  “texto”  o  la  variable  que  lo contenga para mostrar:
-    /*null, si no hay coincidencia. 
-o La primera coincidencia, si la hay. 
-o Para mostrar más coincidencias hay que usar el modificador “g”. 
-o Si  “g”  está  activo,  actualiza  la  propiedad  lastIndex  y  deja  todo 
-preparado para que la siguiente ejecución del método exec() 
-comience  en  esa  posición  y  así,  a  partir  de  ella  busque  una  nueva 
-coincidencia*/
 
-//Propiedades:
-    /*
-    global. 
-• Indica si el modificador “g” está activo en el patrón. 
-▪ ignoreCase. 
-• Indica si el modificador “i” está activo en el patrón. 
-▪ multiline. 
-• Indica si el modificador “m” está activo en el patrón. 
-▪ flags. 
-• Devuelve una cadena con los modificadores presentes en el constructor. 
-▪ source. 
-• Devuelve la cadena correspondiente al patrón escrito. 
-▪ index. 
-• Representa la posición (índice), dentro del texto, donde empieza el primer 
-carácter de la coincidencia encontrada. 
-• Por defecto valor 0. 
-• Se actualiza automáticamente tras usar un método de búsqueda de RegExp 
-si se tiene activado el modificador “g”. 
-• También se puede asignar un valor manualmente. 
-• Debe incluirse junto con el método exec y el patrón de búsqueda: 
-o patron.exec(texto).index; 
-▪ lastIndex. 
-• Representa  la  posición  (índice),  dentro  del  texto,  del  último  carácter  de  la 
-coincidencia encontrada. 
-• Por defecto valor 0. 
-• Se actualiza automáticamente tras usar un método de búsqueda de RegExp 
-si se tiene activado el modificador “g”. 
-• También se puede asignar un valor manualmente. 
-▪ dotAll. 
-• Indica  si  el  carácter  de  punto  (.)  del  patrón  de  una  expresión  normal 
-coincide con un salto de línea (\n).  
-• Hay que incluir el modificador “s” en la expresión para que se obtenga un 
-valor verdadero. /*
-    
     //EXPRESIONES REGULARES ÚTILES 
-        let numeroTelefonico= /\d{9}/ 
-        let DNI= /\d{8}[a-zA-Z]/ 
-        let fecha1= /\d{2}-\d{2}-\d{4}/ //(dd-mm-aaaa / mm-dd-aaaa).
-        let fecha2= /[0-3]\d-[0|1]\d-\d{4}/  //(dd-mm-aaaa). 
-        let hora1=/^(0[0-9]|1[0-2]|2[0-3]):([0-5]\d)(:([0-5]\d))?$/ // (hh:mm:ss formato 24horas con y sin segundos). 
-        let hora2=/^(0[0-9]|1[0-2]):([0-5]\d)(:([0-5]\d))?$/   // (hh:mm:ss  formato  12  horas  con  o sin segundos).
+    let numeroTelefonico= /\d{9}/ 
+    let DNI= /\d{8}[a-zA-Z]/ 
+    let fecha1= /\d{2}-\d{2}-\d{4}/ //(dd-mm-aaaa / mm-dd-aaaa).
+    let fecha2= /[0-3]\d-[0|1]\d-\d{4}/  //(dd-mm-aaaa). 
+    let hora1=/^(0[0-9]|1[0-2]|2[0-3]):([0-5]\d)(:([0-5]\d))?$/ // (hh:mm:ss formato 24horas con y sin segundos). 
+    let hora2=/^(0[0-9]|1[0-2]):([0-5]\d)(:([0-5]\d))?$/   // (hh:mm:ss  formato  12  horas  con  o sin segundos).
+    
+    
+    
+    //OBJETO → RegExp 
+    //Validador RegExp → !!!!!COPIA LA URL QUE TE MANDÓ JAVI
+    var patron5 =new RegExp("\\d{2}-\\d{2}-\\d{4}"); //Fecha: 23-09-2021
+    //Propiedades:
+    /*
+        global → Indica si "g" está activo en el patrón
+        ignoreCase → Indica si "i"
+        multiline → Indica si "m"
+        flags → Devuelve cadena con los modificadores presentes
+        source→ Devuelve cadena correspondiente al patrón
+        index → Posición dentro del texto donde empieza la primera coincidencia encontrada
+        lastIndex → Posición del último carácter coincidente
+        dotAll → Indica si el punto del patrón coincide con salto de línea */
+
+
+    //Método .test()  → Comprueba si un string coincide con el patrón y devuelve true o false. 
+     
+    var expresion = new RegExp("la","gi"); 
+    document.write("¿Hay coincidencia?" + expresion.test("Hola"));
+
+    //Método .exec(). → A diferencia de test,da más información sobre las coincidencias. 
+    /* → null, si no hay coincidencia.
+       → Se detiene en la primera coincidencia, para seguir buscando hay que usar "g" 
+       → Si "g" está en uso, actualiza  la  propiedad  lastIndex  y  deja  todo 
+        preparado para que la siguiente ejecución del método exec() 
+        comience  en  esa  posición  y  así,  a  partir  de  ella  busque  una  nueva 
+        coincidencia.*/ 
+
+    var patron = new RegExp("A","gi"); 
+    document.write(patron.exec("Hola Adiós")); //Encuentra la letra a. 
+    document.write(patron.lastIndex); //Muestra índice 4. 
+    document.write(patron.exec("Hola Adiós")); //Encuentra la letra A. 
+    document.write(patron.lastIndex); //Muestra índice 6. 
+    document.write(patron.exec("Hola  Adiós"));  //Sin  coincidencias, muestra null. 
+    document.write(patron.lastIndex); //Muestra índice 0
+    //Mejor usar match en vez de exec().
+    
+
+
+    
+
 
 
 
