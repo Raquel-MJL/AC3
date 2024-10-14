@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 4</title>
+
+</head>
+<body>
+    <!--Ejercicio 1-->
+    <form onsubmit="validarFormulario(event)">
+        <label >Introduce identificador:</label>
+        <input type="text" id="Usuario" maxlength="40"> <br></br>
+        <label>Contraseña:</label>
+        <input type="password" id="Contraseña" maxlength="30"><br>
+        <button type="submit">Entrar</button>
+
+    </form>
+    <script>
+        function validarFormulario(event){
+            event.preventDefault();
+            const nombre=document.getElementById("Usuario").value;
+            const pass=document.getElementById("Contraseña").value;
+
+            if(nombre==="" || pass===""){
+                alert("Debe introducir datos en este campo obligatoriamente");
+                return;
+            }
+
+            else if(pass.length<8 || pass.length>25){
+                alert("Número de caracteres incorrecto. La contraseña debe tener un mínimo de 8 y un máximo de 25 caracteres.");
+                document.getElementById("Contraseña").value = "";
+                return;
+            }
+            alert("Datos válidos, formulario enviado.");
+    }
+
+    </script>
+    <!--
+ 
+
+
+Ejercicio 2. 
+Crea un formulario que incluya los siguientes campos: 
+• 2  cuadros  de  texto  de  tipo  contraseña  (password),  con  una  longitud  de  40 
+caracteres y las siguientes etiquetas: 
+o Etiqueta para el primer cuadro: Contraseña. 
+o Etiqueta para el segundo cuadro: Repetir Contraseña. 
+• Un botón de tipo button con el texto: Verificar Contraseña. 
+Crear un script que muestre: 
+• Hay  que  incluir  en  ellos  la  misma  contraseña  y  al  pulsar  en  el  botón  Verificar 
+Contraseña, deben aparecer cuadros de alerta con los siguientes mensajes: 
+o Si las contraseñas son iguales: 
+▪ Ambas claves son iguales. 
+o Si las contraseñas no son iguales: 
+▪ Ambas claves son distintas. Escríbalas de nuevo. 
+▪ En  este  último  caso,  además,  deben  vaciarse  los  campos  para 
+volver a escribir en ellos. 
+Común a ambos formularios: 
+• Identificar cada control de los formularios con nombres usando id y name. 
+• Alinear por la izquierda las etiquetas de los campos y los cuadros de texto. 
+• Aplicar  a  los  formularios  los  formatos  de  fuente,  colores,  bordes,  posición, 
+tamaño, etc., que se quiera. 
+• En el caso de los botones de comando de los 2 formularios, aumentar su tamaño 
+a 14 píxeles, aplicarles el color azul marino y mostrarlos en negrita. 
+• Todos los formularios se pueden disponer en la ventana dentro de un 
+contenedor flexible. 
+ -->
+    
+</body>
+</html>

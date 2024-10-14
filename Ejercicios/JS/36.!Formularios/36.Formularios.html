@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularios1</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <div class="flex-container">
+    <!--Ejercicio1-->
     <h3 style="margin:25%">Calculadora de Cubo</h3>
     <form onsubmit=calcularCubo(event) style="margin: 25%;color:blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
         <label for="numero">Introduce un número:</label>
@@ -20,6 +23,8 @@
             alert('El cubo de ' + numero + ' es: ' + cubo);
         }
     </script>
+
+    <!--Ejercicio 2-->
 
     <form onsubmit="compararNum(event)">
         <label for="numeros">Introduce dos números:</label>
@@ -45,11 +50,13 @@
             
         }
     </script>
+    
+    <!--Ejercicio 3-->
 <br><br>
     <form onsubmit="concatenarNombre(event)">
         <label>Introduce tu nombre:</label>
-        <input type="text" id="cuadroNombre" required>
-        <label>Introduce tus apellidos</label>
+        <input type="text" id="cuadroNombre" required><br>
+        <label>Introduce tus apellidos</label> 
         <input type="text" id="cuadroApellidos" required>
                
         <button type="submit">Concatenar Nombre y Apellidos</button>
@@ -69,14 +76,7 @@
             //get para incluir datos 
         }
     </script>
-
-
-
-<!--
- 
-
-Nota: Todos los formularios se pueden incluir en un contenedor Flexbox. */-->
-    
+    </div>   
     
 </body>
 </html>

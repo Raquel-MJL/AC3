@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-direction: column; /* Cambia a 'row' si prefieres horizontal */
+    align-items: center; /* Centra los formularios horizontalmente */
+    margin: 20px;
+}
+
+form {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; /* Ajusta el ancho según lo necesites */
+    text-align: center; /* Centra el texto en el formulario */
+}

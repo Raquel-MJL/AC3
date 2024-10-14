@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 3</title>
+</head>
+<body>
+    <!--
+
+    <form onsubmit="validarEmail(event)">
+        <label>Introduzca email: </label>
+        <input type="text" id="email">
+        <button type="submit">Validar email</button>
+    </form>
+
+    <script>
+        function validarEmail(event){
+            event.preventDefault();
+            const patron=/@/; 
+            const correo= document.getElementById('email').value;
+            if (patron.test(correo)){
+                alert("El correo introducido es correcto");
+
+            }else{
+                alert("El correo introducido es incorrecto");
+            }
+
+        }
+    </script> -->
+
+    <!--Ejercicio 2-->
+    <!--
+    <form>
+        <button type="button" onclick="click1(event)">1</button>
+        <button type="button" onclick="click2(event)">2</button>
+        <button type="button">3</button>
+
+    </form>
+    <script>
+        function click1(event){
+            alert('Has pulsado el primer botón');
+        }
+
+        function click2(event){
+            alert('Has pulsado el segundo botón');
+        }
+        function click3(event){
+            alert('Has pulsado el tercer botón');
+        }
+
+    </script>  -->
+
+    <!--Ejercicio 3-->
+    <form onsubmit="enviarFormulario(event)">
+        <label>Introduce tu nombre</label>
+        <input type="text" id="nombre"><br>
+        <label>Contraseña:</label>
+        <input type="password" id="contraseña"><br>
+        <button type="submit">Confirmar</button>
+    </form>
+    <script>
+        function enviarFormulario(event){
+            event.preventDefault();
+            const nombre=document.getElementById('nombre').value;
+            alert('¡Gracias '+ nombre + ' tus datos han sido enviados correctamente!!')
+               
+        }
+    </script>
+
+
+
+
+
+    <!--
+ 
+ 
+Común a todos los formularios. 
+• Identificar cada control de los formularios con nombres usando id y name. 
+• Alinear por la izquierda las etiquetas de los campos y los cuadros de texto. 
+• Aplicar  a  los  formularios  los  formatos  de  fuente,  colores,  bordes,  posición, 
+tamaño, etc., que se quiera. 
+• Todos los formularios se pueden disponer en la ventana dentro de un 
+contenedor flexible. -->
+    
+</body>
+</html>
