@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 3</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+        <form>
+            <fieldset>
+                <label>Introduzca su email:</label>
+                <input id="email" name="email" type="text">
+                <input type="button" value="Validar correo" onclick="validarEmail()">
+            </fieldset>
+            <script>
+                function validarEmail(){
+                    let patron=/@/;
+                    let email=document.getElementById('email').value;
+                    if(patron.test(email)){
+                        alert("El correo es correcto");
+
+                    }else{
+                        alert("El correo itroducido no es correcto");
+                    }
+                }
+            </script>
+
+        </form>
+
+        <form>
+            <input id="button1" name="botom1" type="button" value="1" onClick="boton1()">
+            <input id="button2" name="botom2" type="button" value="2" onClick="boton2()">
+            <input id="button3" name="botom3" type="button" value="3" onClick="boton3()">
+        </form>
+        <script>
+            function boton1(){
+                alert("Se ha pulsado el primer botón");
+            }
+            function boton2(){
+                alert("Se ha pulsado el segundo botón");
+            }
+            function boton3(){
+                alert("Se ha pulsado el tercer botón");
+            }
+        </script>
+
+        <form>
+            <label>Introduce nombre de usuario:</label>
+            <input id="nombre" type="text" name="nombre"> 
+            <br>
+            <label>Contraseña:</label>
+            <input id="contraseña" type="password" nombre="contraseña">
+            <br>
+            <input type="button" value="Confirmar" onclick="enviarFormulario()">
+
+        </form>
+        <script>
+            function enviarFormulario(){
+                let nombreUsuario = document.getElementById("nombre").value;
+                alert("¡Gracias "+ nombreUsuario + ", tus datos han sido enviados correctamente!");
+            }
+
+        </script>
+</body>
+</html>
