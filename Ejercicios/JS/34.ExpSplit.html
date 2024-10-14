@@ -26,30 +26,28 @@
 
         /*
 
-        let nombres="Luis, Lola, Rosa, Cristina, Eugenia, Juan, Carmen, Pepe";
-        let nombreArr=[
-            "Luis",
-            "Lola",
-            "Rosa",
-            "Cristina",
-            "Eugenia",
-        ]
+        let nombres = "Luis, Lola, Rosa, Cristina, Eugenia, Juan, Carmen, Pepe";
+        let nombreArr = nombres.split(", "); // Usamos .split() para convertir la cadena en un array
 
-        console.log(nombreArr.length); //Confirmación array 5 índices 
+        console.log(nombreArr.length); // Confirmación del tamaño del array
 
-        for (let i=0;i<nombreArr.length;i++){
-            document.write(nombreArr[i]+"<br>");
+        // Imprimir los nombres
+        for (let i = 0; i < nombreArr.length; i++) {
+            document.write(nombreArr[i] + "<br>");
         }
 
-        for(let i=0;i<nombreArr.length;i++){
-            nombreArr=nombreArr.reverse();
-            document.write(nombreArr[i]+"<br>");
+        // Invertir el array y imprimir
+        nombreArr.reverse();
+        for (let i = 0; i < nombreArr.length; i++) {
+            document.write(nombreArr[i] + "<br>");
         }
 
-        for(let i=0;i<nombreArr.length;i++){
-            nombreArr=nombreArr.sort();
-            document.write(nombreArr[i]+"<br>");
+        // Ordenar el array y imprimir
+        nombreArr.sort();
+        for (let i = 0; i < nombreArr.length; i++) {
+            document.write(nombreArr[i] + "<br>");
         }
+
 
         */
         
@@ -57,7 +55,7 @@
 
         let caracteres="fgsraBknfasdfbhewioAuhwae8234ujvw90a23Z785bnBlsdafgshd7293nawuyr7asfgnrfs7asal3n23A5289asfaMGTz";
         let coincidencias=[];
-        coincidencias=caracteres.split(/[aAáÁ]/);
+        coincidencias=caracteres.split(/[aá]/gi);
 
         document.write("Se han encontrado: "+coincidencias.length+"<br>");
 
