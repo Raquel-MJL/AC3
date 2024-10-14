@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones 10</title>
+</head>
+<body>
+    <script>
+        /*
+
+        //Ejercicio 1
+        var frase= prompt("Introduzca una frase: ","");
+
+        if (/hola/.test(frase)){
+            document.write("La frase incluye la palabra 'hola'");
+        }else{
+            document.write("La frase no incluye la palabra 'hola'");
+        }
+
+        //Ejercicio 2
+            
+
+        let coor= prompt("Introduzca coordenadas en formato 999,999 :","");
+        patron1=/\d{3},\d{3}/;
+        if (patron1.test(coor)){
+            document.write("Coordenadas introducidas correctamente");
+        }else{
+            document.write("Las coordenadas introducidas son incorrectas");
+        }
+
+        //Ejercicio 3
+
+        var frase1="JavaScript es un lenguaje de programación de secuencias de comandos";
+        var patron= new RegExp(/de/g);
+
+        var coincidencias;
+        while ((coincidencias = patron.exec(frase1)) !== null) {
+        document.write("Encontrada: " + coincidencias[0] + " en el índice " + coincidencias.index + "<br>");
+} 
+        //Ejercicio 4        
+        var frase1=new String ("JavaScript es un lenguaje de programación de secuencias de comandos");
+        var patron= /de/g;
+        let coincidencias=[];
+
+        let resultado; //Se almacenan en el array las coincidencias 
+        while ((resultado = patron.exec(frase1)) !== null) {
+            coincidencias.push(resultado[0]);
+        }
+
+        document.write("Número de coincidencias: "+coincidencias.length+"<br>");
+
+        for (i=0;i<coincidencias.length;i++){
+            document.write("Coincidencia: "+coincidencias[i]+"<br>");
+
+
+        }
+        
+
+        //Ejercicio 5 
+
+        let frase = new String (); 
+        frase="La capital";
+        document.write("Frase original: "+frase+"<br>");
+
+        let fraseNueva = frase.replace(/La/, "El"); 
+        document.write("Frase nueva: "+ fraseNueva);
+        */
+
+        //Ejercicio 6
+
+        cadenaOriginal = "No tener pelos en la lengua";
+        patron=/pelos/;
+        
+        let subCadenas = cadenaOriginal.split (patron, 2); 
+        document.write("La segunda subcadena es: "+subCadenas[1]);
+
+    </script>
+    
+</body>
+</html>
