@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+	
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Botones de opción. </title>
+
+		<style>
+			#d1{border: 1px solid maroon; width:500px; height:200px}
+		</style>
+				
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+			<legend>Formulario 1</legend>
+			<label id ="l1">Lenguajes de programación conocidos. (Seleccione una opción).</label><br><br>
+			<!--
+			<input type="radio" value="C" name="lenguaje" onclick ="opcion()"> C++ <br>
+			<input type="radio" value="Java" name="lenguaje" onclick ="opcion()"> Java <br>
+			<input type="radio" value="Cobol" name="lenguaje" onclick ="opcion()"> Cobol <br>
+			<input type="radio" value="Perl" name="lenguaje" onclick ="opcion()"> Perl <br><br>
+			-->
+			<input type="radio" value="C" name="lenguaje"> C++ <br>
+			<input type="radio" value="Java" name="lenguaje"> Java <br>
+			<input type="radio" value="Cobol" name="lenguaje"> Cobol <br>
+			<input type="radio" value="Perl" name="lenguaje"> Perl <br><br>
+			
+			<input type = "submit" value ="Enviar" name = "boton1" id ="b1" onclick="opcion()"><br><br>
+			</fieldset>
+			
+		</form>
+		<br>
+		<div id ="d1">
+		
+		</div>
+
+		
+		<script>
+		
+		//ACCESO A DATOS DE TIPO BOTON DE OPCIÓN.
+		
+		var  form1 = document.formulario1.elements;//// Carga todos los elementos del formulario en un array mediante el objeto elements.
+		//var botones = document.forms["formulario1"].elements["lenguaje"];// Carga sólo los elementos de tipo boton de opción en un array mediante el objeto elements y los nombres del formulario y del grupo de botones.
+		var botones = document.formulario1.lenguaje;// Carga sólo los elementos de tipo boton de opción en un array mediante los nombres del formulario y del grupo de botones.
+		/*
+		document.write("<br>Elementos en el array: " + form1.length + "<br><br>");
+		document.write("<br>Elementos de tipo botón de opción en el array: " + botones.length + "<br><br>");
+		*/
+		//Todos los elementos del array de tipo botón de opción mediante el índice.
+		/*
+			document.write("Elemento en el array de tipo botón: " + botones[0] + "<br>");
+			document.write("Elemento en el array de tipo botón: "  + botones[1] + "<br>");
+			document.write("Elemento en el array de tipo botón: " + botones[2] + "<br>");
+			document.write("Elemento en el array de tipo botón: "  + botones[3] + "<br><br>");
+*/
+		//Todos los elementos y sus propiedades mediante bucle for. (value, type y name).
+	
+			for (var i = 0; i < botones.length; i++)		
+				{
+					document.write("Nodo del elemento en el array en posición " + i + ".......................... "  + botones[i] + "<br>");
+					document.write("Propiedad tipo del elemento en el array en posición " + i + "........... "  + botones[i].type + "<br>");
+					document.write("Propiedades nombre del elemento en el array en posición " + i + "... "  + botones[i].name + "<br>");
+					document.write("Propiedades valor del elemento en el array en posición " + i + "....... "  + botones[i].value + "<br>");
+				}
+		
+			
+		// Propiedad checked. Permite conocer que opción se ha seleccionado.
+
+		// botones[índice].checked --> Devuelve true o false si una opción del grupo está seleccionada o no.
+		
+		// Con una condición se puede saber que opción ha sido pulsada. En el ejemplo, la función se ejecuta en respuesta al evento click sobre el botón "Enviar".
+		
+         
+		
+		 function opcion()
+		 {
+			 for (var i=0; i < botones.length; i++)
+			 {
+				seleccionada = botones[i].checked;
+				  if (seleccionada == true)
+				  {
+					 alert("Has elegido la opción " + botones[i].value);
+				   }
+             }
+		 }
+		
+		
+		
+		</script>
+
+	</body>
+ </html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Propiedad name</title>		
+		
+	</head>
+	<body>
+	
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1" name = "campo">
+			<legend name = "leyenda">Formulario 1</legend>
+			<label id ="l1">Usuario 1:</label>
+			<input type ="text" name = "usuario1" id ="u1"><br><br>
+			<label>Contraseña:</label>
+			<input type ="text" name = "pass1" id ="p1"><br><br>
+			<label>Edad:</label>
+			<input type ="number" name = "edad1" id ="e1"><br><br>
+			<label>Fecha de Nacimiento:</label>
+			<input type ="date" name = "fecha" id ="f1"><br><br>
+			<label>Comentarios:</label>
+			<textarea name = "com" id ="c1"></textarea><br><br>
+			
+			<input type = "submit" value ="Enviar formulario" name = "enviar" id ="b1" ><br><br> 
+			<input type = "reset" value ="Reestablecer formulario" name = "limpiar" id ="b2" ><br><br> 
+			<button type = "button" value ="Pulsar para enviar formulario" name = "benviar" id ="b3" >Pulsar para enviar formulario</button><br><br> 
+			</fieldset>
+		</form>
+				
+		<script>
+		
+		//ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS DE UN FORMULARIO.
+		
+		//Propiedad name. (Atributo que no se puede modificar por ser de sólo lectura).
+		
+			var  nombresE = document.formulario1.elements;// Carga de los elementos de un formulario en un array mediante el objeto elements.
+			
+			var nombreF = document.formulario1.name; //Carga en una variable del nombre del formulario.
+						
+			var ele0 = nombresE[0].name; // Carga en una variable del nombre del primer elemento que hay en el formulario.
+			var ele4 = nombresE[4].name; // Carga en una variable del nombre del quinto elemento que hay en el formulario.
+		
+
+		// Acceso a nombres mediante variables.
+		
+			document.write("Nombre del formulario: " + nombreF + "<br>"); // Nombre del formulario.
+			document.write("Nombre del elemento en posición 0 del array: " + ele0 + "<br>"); // Nombre del primer elemento que hay en el formulario.
+			document.write("Nombre del elemento en posición 4 del array: " + ele4 + "<br><br>");
+			
+		// Acceso mediante posición en array a los nombres de los elementos.
+		
+			document.write("Nombre del elemento en posición 0 del array: " + nombresE[0].name + "<br>");// Nombre del primer elemento que hay en el formulario.
+			document.write("Nombre del elemento en posición 2 del array: " + nombresE[2].name + "<br>");
+			document.write("Nombre del elemento en posición 7 del array: " + nombresE[7].name + "<br><br>");
+			
+		// Acceso mediante posición en array a los nombres de los elementos usando un bucle for.
+		
+			for (var i = 0; i < nombresE.length; i++)		
+			{
+				document.write("Nombre del elemento en posición " + i + " del array: " + nombresE[i].name + "<br>");
+			}
+		
+		// Acceso directo al nombre del formulario.
+		
+			document.write("<br>Nombre del formulario: " + document.formulario1.name + "<br><br>"); // Nombre del formulario. No tiene mucho sentido porque se usa el nombre que se busca para acceder.
+		
+		// Acceso directo al nombre de un elemento del formulario.
+
+			document.write("Nombre del campo de contraseña: " + document.formulario1.pass1.name + "<br>"); // Nombre del elemento pass1. No tiene mucho sentido porque se usa el nombre que se busca para acceder.
+			
+		</script>
+
+	</body>
+ </html>

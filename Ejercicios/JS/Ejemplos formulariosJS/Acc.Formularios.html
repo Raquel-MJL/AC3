@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios</title>		
+		
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset>
+			<legend>Formulario 1</legend>
+			<label>Usuario 1:</label>
+			<input type ="text" name = "usuario1" id ="u1"><br><br>
+			<label>Contraseña:</label>
+			<input type ="password" name = "pass1" id ="p1"><br><br>
+			</fieldset>
+			
+		</form>
+		
+		
+		<form action = "procesar.php" method = "get" name = "formulario2" id = "f2">
+		
+			<fieldset>
+			<legend>Formulario 2</legend>
+			<label>Usuario 2:</label>
+			<input type ="text" name = "usuario2" id ="u2"><br><br>
+			<label>Contraseña:</label>
+			<input type ="password" name = "pass2" id ="p2"><br><br>
+			</fieldset>
+			
+		</form>
+		
+		
+		<form action = "" method = "get" name = "formulario3" id = "f3">
+		
+			<fieldset>
+			<legend>Formulario 3</legend>
+			<label>Usuario 3:</label>
+			<input type ="text" name = "usuario3" id ="u3"><br><br>
+			<label>Contraseña:</label>
+			<input type ="password" name = "pass3" id ="p3"><br><br>
+			</fieldset>
+			
+		</form>
+		
+		<script>
+		
+			var  formularios = document.forms; //Carga de formularios en un array mediante el objeto forms.
+			document.write("<br>Formularios en el array: " + formularios.length + "<br><br>");// Número de formularios cargados en el array y a los que se puede acceder.
+		
+		//ACCESO A LOS FORMULARIOS.
+		
+		//Mediante el índice de cada uno de los elementos cargados en el array.
+		
+			document.write("Formularios en el array. Acceso mediante índice. " + formularios[0].id + "<br>");
+			document.write("Formularios en el array. Acceso mediante índice. " + formularios[1].name + "<br>");
+			document.write("Formularios en el array. Acceso mediante índice. " + formularios[2].method + "<br><br>");
+		
+		//Mediante el índice de cada elemento cargado en el array usando un bucle for.
+		
+			for (var i = 0; i < formularios.length; i++)		
+				{
+					document.write("Formularios en el array. Acceso mediante índice. Uso Bucle for " + decodeURI(formularios[i].action) + "<br>");
+				}
+		
+		//Mediante el atributo name del formulario. Opción 1.
+		
+			document.write("<br>Formularios en el array. Acceso mediante atributo name.Opción 1. " + document.forms["formulario1"] + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name.Opción 1. " + document.forms["formulario2"] + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name.Opción 1. " + document.forms["formulario3"] + "<br><br>");
+		
+		//Mediante el atributo name del formulario. Opción 2.
+		
+			document.write("<br>Formularios en el array. Acceso mediante atributo name.Opción 2. " + document.forms.formulario1 + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name.Opción 2. " + document.forms.formulario2 + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name.Opción 2. " + document.forms.formulario3 + "<br><br>");		
+		
+		//Mediante el atributo name del formulario. Opción 3.
+		
+			document.write("<br>Formularios en el array. Acceso mediante atributo name. Opción 3." + document.formulario1 + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name. Opción 3." + document.formulario2 + "<br>");
+			document.write("Formularios en el array. Acceso mediante atributo name. Opción 3." + document.formulario3 + "<br><br>");	
+
+		//Propiedad form.
+			
+				
+		</script>
+
+	</body>
+ </html>

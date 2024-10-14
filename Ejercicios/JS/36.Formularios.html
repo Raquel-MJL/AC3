@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios1</title>
+</head>
+<body>
+    <h3 style="margin:25%">Calculadora de Cubo</h3>
+    <form onsubmit=calcularCubo(event) style="margin: 25%;color:blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <label for="numero">Introduce un número:</label>
+        <input type="number" id="numero" required>
+        <button type="submit">Calcular Potencia</button>
+    </form>
+    <script>
+        function calcularCubo(event) {
+            event.preventDefault() //Evita que el formulario recargue la página al enviarse
+            const numero = document.getElementById('numero').value;
+            const cubo = Math.pow(numero, 3);
+            alert('El cubo de ' + numero + ' es: ' + cubo);
+        }
+    </script>
+
+    <form onsubmit="compararNum(event)">
+        <label for="numeros">Introduce dos números:</label>
+        <input type="int" id="numero1" required>
+        <input type="int" id="numero2"required>
+        <button type="submit">Comparar Numeros</button>
+        
+    </form>
+    <script>
+        function compararNum(event){
+            event.preventDefault();
+            const numero1 = parseFloat(document.getElementById('numero1').value);
+            const numero2 = parseFloat(document.getElementById('numero2').value);
+            if (numero1>numero2){
+                alert('El número mayor es: '+ numero1);
+            }if(numero2>numero1){
+                alert('El número mayor es: '+numero2);
+            }
+            
+            else{
+                alert('Ambos números son iguales');
+            }
+            
+        }
+    </script>
+<br><br>
+    <form onsubmit="concatenarNombre(event)">
+        <label>Introduce tu nombre:</label>
+        <input type="text" id="cuadroNombre" required>
+        <label>Introduce tus apellidos</label>
+        <input type="text" id="cuadroApellidos" required>
+               
+        <button type="submit">Concatenar Nombre y Apellidos</button>
+        <br>
+        <label>Datos: </label>
+        <textarea id="datosConcatenados" readonly></textarea>
+
+    </form>
+
+    <script>
+        function concatenarNombre(event){
+            event.preventDefault();
+            const string1=document.getElementById('cuadroNombre').value;
+            const string2=document.getElementById('cuadroApellidos').value;
+            const resultado=string1 + " " + string2;
+            document.getElementById('datosConcatenados').value=resultado;
+            //get para incluir datos 
+        }
+    </script>
+
+
+
+<!--
+ 
+
+Nota: Todos los formularios se pueden incluir en un contenedor Flexbox. */-->
+    
+    
+</body>
+</html>

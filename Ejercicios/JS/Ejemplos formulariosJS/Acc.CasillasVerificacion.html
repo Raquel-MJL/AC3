@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+	
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Botones de opción. </title>
+
+		<style>
+			#d1{border: 1px solid maroon; width:500px; height:200px}
+		</style>
+				
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+			<legend>Formulario 1</legend>
+			<label id ="l1">Lenguajes de programación conocidos. (Seleccione una opción).</label><br><br>
+			<input type="checkbox" value="C" name="lenguajeC"> C++ <br>
+			<input type="checkbox" value="java" name="lenguajeJava"> Java <br>
+			<input type="checkbox" value="cobol" name="lenguajeCobol" > Cobol <br>
+			<input type="checkbox" value="perl" name="lenguajePerl"> Perl <br><br>
+
+			<input type = "button" value ="Enviar" name = "boton1" id ="b1" onclick = "casillas()"><br><br> <!--Sólo se muestran las opciones elegidas si el formulario es enviado.-->
+			<input type = "reset" value ="Limpiar" name = "boton2" id ="b2" onclick = "limpiarDivision()">
+			</fieldset>
+			
+		</form>
+		<br>
+		<div id ="d1">
+		
+		</div>
+
+		
+		<script>
+		
+		//ACCESO A DATOS DE TIPO CASILLA DE VERIFICACIÓN.
+		/*
+		var  form1 = document.formulario1.elements;//// Carga todos los elementos del formulario en un array mediante el objeto elements.
+		var casillaC = document.forms["formulario1"].elements["lenguajeC"];// Acceso a cada casilla por separado mediante el objeto elements, y los nombres del formulario y la casilla. No se crea un array. 
+		var casillaJava = document.formulario1.lenguajeJava;// Acceso a cada casilla por separado mediante los nombres del formulario y la casilla. No se crea un array.
+		var casillaCobol = document.formulario1.lenguajeCobol;
+		var casillaPerl = document.formulario1.lenguajePerl;
+				
+		//Todas las casillas de verificación cargadas en variables.
+		
+			document.write("Elemento: " + casillaC + "<br>");
+			document.write("Elemento: " + casillaJava + "<br>");
+			document.write("Elemento: " + casillaCobol + "<br>");
+			document.write("Elemento: " + casillaPerl + "<br><br>");
+
+		//Casillas y sus propiedades(value, type y name).
+		
+			document.write("Nodo: "  + casillaJava  + "<br>");
+			document.write("Propiedad tipo: "  + casillaJava.type + "<br>");
+			document.write("Propiedad nombre: " + casillaJava.name  + "<br>");
+			document.write("Propiedad valor: "  + casillaJava.value  + "<br>");
+	*/
+			
+		// Propiedad checked. Permite conocer que casilla se ha seleccionado.
+
+		// document.nombre_formulario.nombre_casilla.checked --> Devuelve true o false si una casilla está seleccionada o no.
+		
+		// Con un bucle for y una condición se puede saber que opción ha sido pulsada. En el ejemplo, la función se ejecuta en respuesta al evento click sobre la opción.
+		/*
+		function casillas()
+		 {
+		    contenedor = document.getElementById("d1")
+			contenedor.innerHTML = "<h3>Lenguajes conocidos:</h3>"
+			 if (document.formulario1.lenguajeC.checked == true)
+			 {
+				c = "<p>" + document.formulario1.lenguajeC.value; + "</p>";
+			 }
+			 else
+			 {
+				c = "";
+			 }
+				if (document.formulario1.lenguajeJava.checked == true)
+			 {
+				java = "<p>" + document.formulario1.lenguajeJava.value; + "</p>";
+			 }
+			 else
+			 {
+				java = "";
+			 }
+			 if (document.formulario1.lenguajeCobol.checked == true)
+			 {
+				cobol = "<p>" + document.formulario1.lenguajeCobol.value; + "</p>";
+			 }
+			 else
+			 {
+				cobol = "";
+			 }
+			 if (document.formulario1.lenguajePerl.checked == true)
+			 {
+				perl = "<p>" + document.formulario1.lenguajePerl.value; + "</p>";
+			 }
+			 else
+			 {
+				perl = "";
+			 }
+			
+			 contenedor.innerHTML += c + java + cobol + perl;
+         }
+		*/
+		// Con 
+		
+		function casillas()
+		{
+			//contenedor = document.getElementById("d1");
+			let verificar = document.querySelectorAll("[type='checkbox']");
+			let seleccionados="";
+			for(let i=0;i<verificar.length;i++)
+			{		 
+				if (verificar[i].checked == true)
+					{
+						seleccionados = seleccionados + ", " + verificar[i].value;
+					}
+			
+			}
+			//alert("Has elegido los lenguajes: " + seleccionados);
+			//contenedor.innerHTML += seleccionados.substring(2);
+			document.getElementById("d1").innerHTML += seleccionados.substring(2);
+		}
+		
+		function limpiarDivision()
+		{
+			//contenedor=document.getElementById("d1");
+			//contenedor.innerHTML = null;
+			
+			document.getElementById("d1").innerHTML = null;
+		}
+		</script>
+
+	</body>
+ </html>

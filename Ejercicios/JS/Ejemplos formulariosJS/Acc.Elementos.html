@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Elementos</title>		
+		
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+			<legend>Formulario 1</legend>
+			<label id ="l1">Usuario 1:</label>
+			<input type ="text" name = "usuario1" id ="u1"><br><br>
+			<label>Contraseña:</label>
+			<input type ="password" name = "pass1" id ="p1"><br><br>
+			</fieldset>
+			
+		</form>
+		
+		<script>
+		
+			var  form1 = document.formulario1.elements;// Carga de los elementos de un formulario en un array mediante el objeto elements.
+			document.write("<br>Elementos en el array: " + form1.length + "<br><br>");// Número de elementos cargados en el array creado usando el formulario 1 y a los que se puede acceder.
+		
+		//ACCESO A LOS ELEMENTOS DE UN FORMULARIO.
+		
+		//Mediante el índice de cada uno elementos cargados en el array.
+		
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + form1[0] + "<br>");
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + form1[1] + "<br>");
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + form1[2] + "<br>");
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + form1[3] + "<br><br>");
+		
+		//Mediante el índice de cada elemento cargado en el array usando un bucle for.
+		
+			for (var i = 0; i < form1.length; i++)		
+				{
+					document.write("Elementos en el array Formulario 1. Acceso mediante índice. Uso Bucle for " + form1[i] + "<br>");
+				}
+		
+		//Mediante el atributo name del formulario y el del elemento usándolo como índice. Opción 1.
+		
+			document.write("<br>Elementos en el array Formulario 1. Acceso mediante atributos name. " + document.formulario1.elements["fs1"] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.
+			document.write("Elementos en el array Formulario 1. Acceso mediante atributos name. " + document.formulario1.elements["usuario1"] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (usuario1), del elemento.
+			document.write("Elementos en el array Formulario 1. Acceso mediante atributos name. " + document.formulario1.elements["pass1"] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (pass1), del elemento.
+			document.write("Elementos en el array Formulario 1. Acceso mediante atributos name. " + document.formulario1.elements["l1"] + "<br><br>");// Elemento no existente o no cargado en el array.
+		
+		//Mediante el atributo name del formulario y un índice. Opción 2.
+		
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[0] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario.
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[1] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario.
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[2] + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario.
+			document.write("Elementos en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[3] + "<br><br>");	// Elemento no existente o no cargado en el array.	
+		
+		//Mediante el atributo name del formulario y el del elemento directamente. Opción 3.
+		
+			document.write("<br>Elementos en el array Formulario 1. Acceso directo mediante atributos name." + document.formulario1.fs1 + "<br>");//Acceso directo al elemento mediante el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.
+			document.write("Elementos en el array Formulario 1. Acceso directo mediante atributos name." + document.formulario1.usuario1 + "<br>");//Acceso directo al elemento mediante el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.
+			document.write("Elementos en el array Formulario 1. Acceso directo mediante atributos name." + document.formulario1.pass1 + "<br>");//Acceso directo al elemento mediante el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.	
+			document.write("Elementos en el array Formulario 1. Acceso directo mediante atributos name." + document.formulario1.l1 + "<br><br>");// Elemento no existente o no cargado en el array.
+		</script>
+
+	</body>
+ </html>

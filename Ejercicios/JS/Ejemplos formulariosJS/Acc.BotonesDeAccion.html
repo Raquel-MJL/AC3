@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Propiedad type</title>		
+		
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+			<legend>Formulario 1</legend>
+			<label id ="l1">Usuario 1:</label>
+			<input type ="text" name = "usuario1" id ="u1"><br><br>
+			<label>Contraseña:</label>
+			<input type ="text" name = "pass1" id ="p1"><br><br>
+			<label>Edad:</label>
+			<input type ="number" name = "edad1" id ="e1"><br><br>
+			<label>Fecha de Nacimiento:</label>
+			<input type ="date" name = "fecha" id ="f1"><br><br>
+			<label>Comentarios:</label>
+			<textarea name = "com" id ="c1"></textarea><br><br>
+			
+			<input type = "submit" value ="Enviar formulario" name = "enviar" id ="b1" onclick = "value = 'Formulario enviado'"><br><br> <!--Con manejador de evento tipo atributo para cambio del texto de un botón. Sin embargo, el formulario no es enviado. También se puede usar onclick = "this.value = 'Formulario enviado'"-->
+			<input type = "reset" value ="Reestablecer formulario" name = "limpiar" id ="b2" onclick = "value = 'Formulario borrado'"><br><br> <!--Con manejador de evento tipo atributo para cambio del texto de un botón. También se puede usar onclick = "this.value = 'Formulario borrado'"-->
+			<button type = "button" value ="Pulsar para enviar formulario" name = "benviar" id ="b3" onclick = "innerHTML = 'Formulario enviado'">Pulsar para enviar formulario</button><br><br> <!--Con manejador de evento tipo atributo para cambio del texto de un botón. Hay que usar la propiedad innerHTML porque el texto de este tipo de botones no se pone con value. También se puede usar onclick = "this.innerHTML = 'Formulario enviado'"-->
+			
+			
+			</fieldset>
+			
+		</form>
+				
+		<script>
+		
+		
+			var  form1 = document.formulario1.elements;// Carga de los elementos de un formulario en un array mediante el objeto elements.
+		
+			var b1 = document.formulario1.enviar.value; // Carga del texto que hay en el botón en una variable. La propiedad value en un botón sólo muestra el texto de éste.
+			var b2 = document.formulario1.limpiar.value;
+			var b3 = document.formulario1.benviar.value;
+
+		//ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS DE UN FORMULARIO.
+		
+		//Propiedad value en botones.
+		
+
+		//Acceso mediante una variable que contiene el texto del botón.
+			
+			document.write("Texto del botón submit. Acceso mediante variable. " + b1 + "<br>");
+			document.write("Texto del botón reset. Acceso mediante variable. " + b2 + "<br>");
+			document.write("Texto del botón submit con button. Acceso mediante variable. " + b3 + "<br><br>");
+			
+			
+		//Acceso al texto mediante el índice de cada uno de los elementos cargados en el array.
+		
+			document.write("Texto del botón submit. Acceso mediante índice. " + form1[6].value + "<br>");
+			document.write("Texto del botón reset. Acceso mediante índice. " + form1[7].value + "<br>");
+			document.write("Texto del botón submit con button. Acceso mediante índice. " + form1[8].value+ "<br><br>");
+			
+				
+		//Acceso al texto mediante el índice de cada uno de los elementos tipo botón cargados en el array usando un bucle for.
+		
+			for (var i = 0; i < form1.length; i++)
+			{
+				if (i >= 6)
+				{
+					document.write("Texto del botón. Acceso mediante índice. Uso Bucle for. " + form1[i].value + "<br>");
+				}
+			}
+		
+		//Mediante el atributo name del formulario y el del elemento usándolo como índice. 
+		
+			document.write("<br>Texto del botón submit en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.elements["enviar"].value + "<br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario y el atributo name (enviar), del elemento.
+			document.write("Texto del botón reset en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.elements["limpiar"].value + "<br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario y el atributo name (limpiar), del elemento.
+			document.write("Texto del botón submit con button en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.elements["benviar"].value + "<br><br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario y el atributo name (benviar), del elemento.
+				
+		//Mediante el atributo name del formulario, un índice y la propiedad value. 
+		
+			document.write("<br>Texto del botón submit en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[6].value + "<br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario.
+			document.write("Texto del botón reset en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[7].value + "<br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario.
+			document.write("Texto del botón submit con button en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[8].value + "<br><br>");// Acceso al texto del botón mediante el atributo name (formulario1), del formulario.
+					
+		//Mediante los atributos name del formulario y de los elementos, y de la propiedad value. 
+		
+			document.write("Texto del botón submit en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.enviar.value + "<br>");//Acceso directo al texto del elemento mediante la propiedad value, el atributo name (formulario1), del formulario y el atributo name (enviar), del elemento.
+			document.write("Texto del botón reset en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.limpiar.value + "<br>");//Acceso directo al texto del elemento mediante la propiedad value, el atributo name (formulario1), del formulario y el atributo name (limpiar), del elemento.
+			document.write("Texto del botón submit con button en el array Formulario 1. Acceso mediante atributos name y propiedad value. " + document.formulario1.benviar.value + "<br><br>");//Acceso directo al texto del elemento mediante la propiedad value, el atributo name (formulario1), del formulario y el atributo name (benviar), del elemento.
+		</script>
+
+	</body>
+ </html>

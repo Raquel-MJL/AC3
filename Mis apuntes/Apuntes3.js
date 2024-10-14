@@ -1125,8 +1125,93 @@ o var nombre = new RegExp(“patrón”);
 //Ejemplo respecto a un <p> con id parrafo en HTML 
         var parrafo = document.getElementById("parrafo").innerHTML;
         const patron3=/a/gim;
-        var coincidencias1=parrafo.match(patron3);  
+        var coincidencias1=parrafo.match(patron3); 
+//Get se usa para acceder a los datos pero también para añadir datos nuevos 
 
+//FORMULARIO -!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    onclick=funcionQueEjecutaAlgo //El usuario al clickar activa el comportamiento de la función
+    //DOM → Estructura jerárquica de un HTML. Accedemos a él para poner o quitar contenido
+    //ACCESO A FORMULARIOS.
+    
+    //Cuando se carga la página web en el navegador, el DOM crea un array con todos los formularios.
+    //El array se llama forms
+    //Accedemos con document y se necesita conocer el índice donde el formulario en concreto está almacenado.
+        
+        document.forms[0]; // Acceso al primer formulario.      
+        document.forms[2]; // Acceso al tercer formulario.
+        
+    //Acceder a formularios en la carpeta EJEMPLOS FORMULARIOS
+    //Resumen y ejemplos: 
+    document.getElementById("formId") //Accede al formulario por su ID.
+    document.forms["formName"] //Accede al formulario por su nombre.
+    document.forms[index] //Accede al formulario por su índice en el array del DOM.
+    document.querySelector("form") //Selecciona el primer formulario en el documento.
+    document.querySelectorAll("form") //Selecciona todos los formularios y devuelve una lista de nodos.
+
+    //Accediendo a elementos dentro del formulario:
+    form.elements["elementName"] //Accede a un elemento del formulario por su nombre.
+    form.elements[index] //Accede a un elemento del formulario por su índice.
+//APUNTES:
+/*
+    ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS. 
+    Se  puede  acceder  a  las  propiedades  de  un  elemento  para consultar o modificar su contenido. 
+    → type. (tipo de elemento) 
+        → input (muestra valor del atributo type que tengan:text, password, radio, etc)
+            text, password, radio, etc. 
+        → select (muestra valores select-one o select-multiple)
+        →textarea 
+    →form. (A qué formulario pertenece el elemento)
+    →name (obtiene el valor del atributo name de un elemento). Solo lectura.
+    →value (Accede a la propiedad value de un elemento, texto introducido por el usuario ) 
+
+ 
+
+
+
+
+
+o Permite obtener el texto escrito por el usuario o escribir texto 
+en ellos. 
+• Botones de acción o comando. 
+o Muestran  el  texto  que  tiene  el  botón  o  permiten  cambiarlo 
+por otro. 
+• Botones de opción(radio) y casillas de verificación (checkbox): 
+o Muestran  el  valor  del  atributo  value,  que  permite  conocer 
+que valor tiene la opción seleccionada.  
+o Este valor también puede ser cambiado. 
+▪ Sintaxis: 
+• Carga de valor: 
+o variable = document.nombreformulario.nombre 
+elemento.value; 
+o variable = document.getElementById(“identificador”).value; 
+// Mediante método get. 
+• Cambio de valor: 
+o document.nombreformulario.nombre elemento.value = 
+nuevo valor; 
+o document.getElementById(“identificador”).value  =  nuevo 
+valor; 
+▪ Ejemplos: 
+• Carga de valor: 
+o <label>Dirección<input type = "text" name = "dir" 
+id=”d”)></label> 
+o let  direccion  =  document.for1.dir.value;  //  Acceso  al  campo 
+dirección  del  formulario  for1  para  guardar,  en  la  variable 
+direccion, lo que el usuario haya escrito en este campo. 
+o let  direccion  =  document.getElementById(“d”).value;  // 
+Acceso  al  campo  dirección  del  formulario  for1  mediante  un 
+método  get  para  guardar,  en  la  variable  direccion,  lo  que  el 
+usuario haya escrito en este campo. 
+• Cambio de valor: 
+o <label>Comentarios</label><textarea name = "coment" 
+id=”com”></textarea> 
+o document.for1bre  elemento.coment.value  =  “Nuevo 
+comentario”;  //Acceso  al  área  de  texto  del  formulario  for1 
+para escribir en ella un nuevo comentario. 
+o document.getElementById(“com”).value  =  “Nuevo 
+comentario”;  //Acceso  al  área  de  texto  del  formulario  for1 
+usando un método get, para escribir en ella un nuevo 
+comentario. */
 
 
     

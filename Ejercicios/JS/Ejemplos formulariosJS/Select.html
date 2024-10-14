@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Select</title>		
+		
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "F1" id = "form1">
+		
+			<h2>Selecciona un idioma</h2>
+			<!--<select id ="idioma" name ="opcion" onChange="seleccionado()"><!-- Evento onChange() que reacciona a la opción elegida, ejecutando una función. -->
+			<!--<select name  ="opcion">-->
+			<select id ="idioma" name ="opcion" multiple> --> <!-- Menú desplegable con selección múltiple. -->
+				<option value = "inglés">Inglés</option>
+				<option value = "frances">Francés</option>
+				<option value = "alemán">Alemán</option>
+				<option value = "italiano">Italiano</option>
+			</select>
+			<label>Idioma elegido:</label><input type = "text" id = "elegido" name = "lengua">
+			<input type="submit" value="Probar Opciones" onClick = "accesoSelect()">
+		</form>
+
+		<script>
+
+			function accesoSelect()
+			
+			{ 
+				var acceso = document.F1.opcion; //Elemento select. Acceso al elemento select --> document.valor atributo name del formulario.valor del atributo name del elemento select;
+				var menu = acceso.options; // Creación de un array con todas las opciones del elemento select usando la propiedad options.
+				//var menu = document.F1.opcion.options; // Equivalente a las 2 intrucciones anteriores. Creación de un array con todas las opciones del elemento select usando la propiedad options.
+				var numOpciones = menu.length; // Carga en variable del número de opciones del elemento select. Cantidad de elementos del array menu.
+				//var numOpciones = document.F1.opcion.length; //Equivalente a anterior. Carga en variable del número de opciones del elemento select. Cantidad de elementos del array menu.
+				var indice = menu.selectedIndex;//Permite conocer el índice de la posición que ocupa en el array el elemento seleccionado.
+				//var indice = document.F1.opcion.selectedIndex; //Equivalente a anterior. Permite conocer el índice de la posición que ocupa en el array el elemento seleccionado.
+				//var indice = acceso.selectedIndex; //Equivalente a anterior. Permite conocer el índice de la posición que ocupa en el array el elemento seleccionado.
+				var valor = menu[indice].value; // La propiedad value permite cargar el valor del atributo value de la opción seleccionada. 
+				//var valor = document.F1.opcion.options[indice].value;// Equivalente a anterior. La propiedad value permite cargar el valor del atributo value de la opción seleccionada. 
+				var idioma = menu[indice].text; // La propiedad text permite cargar el nombre de la opción seleccionada. 
+				//var idioma = document.F1.opcion.options[indice].text; // Equivalente a anterior. La propiedad text permite cargar el nombre de la opción seleccionada. 
+				
+				
+				//Mostrar distintos contenidos extraídos del menú de opciones con document.write().
+				
+				/*document.write("El número de opciones del cuadro de selección es : " + numOpciones + "<br>");				 
+				document.write("Índice de la opcion seleccionada: " + indice + "<br>");
+				document.write("1. Valor de la opción seleccionada: " + valor + "<br>");
+				document.write("2. Valor de la opción seleccionada: " + menu[indice].value + "<br>");// Equivalente a anterior.
+				document.write("1. Idioma elegido: " + idioma + "<br>");
+				document.write("2. Idioma elegido: " + menu[indice].text + "<br>");// Equivalente a anterior.
+				*/
+				//Mostrar distintos contenidos extraídos del menú de opciones con alert().
+				
+				//alert("El número de opciones del cuadro de selección es : " + numOpciones + "\nÍndice de la opcion seleccionada: " + indice + "\nValor de la opción seleccionada: " + valor + "\nIdioma elegido: " + idioma);
+			
+				//Mostrar todas las opciones que incluye el menú usando un bucle for.
+			
+				for (var i = 0; i < menu.length; i++)
+				{
+					document.write("El idioma con valor " + menu[i].value + " e índice " + i + " es el " + menu[i].text + ".<br>");
+				}
+				
+				//Mostrar todas las opciones de una selección múltiple usando un bucle for y la propiedad selected.
+				
+				
+				var conjunto;
+				for (var i = 0; i < menu.length; i++)
+				{
+					if (menu[i].selected == true )
+					{
+						conjunto = menu[i].text;
+						document.write("Idioma elegido en selección múltiple: " + conjunto + ". Almacenado en la posición " + i + " del array.<br>");
+					}
+				}
+				
+			}
+			// Enviar una opcion seleccionada a un campo de texto.
+			
+		/*	function seleccionado() //Está función se ejecuta al seleccionar una ocpión en la lista, gracias al evento onChange.
+		{
+            //document.getElementById("elegido").value =
+            //document.getElementById("idioma").options[document.getElementById("idioma").selectedIndex].value;
+			//confirmar lo de abajo.
+			sel = document.getElementById("idioma").selectedIndex;
+			document.getElementById("elegido").value = document.getElementById("idioma").options[sel].value;
+		}
+		*/
+		</script>
+
+
+
+	</body>
+ </html>

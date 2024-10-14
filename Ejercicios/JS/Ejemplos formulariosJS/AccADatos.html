@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Input tipo text, password y Textarea </title>		
+		
+		<style>
+		
+			#d0{
+				display:flex;
+				justify-content:space-around;
+			}
+			#d1,fieldset{
+				border: 1px solid maroon;
+				width:500px;
+				height:200px;
+				padding:10px;
+			}
+			#c1{
+				resize:none;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+	<div id ="d0">
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+				<legend>Formulario 1</legend>
+				<p>
+					<label id ="l1">Usuario:</label>
+					<!--<input type ="text" name = "usuario1" id ="u1">-->
+					<input type ="text" name = "usuario" id ="u1" value = "Escribe aquí tu nombre">
+				</p>
+				<p>
+					<label>Contraseña:</label>
+					<!--<input type ="password" name = "pass1" id ="p1">-->
+					<input type ="password" name = "pass1" id ="p1" placeholder ="Escribe aquí tu contraseña">
+				</p>
+				<p>
+					<label>Comentarios:</label>
+					<textarea name = "com" id ="c1"></textarea>
+				</p>
+					<input type = "button" value ="Enviar" name = "boton1" id ="b1" onclick = "datos()">
+			</fieldset>
+			
+		</form>
+		
+		<div id ="d1">
+		
+		</div>
+	</div>
+		
+		<script>
+		
+		//ACCESO A DATOS DE TIPO TEXTO.
+		
+		//Propiedad value. (Sólo se mostrará el texto si se escribe en el campo o éste tiene un texto por defecto).
+			
+			
+		// Carga de los contenidos en variables usando atributos name.
+		/*	
+			let nombre = document.formulario1.usuario.value; // Carga del tipo del elemento en una variable.
+			let contraseña = document.formulario1.pass1.value;
+			//let contraseña = document.formulario1.pass1.placeholder; // Usar éste atributo si el texto por defecto está incluido con el atributo placeholder.
+			let comentarios = document.formulario1.com.value;
+		*/
+		
+		// Carga de los contenidos en variables usando atributo id.
+		/*	
+			let nombre = document.getElementById("u1").value; 
+			let contraseña = document.getElementById("p1").value; 
+			let contraseña = document.getElementById("p1").placeholder; 
+			let comentarios = document.getElementById("c1").value; 
+		*/
+		
+		// Acceso a contenidos mediante variables. No se muestra nada porque se ejecuta write()
+		//antes de llegar a escribir en los campos.
+		//Se necesita un evento que llame a una función tras escribir o valores por defecto.
+		/*
+			document.write("Nombre escrito: " + nombre + "<br>"); 
+			document.write("Contraseña escrita: " + contraseña + "<br>"); 
+			document.write("Edad escrita: " + comentarios + "<br><br>");
+		*/	
+		// Acceso a contenidos mediante variables al llamar a una función que los muestra en un cuadro alert().
+		/*
+			function datos()
+			{
+				
+				let nombre0 = document.getElementById("u1").value; 
+				let contraseña0 = document.getElementById("p1").value; 
+				let comentarios0 = document.getElementById("c1").value; 
+				alert("Tus datos: " +"\n" + nombre0 + "\n" + contraseña0 + "\n" + comentarios0 );
+			}
+		*/	
+		// Acceso a contenidos mediante variables al llamar a una función que los muestra en la página web.
+		/*	
+			function datos()
+			{
+				let contenedor = document.getElementById("d1");
+				let nombre1 = document.getElementById("u1").value; 
+				let contraseña1 = document.getElementById("p1").value; 
+				let comentarios1 = document.getElementById("c1").value; 
+				//contenedor.innerHTML = "<p>" + nombre1 +"</p>" + "<p>" + contraseña1+"</p>" + "<p>" + comentarios1 +"</p>";
+				contenedor.innerHTML = nombre1.concat(", ",contraseña1,", ",comentarios1);
+			}
+		*/
+		// Acceso a contenidos mediante variables al llamar a una función que los muestra en la página con write().
+		
+			function datos()
+			{
+				let nombre2 = "<p>" + document.getElementById("u1").value+ "</p>"; 
+				let contraseña2 = "<p>" + document.getElementById("p1").value+ "</p>"; 
+				let comentarios2 = "<p>" + document.getElementById("c1").value+ "</p>"; 
+				document.write(nombre2 + contraseña2 + comentarios2);
+			}	
+	
+		</script>
+
+	</body>
+ </html>

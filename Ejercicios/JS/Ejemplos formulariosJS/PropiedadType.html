@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Acceso a Formularios: Propiedad type</title>		
+		
+	</head>
+	<body>
+
+		<form action = "" method = "get" name = "formulario1" id = "f1">
+		
+			<fieldset id = "fs1">
+			<legend>Formulario 1</legend>
+			<label id ="l1">Usuario 1:</label>
+			<input type ="text" name = "usuario1" id ="u1"><br><br>
+			<label>Contraseña:</label>
+			<input type ="text" name = "pass1" id ="p1"><br><br>
+			<label>Edad:</label>
+			<input type ="number" name = "edad1" id ="e1"><br><br>
+			<label>Fecha de Nacimiento:</label>
+			<input type ="date" name = "fecha" id ="f1"><br><br>
+			<label>Comentarios:</label>
+			<textarea name = "com" id ="c1"></textarea><br><br>
+			<input type = "button" name = "boton1" id ="b1"><br><br>
+			</fieldset>
+			
+		</form>
+				
+		<script>
+		
+		//ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS DE UN FORMULARIO.
+		
+		//Propiedad type.
+			
+			
+			var  form1 = document.formulario1.elements;// Carga de los elementos de un formulario en un array mediante el objeto elements.
+			
+			var tipo1 = document.formulario1.fs1.type; // Carga del tipo del elemento en una variable.
+			var tipo2 = document.formulario1.usuario1.type;
+			var tipo3 = document.formulario1.pass1.type;
+			var tipo4 = document.formulario1.edad1.type;
+			var tipo5 = document.formulario1.fecha.type;
+			var tipo6 = document.formulario1.com.type;
+			var tipo7 = document.formulario1.boton1.type;
+			
+		
+		//Acceso mediante una variable que contiene el tipo.
+			
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo1 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo2 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo3 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo4 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo5 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo6 + "<br>");
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante variable. " + tipo7 + "<br><br>");
+			
+		//Acceso al tipo mediante el índice de cada uno de los elementos cargados en el array.
+		
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[0].type + "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[1].type + "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[2].type+ "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[3].type + "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[4].type + "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[5].type+ "<br>");
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + form1[6].type+ "<br><br>");
+				
+		//Acceso al tipo mediante el índice de cada uno de los elementos cargados en el array usando un bucle for.
+		
+			for (var i = 0; i < form1.length; i++)		
+				{
+					document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante índice. Uso Bucle for. " + form1[i].type + "<br>");
+				}
+		
+		//Mediante el atributo name del formulario y el del elemento usándolo como índice. 
+		
+			document.write("<br>Tipo del elemento en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.elements["fs1"].type + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.elements["usuario1"].type + "<br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (usuario1), del elemento.
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.elements["pass1"].type + "<br><br>");// Acceso al elemento mediante el atributo name (formulario1), del formulario y el atributo name (pass1), del elemento.
+				
+		//Mediante el atributo name del formulario, un índice y la propiedad type. 
+		
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[0].type + "<br>");// Acceso al tipo del elemento mediante el atributo name (formulario1), del formulario.
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[1].type + "<br>");// Acceso al tipo del elemento mediante el atributo name (formulario1), del formulario.
+			document.write("Tipo del elemento en el array Formulario 1. Acceso mediante índice. " + document.formulario1.elements[2].type + "<br><br>");// Acceso al tipo del elemento mediante el atributo name (formulario1), del formulario.
+					
+		//Mediante los atributos name del formulario y de los elementos, y de la propiedad type. 
+		
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.fs1.type + "<br>");//Acceso directo al tipo del elemento mediante la propiedad type, el atributo name (formulario1), del formulario y el atributo name (fs1), del elemento.
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.usuario1.type + "<br>");//Acceso directo al tipo del elemento mediante la propiedad type, el atributo name (formulario1), del formulario y el atributo name (usuario1), del elemento.
+			document.write("Tipo del elemento cargado en el array Formulario 1. Acceso mediante atributos name y propiedad type. " + document.formulario1.pass1.type + "<br><br>");//Acceso directo al tipo del elemento mediante la propiedad type, el atributo name (formulario1), del formulario y el atributo name (pass), del elemento.
+		</script>
+
+	</body>
+ </html>
