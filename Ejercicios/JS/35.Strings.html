@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 2</title>
+</head>
+<body>
+    <script>
+
+        //Ejercicio 1
+
+        /*
+
+        var texto="Volverán las oscuras golondrinas"; 
+        document.write("Texto original: "+texto+"<br>"); 
+        document.write("Número de caracteres: "+texto.length+"<br>"); 
+        document.write ("Primer caracter: "+texto.charAt(0)+"<br>");
+        document.write("Último carácter: " + texto.charAt(texto.length - 1) + "<br>");
+        document.write("Los primeros cinco caracteres: "+texto.substring(0,5)+"<br>");
+        document.write("Frase convertida a Mayus: "+texto.toUpperCase()+"<br>");
+        document.write("Frase convertida a minus: "+texto.toLowerCase()+"<br>");
+        document.write("Frase repetida 3 veces: "+texto.repeat(3)+"<br>");
+        document.write ("Frase concatenada a un punto: "+texto.concat(".")+"<br>");
+        if (texto.includes("golondrinas")){
+            document.write ("La palabra 'golondrinas' está en la frase"+"<br>");
+        }else{
+            document.write("La palabra 'golondrinas' no está en la frase"+"<br>");
+
+        }
+        */
+        
+        //Ejercicio 2
+        /*
+        let frase=prompt("Introduce una frase: ","");
+        let palabra=prompt("Introduce una palabra: ");
+        document.write ("La frase es: "+frase+"<br>"+"Y la palabra es: "+palabra+"<br>");
+
+        if (frase.includes(palabra)){
+            document.write("Coincidencia: "+palabra + "<br>"+"Y su posición: "+frase.indexOf(palabra));
+            
+        }
+        */
+
+        //Ejercicio 3
+        let palabra=prompt("Escriba una palabra: ","")
+
+
+        let vocales = "aeiouAEIOUáéíóú"; 
+        let contadorVocales = 0;
+
+        for (let i = 0; i < palabra.length; i++) {
+            if (vocales.includes(palabra.charAt(i))) {
+                contadorVocales++;
+            }
+        }
+
+        document.write("Número de vocales: " + contadorVocales + "<br>");
+
+
+    
+
+        
+    
+
+
+        
+
+    </script>
+    
+</body>
+</html>
