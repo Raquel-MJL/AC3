@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(175, 207, 177);
+}
+
+#divPpal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre los formularios */
+}
+
+
+#divPpal div{
+    background-color: rgb(187, 170, 123);
+}
+
+*{
+    color:rgb(63, 57, 48)
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columnas */
+    align-items: center; /* Centra los elementos del formulario */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el cuadro de texto */
+}
+
+input[type="text"], input[type="password"], input[type="button"] {
+    margin-bottom: 10px; /* Espacio entre los cuadros de texto */
+    padding: 10px; /* Espacio interno en los cuadros de texto */
+    width: 200px; /* Ancho fijo para los cuadros de texto */
+}
+
+input[type="button"] {
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}

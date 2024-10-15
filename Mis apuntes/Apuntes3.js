@@ -1166,6 +1166,11 @@ o var nombre = new RegExp(“patrón”);
     →value (Accede a la propiedad value de un elemento, texto introducido por el usuario ) 
 
  
+document.getElementById("contraseña1").value = ""; USADO PARA SOBREESCRIBIR
+let variable noseque = document.getElementById("contraseña1").value  USADO PARA OBTENER INFO
+.cheked → Botones de opción (tienen que tener todas las opciones el mismo name
+.querySelector // Acceder a los selectores CSS
+
 
 
 

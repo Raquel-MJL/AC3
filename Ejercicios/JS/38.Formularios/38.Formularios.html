@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 4</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <!--Ejercicio 1-->
+    <div id="divPpal">
+
+        <div>
+    
+            <form id="formid" name="formn">
+                <label>Usuario:</label>
+                <input id="user" type="text" maxlength="40"><br>
+                <label>Contraseña:</label>
+                <input id="pass" name="passn" type="password" maxlength="30">
+                <input id="boton1"type="button" value="Entrar" onclick="datosIncompletos()">
+            </form>
+            <script>
+
+                function datosIncompletos(){
+                    let usuario= document.getElementById("user").value;
+                    let contraseña=document.getElementById("pass").value;
+                    if (usuario=="" || contraseña==""){
+                        alert("Debe introducir los datos obligatoriamente")
+                    }else if(contraseña.length<8 || contraseña.length>25){
+                        alert("Número de caracteres incorrecto. La contraseña debe estar entre 8 y 25 caracteres")
+                        document.getElementById("pass").value = ""; // Vaciar el campo de contraseña
+                        //document.formn.passn.value="" //Lo mismo que la de arriba pero usando name 
+
+                    }else{
+                        alert("Login correcto");
+                    }
+                }
+
+            </script> 
+        </div>
+
+        <div>
+            <form>
+                <label>Contraseña: </label>
+                <input id="contraseña1" name="con1name" type="text" maxlength="40"><br>
+                <label>Repetir contraseña: </label>
+                <input id="contraseña2" name="con2name" type="text" maxlength="40">
+                <input id="boton" type="button" value="Verificar contraseña" onclick="comprobarCons()">
+
+            </form>
+
+            <script>
+                function comprobarCons(){
+                    let con1=document.getElementById("contraseña1").value;
+                    let con2=document.getElementById("contraseña2").value;
+                    if(con1===con2){
+                        alert("Ambas claves son iguales");
+                    }else {
+                        alert("Ambas claves son distintas. Escríbalas de nuevo.")
+                    }
+                    document.getElementById("contraseña1").value = "";
+                    document.getElementById("contraseña2").value = "";
+
+
+                }
+
+            </script>
+        </div>
+    </div>
+
+    
+</body>
+</html>

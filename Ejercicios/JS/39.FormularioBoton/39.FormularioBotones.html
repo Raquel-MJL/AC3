@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="divPpal">
+        
+        <!--Ejercicio 1-->
+        
+        <div>
+        <form>
+            <label>Nombre: </label>
+            <input id="nombreId" name="nombreName" type="text" maxlength="40"><br>
+            <label>Comentarios: </label>
+            <textarea id="areaId" name="areaName" cols="35"></textarea>
+            <input type="button" id="enviarBoton" name="enviarName" value="Enviar Comentarios" onclick="verificarComentarios()">
+            <input type="reset" id="restablecerBoton" name="restablecerName" >
+
+        </form>
+        </div>
+        <script>
+            function verificarComentarios(){
+                let stringNombre=document.getElementById("nombreId").value; 
+                let stringComentarios=document.getElementById("areaId").value;
+                let cadenaPalabras=stringComentarios.split(/\s+/);
+                if(cadenaPalabras.length<10){
+                    alert(stringNombre+" has escrito "+cadenaPalabras.length +  " palabras. Muy poquitas... escribe alguna más, please");
+                }
+            }
+        </script> 
+
+
+
+
+        
+        <!--Ejercicio2-->
+        
+
+        <div>
+        <form>
+            <label>¿Eres mayor de edad?</label><br><br>
+            <input id="botonSiId" name="edadName" type="radio" >Si<br><br>
+            <input id="botonNoId" name="edadName" type="radio" >No<br><br>
+            <input id="enviarEdadId" name="enviarEdadName" type="button" value="Comprobar Edad" onclick="abrirPag()">
+
+        </form>
+        </div>
+        <script>
+            function abrirPag(){
+                let si = document.getElementById("botonSiId").checked;
+                let no = document.getElementById("botonNoId").checked;
+                if(si){
+                window.open("https://es.wikipedia.org/wiki/Wikipedia:Portada");
+                }else{
+                    alert("No eres mayor de edad. No puedes acceder a nuestro sitio web");
+                }
+            }
+        </script>
+
+
+
+
+        <!--Ejercicio 3-->
+        
+        <div>
+        <form id="formulario">
+            <label>Nivel de estudios:</label>
+            <br>
+            <input type="radio" id="sinEstudiosId" name="estudios" value="Sin estudios">Sin estudios <br>
+            <input type="radio" id="primariaId" name="estudios" value="Primaria">Primaria<br>
+            <input type="radio" id="secundariaId" name="estudios" value="Secundaria">Secundaria<br>
+            <input type="radio" id="bachillerId" name="estudios" value="Bachillerato">Bachillerato<br>
+            <input type="radio" id="diplomadoId" name="estudios" value="Diplomado">Diplomado<br>
+            <input type="radio" id="licenciadoId" name="estudios" value="Licenciado">Licenciado<br>
+            <input type="radio" id="otrosId" name="estudios" value="Otros">Otros<br>
+            <br>
+            <label>Estudios seleccionado:</label>
+            <input id="campoTexto" type="text" readonly maxlength="30">
+            <input  type="button" value="Mostrar nivel de estudios" onClick="comprobarEstudios()">
+        </form>
+        </div>
+
+        <script>
+            function comprobarEstudios(){
+            let formulario= document.getElementById("formulario");
+            const elementos1=formulario.elements;
+            for(i=0;i<elementos1.length;i++){
+                if (elementos1[i].checked){
+                    document.getElementById("campoTexto").value=elementos1[i].value;
+                }
+
+            }
+        }
+
+        </script>
+        
+
+
+
+
+        <!--Ejercicio 4-->
+
+        
+        <div>
+
+        <form id="formulario2">
+            <label>Idiomas. Seleccione los que conozca:</label><br>
+            <input id="check1" type="checkbox" value="Español">Español<br>
+            <input id="check2" type="checkbox" value="Inglés">Inglés<br>
+            <input id="check3" type="checkbox" value="Francés">Francés<br>
+            <input id="check4" type="checkbox" value="Portugués">Portugués <br>
+            <input id="check5" type="checkbox" value="Japonés">Japonés <br>
+            <br>
+            <label>Idiomas seleccionados:</label>
+            <input type="text" maxlength="45" id="campoTextoId">
+            <input id="botonIdiomasId" type="button" value="Mostrar Idiomas" onClick="concatenarIdioma()">
+            <input id="botonReset" type="reset" value="Borrar Selección ">
+
+        </form>
+        </div>
+        <script>
+            const formulario2=document.getElementById("formulario2");
+            const elementos=formulario2.elements;
+            
+
+            function concatenarIdioma(){
+                let seleccionado='';
+
+                for (let i = 0; i < elementos.length; i++) {
+                if (elementos[i].checked) {
+                    seleccionado += elementos[i].value + ", ";
+                    
+                    }
+                }
+            document.getElementById("campoTextoId").value=seleccionado;
+            }
+        </script> 
+
+    </div>
+    
+</body>
+</html>

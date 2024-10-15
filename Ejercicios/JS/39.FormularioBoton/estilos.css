@@ -1,0 +1,38 @@
+body{
+    background-color:rgb(218, 204, 224);
+}
+#divPpal{
+    display:flex;
+    justify-content: space-around;
+}
+#divPpal div{
+
+    margin:5px;
+    padding:5px;
+    background-color: rgb(207, 225, 231);
+    border:2px solid;
+    border-color: rgb(155, 135, 175);
+    border-radius: 20px;
+}
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(87, 119, 148)
+}
+
+textarea{
+    resize: none;
+}
+
+#enviarBoton , #botonIdiomasId {
+    float:left;
+}
+
+#restablecerBoton, #botonReset{
+    float:right;
+}
+
+label{
+    font-weight: bold;
+    color:rgb(155, 135, 175);
+}
+
