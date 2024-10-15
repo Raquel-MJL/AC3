@@ -1,0 +1,48 @@
+
+	/* Hoja de estilos para el ejercicio Formulario 7.*/
+	
+			#contenedor1,#contenedor2{
+				display:flex;
+				justify-content:space-around;
+				font-family:verdana, sans-serif;
+				margin: 20px 0px;
+								
+			}
+			
+			fieldset{
+				border:2px solid #444;
+				background:#ddd;
+				box-shadow: 5px 5px 2px #ccc;
+				border-radius:5px;
+				width:250px;
+			}
+						
+			#contenedor2 fieldset{
+			
+				width:340px;
+			}
+			.formu p label{
+				width:50%;
+				float:left;
+			}
+			.formutot p label{
+				width:40%;
+				float:left;
+			}
+			label{
+				font-weight:bold;
+			}
+			
+			.precios{
+				text-align:right;
+			}
+			
+			.bot{
+				font-size:16px;
+				color:maroon;
+				font-weight:bold;
+			}
+			#pedido{
+				resize:none;
+			}
+			

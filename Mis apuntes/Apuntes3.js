@@ -1133,6 +1133,7 @@ o var nombre = new RegExp(“patrón”);
     onclick=funcionQueEjecutaAlgo //El usuario al clickar activa el comportamiento de la función
     //DOM → Estructura jerárquica de un HTML. Accedemos a él para poner o quitar contenido
     //ACCESO A FORMULARIOS.
+    onChange=funcionQueEjecutaAlgoAlCambio
     
     //Cuando se carga la página web en el navegador, el DOM crea un array con todos los formularios.
     //El array se llama forms

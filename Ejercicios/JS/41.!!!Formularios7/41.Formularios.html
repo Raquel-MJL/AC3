@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Formularios 7</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="estilos.css">
+		<script src="script.js">
+		</script>
+
+	</head>
+	<body>
+	<div id ="contenedor1">
+		<form action="" method="post" id ="for1" name = "f1" >
+			<fieldset>
+			<div id="d1" class = "formu">
+				<p>
+					<label>Pizzas:</label>
+					<select id = "pizzas" name = "pizz" >
+					
+							<option value = "8.00">Jamon y Queso</option>
+							<option value = "12.00">Barbacoa</option>
+							<option value = "10.50">Carbonara</option>
+							<option value = "7.50">Margarita</option>
+							
+					</select>
+				</p>
+			</div>
+			<div id="d2" class = "formu">
+				<p>
+					<label>Precio Euros:</label>
+					<input type = "text" id = "precio1" class ="precios" name = "dinerito1" size= "12">
+				</p>
+			</div>
+			<div id="d3" class = "formu">
+				<p>
+					<label>Cantidad:</label>
+					<input type = "number" id = "cantidad1" min="1" name = "cant1" size= "12" onChange="precioFinal1()">
+				</p>
+			</div>
+			<p>
+					<input type = "reset" id = "boton1" name = "b1" class="bot" value = "Limpiar">
+			</p>
+			</fieldset> 
+		</form>
+		
+		<form action="" method="post" id ="for2" name = "f2">
+			<fieldset>
+			<div id="d4" class = "formu">
+				<p>
+					<label>Complementos:</label>
+					<select id = "complementos" name = "comp" >
+					
+							<option value = "1.00">Patatas Fritas</option>
+							<option value = "1.50">Patatas Grill</option>
+							<option value = "1.50">Aros de Cebolla</option>
+							<option value = "2.00">Tiras de Pollo</option>
+													
+					</select>
+				</p>
+			</div>
+			<div id="d5" class = "formu">
+				<p>
+					<label>Precio Euros:</label>
+					<input type = "text" id = "precio2" class ="precios" name = "dinerito2" size= "12">
+				</p>
+			</div>
+			<div id="d6" class = "formu">
+				<p>
+					<label>Cantidad:</label>
+					<input type = "number" id = "cantidad2" min="1" name = "cant2" size= "12" onChange="precioFinal2()">
+				</p>
+			</div>
+			<p>
+					<input type = "reset" id = "boton2" name = "b2" class="bot" value = "Limpiar">
+			</p>
+			</fieldset> 
+		</form>
+		
+		<form action="" method="post" id ="for3" name = "f3">
+			<fieldset>
+			<div id="d7" class = "formu">
+				<p>
+					<label>Postres:</label>
+					<select id = "postres" name = "post" >
+					
+							<option value = "4.50">Tiramisú</option>
+							<option value = "4.00">Tarta de Queso</option>
+							<option value = "2.50">Helado</option>
+							<option value = "3.50">Panna Cotta</option>
+						
+					</select>
+				</p>
+			</div>
+			<div id="d8" class = "formu">
+				<p>
+					<label>Precio Euros:</label>
+					<input type = "text" id = "precio3" class ="precios" name = "dinerito3" size= "12">
+				</p>
+			</div>
+			<div id="d9" class = "formu">
+				<p>
+					<label>Cantidad:</label>
+					<input type = "number" id = "cantidad3" min="1" name = "cant3" size= "12" onChange="precioFinal3()">
+				</p>
+			</div>
+			<p>
+					<input type = "reset" id = "boton3" name = "b3" class="bot" value = "Limpiar">
+			</p>
+			</fieldset> 
+		</form>
+			
+		<form action="" method="post" id ="for4" name = "f4">
+			<fieldset>
+			<div id="d10" class = "formu">
+				<p>
+					<label>Bebidas:</label>
+					<select id = "bebidas" name = "bebid" >
+					
+							<option value = "1.50">Agua</option>
+							<option value = "2.50">Cerveza</option>
+							<option value = "2.00">Coca Cola</option>
+							<option value = "2.00">Fanta Naranja</option>
+							<option value = "2.00">Fanta Limón</option>
+							<option value = "2.30">Sprite</option>
+													
+					</select>
+				</p>
+			</div>
+			<div id="d11" class = "formu">
+				<p>
+					<label>Precio Euros:</label>
+					<input type = "text" id = "precio4" class ="precios" name = "dinerito4" size= "12">
+				</p>
+			</div>
+			<div id="d3" class = "formu">
+				<p>
+					<label>Cantidad:</label>
+					<input type = "number" id = "cantidad4" min="1" name = "cant4" size= "12" onChange="precioFinal4()">
+				</p>
+			</div>
+			<p>
+					<input type = "reset" id = "boton4" name = "b4" class="bot" value = "Limpiar">
+			</p>
+			</fieldset> 
+		</form>	
+	</div>
+	
+	<div id ="contenedor2">	
+		<form action="" method="post" id ="for5" name = "f5">
+			<fieldset>
+			
+			<div id="d12" class = "formutot">
+				<p>
+					<label>Pedido:</label>
+					<textArea id = "pedido" rows = "4"name = "pe" cols = "25"></textArea>
+					
+				</p>
+			</div>
+			<div id="d13" class = "formutot">
+				<p>
+					<label>Total a Pagar:</label>
+					<input type = "text" id = "precio5" class ="precios" name = "dinerito5" size= "12">
+					
+				</p>
+			</div>
+			<p>
+				<input type = "button" id = "boton5" class="bot" value = "Calcular Total" name = "botonCalcular" onclick = "totalPagar();value='Confirmar Pedido'">
+			</p>
+			</fieldset> 
+		</form>
+	
+	</div>
+    
+	</body>
+</html>
