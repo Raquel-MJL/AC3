@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  
+	  <title>Formulario 8</title>
+	  <meta charset="UTF-8">
+	  <link rel="stylesheet" href="css/estilos-formulario8.css">
+	  <script src="scripts/calculos.js">
+      </script>
+	  
+	</head>
+	  	
+
+	<body>
+
+	<div id ="contenedor">
+	<div id = "superior">
+		<form action="" method="post" name ="f1" id="fr1">
+		<fieldset>
+			<legend>Formulario Cálculos.</legend>
+
+			<h3>Introduzca 3 números y a continuación, indique que operaciones quiere realizar.</h3>
+			<div id="numeros">
+				<div id="etiquetas">
+					<p><label for ="uno">Primer número:</label></p>
+					<p><label for ="dos">Segundo número:</label></p>
+					<p><label for ="tres">Tercer número:</label></p>
+				</div>
+				<div id="cuadros">
+					<p><input type="number" name="n1" id="uno"></p>
+					<p><input type="number" name="n2" id="dos"></p>
+					<p><input type="number" name="n3" id="tres"></p>
+				</div>
+			</div>			
+			<div id= "operaciones">
+				<div id="lista-operaciones">
+					<p><label>Seleccione operación:</label></p>
+					</p>
+						<select name="menu" id="lista" multiple onChange="imprimirSeleccion()">
+							<option value = "sum">Sumar</option>
+							<option value = "res">Restar</option>
+							<option value = "mul">Multiplicar</option>
+							<option value = "div">Dividir</option>
+							<option value = "spot">Suma y Potencia</option>
+						</select>
+					</p>
+				</div>
+				<div id="lista-seleccionadas">
+					<p><label>Operaciones seleccionadas:</label></p>
+					<p><textarea id="area" name ="t-area" rows="4"></textarea></p>
+				</div>
+			</div>
+			<div id="botones">
+				<p><input type="button" value="Calcular" id="b1" name ="bt1" onclick="Calcular()"></p>
+				<p><input type="button" value="Nuevo Cálculo" id="b1" name ="bt2" onclick="Limpiar()"></p>
+			</div>
+		</fieldset>
+		</form>
+		
+	</div>
+		<table name="tabla" id="tab" border = "1">
+				<tr>
+					<th>Suma</th>
+					<th>Resta</th>
+					<th>Multiplicación</th>
+					<th>División</th>
+					<th>Suma y Potencia</th>
+				
+				</tr>
+				<tr>
+					<td id="s" name="suma"></td>
+					<td id="r" name="resta"></td>
+					<td id="m" name="mult"></td>
+					<td id="d" name="divi"></td>
+					<td id="sp" name="sumpot"></td>
+				</tr>
+		</table>
+	</div>
+	
+	</body>
+
+</html>

@@ -58,27 +58,63 @@ function precioFinal4() {
     }
 }
 
-
-//Concatenar pedido y cantidad en el id="pedido"
-//Cocacola x2
-//Barbacoa x1  etc tc 
-
-
-
 //Calcular Total 
 function totalPagar() {
     let total = 0;
 
+    // Precios de cada sección
+    const pizzaSeleccion = document.getElementById("pizzas").options[document.getElementById("pizzas").selectedIndex].text;
+    const compSeleccion = document.getElementById("complementos").options[document.getElementById("complementos").selectedIndex].text;
+    const postreSeleccion = document.getElementById("postres").options[document.getElementById("postres").selectedIndex].text;
+    const bebidaSeleccion = document.getElementById("bebidas").options[document.getElementById("bebidas").selectedIndex].text;
+
+    // Cantidades
+    const pizzaNum = document.f1.cant1.value || 0;
+    const compNum = document.f2.cant2.value || 0;
+    const postreNum = document.f3.cant3.value || 0;
+    const bebidaNum = document.f4.cant4.value || 0;
+
+    // Calcular el total
     total += parseFloat(document.getElementById("precio1").value) || 0;
     total += parseFloat(document.getElementById("precio2").value) || 0;
     total += parseFloat(document.getElementById("precio3").value) || 0;
     total += parseFloat(document.getElementById("precio4").value) || 0;
 
+    // Actualizar el total en el campo correspondiente
     document.getElementById("precio5").value = total.toFixed(2);
+
+    // Concatenar los pedidos
+    let pedido = "";
+    if (pizzaNum > 0) {
+        pedido += pizzaSeleccion + " x " + pizzaNum + "\n";
+    }
+    if (compNum > 0) {
+        pedido += compSeleccion + " x " + compNum + "\n";
+    }
+    if (postreNum > 0) {
+        pedido += postreSeleccion + " x " + postreNum + "\n";
+    }
+    if (bebidaNum > 0) {
+        pedido += bebidaSeleccion + " x " + bebidaNum + "\n";
+    }
+
+    // Actualizar el área de texto del pedido
+    document.getElementById("pedido").innerHTML = pedido.trim(); // Usar innerHTML para mostrar los saltos de línea
 }
 
-//Botón de "nuevo pedido" que sea reset, lo subirá Ángel en la página ya hecho 
 
+//Reset 
+function nuevoPedido() {
+    const formularios = ["for1", "for2", "for3", "for4", "for5",];
+    
+    formularios.forEach(formularioId => {
+        const formulario = document.getElementById(formularioId);
+        if (formulario) {
+            formulario.reset();
+        }
+    });
+    document.getElementById("pedido").value = "";
+}
 
 
 
