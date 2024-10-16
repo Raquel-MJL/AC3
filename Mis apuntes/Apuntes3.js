@@ -1224,6 +1224,8 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         var parrafos = document. querySelectorAll ("p"); //Devuelve TODAS las coincidencias 
         let elementoNuevo = document.createElement("li");  //Crea un elemento nuevo del tipo identificado
         let elementoTexto = document.createTextNode("Texto opción"); //Crea un nodo de texto para, posteriormente, añadirlo o asociarlo a un elemento que pueda incluir texto.
+  
+    //Nota: Para acceder al contenido del HTML hay  que usar innerHTML, textContent o innerText.
     
 //OBJETO ELEMENT → Representa cualquier contenido del DOM
     
