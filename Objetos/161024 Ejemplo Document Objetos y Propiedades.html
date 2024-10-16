@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo objeto document y contenido de una página web</title>
+	<style>
+	
+		h1{color:red;}
+		h3{color:blue;}
+	
+	</style>
+	<link rel = "stylesheet" href = "estilosDocument.css">
+	<script>
+  			// Cargar enlaces de la página y mostrar su número.
+			
+			var enlaces = document.links;
+			document.write( "Hay " + enlaces.length + " enlace(s) en la página.<br />" );
+			document.write( "Hay " + document.links.length + " enlace(s) en la página.<br />" );
+		
+			
+	</script>	
+
+  </head>
+  <body style="background-color:#81F781"> 
+		<a id = "principio"></a>
+		<a href="#fin" name = "final">Ir al final</a>
+		
+    <h1>Lista de Enlaces</h1> 
+    
+	 
+	  <h3>Navegadores:</h3> 
+	  
+			<ul>
+			  <li><a href="https://www.mozilla.org/" target="_self">Mozilla Firefox</a></li> 
+			  <li><a href="https://www.microsoft.com/ es-es/`edge" target="_blank">Microsoft Edge</a></li> 
+			  <li><a href="https://www.google.com/intl/es_es/chrome/" target="_self">Google Chrome</a></li>
+			  <li><a href="https://www.opera.com/es" target="_blank">Opera</a></li>
+			  <li><a href="https://www.apple.com/es/safari/" target="_blank">Safari</a></li>
+			</ul>
+ 			
+			<img src = "sistema_solar.jpg" name = "solar" width = "300" height =" 250" alt = "Imagen del sistema solar">
+			<img src = "sistema_solar.jpg" width = "300" height =" 250" alt = "Imagen 2"><br>
+			<img src = "m ari^posa.png" name = "mari" width = "150" height =" 100" alt = "mariposa"><br>
+			
+			<a href = "#principio" name = "principio">Ir al principio de la página</a><br>
+	
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<a id ="fin"></a>
+	<h1>Final</h1>
+	
+	
+	<script>
+  			
+		
+			// Cargar enlaces de la página, y mostrar algunos enlaces y su número.
+		/*	
+			var enlaces1 = document.links;
+			
+			document.write( "<br> Hay " + enlaces1.length + " enlaces en la página.<br>" );	
+			document.write( "Hay " + document.links.length + " enlace(s) en la página.<br />" );
+			document.write( "Número de enlaces sin anclas: " + (document.links.length - document.anchors.length)+ " enlace(s) en la página.<br />" );
+			document.write( "Hay " + document.links[2].href + " enlace(s) en la página.<br />" );
+			document.write( "Primer enlace: " + enlaces1[0] + "<br>" );
+			document.write( "Primer enlace: " + enlaces1[0].innerHTML + "<br>" );
+			document.write( "Tercer enlace: " + enlaces1[2].href + "<br>" );
+			document.write( "Tercer enlace: " + enlaces1[2].target + "<br>" );
+			document.write( "Cuarto enlace: " + enlaces1[3].target + "<br>" );
+			document.write( "Cuarto enlace: " + document.links[3].target + "<br>" );
+			
+			
+			for(var i = 0;i <enlaces1.length;i++)
+			{
+				document.write( "Todos los enlaces cargados sin codificar: " + decodeURI(enlaces1[i]) + "<br>" );
+				document.write( "Todos los enlaces cargados codificados: " + (enlaces1[i]) + "<br>" );
+			}	
+	*/
+	// Mostrar URL de la página y decodificarla.
+	/*		document.write( "URL codificada: " + document.URL + "<br>" );		
+			var url = decodeURI(document.URL);			
+			document.write("URL decodificada: " + url + "<br>");
+	*/
+	//Cargar scripts de la página y mostrar su número y contenido.
+	/*
+			var js = document.scripts;
+			document.write( "Número de scripts: " + document.scripts.length + "<br>" );
+			document.write( "1.Contenido primer script: " + js[0].textContent + "<br>" );
+			document.write( "2.Contenido primer script: " + document.scripts[0].textContent + "<br>" );
+			document.write( "Contenido segundo script: " + js[1].textContent + "<br>" );
+	*/	
+	// Cargar imágenes de la página, decodificar direcciones, acceder a atributos de las imágenes y mostrar su número.
+	/*		
+	
+			var fotos = document.images;
+			var posicion2= document.images[2];
+			document.write( "1.Número de imágenes: " + document.images.length + "<br>" );
+			document.write( "2.Número de imágenes: " + fotos[2].name + "<br>" );
+			document.write( "2.Número de imágenes: " + fotos[2].alt + "<br>" );
+			document.write( "3.Número de imágenes: " + document.images[2] + "<br>" );
+			document.write( "3.Número de imágenes: " + posicion2 + "<br>" );
+			document.write( "4.Número de imágenes: " + document.images[0].alt + "<br>" );
+			document.write( "5.Número de imágenes: " + document.images[1].width + "<br>" );
+			document.write( "6.Número de imágenes: " + document.images[2].alt + "<br>" );
+			document.write( "7.Número de imágenes: " + document.images[2].src + "<br>" );
+			
+			var imagenRuta = decodeURI(document.images[0].src);
+			document.write("8.Direccion codificada: " + document.images[2].src + "<br>" );
+			document.write("9.Direccion decodificada: " + imagenRuta + "<br>");
+			document.write("10.Direccion decodificada: " + decodeURI(fotos[2].src) + "<br>" );
+	*/	
+	//Cargar anclas de la página y mostrar su número.
+	/*
+			var numeroAnclas = document.anchors.length;
+			var anclas = document.anchors;
+			
+			document.write( "<br> Número de anclas obtenido directamente: " + document.anchors.length );
+			document.write( "<br> Número de anclas cargado en una var: " + numeroAnclas);
+			document.write( "<br> URL ancla decodificada: " + decodeURI(anclas[0].href)+ "<br>");
+			document.write( "<br> URL ancla sin codificar: "  + document.anchors[0].href);
+			document.write( "<br> URL ancla sin codificar: " + anclas[1].href);
+	*/		
+	//Cargar las hojas de estilo de la página y mostrar su número y dirección.
+	
+			var css = document.styleSheets;
+			document.write( "<br>Número de Hojas de estilo: " + css.length + "<br>" );
+			document.write( "Dirección primera hoja de estilo: " + css[0].href + "<br>" );
+			document.write( "Dirección segunda hoja de estilo: " + decodeURI(css[1].href) + "<br>" );
+		
+
+	</script>	
+	
+	</body>
+</html>

@@ -13,6 +13,8 @@ function imprimirSeleccion(){
 }
 
 
+//Dos funciones, una para calcular y otra para limpiar. 
+
 
 /*
 

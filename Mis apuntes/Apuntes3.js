@@ -1220,10 +1220,99 @@ usando un método get, para escribir en ella un nuevo
 comentario. */
 
 
-    
+//16/10/2024 DOM y BOM
 
+/*
+BOM → Modelo de Objetos del Navegador - Browser Object Model
+Permite a JavaScript comunicarse con el navegador y acceder a todas sus áreas. 
+Específico de cada navegador.
+    → window, navigator, screen, history, location y frames 
 
+DOM → Modelo de objetos del documento - Document Object Model 
+Documento que contiene toda la estructura del HTML. 
+Es una interfaz que permite crear, cambiar, modificar o eliminar elementos del documento web. 
+Describe el contenido del documento como un conjunto de objetos.
+Se pueden añadir eventos a dichos elementos. 
+Es independiente del navegador. 
+
+    → document y sus objetos hijos como anchors, forms, images, links, layers, element... */
+
+/*Entendemos como árbol dom la estructura que los datos llevan en el HTML
+
+            Head → Title → Mi página
+        
+        Html 
+                 → h1 → Hola mundo
+            body
+                 → p → Cualquier texto
+
+Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
+             
+
+//OBJETO WINDOW → Nos permite acceder al DOM  */
+window.alert() //Muestra un cuadro modal de alerta o aviso. Un solo botón de aceptar. 
+window.confirm() //Muestra mensaje con dos botones, uno para aceptar y otro para cancelar. 
+
+//OBJETO DOCUMENT →
     
+    //OBJETOS 
+
+        var miFormulario = document.forms["formularioRegistro"]; //accede al formulario con el nombre "formularioRegistro" en el documento HTML y lo asigna a la variable miFormulario.
+        document.write(document.forms["formularioRegistro"]); 
+        var miImagen = document.images["logo"]; //accede a la imagen con el nombre "logo" en el documento y la asigna a la variable miImagen. Esto permite manipular esa imagen, como cambiar su src, ocultarla, o modificar otros atributos.
+        var miEnlace = document.links[3]; //accede al cuarto enlace en el documento HTML y lo asigna a la variable miEnlace
+
+        document.styleSheets//Devuelve array con todas las hojas de estilo de la página, o el índice indicado 
+        document.anchors //Array con todas las anclas 
+        document.links //Array con todos los enlaces 
+            //Se pueden mostrar los atributos de los enlaces con: 
+            document.links[indice].atributo; 
+        document.images //Array con imágenes del documento, también funciona el .atributo
+            document.links[indice].atributo; 
+        document.scripts //Array con los scripts
+        document.forms //devuelve las referencias a formularios 
+        document.url //Devuelve variable con dirección del documento actual.
+
+        //Para acceder a cada elemento individual: Por posición en el array o con el atributo name.
+
+    //MÉTODOS
+        document.write("<h1>Hola</h1> ");
+        document.getElementById("aquiVaElID");
+        var parrafos = document.getElementsByName("html");
+        var parrafos = document.getElementsByTagName("p");
+        var parrafos = document.getElementsByClassName("parrafos");
+        var parrafos = document.querySelector ("p"); //Devuelve el primer elemento que coincide con el selector CSS incluido como parámetro. 
+        var parrafos = document. querySelectorAll ("p"); //Devuelve TODAS las coincidencias 
+        let elementoNuevo = document.createElement("li");  //Crea un elemento nuevo del tipo identificado
+        let elementoTexto = document.createTextNode("Texto opción"); //Crea un nodo de texto para, posteriormente, añadirlo o asociarlo a un elemento que pueda incluir texto.
+    
+//OBJETO ELEMENT → Representa cualquier contenido del DOM
+    
+    //OBJETO: children
+        let elementosHijos = document.getElementById("division1").children; 
+        document.write(elementosHijos.length); // Muestra cuántos hijos hay. 
+        document.write(elementosHijos[2]); // Muestra el tipo de objeto que es el tercer hijo. 
+
+    //MÉTODOS
+        //appendChild → Inserta nodo al final de los hijos ya existentes
+            // Añadir elemento a una lista ya existente: 
+            let lista = document.getElemtnById("lista1"); 
+            let elemento = document.createElement("li"); 
+            elemento.innerHTML = "Nuevo elemento al final de una lista existente"; 
+            lista.appendChild(elemento);
+            //Añadir elemento a una lista nueva: 
+            let lista2 = document.createElement("ul"); 
+            let elemento = document.createElement("li"); 
+            elemento.innerHTML = "Nuevo elemento al final de una lista nueva"; 
+            lista.appendChild(elemento); 
+            //Añadir un párrafo al final de una división: 
+            division1.appendChild(ultimoParrafo);
+        
+        //insertBefore() → Permite insertar un nodo o elemento antes que otro  elemento que esté en el mismo nivel de anidamiento.
+         
+            division1.insertBefore(elemento4, elemento5); //Añade elemento antes del quinto elemento de una división denominada division1:
+
+        //replaceChild() → 
 
 
 
