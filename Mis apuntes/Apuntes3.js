@@ -1118,109 +1118,48 @@ o var nombre = new RegExp(“patrón”);
     texto.trim();  //Devuelve "JavaScript".  
 
 
-//OBJETO DOCUMENT 
-//MÉTODO GET 
-//→ Sirve para acceder al DOM y cargar contenido web en variables, arrays etc
-//Se usa junto con innerHTML para que pueda tener acceso   
-//Ejemplo respecto a un <p> con id parrafo en HTML 
-        var parrafo = document.getElementById("parrafo").innerHTML;
-        const patron3=/a/gim;
-        var coincidencias1=parrafo.match(patron3); 
-//Get se usa para acceder a los datos pero también para añadir datos nuevos 
-
-//FORMULARIO -!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    onclick=funcionQueEjecutaAlgo //El usuario al clickar activa el comportamiento de la función
-    //DOM → Estructura jerárquica de un HTML. Accedemos a él para poner o quitar contenido
-    //ACCESO A FORMULARIOS.
-    onChange=funcionQueEjecutaAlgoAlCambio
+//FORMULARIOS  
+    //Cuando se carga la página web en el navegador, el DOM crea un array con todos los formularios llamado forms.
     
-    //Cuando se carga la página web en el navegador, el DOM crea un array con todos los formularios.
-    //El array se llama forms
-    //Accedemos con document y se necesita conocer el índice donde el formulario en concreto está almacenado.
-        
+    //ACCESO AL ARRAY 
         document.forms[0]; // Acceso al primer formulario.      
         document.forms[2]; // Acceso al tercer formulario.
+        document.forms["for1"]; // Acceso al formulario for1.
+        document.forms.for2; // Acceso al formulario for2. 
+        document.for3; // Acceso al formulario for3. 
         
-    //Acceder a formularios en la carpeta EJEMPLOS FORMULARIOS
-    //Resumen y ejemplos: 
-    document.getElementById("formId") //Accede al formulario por su ID.
-    document.forms["formName"] //Accede al formulario por su nombre.
-    document.forms[index] //Accede al formulario por su índice en el array del DOM.
-    document.querySelector("form") //Selecciona el primer formulario en el documento.
-    document.querySelectorAll("form") //Selecciona todos los formularios y devuelve una lista de nodos.
+    //ACCESO A LOS ELEMENTOS → Dentro de cada formulario, el DOM crea un array con todos los elementos llamado elements
+        document.for1.elements[2]; // Acceso al tercer elemento del array con name "for1" 
+        document.for1.elements["edad"]; //Accede al elemento de name "edad"
+        document.for2.edad; //Accede al elemento llamado edad dentro del formulario llamado for2
 
-    //Accediendo a elementos dentro del formulario:
-    form.elements["elementName"] //Accede a un elemento del formulario por su nombre.
-    form.elements[index] //Accede a un elemento del formulario por su índice.
-//APUNTES:
-/*
-    ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS. 
-    Se  puede  acceder  a  las  propiedades  de  un  elemento  para consultar o modificar su contenido. 
-    → type. (tipo de elemento) 
-        → input (muestra valor del atributo type que tengan:text, password, radio, etc)
-            text, password, radio, etc. 
-        → select (muestra valores select-one o select-multiple)
-        →textarea 
-    →form. (A qué formulario pertenece el elemento)
-    →name (obtiene el valor del atributo name de un elemento). Solo lectura.
-    →value (Accede a la propiedad value de un elemento, texto introducido por el usuario ) 
+    //ACCESO A LAS PROPIEDADES DE LOS ELEMENTOS → Muestra o modifica contenido de un elemento (si no son de sólo lectura)
+        /* .type */ document.for1.pass.type;  //  Acceso  al tipo de dato que es el elemento llamado "pass"  campo  contraseña 
+        /* .form */ document.for1.nombre.form;  //  Acceso  al  campo del nombre del formulario padre
+        /* .name */ document.  getElementById("n").name; //Acceso por nombre del elemento indicado 
+        /* .value */ document.  getElementById("n").value; //accede a lo declarado en value o al contenido de ese elemento
+        /* .checked */ seleccionada = botones[i].checked; //Accede a la/s opción/es seleccionada/s de un radiobotón o un checkbox. Boolean
+    
+    //ACCESO A LISTAS DESPLEGABLES → Dentro de cada lista desplegable creada con select, el DOM crea un array con todas sus opciones llamada options.
+        document.for1.lista.options; // Acceso al array cargando  todos  los  valores  de  la  lista  cuyo  name es lista.  
+        //Propiedades: 
+            //.length → Igual que en String
+            let  elementos  =  menu.length  //  Carga en  la  variable  elementos el número de opciones o elementos incluidos en el array menu.
+            //.selectedIndex → Permite conocer el índice del elemento seleccionado
+            let  indice  =  document.for2.opciones.selectedIndex;  //  Carga,  en  la variable indice el número del índice del elemento seleccionado en la lista cuyo name es opciones.
+            // .value → Carga el valor, su contenido
+            let  valor  =  menu[1].value 
+            // .options → Carga el  texto  incluido  en  la  etiqueta  <option>  del  primer elemento del array options incluido en la lista opciones del formulario for1.
+            let texto = document.for1.opciones.options[0].text 
+            // .selected → Permite conocer que opción u opciones de una lista está seleccionada. Boolean.
+            if (menu[i].selected == true ) //Devuelve true o false
 
- 
-document.getElementById("contraseña1").value = ""; USADO PARA SOBREESCRIBIR
-let variable noseque = document.getElementById("contraseña1").value  USADO PARA OBTENER INFO
-.cheked → Botones de opción (tienen que tener todas las opciones el mismo name
-.querySelector // Acceder a los selectores CSS
+            
 
+//Métodos de comportamiento a implementar en el HTML: 
+onclick=funcionQueEjecutaAlgo //El usuario al clickar activa el comportamiento de la función
+onChange=funcionQueEjecutaAlgoAlCambiar //Al cambiar (listas desplegables por ejemplo)
 
-
-
-
-
-o Permite obtener el texto escrito por el usuario o escribir texto 
-en ellos. 
-• Botones de acción o comando. 
-o Muestran  el  texto  que  tiene  el  botón  o  permiten  cambiarlo 
-por otro. 
-• Botones de opción(radio) y casillas de verificación (checkbox): 
-o Muestran  el  valor  del  atributo  value,  que  permite  conocer 
-que valor tiene la opción seleccionada.  
-o Este valor también puede ser cambiado. 
-▪ Sintaxis: 
-• Carga de valor: 
-o variable = document.nombreformulario.nombre 
-elemento.value; 
-o variable = document.getElementById(“identificador”).value; 
-// Mediante método get. 
-• Cambio de valor: 
-o document.nombreformulario.nombre elemento.value = 
-nuevo valor; 
-o document.getElementById(“identificador”).value  =  nuevo 
-valor; 
-▪ Ejemplos: 
-• Carga de valor: 
-o <label>Dirección<input type = "text" name = "dir" 
-id=”d”)></label> 
-o let  direccion  =  document.for1.dir.value;  //  Acceso  al  campo 
-dirección  del  formulario  for1  para  guardar,  en  la  variable 
-direccion, lo que el usuario haya escrito en este campo. 
-o let  direccion  =  document.getElementById(“d”).value;  // 
-Acceso  al  campo  dirección  del  formulario  for1  mediante  un 
-método  get  para  guardar,  en  la  variable  direccion,  lo  que  el 
-usuario haya escrito en este campo. 
-• Cambio de valor: 
-o <label>Comentarios</label><textarea name = "coment" 
-id=”com”></textarea> 
-o document.for1bre  elemento.coment.value  =  “Nuevo 
-comentario”;  //Acceso  al  área  de  texto  del  formulario  for1 
-para escribir en ella un nuevo comentario. 
-o document.getElementById(“com”).value  =  “Nuevo 
-comentario”;  //Acceso  al  área  de  texto  del  formulario  for1 
-usando un método get, para escribir en ella un nuevo 
-comentario. */
-
-
-//16/10/2024 DOM y BOM
 
 /*
 BOM → Modelo de Objetos del Navegador - Browser Object Model
@@ -1250,8 +1189,8 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
              
 
 //OBJETO WINDOW → Nos permite acceder al DOM  */
-window.alert() //Muestra un cuadro modal de alerta o aviso. Un solo botón de aceptar. 
-window.confirm() //Muestra mensaje con dos botones, uno para aceptar y otro para cancelar. 
+    window.alert() //Muestra un cuadro modal de alerta o aviso. Un solo botón de aceptar. 
+    window.confirm() //Muestra mensaje con dos botones, uno para aceptar y otro para cancelar. 
 
 //OBJETO DOCUMENT →
     
@@ -1305,14 +1244,19 @@ window.confirm() //Muestra mensaje con dos botones, uno para aceptar y otro para
             let elemento = document.createElement("li"); 
             elemento.innerHTML = "Nuevo elemento al final de una lista nueva"; 
             lista.appendChild(elemento); 
+
             //Añadir un párrafo al final de una división: 
             division1.appendChild(ultimoParrafo);
         
-        //insertBefore() → Permite insertar un nodo o elemento antes que otro  elemento que esté en el mismo nivel de anidamiento.
-         
-            division1.insertBefore(elemento4, elemento5); //Añade elemento antes del quinto elemento de una división denominada division1:
+            //insertBefore() → Permite insertar un nodo o elemento antes que otro  elemento que esté en el mismo nivel de anidamiento.
+                division1.insertBefore(elemento4, elemento5); //Añade elemento antes del quinto elemento de una división denominada division1:
 
-        //replaceChild() → 
+            //replaceChild() → Permite reemplazar un nodo por otro.
+                division1.insertBefore(parrafoNuevo, parrafo2); //Sustituir un párrafo por otro nuevo en una división denominada division1: 
+            
+            //removeChild(). → Elimina nodo
+                let opcion2 = document.getElementById("op2"); 
+                document.getElementById("lista1").removeChild(opcion2); //Eliminar un elemento de una lista 
 
 
 
