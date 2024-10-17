@@ -9,11 +9,11 @@ Cada instancia tiene sus propios valores para las propiedades definidas en la cl
 /*Case y Acent sensitive*/
 /*Espacio en blanco y saltos de línea no se tienen en cuenta.*/
 /*Se incluye:
-    <script type = “text/javascript”> 
+    <script type = "text/javascript"> 
     Código JavaScript 
     </script> */
 /*O desde un archivo*/
-/*   <script type = “text/javascript” src=”ruta acceso/archivo.js”> 
+/*   <script type = "text/javascript" src="ruta acceso/archivo.js"> 
 </script>    */
 //Prevalece el código del archivo en caso de combinarlas
 
@@ -72,7 +72,7 @@ activarlo.</p>
     instanceof: Verifica si un objeto es una instancia de una clase
 
     //Condicional
-    var mayoriaEdad = (edad >=18)? “Si”: “No”;
+    var mayoriaEdad = (edad >=18)? "Si": "No";
 
     //De espaciado
     in : Verifica si una propiedad existe en un objeto
@@ -362,14 +362,14 @@ API’s - Application Programming Interfaces - Interfaz de Programación de Apli
             // <a href = "javascript: sumar()">Calcular suma</a>
             // <a href="javascript:void(window.open(‘https://www.renfe.com/es/es’));">Renfe</a>
         //Ejecutar al cargar la web, con el atributo onload en el body
-            //<body onload = ”sumar ();”>
+            //<body onload = "sumar ();">
         //Al producirse un evento: 
             /*
             fuction pulsar() 
                 { 
-                alert(“¡Has pulsado el botón!”); 
+                alert("¡Has pulsado el botón!"); 
                 } 
-            <input type =”button” name = “boton1” value = “Pulsar” onclick = “pulsar()”> */
+            <input type ="button" name = "boton1" value = "Pulsar" onclick = "pulsar()"> */
 
         //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //Por defecto hay que indicar el número de parámetros que la función requiere en su declaración
@@ -783,10 +783,10 @@ iniciarMensaje(); //Llamada a la función
         "Marrón"); 
         document.write(colores.join()+ "<br>"); //Muestra lista de valores
         document.write(colores.splice(1,2,"Rosa","Blanco","Negro")+ "<br>"); 
-        //Se insertan “Rosa","Blanco","Negro  y  se  eliminan  "Verde",  "Azul" 
+        //Se insertan "Rosa","Blanco","Negro  y  se  eliminan  "Verde",  "Azul" 
         // 2 elementos a partir de la posición 1 a eliminar). 
         document.write(colores.splice(1,0,"Rosa","Blanco","Negro")+ "<br>");
-        //Se insertan “Rosa","Blanco","Negro" sin eliminar nada, desplazan los existentes. 
+        //Se insertan "Rosa","Blanco","Negro" sin eliminar nada, desplazan los existentes. 
         document.write(colores.splice(2,1)+ "<br>"); 
         //  Se  elimina  un  color  a  partir  de  la posición 2, inclusive
 
@@ -806,9 +806,9 @@ iniciarMensaje(); //Llamada a la función
     let numeros1 = new Array(34,67,45); 
     let numeros2 = new Array(80,32,27); 
     let palabras = new Array("Hola", "Adiós"); 
-    numeros1.concat(palabras); //Resultado: 34,67,45, “Hola”, “Adiós”. 
-    palabras.concat(numeros1); //Resultado: “Hola”, “Adiós”, 34,67,45. 
-    numeros1.concat(palabras,  numeros2,  "hola",89);  //Resultado:  34,67,45,  “Hola”,  “Adiós”,80, 32, 27,"hola",89. 
+    numeros1.concat(palabras); //Resultado: 34,67,45, "Hola", "Adiós". 
+    palabras.concat(numeros1); //Resultado: "Hola", "Adiós", 34,67,45. 
+    numeros1.concat(palabras,  numeros2,  "hola",89);  //Resultado:  34,67,45,  "Hola",  "Adiós",80, 32, 27,"hola",89. 
  
     //includes(). → Determina si un dato o elemento está en el array especificado
         //Devuelve booleano
@@ -862,7 +862,7 @@ Formas de crear una expresión regular.
 • Definir un patrón literal que se puede o no almacenar en una variable. 
 o var nombre = /patrón/; 
 • Utilizar la clase u objeto prototípico RegExp. 
-o var nombre = new RegExp(“patrón”);
+o var nombre = new RegExp("patrón");
 
 //Distinguen mayúscula y minúscula
 
@@ -1261,9 +1261,37 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
             
             //removeChild(). → Elimina nodo
                 let opcion2 = document.getElementById("op2"); 
-                document.getElementById("lista1").removeChild(opcion2); //Eliminar un elemento de una lista 
+                document.getElementById("lista1").removeChild(opcion2); //Eliminar un elemento de una lista */
 
+    //MÉTODOS DE ATRIBUTO 
+        // getAttribute(). → Devuelve el valor del atributo especificado como parámetro en el método
+            var parrafo = document.getElementById("p4"). getAttribute("class"); 
+            var alternativo = document.getElementById("imagen1").getAttribute("alt"); 
+            var a = document.getElementById("p4"); 
+            var alineacion = a. getAttribute("align"); 
+        
+        //getAttributeNames() → Carga todos los atributos de un elemento en un array en el orden declarado en el HTML  
+            let atributos = document.getElementById("p1").getAttributeNames(); //Carga los tipos de atributo que tiene 
+        
+        //setAttribute() → Permite añadir o modificar los atributos de un elemento.
+            var parrafo = document.getElementById("p4"); 
+            parrafo.setAttribute("class","parrafos"); 
 
+            var division = document.getElementById("div1"); 
+            division.setAttribute("name","d1");
+        
+        //createAttribute() → Crea un nuevo nodo de tipo atributo 
+            let division = document.getElementById("div1"); 
+            let atributo = document.createAttribute("class"); 
+            atributo.value = "contenedores"; 
+                    
+        //setAttributeNode() → Añade un nuevo nodo de tipo atributo al elemento que se especifique.    
+            let division = document.getElementById("div1"); 
+            let atributo = document.createAttribute("class"); 
+            atributo.value = "contenedor"; 
+            division.setAttributeNode(atributo); 
+            console.log(division.getAttribute("atributo")); // Mostrará contenedor 
+            
 
 
 
