@@ -15,7 +15,9 @@ body{
 
 #barraNav{
     display:flex;
-    gap:30px;   
+    justify-content:space-evenly;
+    padding:1%;
+    
 }
 
 #cabecera,#barraNav,#footer{
@@ -37,6 +39,7 @@ body{
 a {
     text-decoration: none; 
     font-size: 24px; 
+    color:rgb(197, 164, 227)
 }
 
 a:visited {
@@ -60,23 +63,31 @@ li {
 
 #boton {
     font-size: 24px; 
-    color: orange; 
-    background-color: black; 
-    border: 1px solid gold; 
+    color: rgb(206, 206, 206); 
+    background-color: rgb(46, 46, 46); 
+    border: 1px solid rgb(206, 206, 206); 
     border-radius: 5px; 
     padding: 10px 20px; 
     cursor: pointer; /*Cambia cursor al pasar por encima*/
 }
 
 img{
-    width:20%;
-    height:10%;
+    width:40%;
+    height:60%;
 
 }
-/*
-▪ Utilizar Flexbox para maquetar. 
 
-▪ Aplica los márgenes con la propiedad que consideres para separar 
-los  elementos  entre  sí  de  forma  similar  a  la  mostrada  en  la 
-imagen. 
-▪ Centra las imágenes en vertical y horizontal en su sección. 
+main{
+    display:flex;
+
+}
+
+#t1, ul, #t2{
+    text-align:center;
+}
+
+#footer{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
