@@ -1219,13 +1219,16 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         document.getElementById("aquiVaElID");
         var parrafos = document.getElementsByName("html");
         var parrafos = document.getElementsByTagName("p");
-        var parrafos = document.getElementsByClassName("parrafos");
+        var parrafos = document.getElementsByClassName("parrafos"); //Devuelve un array de datos 
         var parrafos = document.querySelector ("p"); //Devuelve el primer elemento que coincide con el selector CSS incluido como parámetro. 
         var parrafos = document. querySelectorAll ("p"); //Devuelve TODAS las coincidencias 
         let elementoNuevo = document.createElement("li");  //Crea un elemento nuevo del tipo identificado
         let elementoTexto = document.createTextNode("Texto opción"); //Crea un nodo de texto para, posteriormente, añadirlo o asociarlo a un elemento que pueda incluir texto.
   
-    //Nota: Para acceder al contenido del HTML hay  que usar innerHTML, textContent o innerText.
+    //Nota: Para acceder al contenido del HTML hay  que usar:
+    /*      → innerHTML: Devuelve el contenido HTML del elemento, incluyendo las etiquetas HTML.
+            → innerText: Devuelve el texto visible del elemento, ignorando las etiquetas HTML y el texto oculto
+            → textContent: Similar a innerText, devuelve el texto del elemento, pero incluye todo el texto, incluso el que está oculto
     
 //OBJETO ELEMENT → Representa cualquier contenido del DOM
     
