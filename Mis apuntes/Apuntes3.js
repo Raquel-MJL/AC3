@@ -1225,10 +1225,7 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         let elementoNuevo = document.createElement("li");  //Crea un elemento nuevo del tipo identificado
         let elementoTexto = document.createTextNode("Texto opción"); //Crea un nodo de texto para, posteriormente, añadirlo o asociarlo a un elemento que pueda incluir texto.
   
-    //Nota: Para acceder al contenido del HTML hay  que usar:
-    /*      → innerHTML: Devuelve el contenido HTML del elemento, incluyendo las etiquetas HTML.
-            → innerText: Devuelve el texto visible del elemento, ignorando las etiquetas HTML y el texto oculto
-            → textContent: Similar a innerText, devuelve el texto del elemento, pero incluye todo el texto, incluso el que está oculto
+    
     
 //OBJETO ELEMENT → Representa cualquier contenido del DOM
     
@@ -1238,9 +1235,9 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         document.write(elementosHijos[2]); // Muestra el tipo de objeto que es el tercer hijo. 
 
     //MÉTODOS
-        //appendChild → Inserta nodo al final de los hijos ya existentes
-            // Añadir elemento a una lista ya existente: 
-            let lista = document.getElemtnById("lista1"); 
+        //appendChild → Inserta nodo al final de los hijos ya existentes */
+         
+            let lista = document.getElemtnById("lista1"); // Añadir elemento a una lista ya existente:
             let elemento = document.createElement("li"); 
             elemento.innerHTML = "Nuevo elemento al final de una lista existente"; 
             lista.appendChild(elemento);
@@ -1249,19 +1246,17 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
             let elemento = document.createElement("li"); 
             elemento.innerHTML = "Nuevo elemento al final de una lista nueva"; 
             lista.appendChild(elemento); 
-
             //Añadir un párrafo al final de una división: 
             division1.appendChild(ultimoParrafo);
+    
+        //insertBefore() → Permite insertar un nodo o elemento antes que otro  elemento que esté en el mismo nivel de anidamiento.
+            division1.insertBefore(elemento4, elemento5); //Añade elemento antes del quinto elemento de una división denominada division1:
+        //replaceChild() → Permite reemplazar un nodo por otro.
+            division1.insertBefore(parrafoNuevo, parrafo2); //Sustituir un párrafo por otro nuevo en una división denominada division1: 
         
-            //insertBefore() → Permite insertar un nodo o elemento antes que otro  elemento que esté en el mismo nivel de anidamiento.
-                division1.insertBefore(elemento4, elemento5); //Añade elemento antes del quinto elemento de una división denominada division1:
-
-            //replaceChild() → Permite reemplazar un nodo por otro.
-                division1.insertBefore(parrafoNuevo, parrafo2); //Sustituir un párrafo por otro nuevo en una división denominada division1: 
-            
-            //removeChild(). → Elimina nodo
-                let opcion2 = document.getElementById("op2"); 
-                document.getElementById("lista1").removeChild(opcion2); //Eliminar un elemento de una lista */
+        //removeChild(). → Elimina nodo
+            let opcion2 = document.getElementById("op2"); 
+            document.getElementById("lista1").removeChild(opcion2); //Eliminar un elemento de una lista */
 
     //MÉTODOS DE ATRIBUTO 
         // getAttribute(). → Devuelve el valor del atributo especificado como parámetro en el método
@@ -1292,10 +1287,31 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
             division.setAttributeNode(atributo); 
             console.log(division.getAttribute("atributo")); // Mostrará contenedor 
             
+//MÉTODOS DE ACCESO TEXTUAL 
+
+//Nota: Para acceder al contenido del HTML hay  que usar:
+    //innerHTML → Devuelve el contenido HTML del elemento, incluyendo las etiquetas HTML.
+    document.metodo(parámetros).innerHTML  +=  "Contenido  HTML  a insertar";
+    //innerText: Devuelve el texto visible del elemento, ignorando las etiquetas HTML y el texto oculto. Tiene en cuenta estilo y formato. 
+    var parrafo = document.getElementById("p4").innerText; 
+    document.write("Contenido del cuarto párrafo : " + parrafo + "<br>");
+    //textContent → Similar a innerText, devuelve el texto del elemento, pero incluye todo el texto, incluso el que está oculto. No tiene en cuenta estilo ni formato.*/
+    var parrafo = document.getElementById("p4").textContent; 
+    document.write("Contenido del cuarto párrafo : " + parrafo + "<br>");
 
 
-
-
+//APLICAR ESTILOS CSS DESDE JAVASCRIPT. 
+ 
+    //Style → Se usa para aplicar estilo o formato a cualquier elemento HTML. Si las propiedades CSS son compuestas, se elimina el  guion medio y se  pone  la primera letra de la segunda palabra en mayúsculas: 
+   
+    document.getElementById("p1").style.color = "#f00"; 
+    document.getElementById("p1").style.fontSize = "20px";  
+  
+    //Atributo cssText → añade todas las propiedades CSS que se quiera al mismo tiempo, se escriben igual que en CSS
+    /*La  propiedad  style  incluye  el  atributo  cssText,  que  permite  asignar  varias  propiedades  CSS 
+    al mismo tiempo.*/ 
+         
+    document.getElementById("p1").style.cssText  =  "color:  #f00;  font-size: 20px";   
 
 
 

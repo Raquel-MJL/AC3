@@ -1,8 +1,7 @@
 function actualizar(){
 
-    let titulo = document.getElementById("t1"); //Añadir texto al título 
-    let fraseNueva = document.createTextNode(" de informática");
-    titulo.appendChild(fraseNueva); 
+    document.getElementById("t1").innerText += "de informática" //Añadir texto al título 
+    
 
     let barra = document.getElementById("barraNav"); //Incluir enlace entre otros 2
     let enlaceNuevo = document.createElement("a");

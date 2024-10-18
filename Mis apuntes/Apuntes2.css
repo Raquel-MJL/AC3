@@ -563,6 +563,115 @@ Para que el usuario pueda modificar el tamaño de los cuadros de texto.
     input:required{color:white;} /*Cuando sea obligatorio mostrará el estilo*/
     input:optional{border:1px  solid  blue;}  /*Cuando sea opcional*/
 
+    /*SPRITES → Conjunto de imágenes en una sola imagen, cargando una sola se  tienen disponibles todas
+    Sin necesidad de descargarlas del servidor cuando se necesiten. 
+        
+            → Accediendo con CSS a la posición de cada imagen se visualizan como si fueran imágenes independientes. 
+            → Pseudoclases como hover o scripts permiten conseguir cambios de estado o de posición de la imagen.  
+            → También  pueden  crearse  efectos  de  movimiento  y  animaciones.
+        Vale cualquier programa de edición de imagen o sprite generators: 
+         https://www.toptal.com/developers/css/sprite-generator/ 
+    
+    //TRANSICIONES → Cambian de un estado a otro gradualmente al realizarse una acción. 
+    
+        transition-property → Especifica qué propiedad CSS se verá afectada por la transición */
+            #enlace:hover{ 
+            font-size:30px; 
+            transition-duration: 0.5s; 
+            transition-timing-function: linear; 
+     
+    ▪ En  el  ejemplo,  el  texto  del  enlace  aumentará  en  5  décimas  de  segundo  de  forma 
+    lineal desde el tamaño por defecto hasta los 30 píxeles. 
+    ▪ Transición con una sola propiedad: 
+    #enlace:hover{ 
+    font-size:30px; 
+    font-family: Verdana; 
+    transition-property:all; 
+    transition-duration: 1s; 
+    transition-timing-function: linear; 
+     
+    ▪ En  el  ejemplo,  el  texto  del  enlace  aumentará  en  un  segundo  de  forma  constante 
+    desde  el tamaño por defecto hasta  los 30 píxeles. También cambiará la fuente por 
+    defecto, a Verdana en ese mismo tiempo. 
+     
+    • transition-duration. 
+    o Especifica la duración de la transición de principio a fin. 
+    o El tiempo se mide en segundos, incluyendo la letra “s” al valor numérico. 
+    o A mayor valor, transición más lenta. 
+    o Sintaxis: 
+    ▪ transition-duration: tiempo en segundos; 
+    o Ejemplos: 
+    ▪ transition-duration: 2s; // La transición durara 2 segundos. 
+    ▪ transition-duration: 0.3s; // La transición durará 3 décimas de segundo. 
+    • transition-timing-function. 
+    o Establece el ritmo al que avanza la transición. 
+    o Sintaxis: 
+    ▪ transition-timing-function: valor; 
+    ▪ valores: 
+    • ease. 
+    o La  transición  comienza  lentamente,  continua  rápido  y  termina  de 
+    nuevo lentamente. 
+    o Valor por defecto. 
+    • linear. 
+    o La transición avanza a ritmo constante. 
+    • ease-in. 
+    o La  transición  comienza  lentamente  y  continua  y  termina  a  ritmo 
+    constante. 
+    • ease-out. 
+    o La  transición  comienza  y  continua  a  ritmo  normal  constante  y 
+    termina lentamente. 
+    • ease-in-out. 
+    o La transición comienza lentamente, continua a ritmo normal 
+    constante y termina lentamente. 
+    • cubic-bezier(valor1, valor2, valor3, valor4). 
+    o Permite  establecer  un  ritmo  de  transición  personalizado  usando 
+    curvas de Bézier. 
+    o Los  valores,  que  están  comprendidos  entre  0  y  1  con  decimales  y 
+    pueden ser positivos o negativos, representan los siguientes 
+    puntos: 
+    ▪ valor 1. 
+    • Valor  del  eje  X  del  primer  punto  de  control  de  la 
+    curva.   
+    ▪ valor 2. 
+    • Valor  del  eje  Y  del  primer  punto  de  control  de  la 
+    curva.   
+    ▪ valor 3. 
+    • Valor del eje X  del segundo punto de  control de  la 
+    curva.   
+    ▪ valor 4. 
+    • Valor del eje  Y  del segundo punto de  control de  la 
+    curva.   
+    o En la web https://cubic-bezier.com se puede obtener los valores de 
+    forma gráfica. 
+    o Ejemplos: 
+    ▪ transition-timing-function: linear; 
+    ▪ transition-timing-function: ease-out; 
+    ▪ transition-timing-function: cubic-bezier(0.59,0.27,0.67,1); 
+    • transition-delay. 
+    o Permite retrasar el inicio de la transición un tiempo determinado. 
+    o El tiempo se mide en segundos, incluyendo la letra “s” al valor numérico. 
+    o Si no se incluye, la transición empieza inmediatamente. 
+    o Sintaxis: 
+    ▪ transition-delay: tiempo en segundos; 
+    o Ejemplos: 
+    ▪ transition-delay: 0,5s; // La transición comenzara transcurridas 2 décimas de 
+    segundo. 
+    • Notación abreviada. 
+    o Se pueden usar algunas o todas las propiedades de transición usando la propiedad 
+    transition. 
+    o Los valores que no se quieran usar, se pueden no incluir. 
+    o Si se quieren usar varias propiedades con distintos tiempos, se separa las características de 
+    cada una con una coma. 
+    o Sintaxis: 
+    ▪ transition: property duration timing-function delay;  
+    o Ejemplos: 
+    ▪ transition:  all  1s  linear;  //  Se  animan  todas  las  propiedades  a  ritmo  constante 
+    durante un segundo. 
+    ▪ transition: color  0.5s linear  1s;  // Efecto de transición que comienza con  un 
+    segundo de retraso, dura medio segundo y sigue un ritmo normal continuo. 
+    ▪ transition: color 3s, font-size 0.5s ease-in, background-color 1s; // Se animan todas 
+    las propiedades durando cada una, un tiempo distinto y a ritmos diferentes.
+
 
 
 
