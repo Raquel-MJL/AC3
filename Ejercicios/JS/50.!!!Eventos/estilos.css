@@ -1,0 +1,37 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+#d1{
+ 
+    width: 300px; 
+    height: 300px; 
+    background-color: rgb(240, 225, 186); 
+    border: 1px solid rgb(68, 68, 68); 
+    margin: 20px; /* Ajustar márgenes del div */
+    display: flex; 
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    
+}
+
+#d2{
+    display:flex;
+    flex-direction: column;
+}
+
+#contenedor{
+    display:flex;
+    justify-content: space-between;
+    background-color: beige;
+    padding:5%;
+}
+
+a{
+    font-family: 'Comic Sans MS';
+    font-size:24px;
+    color:brown;
+    text-decoration:none;
+
+}

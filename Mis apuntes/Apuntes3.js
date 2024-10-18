@@ -1359,7 +1359,7 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         pa.onclick = pulsar; 
         document.getElementById("p1").onclick  =  pulsar;  //  Alternativa  a  crear  una variable para cargar el nodo.
     
-    //C. Con un Escuchador 
+    //Con un Escuchador 
         /*Sintáxis*/ elemento.addEventListener("evento", funciónSinParéntesis, flujo) ; //Flujo opcional. Es boolean. True=herencia hacia abajo. false=herencia hacia arriba.  
  
         //Ejemplo: 
@@ -1384,7 +1384,14 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         elemento.removeEventListener("evento", funcionSinParentesis, flujo) 
 
         
-
+    // EVITAR ACCIÓN DE EVENTO
+        // → preventDefault() //Cancela acción (no todos los eventos son cancelables) 
+         document.getElementById("form1").addEventListener("submit",  function(e) 
+        {e.preventDefault();}) 
+            //Mostrar si un evento es cancelable: 
+                let esCancelable =e.cancelable; 
+                alert("¿Este evento es cancelable? " + esCancelable); 
+                e.preventDefault();        
 
 
 
