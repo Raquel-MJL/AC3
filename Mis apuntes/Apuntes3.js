@@ -1350,6 +1350,41 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         miInput.style.backgroundColor = '';
     });
 
+    //Con manejador semántico:
+    function pulsar() 
+        { 
+        alert("¡Has pulsado dentro del párrafo!"); 
+        } 
+        var pa =document.getElementById("p1"); 
+        pa.onclick = pulsar; 
+        document.getElementById("p1").onclick  =  pulsar;  //  Alternativa  a  crear  una variable para cargar el nodo.
+    
+    //C. Con un Escuchador 
+        /*Sintáxis*/ elemento.addEventListener("evento", funciónSinParéntesis, flujo) ; //Flujo opcional. Es boolean. True=herencia hacia abajo. false=herencia hacia arriba.  
+ 
+        //Ejemplo: 
+            <h1 id = "titulo">Título de la web</h1> 
+            function cambiarColor() 
+            { 
+            titulo.style.color = "yellow"; 
+            } 
+            var texto = document.getElementById("titulo");  
+            texto.addEventListener("dblclick",cambiarColor);  
+ 
+        //Ejemplo con varios elementos: 
+            
+            function cambiarColor() 
+            { 
+            this.color = "yellow"; // this se refiere al array párrafos. 
+            } 
+            var parrafos = document.getElementsByTagName("p");  
+            parrafos.addEventListener("dblclick",cambiarColor);
+            
+        //Quitar manejador: 
+        elemento.removeEventListener("evento", funcionSinParentesis, flujo) 
+
+        
+
 
 
 
