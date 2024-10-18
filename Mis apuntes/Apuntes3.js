@@ -1313,6 +1313,42 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
          
     document.getElementById("p1").style.cssText  =  "color:  #f00;  font-size: 20px";   
 
+    //Pedir con Prompt el dato de un style: 
+    p.style.color = prompt("Ingresa un color (nombre o código hexadecimal):");
+
+
+//EVENTOS → Acción del usuario sobre un elemento HTML que provoca respuesta. 
+//Hay que asociarles una función o código en JS que se ejecute, se llama manejadores de evento y se añade el "on"delante. . 
+    /* Evento: click. */
+    /* Manejador: onclick. */
+
+    /*Tipos: 
+        → click: botón izquierdo del ratón 
+        → dblclick: doble click con botón izquierdo
+        → mouseover: cuando el puntero entra al área que ocupa un elemento,
+        → mouseout: cuando el puntero sale 
+        → load: cuando el navegador termina de cargar página del todo 
+        → unload: cuando se abandona la página al cerrar el navegador 
+        → focus: cuando un elemento de la página recibe el foco 
+        → blurr: cuando lo pierde. 
+        → keydown:  Se activa cuando se presiona una tecla.
+        → keyup:  Se activa cuando se suelta una tecla.
+        → change: Se activa cuando el valor de un elemento de formulario cambia.
+        → submit: Se activa cuando se envía un formulario.
+        → resize:  Se activa cuando se redimensiona la ventana del navegador.
+        → scroll:  Se activa cuando se desplaza el contenido de un elemento o de la ventana.
+        → contextmenu:  Se activa cuando se hace clic derecho sobre un elemento.*/
+        
+    //Ejemplo
+    const miInput = document.getElementById('miInput');
+
+    miInput.addEventListener('focus', () => { //Cuando el campo de entrada recibe el foco (cuando haces clic en él), el fondo se vuelve de color amarillo claro.
+        miInput.style.backgroundColor = 'lightyellow';
+    });
+
+    miInput.addEventListener('blur', () => { //blur: Cuando el campo de entrada pierde el foco (cuando haces clic fuera de él), el fondo vuelve a su color original.
+        miInput.style.backgroundColor = '';
+    });
 
 
 
