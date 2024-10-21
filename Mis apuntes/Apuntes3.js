@@ -1329,8 +1329,8 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
         → mouseout: cuando el puntero sale 
         → load: cuando el navegador termina de cargar página del todo 
         → unload: cuando se abandona la página al cerrar el navegador 
-        → focus: cuando un elemento de la página recibe el foco 
-        → blurr: cuando lo pierde. 
+        → focus: cuando un elemento de la página recibe el foco (cuadrícula destacada de un formulario por ejemplo )
+        → blurr: cuando lo pierde. (cuando sales de esa selección)
         → keydown:  Se activa cuando se presiona una tecla.
         → keyup:  Se activa cuando se suelta una tecla.
         → change: Se activa cuando el valor de un elemento de formulario cambia.
@@ -1393,7 +1393,36 @@ Y dentro del árbol a cada uno de los elementos (div, p, a...)se le llama nodo.
                 alert("¿Este evento es cancelable? " + esCancelable); 
                 e.preventDefault();        
 
+//EVENTOS TECLADO 
 
+var texto1 = document.getElementById("cuadro1");
+		  var texto2 = document.getElementById("cuadro2");
+		  var texto3 = document.getElementById("cuadro3");
+		  var texto4 = document.getElementById("cuadro4");
+		  var total;
+		  
+		  function soltarTecla()
+		  {
+			total = texto1.value.length;
+			texto3.value = total;
+			
+		  }
+		  function pulsarTecla()
+		  {
+			total = texto1.value.length;
+			texto2.value = total+1;
+		
+		  }
+		  
+		  function presionarTecla()
+		  {
+		
+			total = texto1.value.length;
+			texto4.value = total+1;
+		  }
+		  texto1.addEventListener("keyup",soltarTecla);
+		  texto1.addEventListener("keydown",pulsarTecla);
+		  texto1.addEventListener("keypress",presionarTecla);
 
 
 

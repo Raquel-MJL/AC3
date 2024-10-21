@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Ejemplo Eventos onFocus-onBlur</title>
+		<meta charset="UTF-8">
+		<style>
+			form{
+				width:20%;
+				margin:auto;
+				padding:20px;
+				background-color:#ccc;
+			}
+		</style>
+	</head>
+	<body>
+	
+	<!-- Formulario con función con parámetro this.	-->
+		
+		<form>
+		<fieldset>
+		<legend>Eventos onFocus-onBlur</legend>
+			  <p><label>Nombre:</label></p>
+			  <p><input type="text" id="nombre" onFocus="vaciar(this)" 
+					 onBlur="verificarEntrada(this)" value="nombre"></p>
+			  <p><label>Correo Electronico:</label></p> <p><input type="email" id="correo" onFocus="vaciar(this)" 
+					 onBlur="verificarEntrada(this)" value="correo"></p>
+			  <input type="button" value="Confirmar">
+		</fieldset>
+		</form>
+	
+	<!-- Formulario con función sin parámetro this.	-->
+	<!--	
+		<form>
+		<fieldset>
+		<legend>Eventos onFocus-onBlur</legend>
+			  <p><label>Nombre:</label></p>
+			  <p><input type="text" id="nombre" onFocus="vaciarNombre()" 
+					 onBlur="verificarEntradaNombre()" value="nombre"></p>
+			  <p><label>Correo Electronico:</label></p> <p><input type="email" id="correo" onFocus="vaciarCorreo()" 
+					 onBlur="verificarEntradaCorreo()" value="correo"></p>
+			  <input type="button" value="Confirmar">
+		</fieldset>
+		</form>
+	-->
+		<script>
+		 
+		// Con this.
+
+		function vaciar(control)
+			  {
+				control.value = "";
+			  }
+		function verificarEntrada(control)
+			  {
+				if (control.value == "")
+				  alert("Debe introducir datos");
+			  }
+		
+		// Sin this.
+	/*	
+		let nom = document.getElementById("nombre");
+		let email = document.getElementById("correo");
+		
+		function vaciarNombre()
+			  {
+				nom.value = "";
+			  }
+		function verificarEntradaNombre()
+			  {
+				if (nom.value == "")
+				  alert("Debe introducir datos");
+			  }
+		function vaciarCorreo()
+			  {
+				email.value = "";
+			  }
+		function verificarEntradaCorreo()
+			  {
+				if (email.value == "")
+				  alert("Debe introducir datos");
+			  }
+	*/	
+		</script>
+	
+	</body>
+	
+		
+
+
+</html>

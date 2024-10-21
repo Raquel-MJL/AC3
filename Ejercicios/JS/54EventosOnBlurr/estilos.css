@@ -1,0 +1,79 @@
+/* Reset de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos de la página */
+body {
+    background-color: #d3d3d3; /* Gris medio */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Contenedor principal */
+form {
+    background-color: #f0f8ff; /* Fondo del formulario (azul claro) */
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Distancias entre divisiones */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilos de las divisiones */
+#contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff; /* Azul claro */
+    border: 2px solid black; /* Bordes negros */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+
+/* Área de texto */
+textarea {
+    width: 100%; /* 100% de su división */
+    resize: none; /* No redimensionable */
+}
+
+/* Estilos de botones y enlaces */
+button {
+    font-weight: bold; /* Negrita */
+}
+
+button[type="submit"] {
+    width: 100px; /* Anchura del botón Enviar */
+}
+
+button[type="reset"] {
+    width: 200px; /* Anchura del botón Volver a Cumplimentar */
+}
+
+/* Estilo de enlace */
+a {
+    text-decoration: none; /* Sin subrayado */
+    color: navy; /* Azul marino */
+}
+
+a:visited {
+    color: green; /* Verde cuando ha sido visitado */
+}
+
+/* Estilo de los títulos */
+h1 {
+    text-align: center; /* Centrar título nivel 1 */
+    color: black; /* Color negro */
+}
+
+h2 {
+    text-align: center; /* Centrar título nivel 2 */
+    color: red; /* Color rojo */
+}
+
+/* Estilo de casilla de verificación */
+input[type="checkbox"] {
+    font-weight: bold; /* Negrita */
+}

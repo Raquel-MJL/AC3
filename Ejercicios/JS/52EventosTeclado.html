@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	   <title>Eventos de Teclado: keydown - keyup - keypress- Resultado en un cuadros de texto de formulario</title>
+	  <meta charset="UTF-8">
+	  
+	</head>
+	<body>
+
+	  <label>Cuadro para escribir:<input type="text" id = "cuadro1" maxlength = "100" size = "100"> </label><br> 
+	  <label>Keydown. Teclas pulsadas y caracteres escritos:<input type="text" id = "cuadro2" maxlength = "5" size = "5"> </label><br>
+	  <label>Keyup. Teclas soltadas y caracteres escritos:<input type="text" id = "cuadro3" maxlength = "5" size = "5"> </label><br>
+	  <label>Keypress. Teclas presionadas y caracteres escritos:<input type="text" id = "cuadro4" maxlength = "5" size = "5"> </label><br>
+	  <input type="reset" id = "borrar" value = "Limpiar" > <br>
+	
+	<script>
+		  
+		  var texto1 = document.getElementById("cuadro1");
+		  var texto2 = document.getElementById("cuadro2");
+		  var texto3 = document.getElementById("cuadro3");
+		  var texto4 = document.getElementById("cuadro4");
+		  var total;
+		  
+		  function soltarTecla()
+		  {
+			total = texto1.value.length;
+			texto3.value = total;
+			
+		  }
+		  function pulsarTecla()
+		  {
+			total = texto1.value.length;
+			texto2.value = total+1;
+		
+		  }
+		  
+		  function presionarTecla()
+		  {
+		
+			total = texto1.value.length;
+			texto4.value = total+1;
+		  }
+		  
+		  texto1.addEventListener("keyup",soltarTecla);
+		  texto1.addEventListener("keydown",pulsarTecla);
+		  texto1.addEventListener("keypress",presionarTecla);
+	  
+	</script>
+	  
+	</body>
+</html>
