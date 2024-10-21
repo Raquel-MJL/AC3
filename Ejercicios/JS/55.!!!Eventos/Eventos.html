@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos 0 - Formularios </title>
+    <link rel="stylesheet" href="estilos.css"> 
+
+</head>
+<body>
+    <div id="contenedor">
+
+        <div id="for1">
+            <form id="form1" name="formNombre">
+                <label for="nombre">Nombre:</label>
+                <input type="text" onblur="comprobarNombre()" id="nombre" name="nombre" maxlength="40"  required >
+                <button type="button" id="bot" name="botname">Comprobar Nombre</button>
+            </form>
+            <h2 id="alerta1"></h2>
+
+        </div>
+
+        <div id="for2">
+
+            <form id="form2" name="formAcceso">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" maxlength="25" required>
+                
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" maxlength="25" required>
+                
+                <button type="button" id="identificarse" name="identificarse">Identificarse</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js">   </script>
+
+</body>
+</html>

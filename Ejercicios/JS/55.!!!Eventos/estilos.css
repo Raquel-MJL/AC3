@@ -1,0 +1,20 @@
+body {
+    background-color: #c3d9e0; /* Azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0;
+}
+
+#contenedor{
+    display:flex;
+    gap:80px;
+    border: 3px solid #b99ec9; /* Lila */
+    margin: 2px; /* Separación entre objetos */
+    padding: 15px; /* Espaciado interno */
+}
+
+*{
+    font-family:Arial, Helvetica, sans-serif
+}
