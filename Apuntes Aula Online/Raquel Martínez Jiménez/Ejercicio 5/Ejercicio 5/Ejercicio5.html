@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="css/estilos-ejercicio5.css">
+</head>
+<body>
+    <div id="contenedor">
+        <form id="formularioId" name="formularioName">
+            
+            <label>Nombre:</label>
+            <input type="text" id="nombreId" name="nombreName" size="30" required placeholder="Escriba primera letra en mayúscula y el resto en minúscula">
+            <label>Apellido1:</label>
+            <input type="text" id="apellido1Id" name="apellido1Name" size="30" required placeholder="Escriba primera letra en mayúscula y el resto en minúscula">
+            <label>Apellido2:</label>
+            <input type="text" id="apellido2Id" name="apellido2Name" size="30" required placeholder="Escriba primera letra en mayúscula y el resto en minúscula">
+            <label>Correo Electrónico:</label>
+            <input type="text" id="emailId" name="emailName" size="30" required>
+            <label>Teléfono:</label>
+            <input type="text" id="telefonoId" name="telefonoName" size="10" required>
+
+            
+            <div id="divBotones">
+                <button type="submit" id="botEnviar" onclick="validarTodo()">Enviar datos</button>
+                <button type="reset" id="botReset">Limpiar</button>
+            </div>
+
+        </form>
+        <h2 id="mensajeAlerta"></h2>
+
+    </div>
+    <script src="scripts/scripts-ejercicio5.js"></script>
+
+</body>
+</html>

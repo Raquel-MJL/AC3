@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1 id="t1">Ejercicio 5. Examen UF1842 11-03-2024</h1>
+    <p id="p1">Desarrollo y reutilización de componentes software y multimedia mediante lenguajes de guion </p>
+    
+    <script>
+        let titulo = document.getElementById("t1");
+        let parrafo = document.getElementById("p1");
+
+        titulo.addEventListener("mouseover", function() {
+            titulo.style.fontFamily = "Calibri";
+            titulo.style.color= "maroon";
+        });
+
+        parrafo.addEventListener("mouseover", function() {
+            parrafo.style.fontFamily = "Calibri";
+        });
+
+        titulo.addEventListener("mouseout", function() {
+            titulo.style.fontFamily = "";
+            titulo.style.color= "black";
+        });
+
+        parrafo.addEventListener("mouseout", function() {
+            parrafo.style.fontFamily = "";
+        });
+    </script>
+</body>
+</html>

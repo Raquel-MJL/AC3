@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 1,2,3</title>
+</head>
+<body>
+    <script>
+   
+   // Ejercicio 1
+
+   /*
+
+    function calcularIva(nombre, precio, cantidad) {
+        let subtotal = precio * cantidad; 
+        let iva = subtotal * 0.15;
+        let precioFinal = subtotal + iva; 
+    
+        document.write("Nombre del producto: " + nombre + "<br>");
+        document.write("Precio unitario: " + precio + "<br>");
+        document.write("Cantidad comprada: " + cantidad + "<br>");
+        document.write("Subtotal: " + subtotal + "<br>");
+        document.write("Total a pagar (con IVA): " + precioFinal.toFixed(2) + "<br>");
+    }
+    
+    let nombre = prompt("Escriba nombre del producto: ", "");
+    let precio = parseFloat(prompt("Indique precio en decimal: ", ""));
+    let cantidad = parseInt(prompt("Indique cantidad en número: "), 10);
+    
+    calcularIva(nombre, precio, cantidad);
+
+    */
+
+    //Ejercicio 2
+
+    /*
+
+    const alumno = {
+    nombre: "Raquel",
+    apellido1: "Martínez",
+    apellido2: "Jiménez"
+    };
+
+
+    function mostrarDatosAlumno(){
+    document.write("Nombre: " + alumno.nombre + "<br>");
+    document.write("Primer apellido: " + alumno.apellido1 + "<br>");
+    document.write("Segundo apellido " + alumno.apellido2 + "<br>");
+    }
+    
+    mostrarDatosAlumno();
+
+    */
+
+    //Ejercicio 3
+
+    let numeros = new Array(10);
+
+    for (let i=0;i<numeros.length;i++){
+        numeros[i]=prompt("Escribe un número (hasta 10): ","");
+
+    }
+    document.write("Cantidad de números cargados: " + numeros.length + "<br>");
+    
+    for (let i=0;i<numeros.length;i++){
+        document.write("Valor " + (i+1) + " :" + numeros[i] + "<br>");
+    }
+
+    
+    let numerosCopia = numeros.slice(); //Copiar array
+    document.write("Array copiado: "+numerosCopia+"<br>");
+
+    //Insertar sin eliminar 
+    numerosCopia.splice(4, 0, prompt("Escribe un nuevo número para la posición 5: "), prompt("Escribe un nuevo número para la posición 6: "));
+    document.write("Array con valores añadidos: "+ numerosCopia+"<br>");
+
+    //Mostrar alfabéticamente
+    document.write("Array con cambios y ordenado: " + numerosCopia.sort()+"<br>"); 
+
+    
+    let sumaTotal = 0;   //Sumar total números array 
+    for (let i = 0; i < numerosCopia.length; i++) {
+        sumaTotal += parseInt(numerosCopia[i]); 
+    }
+    document.write("Suma total de los números: " + sumaTotal + "<br>");
+
+
+
+
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>
