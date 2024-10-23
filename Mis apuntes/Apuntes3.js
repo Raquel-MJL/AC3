@@ -1425,81 +1425,47 @@ var texto1 = document.getElementById("cuadro1");
 		  texto1.addEventListener("keypress",presionarTecla);
 
 
-//Eventos tiempo
+//EVENTOS DE TIEMPO 
 /*
+Temporizadores para retrasar o repetir la ejecución de un evento o planificar llamadas 
+    
+    → setTimeout Ejecuta función pasado un tiempo determinado  */
+        function saludar() 
+        { 
+         alert("¡Buenos días!"); 
+        } 
+        setTimeout(saludar,2000); // Transcurridos 2 segundos se muestra el saludo
+/*
+    → setInterval Ejecuta función cada X tiempo */
+        function saludar() 
+        { 
+            alert("¡Buenos días!"); 
+        } 
+        setInterval(saludar,2000); // Cada 2 segundos, se repite el saludo.
 
-EVENTOS DE TIEMPO. 
-• Son  temporizadores  que  se  usan  para  retrasar  o  repetir  la  ejecución  de  código  (una  función,  por 
-ejemplo), un determinado intervalo de tiempo. 
-• Ejecutar una función transcurrido un tiempo determinado, se denomina planificar una llamada. 
-• Existen 2 métodos nativos de JavaScript que se utilizan en los eventos de tiempo. 
-o setTimeout. 
-▪ Permite ejecutar una función pasado un intervalo de tiempo determinado. 
-▪ Sintaxis: 
-▪ setTimeout(Función o código, tiempo); 
-▪ Función. 
-▪ Función o código que se llamará o ejecutará transcurrido el tiempo 
-especificado como segundo parámetro. 
-▪ Tiempo. 
-▪ Tiempo  expresado  en  milisegundos  que  debe  transcurrir  antes  de 
-ejecutarse la función incluida como parámetro. 
-▪ 1000 milisegundos = 1 segundo. 
-▪ Ejemplos: 
-function saludar() 
-    { 
-     alert("¡Buenos días!"); 
-    } 
-setTimeout(saludar,2000); // Transcurridos 2 segundos se muestra el 
-saludo. 
- 
-o setInterval. 
-▪ Permite ejecutar una función de forma repetida pasado un intervalo de tiempo.  
-▪ Sintaxis: 
-▪ setInterval(Función o código, tiempo); 
-▪ Función. 
-• Función o código que se llamará o ejecutará transcurrido el tiempo 
-especificado  como  segundo  parámetro  y  volverá  a  repetirse  cada 
-vez que el intervalo temporal se cumpla. 
-▪ Tiempo. 
-• Tiempo  expresado  en  milisegundos  que  debe  transcurrir  antes  de 
-ejecutarse  cada  repetición  de  la  función  o  código  incluido  como 
-parámetro. 
-▪ Ejemplos: 
-function saludar() 
-{ 
-alert("¡Buenos días!"); 
-} 
-setInterval(saludar,2000); // Cada 2 segundos, se repite el saludo. 
-Identificador de temporizador. (intervalID). 
-• Cuando  setTimeout()  o  setInterval(),  se  ejecutan,  se  les  asigna  un  número  o  identificador  único 
-(intervalID), que puede ser guardado en una variable. 
-• A través de dicha variable, podemos, por ejemplo, conocer qué temporizador está ejecutándose. 
-• También sirve para detener los temporizadores.  
-• Sintaxis: 
-o variable = setTimeout(Función o código, tiempo); 
-o variable = setInterval(Función o código, tiempo); 
-o  
-• Ejemplo: 
-o let identificador = setTimeout(calcular, 2000); 
-o let intervalo = setInterval(saludar, 5000); 
- 
-Detener eventos de tiempo. 
-• Para  detener  un  temporizador,  se  crea  una  función  para  borrarlo  a  la  que  se  le  pasa  la  variable  que 
-contiene el identificador del temporizador que se quiere parar. 
-• clearInterval(). 
-o Emparejado con setInterval() 
-o Sintaxis: 
-function detenerTemporizador() 
- { 
-  clearInterval(variable con identificador); 
-} 
-• clearTimeout() 
-o Emparejado con setTimeout(). 
-o Sintaxis: 
-function detenerTemporizador() 
- { 
-  clearTimeout (variable con identificador); 
-}*/
+// Cuando se ejecutan se les asigna un ID (intervalID) que puede guardarse en una variable. 
+// Útil para conocer qué temporizador está activo o detenerlos. 
+    let identificador = setTimeout(calcular, 2000); 
+    let intervalo = setInterval(saludar, 5000);
+
+// Detener → Se crea una función a la que se le pasa la variable que contiene el intervalID
+
+        // → clearInterval
+        function detenerIntervalo() 
+        { 
+            clearInterval(variableConIntervalID); 
+        }  
+        
+        // → clearTimeOut
+
+        function detenerTemporizador() 
+         { 
+          clearTimeout (variableConIntervalID); 
+        }
+
+
+//!!!!!!!!añadir esto en arrays ↓
+
 
 
 

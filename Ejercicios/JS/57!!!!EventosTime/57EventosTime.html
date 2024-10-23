@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos 9 </title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor-flexible">
+        <div class="cuadro">Cuadro Nº 1</div>
+        <div class="cuadro">Cuadro Nº 2</div>
+        <div class="cuadro">Cuadro Nº 3</div>
+        <div class="cuadro">Cuadro Nº 4</div>
+        <div class="cuadro">Cuadro Nº 5</div>
+        <div class="cuadro">Cuadro Nº 6</div>
+    </div>
+
+    <div class="contenedor-flexible-2">
+        <h3>Cambio de colores</h3>
+        <div class="botones">
+            <button class="boton">Comenzar</button>
+            <button class="boton">Terminar</button>
+        </div>
+    </div>
+    
+    <script>
+    const cuadros = document.querySelectorAll('.cuadro'); 
+    const botonComenzar = document.querySelector('.boton:first-child');
+    const botonTerminar = document.querySelector('.boton:last-child');
+
+    let intervalId; //Inicializo variable para almacenar el ID del intervalo 
+
+    // Defino array por cada par de colores y cuadro 
+    const colores = [
+        ['#ffcccb', '#ff9966'], 
+        ['#6666ff', '#ffcc11'], 
+        ['#99ffcc', '#ffcccb'], 
+        ['#6699ff', '#6666ff'], 
+        ['#cc99ff', '#cc66ff'], 
+        ['#ff99cc', '#ff66cc'], 
+    ];
+
+    
+    let estadoColores = Array(cuadros.length).fill(0); 
+
+    function cambiarColores() {
+        cuadros.forEach((cuadro, index) => {
+            // Cambia el estado y el color del cuadro
+            estadoColores[index] = 1 - estadoColores[index]; // Alterna entre 0 y 1
+            cuadro.style.backgroundColor = colores[index][estadoColores[index]];
+        });
+    
+    }
+
+    // Evento que se activa al hacer clic en el botón 'Comenzar'
+    botonComenzar.addEventListener('click', () => {
+        // Verifica si no hay un intervalo activo
+        if (!intervalId) {
+            // Inicia un intervalo que llama a cambiarColores cada 500 milisegundos
+            intervalId = setInterval(cambiarColores, 500);
+        }
+    });
+
+    // Evento "Terminar"
+    botonTerminar.addEventListener('click', () => {
+        clearInterval(intervalId); //Detiene intervalo activo 
+        cuadros.forEach(cuadro => { //Restablece color por cada cuadro 
+            cuadro.style.backgroundColor = 'lightgray'; 
+        });
+        estadoColores.fill(0); // Restablece el estado de los colores
+        intervalID=null; 
+        
+    });
+    </script>
+    
+</body>
+</html>
