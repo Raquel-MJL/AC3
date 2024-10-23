@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808080; /* Color gris medio */
+}
+
+#contenedor {
+    width: 60%;
+    margin: 0 auto; /* Centrado en la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal */
+    gap: 50px; /* Distancia entre elementos de 50 píxeles */
+}
+
+#rosas-activacion, 
+#iconos-imagenes-cambiantes {
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    align-items: center; /* Centrados en horizontal */
+}
+
+ul {
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    list-style-type: none; 
+    gap: 30px; 
+}
+
+img {
+    border: 1px solid black; 
+}
