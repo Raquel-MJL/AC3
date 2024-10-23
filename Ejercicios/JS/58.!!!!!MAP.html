@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map 1</title>
+</head>
+<body>
+    <ul id="lista!">
+
+    </ul>
+    <script>
+
+        //Ejercicio 1 
+        let  Arcoiris  =  new  Map([[1,"Azul"],[2,"Morado"],[3,"Magenta"],[4,"Rojo"],[5,"Naranja"],[6,"Amarillo"],[7,"Verde"]]);
+        
+        document.write("Listado de claves: <br>");
+        for(let i of Arcoiris.keys())  //Mostrar claves con bucle 
+            { 
+            document.write("Clave: " + i +"<br>" ); 
+            } 
+        
+        document.write("Listado de valores: <br>");
+        for(let i of Arcoiris.values())  //Mostrar valores con bucle 
+            { 
+            document.write("Valor: " + i +"<br>" ); 
+            } 
+        
+    
+        document.write("Listado de pares: <br>");
+        function mostrarElementos(valor, clave) //Mostrar par con un bucle   
+            { 
+                 document.write("La clave " + clave + " tiene el valor" + valor+"<br>"); 
+            } 
+
+        Arcoiris.forEach(mostrarElementos);
+
+        
+        
+        //Ejercicio 2 
+
+        let personajes = new Map(); //Creación Mapa 
+     
+        for (let i = 1; i <= 5; i++) { //Pedir valor por teclado 
+            let nombre = prompt("Introduce el nombre del personaje " + i + ":");
+            personajes.set(i, nombre);
+        }
+
+        document.write("Listado de personajes: <br>"); //Imprimir mapa por pares 
+        function mostrarPersonajes(valor, clave) 
+            { 
+                 document.write("La clave " + clave + " tiene el personaje" + valor+"<br>"); 
+            } 
+        personajes.forEach(mostrarPersonajes);
+
+        //Comprobación de datos, borrar, consultas etc    
+        document.write("El mapa tiene: "+personajes.size+" personajes<br>");
+        document.write("¿El elemento con clave 8 existe? " + personajes.has(8)+"<br>");
+        document.write("¿Se ha podido eliminar dicho elemento? " + personajes.delete(8)+"<br>");
+        personajes.delete(3); //Borrar un registro concreto 
+
+        document.write("Listado de personajes NUEVO: <br>"); //Imprimir de nuevo 
+        function mostrarPersonajesNuevo(valor, clave) 
+            { 
+                 document.write("La clave " + clave + " tiene el personaje" + valor+"<br>"); 
+            } 
+
+        personajes.forEach(mostrarPersonajesNuevo);
+
+        //Ejercicio 3
+
+        let sueldos = new Map([["Jose",1000.56],["María",900.80],["Enrique",1500.00],["Miranda",1400.90],["Ana",4000],["Raquel",3500.56],["Antonio",596.70]]); 
+        document.write("¿Se ha dado de baja a Pepe? " + sueldos.delete("Pepe")+"<br>");
+
+         // Recorrer el Map y añadir elementos a la UL
+        sueldos.forEach((valor, clave) => {
+        
+            const li = document.createElement("li"); // Crear un nuevo elemento LI
+            li.textContent = "Clave " + clave + ": " + valor;
+        
+            ul.appendChild(li); // Añadir el LI al UL
+        });
+
+
+
+        
+        
+
+
+
+
+
+           
+
+
+
+
+
+    </script>
+</body>
+</html>

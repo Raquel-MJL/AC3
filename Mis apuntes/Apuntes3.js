@@ -1463,8 +1463,86 @@ Temporizadores para retrasar o repetir la ejecución de un evento o planificar l
           clearTimeout (variableConIntervalID); 
         }
 
-
+/* 
 //!!!!!!!!añadir esto en arrays ↓
+    Map / Set 
+
+    //MAP → Estructura de datos nativa que permite almacenar una colección de pares clave-valor. 
+    → La clave permite identificar los valores (pueden ser cualquier tipo de dato) 
+    → Un mapa puede convertirse en un array y viceversa. */
+        
+        //Creación vacío 
+        let miMapa0 = new Map();
+
+        //Creación con datos
+        let  miMapa1  =  new  Map([["nombre","Cristina"],["edad",24]]);  //  Las  claves son string y los valores cadenas y números. 
+        let miMapa2 = new Map([[1,"JavaScript"],[2,"PHP"],[3,"C++"]]); // Las claves son números y los valores son cadenas.
+
+        // Propiedad size → Muestra cuantos pares clave-valor tiene, si está vacío devuelve 0
+        alert(miMapa0.size);
+
+        //MÉTODOS 
+        
+            // → set() Para añadir */
+            miMapa0.set ("Idioma1", "Inglés");  //Con  o  sin  comillas  según  tipo de dato. 
+
+            // → get() Muestra el valor del par especificado con su clave (si clave no existe, devuelve undefined). 
+            document.write(miMapa1.get("edad"));
+
+            // → has() Indica si existe el elemento con la clave especificada (boolean)
+            document.write(miMapa1.has("nombre"));
+
+            // → delete() Elimina. Si el elemento existe y es eliminado (true) Si el elemento no existe (false)
+            document.write(miMapa1.delete("nombre"));
+
+            // → clear() Elimina sin devolver nada
+            miMapa2.clear();
+
+            // → keys() Devuelve iterador que contiene todas las claves del mapa especificado, se puede almacenar en variable. 
+
+                /* Si  se  guarda  en  una  variable  iteradora,  al  mostrar  su  contenido  solo  aparecerá  la 
+                última clave. Para mostrarlo sueltas usaremos: */  
+                next().value; 
+
+                //Se puede usar un bucle for...of para recorrer y mostrar las claves. 
+                let iterador = miMapa1.keys(); 
+                document.write(iterador.next().value); //Devuelve nombre 
+                document.write(iterador.next().value); //Devuelve edad
+
+            // → values() Devuelve un iterador que contiene todos los valores
+            //Mismas reglas que keys
+
+            let valores = miMapa1.values(); //Con variable iteradora 
+            document.write(valores.next().value); //Devuelve Raquel 
+            document.write(valores.next().value);  //Devuelve 29
+
+
+            for(let i of miMapa1.values())  //Con bucle for of
+            { 
+            document.write("Valor: " + i ); 
+            } 
+
+            // → forEach() Aplica una función a cada uno de los elementos (par clave-valor)
+            /*
+            En la función a aplicar se incluyen los siguientes parámetros en este orden: 
+                Un parámetro para representar al valor. 
+                Un parámetro para representar a la clave. 
+                Un parámetro para representar al mapa (opcional) */
+                //Función a aplicar: 
+                function mostrarElementos(valor, clave)  
+                { 
+                     document.write("La clave " + clave + " tiene el valor" + valor); 
+                } 
+                
+                //forEach
+                miMapa3.forEach(mostrarElementos);
+
+    // SET → Almacena colección de valores únicos de cualquier tipo. 
+        // No se insertan datos repetidos. No permite duplicados. 
+        // Puede convertirse en un array y viceversa. 
+        // MISMAS REGLAS, ESTRUCTURAS Y MÉTODOS QUE MAP  
+                
+        
 
 
 
