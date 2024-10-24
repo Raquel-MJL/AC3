@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    Enlaces: 
+    
+    Consulta legal y de referencia: 
+    https://web.ua.es/es/accesibilidad/documentos-electronicos-accesibles.html 
+    
+    https://www.w3.org/WAI/fundamentals/accessibility-principles/es 
+
+    escribir en el enlace ppal de una página /robots.txt para acceder. 
+    Estos datos sirven para indicar y guiar a los buscadores respecto al contenido que pueden escanear o no. 
+    (Se puede limitar acceso de IAs a mi web)
+    
+    
+    3 REGLAS PPALES: 
+
+    WCAG → Reglas de diseño → 4 Principios, 13 pautas, 78 criterios
+        
+        PERCEPTIBLE 
+        → Inclusión alternativas textuales. 
+        → Subtítulos y otras facilidades. 
+        → Cree contenido que se pueda presentar de diferentes formas, incluyendo a las 
+        tecnologías de apoyo, sin perder información. 
+        → Facilite que los usuarios puedan ver y oír el contenido. 
+
+        OPERABLE 
+        → Acceso a todas las funcionalidades mediante el teclado. 
+        → Conceda a los usuarios tiempo suficiente para leer y usar el contenido. 
+        → No use contenido que pudiera causar convulsiones o reacciones físicas. 
+        → Ayude a los usuarios a navegar y encontrar el contenido. 
+        → Facilite métodos de entrada diferentes al teclado. 
+
+        COMPRENSIBLE  
+        → Proporcione texto legible y comprensible. 
+        → Proporcione contenido que sea predecible en apariencia y operación. 
+        → Ayude a los usuarios a evitar y corregir errores. 
+
+        ROBUSTO  
+        → Maximice la compatibilidad con herramientas de usuario actuales y futuras.
+
+    
+    UAAG → Reglas para los programas 
+    ATAG → Reglas de autor 
+
+
+    //HTML Y CSS ACCESIBLE
+    HTML-CSS y Accesibilidad. 
+• Separar  el  contenido  de  la  presentación  mediante  el  uso  de  hojas  de  estilo 
+(CSS). 
+• Estructurar y etiquetar correctamente el contenido de las páginas. 
+• Realizar una maquetación mediante CSS y con un diseño adaptativo (responsive 
+design)  para  que  se  adapte  a  cualquier  dispositivo  y  a  cualquier  resolución  de 
+pantalla. 
+• Evitar el uso de JavaScript. 
+Elementos, propiedades o atributos que favorecen un diseño web accesible. 
+• Título de la página. 
+o Usando  la  etiqueta  <title>  se  puede  establecer  el  título  de  la  página 
+formando éste por el título del sitio web y el título de la página para así, 
+ayudar  a  la  navegación  y  al  correcto  almacenamiento  de  cualquier 
+página en los "favoritos" o "marcadores" del navegador. 
+• Imágenes. 
+o Incluir texto alternativo descriptivo y detallado usando atributo alt. Este 
+atributo  actúa  también  como alternativa  a una imagen  y  ayuda al 
+posicionamiento SEO. Máximo 150 caracteres. 
+▪ <img src = ”imagen.extensión” alt = “Texto alternativo”> 
+o Se  puede  incluir  información  en  el  pie  de  la  imagen  con  las  etiquetas 
+<figure>  y  <figcaption>.  En  este  caso  puede  no  ser  necesario  incluir 
+texto  descriptivo  con  alt  para  no  saturar  al  usuario  con  información 
+redundante. 
+o En  una  imagen  decorativa  el  atributo  alt  suele  dejarse  vacío.  (Imagen 
+sin función o que no aporta información relevante). 
+o El atributo title permite añadir información adicional sobre una imagen. 
+Es opcional. 
+• Enlaces de hipertexto: 
+o Utilizar un texto significativo en los enlaces. 
+o Usar  un  texto  que  tenga  sentido  leído  fuera  de  contexto.  Por  ejemplo, 
+evitar "pincha aquí". 
+• Organización de las páginas:  
+o Usar encabezados, listas y estructura consistente. 
+o Usar CSS para la maquetación donde sea posible. 
+• Figuras y diagramas: Describirlos brevemente en la página o usar el 
+atributo longdesc. 
+o El  atributo  longdesc  permite  indicar  una  URL  a  una  web  que  contenga  una 
+descripción de la imagen. 
+o Sintaxis: 
+▪ longdesc = “https://www.misitio.com/descripcion.html” 
+▪ longdesc = “descripción.txt” 
+o No soportado actualmente por la mayoría de los navegadores. 
+• Multimedia. 
+o Proporcionar  subtítulos  y  transcripción  del  sonido,  y  descripción  del 
+vídeo. 
+o Elementos multimedia como audio y videos con texto alternativo 
+detallado entre el par de etiquetas de apertura y cierre. 
+▪ <audio.....>Texto</audio> 
+▪ <video.....>Texto</video> 
+o Pueden utilizarse explicaciones sonoras grabadas y guardadas en 
+archivos de audio y cargadas en la página web con la etiqueta <audio>. 
+• Tablas. 
+o No utilizar tablas para maquetar las páginas. 
+o Poner títulos o textos a las tablas con etiqueta <caption>: 
+<table> 
+<caption> Título para la tabla </caption>  
+.... 
+</table> 
+• Teclado. 
+o El sitio web se puede manejar mediante teclado. 
+o Posibilidad uso del teclado independientemente del ratón para acceder 
+al sitio web: 
+▪ Usando tecla del tabulador para desplazarse por algunos 
+elementos web como controles de formulario y enlaces. 
+• Propiedad tabindex. 
+• Permite  especificar  el  orden  de  tabulación  mediante  un 
+numero entero. 
+• Sintaxis: 
+o tabindex = “número de orden” 
+• Ejemplos: 
+o <label>Dirección:<input type =”text” tabindex = 
+“5”> </label> 
+o <label>Código:<input  type  =  “text”  tabindex 
+=”2”></label> 
+▪ Usando atajos de teclado o teclas de acceso rápido: 
+• Combinaciones por defecto. 
+• Uso del atributo global accesskey en elementos o 
+etiquetas HTML: 
+• accesskey = ”tecla” 
+o Para usar la tecla asignada hay que  consultar  con 
+cuál hay que combinarla en cada navegador. 
+• Atajos de teclado: 
+o Firefox: Alt + Mayus + tecla utilizada. 
+o Chrome: Alt + tecla utilizada. 
+o Opera: Alt + tecla utilizada. 
+• Tamaño de fuentes: 
+o Propiedad font-size en CSS. 
+o Uso de unidades de medida variables que no estropeen la maquetación 
+de la página al cambiar. 
+o Tipos de unidades de medida: 
+▪ Absolutas: píxeles (px), puntos (pt), picas (pc), centímetros (cm), 
+milímetros (mm) y pulgadas (in). 
+▪ Relativas: em, rem, ex, vw, vh, píxeles (px) y porcentaje (%). 
+• Textos. 
+o Limitar  la  anchura  de  los  textos  a  unos  80  caracteres  para  facilitar  su 
+lectura. 
+• Citas y Abreviaturas. 
+o Utilizar etiquetas como <abbr> y <blockquote> conforme a su 
+significado semántico y nunca para formatear el texto.  
+• Frames. 
+o Evitar el uso de marcos.  
+o Los marcos rompen con los esquemas de navegación y los hacen 
+inservibles, ya que no son información lógica, sino de presentación, por 
+lo que sólo funcionan con navegadores gráficos. 
+o Impiden enlazar unos documentos con otros. 
+• Colores. 
+o Evitar combinaciones de colores de poco contraste. 
+o Evitar transmitir información sólo a través del color. 
+• Etiquetas semánticas. 
+o Estructurar el contenido del documento web para darle cierto 
+significado utilizando etiquetas semánticas como <header>, <nav>, 
+<main>, <aside>, <footer>, etc. 
+• Idioma. 
+o Incluir el idioma en que esta escrito el documento web ya que: 
+▪ Facilita  la  lectura  de  los  lectores  de  pantalla  y  sintetizadores  de 
+voz braille. 
+▪ Los  motores  de  búsqueda  identifican  los  contenidos  del  idioma 
+deseado. 
+▪ Se utiliza para cambiar la voz en la pronunciación de un texto en 
+otro idioma, etc. 
+o Atributos HTML para Idioma. 
+▪ Idioma de la página: 
+• Se  especifica  en  la  etiqueta  <html>  con  el  atributo  lang  = 
+“Código de idioma”. 
+• Ejemplo: 
+o <html lang = “es”> 
+▪ Idioma en cualquier parte del código. 
+• Se especifica en cualquier etiqueta mediante el atributo lang = 
+“Código de idioma”. 
+• Ejemplo: 
+o <p>Él dijo: <blockquote lang="en">Hello! 
+</blockquote>cuando vio a...</p> 
+▪ Idioma en un enlace. 
+• Se  especifica  mediante  el  atributo  hreflang  = “Código de 
+idioma”. 
+• Ejemplo: 
+o <a  href  =  ”www.france.com”  hreflang  = 
+“fr”>Visitar Francia</a> 
+• Formularios. 
+o Etiquetar todos los controles de formulario con <label>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    -->
+    
+</body>
+</html>
