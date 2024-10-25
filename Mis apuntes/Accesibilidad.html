@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ACCESIBILIDAD</title>
 </head>
 <body>
     <!--
-    Enlaces: 
-    
-    Consulta legal y de referencia: 
+    Enlaces de consulta de regulación oficial de Accesibilidad: 
+
     https://web.ua.es/es/accesibilidad/documentos-electronicos-accesibles.html 
     
     https://www.w3.org/WAI/fundamentals/accessibility-principles/es 
 
-    escribir en el enlace ppal de una página /robots.txt para acceder. 
-    Estos datos sirven para indicar y guiar a los buscadores respecto al contenido que pueden escanear o no. 
-    (Se puede limitar acceso de IAs a mi web)
-    
-    
-    3 REGLAS PPALES: 
+    Se considera una web accesible si puede: 
+    → Acceder cualquier usuario independientemente de su discapacidad o condición
+    → Visualizarse correctamente en todos los dispositivos 
+    → Posicionarse bien en buscador
 
-    WCAG → Reglas de diseño → 4 Principios, 13 pautas, 78 criterios
-        
+    Hay unas pautas estipuladas por W3C (World Wide Web Consortium) motivadas por la iniciativa WAI (World Accesibility Initiative)
+    Entre ellas las más importantes son:
+    → WCAG Web Content Accesibility Guidelines
+    → ATAG Authoring Tool Accessibility Guidelines
+    → UAAG User Agent Accessibility Guidelines 
+
+    WCAG: Incluye 4 principios y dentro de ellos 13 pautas
         PERCEPTIBLE 
         → Inclusión alternativas textuales. 
         → Subtítulos y otras facilidades. 
@@ -45,162 +47,247 @@
         ROBUSTO  
         → Maximice la compatibilidad con herramientas de usuario actuales y futuras.
 
-    
-    UAAG → Reglas para los programas 
-    ATAG → Reglas de autor 
+        Para medir estas cualidades de una web se utilizan 3 niveles de adecuación. 
 
+        A → (Mínimo) Cumple las funciones de accesibilidad web más básicas.
+        AA → (Recomendado) Se  ocupa  de  las  barreras  más comunes para los usuarios con discapacidad. 
+            Es el nivel de adecuación habitualmente exigido. 
+        AAA → (Avanzado)  Es  el  nivel  más  alto  y  complejo  de  accesibilidad  web. 
+            No  es  recomendable,  pues  muchos  contenidos  no  pueden  adecuarse 
+            para que cumplan con este nivel de certificación de la accesibilidad
+
+    ATAG 
+        Editores Web Accesibles:
+
+        A1 → La  interfaz  de  usuario  de  la  herramienta  de  creación  sigue  las  pautas  de 
+        accesibilidad aplicables 
+        A2 → Las vistas de edición son perceptibles
+        A3 → Las vistas de edición son operables
+        A4 → Las vistas de edición son comprensibles
+        
+        Contenido accesible:
+         
+        B1 → Los procesos completamente automáticos producen contenido accesible. 
+        B2 → Los autores reciben apoyo para producir contenido accesible.  
+        B3 → Los  autores  reciben  apoyo  para  mejorar  la  accesibilidad  del  contenido existente. 
+        B4 → Las  herramientas  de  creación  B4  promueven  e  integran  sus  funciones  de accesibilidad. 
+
+    UAAG Para agentes de usuario (Navegadores, extensiones, reproductores...)
+    Principios: 
+        1. Perceptible. 
+            1.1.1.  Contenido alternativo. 
+            1.1.2.  Contenido faltante.  
+            1.1.3.  Resaltado. 
+            1.1.4.  Configuración de texto. 
+            1.1.5.  Configuración de volumen. 
+            1.1.6.  Configuración de voz sintetizada. 
+            1.1.7.  Configuración de la hoja de estilo del usuario. 
+            1.1.8.  Orientación en ventanas gráficas. 
+            1.1.9.  Vistas alternativas. 
+            1.1.10. Información del elemento. 
+        2. Operable.  
+            2.1.1.  Acceso al teclado. 
+            2.1.2.  Navegación secuencial. 
+            2.1.3.  Navegación y activación directas. 
+            2.1.4.  Búsqueda de texto. 
+            2.1.5.  Navegación estructural. 
+            2.1.6.  Configuración de preferencias. 
+            2.1.7.  Controles gráficos. 
+            2.1.8.  Interacción independiente del tiempo. 
+            2.1.9.  Intermitente. 
+            2.1.10. Medios basados en el tiempo. 
+            2.1.11. Otros dispositivos de entrada. 
+        3. Comprensible  
+            3.1.1.  Errores.  
+            3.1.2.  Documentación. 
+            3.1.3.  Predecible. 
+        4. Acceso programático.  
+            4.1.1.  Tecnología de asistencia.  
+        5. Especificaciones y convenciones. 
+            5.1.1.  Siga las especificaciones.
 
     //HTML Y CSS ACCESIBLE
-    HTML-CSS y Accesibilidad. 
-• Separar  el  contenido  de  la  presentación  mediante  el  uso  de  hojas  de  estilo 
-(CSS). 
-• Estructurar y etiquetar correctamente el contenido de las páginas. 
-• Realizar una maquetación mediante CSS y con un diseño adaptativo (responsive 
-design)  para  que  se  adapte  a  cualquier  dispositivo  y  a  cualquier  resolución  de 
-pantalla. 
-• Evitar el uso de JavaScript. 
-Elementos, propiedades o atributos que favorecen un diseño web accesible. 
-• Título de la página. 
-o Usando  la  etiqueta  <title>  se  puede  establecer  el  título  de  la  página 
-formando éste por el título del sitio web y el título de la página para así, 
-ayudar  a  la  navegación  y  al  correcto  almacenamiento  de  cualquier 
-página en los "favoritos" o "marcadores" del navegador. 
-• Imágenes. 
-o Incluir texto alternativo descriptivo y detallado usando atributo alt. Este 
-atributo  actúa  también  como alternativa  a una imagen  y  ayuda al 
-posicionamiento SEO. Máximo 150 caracteres. 
-▪ <img src = ”imagen.extensión” alt = “Texto alternativo”> 
-o Se  puede  incluir  información  en  el  pie  de  la  imagen  con  las  etiquetas 
-<figure>  y  <figcaption>.  En  este  caso  puede  no  ser  necesario  incluir 
-texto  descriptivo  con  alt  para  no  saturar  al  usuario  con  información 
-redundante. 
-o En  una  imagen  decorativa  el  atributo  alt  suele  dejarse  vacío.  (Imagen 
-sin función o que no aporta información relevante). 
-o El atributo title permite añadir información adicional sobre una imagen. 
-Es opcional. 
-• Enlaces de hipertexto: 
-o Utilizar un texto significativo en los enlaces. 
-o Usar  un  texto  que  tenga  sentido  leído  fuera  de  contexto.  Por  ejemplo, 
-evitar "pincha aquí". 
-• Organización de las páginas:  
-o Usar encabezados, listas y estructura consistente. 
-o Usar CSS para la maquetación donde sea posible. 
-• Figuras y diagramas: Describirlos brevemente en la página o usar el 
-atributo longdesc. 
-o El  atributo  longdesc  permite  indicar  una  URL  a  una  web  que  contenga  una 
-descripción de la imagen. 
-o Sintaxis: 
-▪ longdesc = “https://www.misitio.com/descripcion.html” 
-▪ longdesc = “descripción.txt” 
-o No soportado actualmente por la mayoría de los navegadores. 
-• Multimedia. 
-o Proporcionar  subtítulos  y  transcripción  del  sonido,  y  descripción  del 
-vídeo. 
-o Elementos multimedia como audio y videos con texto alternativo 
-detallado entre el par de etiquetas de apertura y cierre. 
-▪ <audio.....>Texto</audio> 
-▪ <video.....>Texto</video> 
-o Pueden utilizarse explicaciones sonoras grabadas y guardadas en 
-archivos de audio y cargadas en la página web con la etiqueta <audio>. 
-• Tablas. 
-o No utilizar tablas para maquetar las páginas. 
-o Poner títulos o textos a las tablas con etiqueta <caption>: 
-<table> 
-<caption> Título para la tabla </caption>  
-.... 
-</table> 
-• Teclado. 
-o El sitio web se puede manejar mediante teclado. 
-o Posibilidad uso del teclado independientemente del ratón para acceder 
-al sitio web: 
-▪ Usando tecla del tabulador para desplazarse por algunos 
-elementos web como controles de formulario y enlaces. 
-• Propiedad tabindex. 
-• Permite  especificar  el  orden  de  tabulación  mediante  un 
-numero entero. 
-• Sintaxis: 
-o tabindex = “número de orden” 
-• Ejemplos: 
-o <label>Dirección:<input type =”text” tabindex = 
-“5”> </label> 
-o <label>Código:<input  type  =  “text”  tabindex 
-=”2”></label> 
-▪ Usando atajos de teclado o teclas de acceso rápido: 
-• Combinaciones por defecto. 
-• Uso del atributo global accesskey en elementos o 
-etiquetas HTML: 
-• accesskey = ”tecla” 
-o Para usar la tecla asignada hay que  consultar  con 
-cuál hay que combinarla en cada navegador. 
-• Atajos de teclado: 
-o Firefox: Alt + Mayus + tecla utilizada. 
-o Chrome: Alt + tecla utilizada. 
-o Opera: Alt + tecla utilizada. 
-• Tamaño de fuentes: 
-o Propiedad font-size en CSS. 
-o Uso de unidades de medida variables que no estropeen la maquetación 
-de la página al cambiar. 
-o Tipos de unidades de medida: 
-▪ Absolutas: píxeles (px), puntos (pt), picas (pc), centímetros (cm), 
-milímetros (mm) y pulgadas (in). 
-▪ Relativas: em, rem, ex, vw, vh, píxeles (px) y porcentaje (%). 
-• Textos. 
-o Limitar  la  anchura  de  los  textos  a  unos  80  caracteres  para  facilitar  su 
-lectura. 
-• Citas y Abreviaturas. 
-o Utilizar etiquetas como <abbr> y <blockquote> conforme a su 
-significado semántico y nunca para formatear el texto.  
-• Frames. 
-o Evitar el uso de marcos.  
-o Los marcos rompen con los esquemas de navegación y los hacen 
-inservibles, ya que no son información lógica, sino de presentación, por 
-lo que sólo funcionan con navegadores gráficos. 
-o Impiden enlazar unos documentos con otros. 
-• Colores. 
-o Evitar combinaciones de colores de poco contraste. 
-o Evitar transmitir información sólo a través del color. 
-• Etiquetas semánticas. 
-o Estructurar el contenido del documento web para darle cierto 
-significado utilizando etiquetas semánticas como <header>, <nav>, 
-<main>, <aside>, <footer>, etc. 
-• Idioma. 
-o Incluir el idioma en que esta escrito el documento web ya que: 
-▪ Facilita  la  lectura  de  los  lectores  de  pantalla  y  sintetizadores  de 
-voz braille. 
-▪ Los  motores  de  búsqueda  identifican  los  contenidos  del  idioma 
-deseado. 
-▪ Se utiliza para cambiar la voz en la pronunciación de un texto en 
-otro idioma, etc. 
-o Atributos HTML para Idioma. 
-▪ Idioma de la página: 
-• Se  especifica  en  la  etiqueta  <html>  con  el  atributo  lang  = 
-“Código de idioma”. 
-• Ejemplo: 
-o <html lang = “es”> 
-▪ Idioma en cualquier parte del código. 
-• Se especifica en cualquier etiqueta mediante el atributo lang = 
-“Código de idioma”. 
-• Ejemplo: 
-o <p>Él dijo: <blockquote lang="en">Hello! 
-</blockquote>cuando vio a...</p> 
-▪ Idioma en un enlace. 
-• Se  especifica  mediante  el  atributo  hreflang  = “Código de 
-idioma”. 
-• Ejemplo: 
-o <a  href  =  ”www.france.com”  hreflang  = 
-“fr”>Visitar Francia</a> 
-• Formularios. 
-o Etiquetar todos los controles de formulario con <label>
+    → Separar contenido de presentación (css en un archivo y contenido en otro)
+    → Estructurar y etiquetar correctamente el contenido 
+    → Diseño adaptativo (Responsive)
+    → JavaScript no es usable siempre por los usuarios
+
+    //Elementos que favorecen un diseño web accesible 
+    → Título (Etiqueta <title> favorece legibilidad en marcadores)
+    → Imágenes:
+        → Texto alternativo(alt, favorece seo y es leída por los intérpretes de audio).
+        Si es una imagen-recurso y no aporta información, no se usa en ellas.     
+        → Sirve también <figure> o <figcaption>
+        → Atributo <title> permite añadir información adicional 
+    → Enlaces: Usar texto descriptivo y significativo (Evitar "pinche aquí")
+    → Organización: Usar estructuras como encabezado, pie etc 
+    → Multimedia: Subtítulos, descripción de vídeo, texto alternativo descriptivo.
+        Pueden utilizarse explicaciones sonoras grabadas y guardadas en 
+        archivos de audio y cargadas en la página web con la etiqueta <audio>
+    → Tablas: No usarlas para maquetar y si hay alguna en la web añadirle <caption> con un título descriptivo 
+    → Teclado: Que el sitio web se pueda manejar mediante teclado sin ratón. <tabindex>especifica orden de tabulación
+        <acceskey> Asigna una tecla de acceso rápido a un elemento de la página.
+    → Fuentes: Unidad de medida variable que no estropee la maquetación 
+    Relativas: em, rem, ex, vw, vh y porcentaje (%). 
+    → Textos: Anchura max. de unos  80  caracteres  para  facilitar  su lectura. 
+    → Citas y Abreviaturas: <abbr> y <blockquote> 
+        <p>La <abbr title="Organización de las Naciones Unidas">ONU</abbr> fue fundada en 1945.</p>
+        
+        <blockquote cite="https://www.ejemplo.com">
+        <p>La innovación es lo que distingue a un líder de un seguidor.</p></blockquote>
+    → Frames: Evitar uso de marcos 
+    → Colores: Evitar transmitir información sólo a través del color y procurar un contraste adecuado.
+    → Etiquetas semánticas: <header>, <nav>, <main>, <aside>, <footer>, etc. 
+    → Idioma: Incluir idioma en el que está escrito el documento web. 
+        <html lang = "es"> 
+        Se puede incluir también en cualquier parte del código. 
+            <p>Él dijo: <blockquote lang="en">Hello!</blockquote>cuando vio a...</p> 
+        Y en los enlaces
+        <a  href  =  "www.france.com"  hreflang  = "fr">Visitar Francia</a> 
+    → Formularios: Etiquetar todos los controles de formulario con <label>
+  
+    
+    //INFORMACIÓN Y HERRAMIENTAS DE REVISIÓN DEL SITIO WEB. 
+
+    Usar puntos de comprobación y pautas sobre accesibilidad en: 
+        https://www.w3.org/TR/WCAG/. 
+    Obtener información en sitios dedicados a la accesibilidad. 
+        http://accesibilidadweb.dlsi.ua.es/ 
+        https://olgacarreras.blogspot.com/?m=0 
+    Usar comprobadores y validadores la accesibilidad: 
+        https://www.tawdis.net/# 
+        https://achecker.achecks.ca/checker/index.php 
+    Comprobador contraste y juego de colores: 
+        https://webaim.org/resources/contrastchecker/ 
+        https://color.adobe.com/es/create/color-wheel 
+    Comprobar soporte HTML y CSS en navegadores: 
+        https://caniuse.com/ 
+    Consejos: 
+        https://www.insuit.net/es/como-hacer-accesible-pagina-web/
+
+    
+    Ejemplos: 
+     
+        https://www.paralympic.org/es 
+        https://www.disabilitytrust.org.au/ 
+        http://www.fundacioncnse.org/dgt/ 
+        http://www.fundacioncnse.org/index.php 
+        http://www.government.se/ 
+        https://www.oercommons.org/ 
+    
+
+    //Especificación sobre Daltonismo 
+        Deuteranopia:
+        Significado: "Deutero" proviene del griego y significa "segundo". En este caso, se refiere a la dificultad para percibir los colores verdes, que son detectados por los conos de tipo "M" (medium).
+        Dificultad: Las personas con deuteranopia tienen problemas para distinguir entre el verde y el rojo.
+
+        Protanopia:
+        Significado: "Proto" significa "primero" en griego, lo que se refiere a la alteración en la percepción de los colores rojos, que son detectados por los conos de tipo "L" (long).
+        Dificultad: Las personas con protanopia tienen problemas para distinguir entre el rojo y el verde, y tienden a ver el rojo como un color más oscuro.
+
+        Tritanopia:
+        Significado: "Trita" proviene del griego "trito", que significa "tercero". Se refiere a la alteración en la percepción de los colores azules, que son detectados por los conos de tipo "S" (short).
+        Dificultad: Las personas con tritanopia tienen problemas para distinguir entre azul y amarillo.
+
+        Resumen
+        Deuteranopia (dificultad con el verde)
+        Protanopia (dificultad con el rojo)
+        Tritanopia (dificultad con el azul)
+
+        Contrastes óptimos: 
+        Contraste  de  color  con  al  menos una  relación  primer  plano  / 
+        fondo  de  4.5:1 para  texto  normal  y 3:1 para  texto  grande  para 
+        cumplir con los estándares de nivel AA (WCAG 2.1). 
+        
+        Contraste  de  color  con  al  menos una  relación  primer  plano  / 
+        fondo  de  7:1 para  el  texto  normal  y  4.5:1  para texto  grande para 
+        cumplir con los estándares de nivel AAA (WCAG 2.1). 
     
     
+    //USABILIDAD → Jakob Nielsen en 1990 definió 10 principios de UX/UI que siguen vigentes 
+        
+        → Visibilidad  del  estado  del  sistema.  El  web  o  aplicación  debe 
+        mostrar en todo momento al usuario qué está pasando y en qué 
+        punto de la navegación se encuentra.
+
+        → Adecuación  entre  el  sistema  y  el  mundo  real.  El  sistema  debe 
+        hablar con el mismo lenguaje que los usuarios. 
+
+        → Libertad  y  control  por  el  usuario.  Los  usuarios  deben  poder 
+        volver  fácilmente  a  un  estado  anterior.  Es  conveniente  dar  las 
+        opciones de "deshacer" y "rehacer". 
+
+        → Consistencia y estándares. Es conveniente seguir y repetir 
+        algunos patrones para no confundir a los usuarios.
+
+        → Prevención de errores. Es mejor prevenir los errores que 
+        generar mensajes una vez se produzcan. 
+
+        → Reconocer  mejor  que  recordar.  Hay  que  intentar  en  la  medida 
+        de lo posible mostrar objetos, acciones y opciones para 
+        minimizar el uso de memoria del usuario. 
+
+        → Flexibilidad  y  eficiencia  de  uso.  Es  importante  personalizar  las 
+        acciones frecuentes. A veces hay que crear aceleradores o atajos 
+        para mejorar la usabilidad para los usuarios más expertos. 
+
+        → Estética  y  diseño  minimalista.  Intentar  simplificar,  eliminar  el 
+        contenido  irrelevante  para que  el  usuario  sólo se  fije  en  lo 
+        realmente importante. 
+
+        → Ayudar a los usuarios a reconocer, diagnosticar y solucionar los 
+        errores.  Los  mensajes  de  error  deben  expresar  claramente  cuál 
+        ha sido la causa del problema. 
+
+        → Ayuda  y  documentación.  En  algunos  casos  puede  ser  necesario 
+        que el usuario necesite ayuda. Es necesario que ésta sea fácil de 
+        encontrar, útil, y si puede ser no demasiado extensa
+
+    //Criterios de Usabilidad       
+ 
+    → Tiene mapas de navegación interactiva para su correcta utilización y 
+    navegación. 
+    → Sistema de navegación intuitivo. 
+    → Incluye vínculos de navegación en el pie de página. 
+    → Ausencia de redireccionamiento en la entrada al portal. 
+    → Identificación clara de los elementos enlazados. 
+    → Posibilidad de retorno directo a la página de inicio en todo momento. 
+    → Menú permanente con no más de 7 opciones. 
+    → Disponibilidad de una barra de "rastros" en todo momento. 
+    → Enlaces externos se abren en nuevas ventanas. 
+    → Presenta iconos y menús con títulos y textos concisos y explicativos. 
+    → Los iconos utilizados son comprensibles. 
+    → Dimensiones óptimas de la página. 
+    → Se observa correctamente con diferentes resoluciones de pantalla. 
+    → Se  aprovecha  equilibradamente  el  espacio  visual  de  la  página  para  evitar  la 
+    sobresaturación de elementos, con espacios en blanco (libres) entre el 
+    contenido, para descansar la vista. 
+    → Se  ofrece  información  sobre  limitaciones  o  condiciones  para  la  navegabilidad 
+    (límite  de  usuarios,  necesidad  de  registrarse,  fechas  de  caducidad  para  el 
+    acceso, costos de las operaciones). 
+    → Se especifican los aspectos técnicos para una correcta presentación 
+    (determinadas aplicaciones o plugin, versión  del navegador, resolución de 
+    pantalla) 
+    → Estructura organizada con criterio de perfil de usuario. 
+    → Tiempo de descarga adecuado. 
+    → Ausencia de marcos. 
+    → El  rotulado  es  significativo,  correcto  y  utiliza  lemas  estándares:  "Mapa  del 
+    sitio", “Acerca de", "Quiénes somos", "Ayuda", "FAQs", "Regístrese". 
+    → Existencia de una opción de búsqueda en la parte superior de la página 
+    principal. 
+    → Opción de búsqueda avanzada. 
+    → No necesidad de plugin para visualizar las páginas. 
+    → Ausencia de elementos multimedia como animaciones o música. 
+    → Imágenes e ilustraciones ocupando entre el 5 y el 15 % del espacio de la página 
+    de inicio. 
+    → Fuente de texto adecuada (negro, 12puntos, sans-serif). 
+    → Títulos descriptivos de las páginas (etiqueta <title>). 
+    → Ausencia de ventanas emergentes (pop-ups). 
+    → Ausencia de menús desplegables, texto móvil, marquesinas, texto flotante, ... 
+    → Independencia del navegador y su versión. 
+
     
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
