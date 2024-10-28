@@ -1,0 +1,5 @@
+div{margin:5px; border:5px solid rgb(80, 124, 80);background:#E9DBDD; padding:8px;}
+			*{font-family:verdana,serif;color: #1A1A47;}
+			p{text-align:justify;}
+			a{color:#54297c;text-decoration: none;} /*Colores mejorados para contraste*/
+			a:hover{font-size:20px; color:#640d0d}
