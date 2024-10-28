@@ -1,0 +1,59 @@
+# Robots.txt para controlar el acceso de los agentes web
+
+# Agente 'a' no puede acceder a 'carpeta1' y su contenido
+User-agent: a 
+Disallow: /carpeta1/
+
+# Agente 'b' no puede acceder a 'carpeta1' y su contenido
+User-agent: b
+Disallow: /carpeta1/
+
+# Agente 'c' tiene bloqueado el acceso a 'carpeta2' y 'carpeta1B'
+User-agent: c
+Disallow: /carpeta2/
+Disallow: /carpeta1B/
+
+# Agente 'c' puede acceder a 'carpeta1A'
+Allow: /carpeta1A/
+
+# Agente 'a' tiene bloqueado el acceso al archivo 'dos.css' en 'carpeta2'
+Disallow: /carpeta2/dos.css
+
+# Agente 'b' puede acceder a las hojas de estilo de 'carpeta2' pero no al resto
+User-agent: b
+Allow: /carpeta2/*.css
+Disallow: /carpeta2/*
+
+# Agente 'e' tiene prohibido el acceso a todas las carpetas excepto a archivos en 'carpeta2' que comienzan con 'uno'
+User-agent: e
+Disallow: /
+Allow: /carpeta2/uno*
+
+# Agente 'd' puede acceder únicamente a archivos '.pdf' de 'carpeta1B'
+User-agent: d
+Disallow: /carpeta1B/*
+Allow: /carpeta1B/*.pdf
+
+# Agente 'd' no puede acceder a imágenes '.png' en 'carpeta1A', pero sí al resto
+Disallow: /carpeta1A/*.png
+
+# Agente 'd' tiene acceso restringido a 'carpeta2', excepto a 'tres.css'
+User-agent: d
+Disallow: /carpeta2/
+Allow: /carpeta2/tres.css
+
+# Todos los agentes pueden acceder al archivo 'uno.html' en la raíz
+User-agent: *
+Allow: /uno.html
+
+# 'dos.html' solo puede ser accedido por el agente 'e'
+Disallow: /dos.html
+User-agent: e
+Allow: /dos.html
+
+# Todos los agentes solo pueden acceder a 'carpeta3' y su contenido
+User-agent: *
+Allow: /carpeta3/
+
+# Indica que el archivo en 'carpeta3' es el mapa del sitio
+Sitemap: /carpeta3/sitemap.xml

@@ -1,0 +1,37 @@
+#Robots pero optimizado. 
+
+# robots.txt para controlar el acceso de los robots de búsqueda
+
+# Por defecto, ningún robot puede rastrear el sitio web
+User-agent: *
+Disallow: /
+
+# Exabot, MetaURI y Rogerbot pueden rastrear las carpetas 'buscadores' y 'navegadores'
+User-agent: Exabot
+User-agent: MetaURI
+User-agent: Rogerbot
+Allow: /buscadores/
+Allow: /navegadores/
+
+# Permitir acceso a archivos en 'Varios' que empiecen por 'doc'
+User-agent: *
+Allow: /Varios/doc*
+
+# Permitir acceso a imágenes en 'imagenes' solo al robot de Google para imágenes
+User-agent: Googlebot-Image
+Allow: /imagenes/
+
+# Bloquear el acceso a la carpeta 'imagenes' para el resto de los robots
+User-agent: *
+Disallow: /imagenes/
+
+# Permitir a los robots de Bing y Yandex acceder a imágenes con extensión '.png'
+User-agent: Bingbot
+Allow: /*.png$
+
+User-agent: Yandex
+Allow: /*.png$
+
+# Todos los robots pueden rastrear el archivo 'descargas.html' en la carpeta 'descargas'
+User-agent: *
+Allow: /descargas/descargas.html
