@@ -1,0 +1,10 @@
+*{
+    color:#EA9F15;
+    background-color:#FFFFFF
+}
+
+/*  Esta es la combinación de colores menos accesible. 
+    Nivel A → No cumple con los requisitos de accesibilidad. 
+    Contraste muy pobre para cualquier tamaño de letra: 2.22
+    No es recomendable el uso de esta combinación de colores */
+
