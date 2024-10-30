@@ -694,7 +694,149 @@ Para que el usuario pueda modificar el tamaño de los cuadros de texto.
 
 
 
+zindex: indica posición en las "capas" con los divs. 
 
+Media
+
+30/10
+
+CONSULTAS DE MEDIOS - MEDIA QUERIES. 
+Concepto. 
+• Permiten a un diseño acoplarse con precisión a los distintos tipos de medios de difusión.  
+• Para ello, en las consultas de medios se usan determinados criterios o condiciones que establecen 
+que estilo se aplicará según sean las características del medio de difusión. 
+Diseño Web Adaptable o Responsivo - Responsive Web Design (RWD). 
+• Creación y diseño de sitios web que se adaptan automáticamente en función del soporte 
+(ordenador, tableta, smartphone, etc.). 
+• RWD se basa en el módulo Media Queries. 
+Tamaños más comunes de dispositivos de salida.  
+• 320px. 
+• 480px. 
+• 600px. 
+• 640px. 
+• 768px. 
+• 800px. 
+• 900px. 
+• 1024px. 
+• 1280px. 
+• 1920px. 
+CRITERIOS. 
+• width. 
+o Anchura de visualización. 
+o Se usa para comprobar la anchura de la zona de visualización del navegador (viewport). 
+o Admite variantes con prefijos min y max. 
+o Sintaxis: 
+▪ (width: número unidad de medida) 
+▪ (min-width: número unidad de medida) 
+▪ (max-width: número unidad de medida) 
+o Ejemplo: 
+▪ (width: 900px) 
+▪ (min-width: 500px) 
+• height. 
+o Altura de visualización. 
+o Se usa para comprobar la altura de la zona de visualización del navegador (viewport). 
+o Sintaxis: 
+▪ (height: número unidad de medida) 
+▪ (min- height: número unidad de medida) 
+▪ (max- height: número unidad de medida) 
+o Ejemplo: 
+▪ (height: 680px) 
+▪ (max-height: 1000px) 
+• device-width. 
+o Anchura física de visualización. 
+o Se usa para comprobar la anchura física de la pantalla de difusión. 
+o Sintaxis: 
+▪ (devide-width: número unidad de medida) 
+o Ejemplo: 
+▪ (device-width: 1340px) 
+• devide-height. 
+o Altura física de visualización. 
+o Se usa para comprobar la altura física de la pantalla de difusión. 
+o Sintaxis: 
+▪ (device-height: número unidad de medida) 
+o Ejemplo: 
+▪ (device-height: 720px) 
+• orientation. 
+o Útil para conocer a orientación de la pantalla de difusión. 
+o Sintaxis: 
+▪ (orientation: valores) 
+o Valores: 
+▪ portrait. 
+• Orientación vertical. 
+▪ landscape. 
+• Orientación horizontal. 
+o Ejemplo: 
+▪ (orientation: portrait) 
+• aspect-ratio. 
+o Relación de aspecto. 
+o Permite comprobar la relación ente el ancho y el alto de la pantalla de difusión. 
+o Sintaxis: 
+▪ (aspect-ratio: valores) 
+o Valores: 
+▪ 4/3, 16/9, 185/100 o 91/50, 239/100. 
+o Ejemplo: 
+▪ (aspect-ratio: 16/9) 
+• device-aspect-ratio. 
+o Relación de aspecto física. 
+o Permite comprobar la relación ente el ancho y el alto del dispositivo de salida. 
+o Sintaxis: 
+▪ (device-aspect-ratio: valores) 
+o Valores: 
+▪ 4/3, 16/9, 185/100 o 91/50, 239/100. 
+o Ejemplo: 
+▪ (aspect-ratio: 16/9) 
+• color. 
+o Permite comprobar si la pantalla usa color o no. 
+o Admite variantes con prefijos min y max. 
+o Sintaxis: 
+▪ (color: valor) 
+▪ (min-color: valor) 
+▪ (max-color: valor) 
+o Valor: 
+▪ Número  entero  que  representa  el  número  de  bits  por  componente  de  color (rojo, 
+verde, azul) del dispositivo de salida. 
+▪ Valor = 0, indica que el dispositivo no es en color. 
+o Ejemplo: 
+▪ (color) 
+▪ (min-color: 8) 
+• color-index. 
+o Permite comprobar si la pantalla usa un número determinado de colores. 
+o Admite variantes con prefijos min y max. 
+o Sintaxis: 
+▪ (color-index: valor) 
+▪ (max-color-index: valor) 
+▪ (min-color-index: valor) 
+o Valor: 
+▪ Número  entero  que  representa  el  número  de  colores  en  la  tabla  de  colores  del 
+dispositivo de salida. 
+o Ejemplo: 
+▪ (color-index:256) 
+▪ (min-color-index: 256) 
+• monochrome. 
+o Número de niveles de gris para dispositivos monocromáticos. 
+o Admite variantes con prefijos min y max. 
+o Sintaxis: 
+▪ (monochrome: valor) 
+▪ (max- monochrome: valor) 
+▪ (min- monochrome: valor) 
+o Valor: 
+▪ Indica el número de bits por pixel en un dispositivo monocromático (escala de 
+grises) 
+▪ Si el valor es 0, el dispositivo no es monocromático. 
+o Ejemplo: 
+▪ (monochrome) 
+▪ (min-monochrome: 8) 
+• resolution 
+o Resolución de la pantalla de salida. 
+o Admite variantes con prefijos min y max. 
+o Sintaxis: 
+▪ (resolution: valor) 
+▪ (max-resolution: valor) 
+▪ (min-resolution: valor) 
+o Valor: 
+▪ Se expresa en dpi o dpcm, puntos por pulgada o centímetro respectivamente. 
+o Ejemplo: 
+▪ (min-resolution: 300dpi)
 
 
 
