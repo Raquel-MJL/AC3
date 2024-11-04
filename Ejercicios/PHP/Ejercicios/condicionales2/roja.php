@@ -1,0 +1,4 @@
+<?php
+$roja = "Si tomas la pastilla roja, te quedarás en el país de las maravillas y
+yo te mostraré hasta donde alcanza la madriguera de conejos."
+?>

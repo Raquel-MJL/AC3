@@ -113,7 +113,7 @@
     // 3. isset()
     $variable = "texto";
     if (isset($variable)) {
-        echo "La variable está definida.\n"; // Comprueba si la variable está definida
+        echo "La variable está definida.<br>"; // Comprueba si la variable está definida
     }
     
     // 4. unset()
@@ -123,12 +123,12 @@
     // 5. empty()
     $variable = "";
     if (empty($variable)) {
-        echo "La variable está vacía.\n"; // Verifica si la variable está vacía
+        echo "La variable está vacía.<br>"; // Verifica si la variable está vacía
     }
     
     // 6. gettype()
     $variable = 42;
-    echo gettype($variable) . "\n"; // Muestra "integer"
+    echo gettype($variable) . "<br>"; // Muestra "integer"
     
     // 7. settype()
     $variable = "123";
@@ -136,49 +136,49 @@
     
     // 8. sizeof() (alias de count())
     $array = array(1, 2, 3);
-    echo sizeof($array) . "\n"; // Muestra 3
+    echo sizeof($array) . "<br>"; // Muestra 3
 
     //CONVERSIÓN DE TIPOS 
     
     // 1. Conversión de string a integer
     $cadena = "123";
     $entero = (int)$cadena; // Se convierte a entero
-    echo "String a Integer: $entero\n"; // Muestra 123
+    echo "String a Integer: $entero<br>"; // Muestra 123
 
     // 2. Conversión de string a float
     $cadenaDecimal = "12.34";
     $flotante = (float)$cadenaDecimal; // Se convierte a flotante
-    echo "String a Float: $flotante\n"; // Muestra 12.34
+    echo "String a Float: $flotante<br>"; // Muestra 12.34
 
     // 3. Conversión de integer a string
     $numero = 456;
     $cadenaNumero = (string)$numero; // Se convierte a string
-    echo "Integer a String: $cadenaNumero\n"; // Muestra "456"
+    echo "Integer a String: $cadenaNumero<br>"; // Muestra "456"
 
     // 4. Conversión de float a integer
     $decimal = 12.99;
     $enteroDesdeFloat = (int)$decimal; // Se convierte a entero (truncando el decimal)
-    echo "Float a Integer: $enteroDesdeFloat\n"; // Muestra 12
+    echo "Float a Integer: $enteroDesdeFloat<br>"; // Muestra 12
 
     // 5. Conversión de integer a float
     $enteroParaFloat = 10;
     $flotanteDesdeEntero = (float)$enteroParaFloat; // Se convierte a flotante
-    echo "Integer a Float: $flotanteDesdeEntero\n"; // Muestra 10.0
+    echo "Integer a Float: $flotanteDesdeEntero<br>"; // Muestra 10.0
 
     // 6. Conversión de array a string
     $array = array("Hola", "mundo");
     $cadenaDesdeArray = implode(" ", $array); // Une los elementos del arreglo en una cadena
-    echo "Array a String: $cadenaDesdeArray\n"; // Muestra "Hola mundo"
+    echo "Array a String: $cadenaDesdeArray<br>"; // Muestra "Hola mundo"
 
     // 7. Conversión de booleano a integer
     $booleano = true;
     $enteroDesdeBooleano = (int)$booleano; // true se convierte a 1
-    echo "Booleano a Integer: $enteroDesdeBooleano\n"; // Muestra 1
+    echo "Booleano a Integer: $enteroDesdeBooleano<br>"; // Muestra 1
 
     // 8. Conversión de booleano a string
     $booleanoFalse = false;
     $cadenaDesdeBooleano = (string)$booleanoFalse; // false se convierte a "0"
-    echo "Booleano a String: $cadenaDesdeBooleano\n"; // Muestra "0"
+    echo "Booleano a String: $cadenaDesdeBooleano<br>"; // Muestra "0"
 
     
     
@@ -307,6 +307,131 @@
 
         // Asigna valor si $usuario es null
         $nombre = $usuario ?? 'Invitado'; // 'Invitado'
+
+
+    //CONDICIONALES 
+    
+    // 1. Estructura if simple
+    $edad = 18;
+    if ($edad >= 18) {
+        echo "Eres mayor de edad.<br>"; // Se ejecuta si la condición es verdadera
+    }
+
+    // 2. Estructura if-else
+    $hora = 10;
+    if ($hora < 12) {
+        echo "Buenos días.<br>"; // Se ejecuta si la condición es verdadera
+    } else {
+        echo "Buenas tardes.<br>"; // Se ejecuta si la condición es falsa
+    }
+
+    // 3. Estructura if-else if-else
+    $nota = 75;
+    if ($nota >= 90) {
+        echo "Excelente.<br>";
+    } elseif ($nota >= 70) {
+        echo "Bien.<br>"; // Se ejecuta si la nota es mayor o igual a 70 y menor a 90
+    } else {
+        echo "Necesitas mejorar.<br>";
+    }
+
+    // 4. Operador ternario
+    $es_adulto = ($edad >= 18) ? "Sí" : "No"; // Asigna "Sí" si la condición es verdadera, "No" si es falsa
+    echo "¿Es adulto? $es_adulto<br>";
+
+    // 5. Estructura switch
+    $día = "lunes";
+    switch ($día) {
+        case "lunes":
+            echo "Inicio de semana.<br>"; // Se ejecuta si $día es "lunes"
+            break;
+        case "viernes":
+            echo "Fin de semana a la vista.<br>"; // Se ejecuta si $día es "viernes"
+            break;
+        default:
+            echo "Es un día normal.<br>"; // Se ejecuta si no coincide con ningún caso anterior
+    }
+
+    // 6. Estructura if con múltiples condiciones
+    $temperatura = 30;
+    if ($temperatura > 25 && $temperatura < 35) {
+        echo "El clima es agradable.<br>"; // Se ejecuta si ambas condiciones son verdaderas
+    }
+
+    // 7. Estructura if con condición OR
+    $usuario = "invitado";
+    if ($usuario == "admin" || $usuario == "moderador") {
+        echo "Acceso permitido.<br>"; // Se ejecuta si alguna de las condiciones es verdadera
+    } else {
+        echo "Acceso denegado.<br>"; // Se ejecuta si ambas condiciones son falsas
+    }
+
+    //SINTAXIS ALTERNATIVA ABREVIADA 
+    /*En ellas se sustituye la primera llave ({), por 2 puntos (:), y la llave de cierre (}) 
+    por  las  cláusulas  endif,  endwhile,  endfor,  endforeach  y  endswitch,  según  la 
+    instrucción utilizada.*/
+    
+    if ($edad >= 18): 
+        echo "Es mayor de edad"; 
+    else: 
+        echo "Es menor de edad"; 
+    endif;
+    
+    
+    
+    //BUCLES 
+    
+    // 1. Bucle for
+    // Este bucle imprimirá los números del 1 al 5
+    for ($i = 1; $i <= 5; $i++) {
+        echo $i . "<br>"; 
+    }
+
+
+    // 2. Bucle while
+    // Este bucle imprimirá los números del 1 al 5
+    $i = 1;
+    while ($i <= 5) {
+        echo $i . "<br>"; 
+        $i++; 
+    }
+
+
+    // 3. Bucle do...while
+    // Este bucle imprimirá los números del 1 al 5
+    $i = 1;
+    do {
+        echo $i . "<br>"; 
+        $i++; 
+    } while ($i <= 5); // La condición se evalúa después de ejecutar el bloque
+
+
+    // 4. Bucle foreach
+    // Este bucle imprimirá cada elemento de un arreglo
+    $frutas = array("manzana", "naranja", "plátano");
+
+    foreach ($frutas as $fruta) {
+        echo $fruta . "<br>"; // Imprime el nombre de la fruta y un salto de línea
+    }
+
+
+    // 5. Bucle anidado
+    // Este bucle imprimirá un arreglo bidimensional
+    $arreglo = array(
+        array(1, 2, 3),
+        array(4, 5, 6),
+        array(7, 8, 9)
+    );
+
+    foreach ($arreglo as $fila) {
+        foreach ($fila as $numero) {
+            echo $numero . " "; // Imprime cada número en la fila
+        }
+        echo "<br>"; 
+    }
+
+
+
 
     ?>
 </body>

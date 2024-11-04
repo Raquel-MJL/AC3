@@ -1,0 +1,4 @@
+<?php
+$azul = "Si tomas la pastilla azul, fin de la historia. Te despertarás en tu
+cama y te creerás lo que quieras creerte";
+?>
