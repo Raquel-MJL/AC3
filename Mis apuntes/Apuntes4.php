@@ -430,9 +430,157 @@
         echo "<br>"; 
     }
 
+    //ARRAYS
 
+    //Indexado o numérico 
+   
+    $colores = array("Rojo", "Verde", "Azul");
 
+    echo $colores[0]; // Imprime "Rojo"
+    echo $colores[1]; // Imprime "Verde"
+    echo $colores[2]; // Imprime "Azul"
 
+    //Asociativo 
+    
+    $persona = array(
+        "nombre" => "Juan",
+        "edad" => 30,
+        "ciudad" => "Madrid"
+    );
+
+    echo $persona["nombre"];  // Imprime "Juan"
+    echo $persona["edad"];    // Imprime 30
+    echo $persona["ciudad"];  // Imprime "Madrid"
+    
+    //Multidimensional 
+    
+    $estudiantes = array(
+        array("nombre" => "Carlos", "edad" => 22, "ciudad" => "Barcelona"),
+        array("nombre" => "Ana", "edad" => 25, "ciudad" => "Valencia"),
+        array("nombre" => "Luis", "edad" => 20, "ciudad" => "Sevilla")
+    );
+
+    echo $estudiantes[0]["nombre"];  // Imprime "Carlos"
+    echo $estudiantes[1]["edad"];    // Imprime 25
+    echo $estudiantes[2]["ciudad"];  // Imprime "Sevilla"
+
+    foreach ($estudiantes as $estudiante) { //mostrar datos con foreach 
+        echo "Nombre: " . $estudiante["nombre"] . "<br>";
+        echo "Edad: " . $estudiante["edad"] . "<br>";
+        echo "Ciudad: " . $estudiante["ciudad"] . "<br><br>";
+    }
+
+    //MÉTODOS DE ARRAYS 
+
+    //Copiar array 
+    $nombreArrayNuevo = $NombreArrayACopiar ;
+    
+
+    // count() - Cuenta el número de elementos en un array
+    $frutas = ["manzana", "naranja", "plátano"];
+    $numeroFrutas = count($frutas);  // Devuelve 3
+    echo "count: $numeroFrutas<br>";   // Imprime "count: 3"
+
+    // sizeof() - Alias de count(), cuenta el número de elementos en un array
+    $numeros = [1, 2, 3, 4];
+    $numeroNumeros = sizeof($numeros);  // Devuelve 4
+    echo "sizeof: $numeroNumeros<br>";   // Imprime "sizeof: 4"
+
+    // implode() - Convierte un array en una cadena, uniendo los elementos con un delimitador
+    $frutas = ["manzana", "naranja", "plátano"];
+    $frutasCadena = implode(", ", $frutas);  // "manzana, naranja, plátano"
+    echo "implode: $frutasCadena<br>";   // Imprime "implode: manzana, naranja, plátano"
+
+    // in_array() - Verifica si un valor existe en un array
+    $existe = in_array("plátano", $frutas);  // Devuelve true
+    echo "in_array: " . ($existe ? "Sí" : "No") . "<br>";  // Imprime "in_array: Sí"
+
+    // list() - Asigna valores de un array a variables individuales
+    $colores = ["rojo", "verde", "azul"];
+    list($color1, $color2, $color3) = $colores;  // Asigna a $color1 "rojo", $color2 "verde", $color3 "azul"
+    echo "list: $color1, $color2, $color3<br>";  // Imprime "list: rojo, verde, azul"
+
+    // array_search() - Busca un valor en un array y devuelve la clave correspondiente
+    $clave = array_search("naranja", $frutas);  // Devuelve 1, la posición de "naranja"
+    echo "array_search: La clave de 'naranja' es $clave<br>";  // Imprime "array_search: La clave de 'naranja' es 1"
+
+    // array_keys() - Devuelve todas las claves de un array
+    $miArray = ["a" => 1, "b" => 2, "c" => 3];
+    $claves = array_keys($miArray);  // Devuelve ["a", "b", "c"]
+    echo "array_keys: ";
+    print_r($claves);  // Imprime "array_keys: Array ( [0] => a [1] => b [2] => c )"
+
+    // array_values() - Devuelve todos los valores de un array
+    $valores = array_values($miArray);  // Devuelve [1, 2, 3]
+    echo "array_values: ";
+    print_r($valores);  // Imprime "array_values: Array ( [0] => 1 [1] => 2 [2] => 3 )"
+
+    // sort() - Ordena un array en orden ascendente (por valor)
+    $numeros = [3, 1, 4, 2];
+    sort($numeros);  // Ordena el array a [1, 2, 3, 4]
+    echo "sort: ";
+    print_r($numeros);  // Imprime "sort: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )"
+
+    // rsort() - Ordena un array en orden descendente (por valor)
+    rsort($numeros);  // Ordena el array a [4, 3, 2, 1]
+    echo "rsort: ";
+    print_r($numeros);  // Imprime "rsort: Array ( [0] => 4 [1] => 3 [2] => 2 [3] => 1 )"
+
+    // max() - Devuelve el valor máximo de un array
+    $numeros = [10, 20, 30, 40];
+    $maximo = max($numeros);  // Devuelve 40
+    echo "max: $maximo<br>";  // Imprime "max: 40"
+
+    // min() - Devuelve el valor mínimo de un array
+    $minimo = min($numeros);  // Devuelve 10
+    echo "min: $minimo<br>";  // Imprime "min: 10"
+
+    // array_reverse() - Devuelve un array con los elementos en orden inverso
+    $frutas = ["manzana", "naranja", "plátano"];
+    $invertido = array_reverse($frutas);  // Devuelve ["plátano", "naranja", "manzana"]
+    echo "array_reverse: ";
+    print_r($invertido);  // Imprime "array_reverse: Array ( [0] => plátano [1] => naranja [2] => manzana )"
+
+    // array_push() - Agrega uno o más elementos al final de un array
+    array_push($frutas, "kiwi", "sandía");  // $frutas es ["manzana", "naranja", "plátano", "kiwi", "sandía"]
+    echo "array_push: ";
+    print_r($frutas);  // Imprime "array_push: Array ( [0] => manzana [1] => naranja [2] => plátano [3] => kiwi [4] => sandía )"
+
+    // array_pop() - Elimina el último elemento de un array
+    $ultimo = array_pop($frutas);  // Elimina "sandía", $frutas es ahora ["manzana", "naranja", "plátano", "kiwi"]
+    echo "array_pop: ";
+    print_r($frutas);  // Imprime "array_pop: Array ( [0] => manzana [1] => naranja [2] => plátano [3] => kiwi )"
+    echo "Elemento eliminado: $ultimo<br>";  // Imprime "Elemento eliminado: sandía"
+
+    // array_unshift() - Agrega uno o más elementos al principio de un array
+    array_unshift($frutas, "fresa", "melón");  // $frutas es ["fresa", "melón", "manzana", "naranja", "plátano", "kiwi"]
+    echo "array_unshift: ";
+    print_r($frutas);  // Imprime "array_unshift: Array ( [0] => fresa [1] => melón [2] => manzana [3] => naranja [4] => plátano [5] => kiwi )"
+
+    // array_shift() - Elimina el primer elemento de un array
+    $primero = array_shift($frutas);  // Elimina "fresa", $frutas es ahora ["melón", "manzana", "naranja", "plátano", "kiwi"]
+    echo "array_shift: ";
+    print_r($frutas);  // Imprime "array_shift: Array ( [0] => melón [1] => manzana [2] => naranja [3] => plátano [4] => kiwi )"
+    echo "Elemento eliminado: $primero<br>";  // Imprime "Elemento eliminado: fresa"
+
+    // array_slice() - Extrae una porción de un array sin modificar el original
+    $porcion = array_slice($frutas, 1, 3);  // Devuelve ["manzana", "naranja", "plátano"]
+    echo "array_slice: ";
+    print_r($porcion);  // Imprime "array_slice: Array ( [0] => manzana [1] => naranja [2] => plátano )"
+
+    // array_splice() - Elimina una porción de un array y la reemplaza por nuevos elementos
+    array_splice($frutas, 2, 2, ["fresa", "sandía"]);  // $frutas es ahora ["melón", "manzana", "fresa", "sandía", "kiwi"]
+    echo "array_splice: ";
+    print_r($frutas);  // Imprime "array_splice: Array ( [0] => melón [1] => manzana [2] => fresa [3] => sandía [4] => kiwi )"
+
+    // array_sum() - Devuelve la suma de los valores de un array
+    $numeros = [1, 2, 3, 4];
+    $suma = array_sum($numeros);  // Devuelve 10
+    echo "array_sum: $suma<br>";  // Imprime "array_sum: 10"
+
+    //array_product() - Devuelve el producto de los valores de un array
+    $producto = array_product($numeros);  // Devuelve 24 (1 * 2 * 3 * 4)
+    echo "array_product: $producto<br>";  // Imprime "array_product: 24"
     ?>
 </body>
 </html>
