@@ -517,14 +517,24 @@
 
     // sort() - Ordena un array en orden ascendente (por valor)
     $numeros = [3, 1, 4, 2];
-    sort($numeros);  // Ordena el array a [1, 2, 3, 4]
-    echo "sort: ";
-    print_r($numeros);  // Imprime "sort: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )"
+    echo sort($numeros);  // Ordena el array a [1, 2, 3, 4]
 
-    // rsort() - Ordena un array en orden descendente (por valor)
-    rsort($numeros);  // Ordena el array a [4, 3, 2, 1]
-    echo "rsort: ";
-    print_r($numeros);  // Imprime "rsort: Array ( [0] => 4 [1] => 3 [2] => 2 [3] => 1 )"
+        // rsort() - Ordena un array en orden descendente (por valor)
+        echo rsort($numeros);  // Ordena el array a [4, 3, 2, 1]
+
+        //  asort() - Ordena un array en orden ascendente, manteniendo la relación entre claves y valores
+        $colores = ["rojo" => 3, "verde" => 1, "azul" => 2];
+        echo asort($colores);  // Ordena los valores en orden ascendente, las claves se mantienen
+
+        //  arsort() - Ordena un array en orden descendente, manteniendo la relación entre claves y valores
+        echo arsort($colores);
+
+        //  ksort() - Ordena un array en orden ascendente según sus claves
+        $frutas = ["manzana" => 2, "naranja" => 3, "plátano" => 1];
+        echo ksort($frutas);  // Ordena el array por las claves en orden ascendente
+
+        //  krsort() - Ordena un array en orden descendente según sus claves
+        echo krsort($frutas);  // Ordena el array por las claves en orden descendente
 
     // max() - Devuelve el valor máximo de un array
     $numeros = [10, 20, 30, 40];
@@ -538,8 +548,7 @@
     // array_reverse() - Devuelve un array con los elementos en orden inverso
     $frutas = ["manzana", "naranja", "plátano"];
     $invertido = array_reverse($frutas);  // Devuelve ["plátano", "naranja", "manzana"]
-    echo "array_reverse: ";
-    print_r($invertido);  // Imprime "array_reverse: Array ( [0] => plátano [1] => naranja [2] => manzana )"
+    echo $invertido;// Imprime "array_reverse: Array ( [0] => plátano [1] => naranja [2] => manzana )"
 
     // array_push() - Agrega uno o más elementos al final de un array
     array_push($frutas, "kiwi", "sandía");  // $frutas es ["manzana", "naranja", "plátano", "kiwi", "sandía"]
