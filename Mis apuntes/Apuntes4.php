@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documento NO FUNCIONAL a modo de apuntes y notas PHP</title>
 </head>
 <body>
     <?php
@@ -590,6 +590,157 @@
     //array_product() - Devuelve el producto de los valores de un array
     $producto = array_product($numeros);  // Devuelve 24 (1 * 2 * 3 * 4)
     echo "array_product: $producto<br>";  // Imprime "array_product: 24"
+    
+    //FUNCIONES MATEMÁTICAS 
+    
+    // 1. abs() - Devuelve el valor absoluto de un número
+    $num = -10;
+    echo "El valor absoluto de $num es: " . abs($num) . "\n"; // 10
+
+    // 2. ceil() - Redondea un número hacia arriba al entero más cercano
+    $num = 3.14;
+    echo "Redondeo hacia arriba de $num es: " . ceil($num) . "\n"; // 4
+
+    // 3. floor() - Redondea un número hacia abajo al entero más cercano
+    $num = 3.14;
+    echo "Redondeo hacia abajo de $num es: " . floor($num) . "\n"; // 3
+
+    // 4. round() - Redondea un número al entero más cercano
+    $num = 3.56;
+    echo "Redondeo de $num es: " . round($num) . "\n"; // 4
+
+    // 5. max() - Devuelve el valor más alto de una lista de números
+    echo "El valor máximo entre 1, 5 y 3 es: " . max(1, 5, 3) . "\n"; // 5
+
+    // 6. min() - Devuelve el valor más bajo de una lista de números
+    echo "El valor mínimo entre 1, 5 y 3 es: " . min(1, 5, 3) . "\n"; // 1
+
+    // 7. pow() - Calcula la potencia de un número
+    $base = 2;
+    $exponente = 3;
+    echo "$base elevado a la potencia de $exponente es: " . pow($base, $exponente) . "\n"; // 8
+
+    // 8. sqrt() - Calcula la raíz cuadrada de un número
+    $num = 16;
+    echo "La raíz cuadrada de $num es: " . sqrt($num) . "\n"; // 4
+
+    // 9. rand() - Genera un número aleatorio entre un rango
+    echo "Número aleatorio entre 1 y 100: " . rand(1, 100) . "\n";
+
+    // 10. sin() - Devuelve el seno de un ángulo (en radianes)
+    $angulo = pi() / 2; // 90 grados en radianes
+    echo "El seno de 90 grados es: " . sin($angulo) . "\n"; // 1
+
+    // 11. cos() - Devuelve el coseno de un ángulo (en radianes)
+    $angulo = pi() / 3; // 60 grados en radianes
+    echo "El coseno de 60 grados es: " . cos($angulo) . "\n"; // 0.5
+
+    // 12. tan() - Devuelve la tangente de un ángulo (en radianes)
+    $angulo = pi() / 4; // 45 grados en radianes
+    echo "La tangente de 45 grados es: " . tan($angulo) . "\n"; // 1
+
+    // 13. deg2rad() - Convierte grados a radianes
+    $grados = 180;
+    echo "$grados grados en radianes es: " . deg2rad($grados) . "\n"; // 3.1415926535898
+
+    // 14. rad2deg() - Convierte radianes a grados
+    $radianes = pi();
+    echo "$radianes radianes en grados es: " . rad2deg($radianes) . "\n"; // 180
+
+    // 15. exp() - Calcula el valor de e elevado a la potencia de un número
+    $num = 2;
+    echo "e elevado a la potencia de $num es: " . exp($num) . "\n"; // 7.3890560989
+
+    // 16. log() - Calcula el logaritmo natural (base e) de un número
+    $num = 10;
+    echo "El logaritmo natural de $num es: " . log($num) . "\n"; // 2.30258509299
+
+    // 17. log10() - Calcula el logaritmo en base 10 de un número
+    $num = 100;
+    echo "El logaritmo en base 10 de $num es: " . log10($num) . "\n"; // 2
+
+    // 18. mod() - Devuelve el residuo de la división de dos números
+    $num1 = 10;
+    $num2 = 3;
+    echo "El residuo de $num1 dividido por $num2 es: " . fmod($num1, $num2) . "\n"; // 1
+
+    //FUNCIONES 
+
+    // Sin retorno ni parámetros (tipo: Procedimiento)
+    function sinRetornoNiParametros() {
+        echo "Esta función no tiene retorno ni parámetros.\n";
+    }
+    sinRetornoNiParametros(); // Llamada a la función sin parámetros
+
+    // Sin retorno con parámetros (tipo: Procedimiento con parámetros)
+    function sinRetornoConParametros($nombre) {
+        echo "Hola, $nombre! Esta función no retorna nada.\n";
+    }
+    sinRetornoConParametros("Juan"); // Llamada a la función con un parámetro
+
+    // Con retorno sin parámetros (tipo: Función con retorno)
+    function conRetornoSinParametros() {
+        return "Esta función retorna un valor sin parámetros.\n";
+    }
+    $resultado = conRetornoSinParametros(); // Llamada a la función sin parámetros
+    echo $resultado; // Mostrar el valor retornado
+
+    // Con retorno y con parámetros (tipo: Función con retorno y parámetros)
+    function conRetornoConParametros($a, $b) {
+        return $a + $b; // Retorna la suma de los parámetros
+    }
+    $suma = conRetornoConParametros(5, 3); // Llamada a la función con parámetros
+    echo "La suma de 5 y 3 es: $suma\n"; // Mostrar el valor retornado
+
+    //Con múltiples datos de retorno 
+        
+        // Con array como retorno 
+        function retornarArray() {
+            $personas = [
+                "Juan" => 25,
+                "Ana" => 30,
+                "Pedro" => 22,
+            ];
+            return $personas; // Retorna un array con nombres y edades
+        }
+
+        $datosPersonas = retornarArray(); // Llamada a la función
+        echo "Datos de las personas:\n";
+        print_r($datosPersonas); // Muestra el array retornado
+
+
+        // Con returns alternativos (diferentes retornos según condiciones)
+        function retornarValorAlternativo($numero) {
+            if ($numero > 0) {
+                return "El número $numero es positivo";
+            } elseif ($numero < 0) {
+                return "El número $numero es negativo";
+            } else {
+                return "El número es cero";
+            }
+        }
+    
+    //Función anónima 
+    $cuadrado = function($numero) {
+        return $numero * $numero;
+    };
+
+    //Función flecha 
+    $doble = fn($numero) => $numero * 2; //fn es abreviatura de función. Y si sólo devuelve 1 dato no es necesario el return. 
+    echo "El doble de 5 es: " . $doble(5) . "<br>"; // Resultado: 10
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     ?>
 </body>
 </html>
