@@ -1,0 +1,24 @@
+img {
+width: 200px;
+height: 125px;
+margin: 10px;
+border-radius: 5px;
+};
+
+ul {
+    list-style-type: none; /* Elimina las viñetas */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilo para los elementos de la lista */
+ul li {
+    display: inline-block; /* Coloca los elementos en línea */
+    margin-right: 10px; /* Espacio entre los iconos */
+}
+
+/* Estilo para las imágenes */
+ul li img {
+    width: 50px; /* Ajusta el tamaño de los iconos */
+    height: 50px; /* Ajusta el tamaño de los iconos */
+}

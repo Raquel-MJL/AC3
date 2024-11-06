@@ -1,0 +1,94 @@
+/* General */
+body {
+    font-family: Calibri, sans-serif; /* Fuente general */
+    background: linear-gradient(to bottom, #f0f0f0, #c9c9c9); /* Fondo degradado */
+    text-align: center; /* Centrar todo el texto por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Título */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Contenedor principal de las tablas */
+#contenedor1, #contenedor2 {
+    display: flex;
+    flex-direction: column; /* Las tablas se apilan verticalmente */
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilos para los contenedores independientes de cada tabla */
+table {
+    border: 1px solid black; /* Borde de 1px negro */
+    border-radius: 5px; /* Bordes redondeados de 5px */
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra gris oscuro difusa */
+    background-color: #f1f1f1; /* Fondo gris claro */
+    padding: 10px; /* Márgenes internos */
+    margin-bottom: 30px;
+}
+
+/* Estilo para los encabezados de las tablas (figcaption) */
+figcaption {
+    font-size: 24px; /* Tamaño de la leyenda */
+    color: #003366; /* Color azul marino */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 10px;
+}
+
+/* Estilos para las tablas */
+#tablaContactos, #tablaVendedores, #tablaEstadisticas {
+    border-collapse: collapse; /* Sin espacio entre celdas */
+    width: 80%; /* Ajuste el ancho al 80% de su contenedor */
+}
+
+/* Celdas de las tablas */
+#tablaContactos th, #tablaVendedores th, #tablaEstadisticas th,
+#tablaContactos td, #tablaVendedores td, #tablaEstadisticas td {
+    border: 1px solid #003366; /* Borde azul marino */
+    padding: 10px;
+    width: 250px; /* 250px de ancho por celda */
+    font-size: 20px; /* Tamaño de texto */
+}
+
+/* Estilos para los encabezados */
+#tablaContactos th, #tablaVendedores th, #tablaEstadisticas th {
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Negrita */
+    background-color: #003366; /* Fondo azul marino para los encabezados */
+    color: white; /* Texto blanco */
+}
+
+/* Centrado de los datos en las celdas */
+#tablaContactos td, #tablaVendedores td, #tablaEstadisticas td {
+    text-align: center; /* Centrar el texto de las celdas */
+    font-size: 20px; /* Tamaño de texto de las celdas */
+}
+
+/* Bordes de las tablas */
+#tablaContactos, #tablaVendedores, #tablaEstadisticas {
+    border: 1px solid #003366; /* Borde azul marino */
+}
+
+/* Contenedor para las estadísticas */
+#contenedor2 {
+    margin-top: 50px; /* Espacio superior para el contenedor de estadísticas */
+}
+
+/* Estilos para el contenedor 2 de la tabla de estadísticas */
+#tablaEstadisticas th, #tablaEstadisticas td {
+    text-align: center; /* Centrar texto en la tabla de estadísticas */
+}
+
+/* Estilo de las leyendas y otros detalles */
+figcaption {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366; /* Azul marino */
+    margin-bottom: 10px;
+}
