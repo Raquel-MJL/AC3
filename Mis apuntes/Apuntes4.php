@@ -729,12 +729,134 @@
     $doble = fn($numero) => $numero * 2; //fn es abreviatura de función. Y si sólo devuelve 1 dato no es necesario el return. 
     echo "El doble de 5 es: " . $doble(5) . "<br>"; // Resultado: 10
     
+    //CLASES
+    class Persona1 {  //ESTRUCTURA BÁSICA DE UNA CLASE 
+        // Atributos o propiedades
+        public $nombre;
+        public $edad;
+    
+        // Método constructor (se ejecuta cuando se crea un objeto)
+        public function __construct($nombre, $edad) {
+            $this->nombre = $nombre;
+            $this->edad = $edad;
+        }
+    
+        // Método (función)
+        public function saludar() {
+            echo "Hola, mi nombre es " . $this->nombre . " y tengo " . $this->edad . " años.";
+        }
+    }
+    
+ 
+
+    // HERENCIA
+    // Permite crear clases a partir de otras, ahorrando código.
+
+    // Relación de Herencia:
+    // - "Es un", es decir, una subclase es un tipo más específico de la superclase.
+    // Ejemplo: Un "Vendedor" es un "Empleado".
+
+    // TIPOS DE CLASES
+    // 1. Clase base, padre o superclase: Es la clase más genérica de la que se hereda.
+    // 2. Clase derivada, hija o subclase: Es la clase más específica que hereda.
+
+    // CARACTERÍSTICAS DE LA SUBCLASE
+    // - Hereda todas las variables y métodos de la superclase.
+    // - Puede definir nuevas variables y métodos.
+    // - Sintaxis para declarar la herencia: `class Subclase extends Superclase { ... }`
+
+    // Ejemplo de clases con herencia:
+
+    class Empleado {
+        protected $nombre;
+        protected $antiguedad;
+        protected $sueldo;
+        protected $hora_entrada;
+        protected $hora_salida;
+        protected $diario;
+
+        // Método para calcular horas diarias
+        public function horas_diarias() {
+            $this->diario = $this->hora_salida - $this->hora_entrada;
+        }
+    }
+
+    class Vendedor extends Empleado {  // Subclase "Vendedor" hereda de "Empleado"
+        private $ventas;
+        private $comision;
+
+        // Método para registrar ventas
+        public function vender($cantidad) {
+            $this->ventas += $cantidad;  // Aumenta las ventas por la cantidad vendida
+        }
+
+        // Constructor de la subclase
+        public function __construct($nombre, $sueldo, $fecha, $comision) {
+            parent::__construct($nombre, $sueldo, $fecha); // Llama al constructor de la superclase
+            $this->ventas = 0;
+            $this->comision = $comision;  // Variable específica de la subclase
+        }
+    }
+
+    class Administrativo extends Empleado {  // Subclase "Administrativo" hereda de "Empleado"
+        private $horas_extras;
+
+        // Método para calcular prima
+        public function prima() {
+            echo "Prima por beneficios: " . $this->horas_extras * 50; // Ejemplo de cálculo
+        }
+    }
+
+    // CREACIÓN DE OBJETOS EN UNA RELACIÓN DE HERENCIA
+    // - Se llama a los constructores tanto de la subclase como de la superclase.
+    // - No es obligatorio crear el constructor en la subclase, PHP usará el constructor de la superclase por defecto.
+    // - Para invocar el constructor de la superclase, se usa "parent::".
+
+    // Ejemplo de creación de un objeto de la subclase "Vendedor"
+    $vendedor = new Vendedor("Juan", 2000, "2023-01-01", 0.10);
+
+    // Uso de métodos de la subclase
+    $vendedor->vender(100);
+    $vendedor->horas_diarias();
     
     
+    //SOBRECARGA DE MÉTODOS DE PHP 
+    //Consiste en tener varias funciones con el mismo nombre, pero que se diferencian 
+    //en el tipo o cantuidad de parámetros que aceptan. Esta característica permite que 
+    //un mismo nombre de función pueda realizar tareas similares pero con diferentes tipos de datos o con diferentes cantidades de argumentos.
     
-    
-    
-    
+    //PHP no permite la sobrecarga directa, pero hay alternativas
+
+        //Usar valores por defecto en los parámetros**:
+        //Puedes definir valores por defecto para los parámetros de un método, lo que permite llamarlo con un número variable de argumentos.
+           
+        
+        function sumar($a1, $b1 = null) {
+            if ($b1 == null) {
+                return $a1;
+            } else {
+                return $a1 + $b1;
+            }
+        }
+
+        echo sumar(4); // Resultado: 4
+        echo sumar(3, 5); // Resultado: 8
+
+        //Usar la función `func_get_args()`**:    (Devuelve un array con todos los argumentos)
+        
+        function hello() {
+            $argumentos = func_get_args();
+            $numeroDeArgumentos = count($argumentos);
+            
+            if ($numeroDeArgumentos == 0) {
+                echo "Hola<br>";
+            } else if ($numeroDeArgumentos == 1) {
+                echo "Hola " . $argumentos[0] . "<br>";
+            }
+        }
+
+        hello(); // Resultado: Hola
+        hello("Mundo."); // Resultado: Hola Mundo.
     
     
     
