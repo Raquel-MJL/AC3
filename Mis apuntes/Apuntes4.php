@@ -859,7 +859,154 @@
         hello("Mundo."); // Resultado: Hola Mundo.
     
     
-    
+    //FORMULARIOS 
+    //Permiten a los usuarios enviar datos a PHP y luego los procesa. Normalmente se necesitan
+    //dos páginas, una con el formulario y otra que procese sus datos. 
+
+    // Métodos para procesar un formulario en PHP:
+    // 1. Incluir formulario en una página HTML y especificar el archivo PHP para procesarlo.
+    // 2. Incluir formulario dentro de un script PHP y especificar el archivo PHP para procesarlo.
+    // 3. Incluir formulario en un archivo PHP que también lo procesa, permitiendo elementos dinámicos.
+
+    // Atributos importantes de formularios HTML:
+    // 1. action: Especifica la página que procesará los datos del formulario.
+    // 2. method: Define cómo se enviarán los datos. Puede ser 'GET' o 'POST'.
+    //    - 'GET': Los datos se envían en la URL. No es adecuado para datos sensibles.
+    //    - 'POST': Los datos no son visibles en la URL y son más seguros.
+    // 3. enctype: Define la codificación usada para enviar los datos (relevante para subir archivos).
+    // 4. name: Atributo necesario para identificar cada campo de un formulario.
+
+    // VARIABLES SUPERGLOBALES PARA FORMULARIOS
+    // $_REQUEST: Combina $_GET, $_POST y $_COOKIE. Es un array asociativo donde las claves son los nombres de los campos 'name' y los valores son los datos enviados.
+    $nombre = $_REQUEST["nombre"];  // Ejemplo de cómo acceder a los datos
+
+    // $_POST: Recoge datos de formularios enviados con el método POST.
+    $edad = $_POST["edad"];  // Ejemplo con POST
+
+    // $_GET: Recoge datos de formularios enviados con el método GET.
+    $nacionalidad = $_GET["nacionalidad"];  // Ejemplo con GET
+
+    // $_FILES: Recoge información sobre archivos subidos a través del formulario.
+    $archivo_name = $_FILES["archivo"]["name"];  // Ejemplo con $_FILES
+
+    // FUNCIONES PARA MANIPULAR ARCHIVOS EN PHP
+    // 1. copy(): Copia un archivo de una ubicación a otra.
+    if (copy("origen.txt", "destino.txt")) {
+        echo "Archivo copiado exitosamente.";
+    }
+
+    // 2. move_uploaded_file(): Mueve un archivo subido a su ubicación final.
+    if (move_uploaded_file($_FILES["archivo"]["tmp_name"], "uploads/" . $_FILES["archivo"]["name"])) {
+        echo "Archivo movido correctamente.";
+    }
+
+    // 3. unlink(): Elimina un archivo.
+    if (unlink("archivo_a_borrar.txt")) {
+        echo "Archivo eliminado.";
+    }
+
+    // COMPROBACIÓN DE CAMPOS VACÍOS
+    // Verifica si un campo está vacío en el formulario.
+    if ($_REQUEST["nombre"] == "") {
+        echo "El campo nombre está vacío.";
+    } else {
+        echo "Tu nombre es: " . $_REQUEST["nombre"];
+    }
+
+    // COMPROBACIÓN DE EXISTENCIA DE CAMPOS
+    // Verifica si un campo existe en el formulario antes de usarlo.
+    if (isset($_REQUEST["nombre"])) {
+        echo "Tu nombre es: " . $_REQUEST["nombre"];
+    } else {
+        echo "Campo nombre no recibido.";
+    }
+
+// TIPOS DE CONTROLES EN LOS FORMULARIOS
+
+    // 1. Botones de opción (radio buttons)
+    echo '<input type="radio" name="opc" value="uno"> Opción 1';
+    echo '<input type="radio" name="opc" value="dos"> Opción 2';
+
+    if ($_REQUEST["opc"] == "uno") {
+        echo "Opción 1 seleccionada.";
+    } else if ($_REQUEST["opc"] == "dos") {
+        echo "Opción 2 seleccionada.";
+    }
+
+    // 2. Casillas de verificación (checkboxes)
+    echo '<input type="checkbox" name="c1"> Opción 1';
+    echo '<input type="checkbox" name="c2" value="dos"> Opción 2';
+
+    if (isset($_REQUEST["c1"])) {
+        echo "Opción 1 elegida: " . $_REQUEST["c1"];
+    }
+
+    if (isset($_REQUEST["c2"])) {
+        echo "Opción 2 elegida: " . $_REQUEST["c2"];
+    }
+
+    // 3. Listas o menús desplegables (select)
+    echo '<select name="lista1">
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 2</option>
+          </select>';
+
+    echo '<select name="lista2[]" multiple>
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 2</option>
+          </select>';
+
+    if (isset($_REQUEST["lista1"])) {
+        echo "Opción elegida: " . $_REQUEST["lista1"];
+    }
+
+    if (isset($_REQUEST["lista2"])) {
+        foreach ($_REQUEST["lista2"] as $opcion) {
+            echo "Opción elegida: " . $opcion;
+        }
+    }
+
+    //Ejemplos 
+
+//Procesar formulario en PHP:
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombre = $_POST["nombre"];
+        echo "Nombre recibido: " . $nombre;
+    }
+?>
+
+<!--Subir archivo con formulario: (HTML)-->
+
+
+<form action="subir_archivo.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo" id="archivo">
+    <input type="submit" value="Subir archivo">
+</form>
+
+<?php
+
+//En el archivo subir_archivo.php:
+if (isset($_FILES["archivo"])) {
+    $nombre_archivo = $_FILES["archivo"]["name"];
+    move_uploaded_file($_FILES["archivo"]["tmp_name"], "uploads/" . $nombre_archivo);
+    echo "Archivo subido correctamente.";
+}
+
+
+//Comprobación de campos vacíos:
+if (empty($_POST["nombre"])) {
+    echo "El campo nombre está vacío.";
+} else {
+    echo "El nombre es: " . $_POST["nombre"];
+}
+
+/*
+Explicación de funciones clave:
+isset(): Comprueba si una variable está definida y no es null.
+empty(): Verifica si una variable está vacía.
+move_uploaded_file(): Mueve un archivo subido a una nueva ubicación en el servidor.
+copy(): Copia un archivo de una ruta a otra.
+unlink(): Elimina un archivo. */
     
     
     
