@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos 1</title>
+</head>
+<body>
+    <h2>Ejercicio Archivos 1</h2>
+
+<!--Formulario HTML para cargar el archivo -->
+<form action="procesarArchivo1.php" method="post" enctype="multipart/form-data">
+    <label for="archivo">Selecciona un archivo:</label>
+    <input type="file" name="archivo" id="archivo" accept="*/*"><br>
+    <button type="submit">Subir archivo</button>
+</form>
+
+<h2>Subir Imagen</h2>
+    <form action="procesarArchivo2.php" method="POST" enctype="multipart/form-data">
+        <label for="archivo">Seleccionar una imagen:</label>
+        <input type="file" name="archivo" accept="image/*" required>
+        <input type="submit" value="Subir imagen">
+    </form>
+
+    <h2>Subir 3 Imágenes</h2>
+    <form action="procesarArchivo3.php" method="POST" enctype="multipart/form-data">
+        <label for="archivo1">Seleccionar primera imagen:</label>
+        <input type="file" name="archivo1" accept="image/*" required><br><br>
+
+        <label for="archivo2">Seleccionar segunda imagen:</label>
+        <input type="file" name="archivo2" accept="image/*" required><br><br>
+
+        <label for="archivo3">Seleccionar tercera imagen:</label>
+        <input type="file" name="archivo3" accept="image/*" required><br><br>
+
+        <input type="submit" value="Subir imágenes">
+    </form>
+    
+</body>
+</html>
