@@ -1007,6 +1007,80 @@ empty(): Verifica si una variable está vacía.
 move_uploaded_file(): Mueve un archivo subido a una nueva ubicación en el servidor.
 copy(): Copia un archivo de una ruta a otra.
 unlink(): Elimina un archivo. */
+
+
+//FUNCIONES DE FECHA Y HORA 
+
+// 1. Función getdate() - Obtiene los detalles de la fecha actual
+$actual = getdate(); // Obtiene la fecha actual como array asociativo
+print_r($actual); // Muestra todos los detalles de la fecha actual
+foreach ($actual as $periodo => $valor) { // Recorre el array con un bucle foreach()
+    echo $periodo . ": " . $valor . "\n"; // Muestra cada clave y valor
+}
+
+// 2. Función date() - Muestra la fecha y hora actual en un formato específico
+echo date("d-m-Y"); // 20-07-2023
+echo date("d/m/Y"); // 20/07/2023
+echo date("l-F-Y"); // Sunday - July - 2023
+echo date("F"); // July
+echo date("Y"); // 2023
+echo date("H:i:s"); // 22:24:45
+echo date("H"); // 22
+
+// 3. Función checkdate() - Verifica la validez de una fecha
+echo checkdate(5, 17, 2006) ? 'true' : 'false'; // true
+echo checkdate(2, 30, 2022) ? 'true' : 'false'; // false
+
+// 4. Función time() - Devuelve el tiempo actual en segundos desde la época Unix (1 de enero de 1970)
+echo time(); // Muestra el número de segundos actuales
+echo date("d/m/Y", time()); // Muestra la fecha actual
+echo date("d/m/Y", time() - (7 * 24 * 60 * 60)); // Fecha de hace 7 días
+echo date("d/m/Y", time() + (7 * 24 * 60 * 60)); // Fecha en 7 días
+
+// 5. Función date_default_timezone_set() - Establece la zona horaria predeterminada
+date_default_timezone_set("Asia/Seoul"); // Establece la zona horaria a Seúl
+echo date_default_timezone_get(); // Muestra la zona horaria predeterminada (Asia/Seoul)
+
+// 6. Función mktime() - Devuelve el timestamp de una fecha específica
+$timestamp = mktime(0, 0, 0, 8, 12, 1999); // Timestamp de la fecha 12/08/1999
+echo date("d/m/Y", $timestamp); // Muestra la fecha en formato d/m/Y
+
+// 7. Clase DateTime() - Permite trabajar con fechas y horas
+// Creación de objetos DateTime con diferentes formas de inicialización
+$ahora = new DateTime(); // Objeto con la fecha y hora actuales
+$fecha1 = new DateTime("2023-04-21"); // Objeto con fecha específica
+$fecha2 = new DateTime("3 days 12 hours ago"); // Objeto con fecha calculada
+$fecha3 = new DateTime("+7 weeks"); // Objeto con fecha calculada sumando 7 semanas
+
+// Métodos de la clase DateTime
+echo $fecha1->format("d-m-Y"); // Muestra la fecha en formato d-m-Y
+echo $fecha1->format("Y/m/d H:i:s"); // Muestra la fecha y hora completa
+
+// Calcular la diferencia entre dos fechas
+$diferencia = $fecha1->diff($fecha2); // Calcula la diferencia entre las fechas
+echo $diferencia->format("%d días"); // Muestra la diferencia en días
+echo $diferencia->format("%d días, %m meses"); // Muestra días y meses
+
+// Modificar fechas con la función modify()
+$fecha1->modify("+5 months"); // Sumar 5 meses a la fecha
+echo $fecha1->format("Y-m-d"); // Muestra la fecha después de sumar 5 meses
+
+// Modificar fechas usando date_modify()
+$date1 = new DateTime();
+date_modify($date1, "+5 days"); // Sumar 5 días a la fecha
+echo date_format($date1, "d-m-Y"); // Muestra la fecha modificada
+
+// Modificar fechas con el método modify() y mostrar en formato personalizado
+$fecha2->modify("-12 days"); // Restar 12 días
+echo $fecha2->format("Y-m-d"); // Muestra la fecha después de restar 12 días
+
+// 8. Función date_format() - Alias del método format() de DateTime
+$date2 = new DateTime();
+date_modify($date2, "+2 months"); // Sumar 2 meses a la fecha
+echo date_format($date2, "d-m-Y"); // Muestra la fecha después de sumar 2 meses
+
+
+
     
     
     
