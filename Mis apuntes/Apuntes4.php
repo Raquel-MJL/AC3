@@ -1203,6 +1203,115 @@ foreach($cadenas as $clave => $valor){
     echo $clave. "=>" . $valor. "<br>";
 }
 
+//FUNCIONES DE STRING 
+
+// 1. strlen()
+$str = "Hola Mundo";
+echo strlen($str);  // Salida: 10
+
+// 2. strtoupper()
+$str = "hola mundo";
+echo strtoupper($str);  // Salida: HOLA MUNDO
+
+// 3. strtolower()
+$str = "HOLA MUNDO";
+echo strtolower($str);  // Salida: hola mundo
+
+// 4. ucfirst()
+$str = "hola mundo";
+echo ucfirst($str);  // Salida: Hola mundo
+
+// 5. ucwords()
+$str = "hola mundo desde php";
+echo ucwords($str);  // Salida: Hola Mundo Desde Php
+
+// 6. trim()
+$str = "  hola mundo  ";
+echo trim($str);  // Salida: "hola mundo"
+
+// 7. rtrim()
+$str = "hola mundo    ";
+echo rtrim($str);  // Salida: "hola mundo"
+
+// 8. ltrim()
+$str = "    hola mundo";
+echo ltrim($str);  // Salida: "hola mundo"
+
+// 9. substr()
+$str = "Hola Mundo";
+echo substr($str, 5);  // Salida: Mundo
+echo substr($str, 0, 4);  // Salida: Hola
+
+// 10. str_replace()
+$str = "Hola Mundo";
+echo str_replace("Mundo", "PHP", $str);  // Salida: Hola PHP
+
+// 11. strpos()
+$str = "Hola Mundo";
+echo strpos($str, "Mundo");  // Salida: 5
+
+// 12. strrpos()
+$str = "Hola Mundo Mundo";
+echo strrpos($str, "Mundo");  // Salida: 12
+
+// 13. explode()
+$str = "manzana,banana,cereza";
+$arr = explode(",", $str);
+print_r($arr);  // Salida: Array ( [0] => manzana [1] => banana [2] => cereza )
+
+// 14. implode()
+$arr = ["manzana", "banana", "cereza"];
+echo implode(",", $arr);  // Salida: manzana,banana,cereza
+
+// 15. sprintf()
+$str = sprintf("Tengo %d años y me llamo %s", 25, "Juan");
+echo $str;  // Salida: Tengo 25 años y me llamo Juan
+
+// 16. md5()
+$str = "Hola Mundo";
+echo md5($str);  // Salida: 98f6bcd4621d373cade4e832627b4f6
+
+// 17. str_split()
+$str = "Hola";
+print_r(str_split($str));  // Salida: Array ( [0] => H [1] => o [2] => l [3] => a )
+
+// 18. addslashes()
+$str = "O'Reilly";
+echo addslashes($str);  // Salida: O\'Reilly
+
+// 19. str_ireplace()
+$str = "Hola Mundo";
+echo str_ireplace("hola", "Hi", $str);  // Salida: Hi Mundo
+
+// 20. str_contains()
+$str = "Hola Mundo";
+var_dump(str_contains($str, "Mundo"));  // Salida: bool(true)
+var_dump(str_contains($str, "PHP"));  // Salida: bool(false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//phpmyadmin en localhost 
+
+
+
+
     
     
     
