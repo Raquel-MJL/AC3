@@ -1,0 +1,18 @@
+table {
+    border:1px solid black;
+    border-collapse: collapse; 
+    width: 100%; 
+    font-family: Calibri, sans-serif; 
+    text-align: center; 
+}
+
+th {
+    font-weight: bold; 
+    background-color: #D3D3D3; 
+    color: #003366; 
+    padding: 10px; 
+}
+
+td {
+    padding: 8px; 
+}
