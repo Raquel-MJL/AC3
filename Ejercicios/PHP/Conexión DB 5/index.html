@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  
+     <title>Formulario. Conexión a Base de datos 5 | PHP y MySQL</title>
+     <meta charset="UTF-8">
+	 <link rel="stylesheet" href="css/estilosBD5.css">
+	 
+  </head>
+ 
+	<body>
+		<h1>Inserción y Consulta de Registros en la Base de Datos Productos</h1>
+		<div id ="contenedor">
+			<div id ="contenedorA">
+				<div class ="ejercicios">
+					<form method = "post" action = "procesar_insercion.php" name = "form-fabricantes">
+						<fieldset>
+							<legend>Inserción de Registros en Tabla Fabricantes.</legend>
+						
+							<p>
+								<label>Nombre del Fabricante:</label>
+							<p>	
+								<input type = "text" name = "nombref" size="40">
+							</p>	
+							
+						</fieldset>
+						<fieldset>
+							<input id ="b1f" class ="botones" type="submit" name = "insertarf" value="Insertar"> 
+							<input id ="b2f" class ="botones" type="reset" name = "borrarf" value="Borrar">
+						</fieldset>
+					</form>
+				</div>
+				
+				<div class ="ejercicios">
+					<form method = "post" action = "procesar_insercion.php" name = "form-productos">
+						<fieldset>
+							<legend>Inserción de Registros en Tabla Productos</legend>
+							
+							<p>
+								<label>Nombre del Producto:</label>
+							<p>	
+								<input type = "text" name = "nombrep" size="40">
+							</p>	
+							<p>
+								<label>Precio:</label>
+							</p>
+							<p>
+								<input type = "text" name = "preciop" size="40">
+							</p>
+							<p>
+								<label>Cantidad en Stock:</label>
+							</p>
+							<p>
+								<input type = "number" name = "cantidadp" size="10">
+							</p>	
+							<p>
+								<label>Código del Fabricante:</label>
+							</p>
+							<p>
+								<input type = "text" name = "codigofp" size="40">
+							</p>	
+						</fieldset>
+						<fieldset>
+							<input id ="b1p" class ="botones" type="submit" name = "insertarp" value="Insertar"> 
+							<input id ="b2p" class ="botones" type="reset" name = "borrarp" value="Borrar">
+						</fieldset>
+					</form>
+				</div>	
+			</div>
+			<div id ="contenedorB"></div>
+				<div class ="ejercicios">	
+					<form method = "post" action = "procesar_consulta.php" name = "form-consultar-fabricantes">
+						<fieldset>
+							<input id ="bcf" class ="botones" type="submit" name = "consultarf" value="Consultar Tabla Fabricantes"> 
+						</fieldset>
+					</form>
+				</div>
+				<div class ="ejercicios">	
+					<form method = "post" action = "procesar_consulta.php" name = "form-consultar-productos">
+						<fieldset>
+							<input id ="bcp" class ="botones" type="submit" name = "consultarp" value="Consultar Tabla Productos"> 
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+ 
+</html>

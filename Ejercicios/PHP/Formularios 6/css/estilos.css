@@ -1,0 +1,52 @@
+
+/* Archivo de estilos para el ejercicio Formulario 6. */
+			
+			body{
+				background-color:orange;
+				font-family:calibri,sans-serif;
+			}
+			#contenedor{
+				display:flex;
+				justify-content:space-around;
+				align-items:center;
+				margin:10px;
+				gap:20px;
+			}
+			.ejercicios{
+				border:1px solid #000;
+				border-radius:5px;
+				box-shadow:5px 5px 2px #333;
+				background-color:#ccc;
+				padding:10px;
+			}
+			
+			textarea{
+				resize:none;
+			}	
+			
+			h2,legend{
+				color:navy;
+				text-align:center;
+			}
+				
+			legend,p{
+				font-weight:bold;
+			}
+			table, td, th {
+				border: 1px solid navy;
+			}
+						
+			caption{
+				font-weight:bold;
+				color: navy;
+				font-size:22px;
+			}
+			th{
+				background-color: #999;
+			}	
+			td{
+				width:150px;
+				text-align:center;
+			}								
+			
+			

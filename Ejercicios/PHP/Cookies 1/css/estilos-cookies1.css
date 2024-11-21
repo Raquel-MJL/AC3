@@ -1,0 +1,40 @@
+
+
+/* Archivo de estilos para el ejercicio Cookies 1. */
+
+			body{
+				font-family:calibri,sans-serif;
+			}
+			#contenedor{
+				display:flex;
+				justify-content:space-around;
+				flex-wrap:wrap;
+				align-items:center;
+				margin:10px;
+				gap:20px;
+			}
+			
+			.ejercicios{
+				border:1px solid #000;
+				border-radius:5px;
+				box-shadow:5px 5px 2px #333;
+				background-color:#ccc;
+				padding:10px;
+			}
+			form{
+				display:flex;
+				justify-content:space-around;
+			}
+			h2 {
+				text-align:center;
+				color:navy;
+			}
+			
+			p,#boton{
+				font-weight:bold;
+			}
+			#boton{
+				font-size:14px;
+			}
+
+		
