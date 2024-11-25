@@ -229,34 +229,241 @@ Según modelo teórico:
 
 
 
-        ---------¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PÁGINA 6 APUNTES !!!!!!!!!!!!!!!!!!!----------------
+        ---------¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PÁGINA 11 APUNTES !!!!!!!!!!!!!!!!!!!----------------
+        ---------¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡SEGUIMOS EN 25 !!!!!!!!!!!!!!!!!!!----------------
+
+
+///Normalización bases de datos\\\
+
+Proceso que transforma datos complejos en una forma más simple, estable y fácil de manejar. 
+
+Objetivos:
+    → Reducir o eliminar redundancias de datos.
+    → Eliminar anomalías de actualización (inserción, borrado y modificación).
+    → Eliminar ambigüedades y simplificar dependencias entre atributos.
+    → Lograr integridad y consistencia de los datos.
+
+Ventajas:
+    → Menor espacio ocupado en la base de datos.
+    → Mejora la comprensión de datos complejos.
+    → Facilita las consultas y la búsqueda de información.
+
+Inconveniente: Creación de múltiples tablas que pueden complicar el manejo y generar pérdida de dependencias entre campos.
+
+Anomalías por mal diseño:
+    → Redundancia: Repetición de datos que aumenta el espacio y dificulta las búsquedas.
+    → Modificación: Cambios en un valor repetido deben aplicarse a todas las tuplas, lo que puede causar inconsistencia si no se actualizan todas.
+    → Borrado: Eliminar una tupla repetida puede resultar en pérdida de datos importantes.
+    → Inserción: Puede ser imposible añadir nuevos datos debido a la ausencia de otros.
+
+Solución anomalías: Las tablas se dividen en otras más pequeñas mediante la proyección de relaciones. 
+El proceso de normalización utiliza formas normales (FN) y termina cuando se alcanza la forma normal objetivo o no es posible normalizar más.
+
+Formas Normales Principales:
+    → 1FN, 2FN y 3FN: Diseñadas por Codd.
+    → FNBC (Forma Normal Boyce-Codd): Variante más estricta de la 3FN.
+    → 4FN y 5FN: Diseñadas por Fagin. (Es raro llegar hasta aquí)
+    → 6FN.
+    → Forma Normal Clave/Dominio.
+
+→   FORMAS NORMALES 1FN establece que los valores de los atributos deben ser atómicos, es decir, no pueden ser conjuntos de valores ni contener grupos repetitivos. 
+    Se deben eliminar las redundancias y garantizar que cada campo contenga solo valores indivisibles. Esto se logra creando nuevos campos o separando los valores en diferentes tuplas 
+    
+    Dependencias: Relación entre atributos de una tabla donde un atributo (determinante) influye en otro (implicado).
+    A → B (A determina a B, o B depende de A, lo que implica que al cambiar A, B siempre tendrá el mismo valor).
+
+    Tipos de Dependencias:
+        → Dependencia Funcional Mutua (Interdependencia o Reflexiva): Ocurre cuando A → B y B → A simultáneamente, lo que significa que A y B son claves candidatas. Ejemplo: Código_libro <-> ISBN.
+        → Dependencia Transitiva: Si A → B y B → C, entonces A → C. Esto ocurre cuando un atributo depende indirectamente de otro. 
+            Ejemplo: FECHA NACIMIENTO → EDAD → VOTAR, entonces FECHA NACIMIENTO → VOTAR.
+        → Dependencia Completa: Se da cuando un atributo depende completamente de un conjunto de atributos y no de un subconjunto. 
+            Ejemplo: DNI, CÓDIGO PROYECTO → HORAS.
+        → Dependencia Parcial: Se presenta cuando un atributo depende solo de una parte del conjunto de atributos que lo determina. 
+            Ejemplo: DNI → NOMBRE (solo depende de DNI, no del conjunto completo).
+
+
+→   Segunda Forma Normal (2FN)
+
+Una relación está en Segunda Forma Normal (2FN) si cumple con dos condiciones:
+
+→ Está en Primera Forma Normal (1FN) (es decir, los valores de los atributos son atómicos).
+→ No existen dependencias parciales entre los atributos no clave y la clave primaria. Es decir, todos los atributos no clave deben depender completamente de la clave primaria.
+Eliminación de dependencias parciales:
+→ Identificamos qué atributos no clave dependen solo de una parte de la clave primaria (en lugar de depender completamente de ella).
+→ Luego, movemos estos atributos a una nueva tabla, incluyendo las partes relevantes de la clave primaria en esa nueva tabla.
+→ Aseguramos que las relaciones entre tablas se mantengan, añadiendo las claves primarias necesarias.
+
+Ejemplo de 2FN:
+Consideremos una tabla con los siguientes atributos: DNI, CÓDIGO PROYECTO, HORAS, NOMBRE ALUMNO, y NOMBRE PROYECTO.
+
+La relación inicial está en 1FN, pero tiene dependencias parciales:
+
+DNI → NOMBRE ALUMNO (dependencia parcial: solo depende de DNI).
+CÓDIGO PROYECTO → NOMBRE PROYECTO (dependencia parcial: solo depende de CÓDIGO PROYECTO).
+Para cumplir con 2FN, debemos separar las dependencias parciales en nuevas tablas:
+
+Tabla Base (relación principal):
+Esta tabla solo debe contener los atributos que dependen completamente de la clave primaria compuesta (DNI, CÓDIGO PROYECTO), es decir, HORAS. La tabla base quedaría así:
+
+DNI	CÓDIGO PROYECTO	HORAS
+444	C	40
+555	B	50
+555	C	30
+Tabla de Alumnos (Eliminamos NOMBRE ALUMNO de la tabla base y creamos una nueva tabla para los alumnos):
+
+DNI	NOMBRE ALUMNO
+444	ANA
+555	JUAN
+Tabla de Proyectos (Eliminamos NOMBRE PROYECTO de la tabla base y creamos una nueva tabla para los proyectos):
+
+CÓDIGO PROYECTO	NOMBRE PROYECTO
+C	INFORMÁTICA
+B	INGENIERÍA
+Relaciones:
+La tabla base ahora está relacionada con las tablas de Alumnos y Proyectos a través de claves foráneas (DNI y CÓDIGO PROYECTO).
+Así, hemos eliminado las dependencias parciales y la base de datos está ahora en Segunda Forma Normal (2FN).
+
+
+→   3 FN - TERCERA FORMA NORMAL 
+• Una relación está en tercera forma normal si está en segunda forma normal y no existen 
+dependencias transitivas. 
+• En  una  dependencia  transitiva  los  atributos  no  clave  dependen  de  otros  atributos  no 
+clave.  
+• Ejemplo:  En el caso de añadir una columna nueva sobre el uso o no del ordenador para 
+el proyecto, la tabla anterior quedaría: 
+C DEPENDE DE A Y DE B QUE NO ES CLAVE, B DEPENDE DE A:
+                           
+ 
+ 
+ 
+• Eliminar dependencias transitivas: 
+    Crear una tabla o relación con los atributos dependientes del atributo no clave e 
+incluir éste también 
+▪ Mantener  el  atributo  no  clave  que  provoca  la  dependencia  transitiva  en  la  tabla 
+base.  
+    Por tanto, “Nombre de proyecto” que es el campo que provoca la dependencia, y 
+“Uso del ordenador”, se van a otra tabla: 
+  
+ 
+FNBC - FORMA NORMAL BOYCE-CODD. 
+• Una  relación  está  en  FNBC  si  está  en  tercera  forma  normal  y  no  hay  dependencias 
+redundantes y los únicos determinantes son claves candidatas no compuestas. 
+Realmente es una ampliación o forma más estricta de la tercera forma normal.  
+• Una  tabla  no  está  en  FNBC  si  las  claves  candidatas  son  compuestas,  si  las  claves 
+candidatas  se  encubren  y  tienen  al  menos  un  atributo  en  común  (se  solapan),  si  hay 
+redundancias entre dependencias.  
+• Transformar a FNBC una relación: 
+o Separar las claves candidatas compuestas 
+o Separar redundancias 
+
+• Ejemplos: 
+ASISTIR (CODIGOCURSO, NOMBRECURSO, CODIGOESTUDIANTE, NOTA) 
+CODIGO CURSO ←→NOMBRE CURSO      EXISTE REDUNDANCIA 
+CODIGO CURSO, CODIGO ESTUDIANTE→NOTA 
+ 
+CÓDIGO PROYECTO NOMBRE PROYECTO USO DEL 
+ORDENADOR 
+B INGENIERÍA SI 
+A ARQUITECTURA SI 
+C INFORMÁTICA SI 
+D GASTRONOMÍA NO 
+CÓDIGO DE PROYECTO NOMBRE PROYECTO 
+NOMBRE PROYECTO USO DEL ORDENADOR 
+CODIGO CURSO NOMBRE CURSO 
+30 
+ 
+ 
+ 
+• Ya están en 3FN Y EN FNBC. 
+
+
+Cuarta Forma Normal (4FN):
+Definición: Una relación está en Cuarta Forma Normal (4FN) si cumple con los requisitos de Tercera Forma Normal (3FN) o Forma Normal Boyce-Codd (FNBC) y no tiene dependencias multivalor entre los atributos.
+Dependencia multivalor: Ocurre cuando un atributo clave o no clave está asociado a más de un valor para otro atributo, y ambos atributos dependen de un mismo determinante (clave).
+Notación: A →→ B significa que un atributo A determina múltiples valores para el atributo B.
+Ejemplo:
+Tabla original:
+DNI	TELEFONO	EMAIL
+8787A	78787878	A@LLLL.ES
+7444B	55556565	B@LLLL.ES
+Aquí, DNI →→ TELEFONO y DNI →→ EMAIL, lo que significa que un mismo DNI tiene múltiples teléfonos y correos asociados.
+Solución: Para llevarla a 4FN, se crean dos tablas separadas para TELEFONO y EMAIL, con el DNI como clave:
+Tabla 1:
+DNI	TELEFONO
+8787A	78787878
+7444B	55556565
+Tabla 2:
+DNI	EMAIL
+8787A	A@LLLL.ES
+7444B	B@LLLL.ES
+Ejemplo de 4FN con múltiples dependencias:
+Supón una tabla de Conductores, Vehículos y Carga:
+
+CONDUCTOR	VEHÍCULO	CARGA
+JUAN	FURGONETA	MUEBLES
+LUIS	FURGONETA	MUEBLES
+PEPE	FURGONETA	MUEBLES
+JUAN	CAMIÓN	ESCOMBROS
+LUIS	CAMIÓN	ESCOMBROS
+PEPE	GRÚA	COCHE
+JUAN	TRAILER	CONTENEDOR
+LUIS	TRAILER	CONTENEDOR
+Dependencias multivalor:
+
+CONDUCTOR →→ VEHÍCULO
+VEHÍCULO → CARGA
+Solución: Para cumplir con 4FN, creamos dos tablas:
+
+Tabla 1:
+VEHÍCULO	CARGA
+FURGONETA	MUEBLES
+CAMIÓN	ESCOMBROS
+GRÚA	COCHE
+TRAILER	CONTENEDOR
+Tabla 2:
+CONDUCTOR	VEHÍCULO
+JUAN	FURGONETA
+LUIS	FURGONETA
+PEPE	FURGONETA
+JUAN	CAMIÓN
+LUIS	CAMIÓN
+PEPE	GRÚA
+JUAN	TRAILER
+LUIS	TRAILER
+Quinta Forma Normal (5FN) o Forma Normal Proyección-Unión (FNPU):
+Definición: Una relación está en Quinta Forma Normal (5FN) si cumple con los requisitos de Cuarta Forma Normal (4FN) y se puede descomponer en proyecciones que, al combinarse, reconstruyan la tabla original sin perder información. Esto implica eliminar dependencias de unión y mantener la integridad de los datos.
+Requisitos:
+La relación debe estar en 4FN.
+Las proyecciones de las dependencias deben ser combinables para reconstruir la tabla original.
+Ejemplo:
+Supón la tabla:
+VENDEDOR	MARCA	PRODUCTO
+LUIS	FORD	COCHE
+LUIS	FORD	CAMIÓN
+LUIS	MERCEDES	COCHE
+LUIS	MERCEDES	CAMIÓN
+JUAN	FORD	COCHE
+Aquí, la tabla está en 4FN.
+Proyecciones:
+Tabla A (VENDEDOR, MARCA)
+Tabla B (VENDEDOR, PRODUCTO)
+Tabla C (MARCA, PRODUCTO)
+Combinación de las proyecciones:
+Combinando A y B: (VENDEDOR, MARCA, PRODUCTO)
+Combinando B y C: (VENDEDOR, PRODUCTO, MARCA)
+Al hacer estas combinaciones, se pueden reconstruir las relaciones originales sin pérdida de datos, lo que significa que la tabla está en 5FN.
+Dominio-Clave (DK/FN):
+Dominio: Se refiere a las restricciones que definen qué valores son válidos para un atributo específico en una tabla.
+Clave: Indica qué conjunto de atributos se necesita para identificar de manera única una fila en la tabla.
+Conclusión:
+
+4FN se ocupa de evitar dependencias multivalor, mientras que 5FN se enfoca en descomponer relaciones para eliminar redundancias y dependencias de unión, permitiendo reconstruir la tabla original mediante proyecciones.
 
 
 
 
+PAG 32--->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--->
 
 </body>
 
