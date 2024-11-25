@@ -1,0 +1,18 @@
+Nivel 1: 
+Dividir nombre en Nombre→Apellido1→Apellido2
+
+Nivel 2: 
+
+IDPedido → Fecha → IDCliente
+
+
+IDCliente →	Nombre → Apellido1 → Apellido2 → Provincia
+
+
+CodArticulo	→ Descripción → Precio_Unidad
+
+
+IDPedido →	CodArticulo	→ Cantidad
+
+
+

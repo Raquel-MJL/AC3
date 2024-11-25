@@ -1,0 +1,23 @@
+Dependencias funcionales y anomalías 1 
+
+Dependencias funcionales → 
+
+A es la clave
+B determina H 
+B determina E 
+C determina B 
+C determina F 
+D,E determina toda la relacion 
+G es llave
+
+
+Anomalías de borrado → 
+
+Si se elimina una tupla y ésta tiene datos repetidos en otras 
+habrá que eliminar varias por repetición y podría ocurrir que 
+alguna no se borrase. Como efecto secundario pueden 
+borrarse datos importantes que no se puedan luego 
+recuperar.
+
+→ Al eliminar tuplas con registros dobles ( 1,5 se podrían borrar datos indeseados)
+→ Al eliminar antiguedad se pierden trienios
