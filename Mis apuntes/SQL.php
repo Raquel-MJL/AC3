@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
-<!--
+    <!--
 ----------||BASES DE DATOS||----------
 
 Conjunto de información organizada sistemáticamente, no redundante y referida a un
@@ -100,11 +102,134 @@ Conjunto de operaciones que realiza un SGBD para llevar a cabo una unidad lógic
             -→ Fallida     →   Abortada 
     Activa        ↑
             -→ Parcialmente →  Comprometida
-               comprometida        
+               comprometida     
+               
+               
+
+///Fallos típicos en bases de datos\\\
+
+Transacciones
+
+    → Error lógico: Datos que no se encuentran, entradas incorrectas, desbordamiento de memoria...
+    → Error del sistema: El SGBD impide que las transacciones puedan ejecutarse normalmente.
+    → Interbloqueo: Bloqueo permanente de procesos que no pueden avanzar porque dependen de otros. 
+
+Caídas del sistema
+
+    → Errores en el SO
+    → En el software que gestiona la DB
+    → Averías de hardware que provocan pérdida del contenido en la memoria volátil. 
+    → Detención del sistema 
+
+Técnicas para evitar caídas
+
+    → Replicación de recursos y datos
+    → Balanceo en el reparto de cargas
+    → Uso de SAI (Sistemas de alimentación ininterrumpidas)
+
+Fallos en los soportes de almacenamiento. 
+
+    → Cuando falla la transferencia de datos del soporte al almacenamiento. 
+    → Se puede solucionar eniendo buena política de copia de seguridad de datos. 
+
+ Elementos de recuperación ante fallos lógicos que soportan los SGBD. 
+    
+    → Registro histórico, de transacciones, archivos de registro o log...
+    Cada registro describe una única modificación y tienen una serie de atributos:
+ 
+        ● Identificador de la transacción (de tipo numérico) 
+        ● Indicador de elementos de datos 
+        ● Valor anterior (como un punto de recuperación) 
+        ● Valor nuevo. 
+
+Punto de verificación, comprobación, sincronización o de revisión. 
+
+    → Si falla se accede al registro histórico hasta  encontrar  una 
+versión  estable  de  la  misma.  Si  habitualmente  vamos  guardando  puntos  de 
+verificación se reduce el número de  registros del registro histórico que deben 
+examinarse  tras  una  caída  del  sistema,  ya  que  al  establecer  un  punto  de 
+comprobación  se  fuerza  a  que  todas  las  transacciones  hasta  ese  punto  se 
+lleven a cabo.
+
+
+///Reglas de Bases de Datos\\\
+
+1984 Edgar  F.  Codd,  creador  de  del  Modelo  Relacional  publicó  las  12  Reglas
+
+        0 → Un SGBD es relacional cuando gestiona las bases de datos usando solo sus capacidades relacionales.
+        1 → Regla de la información: Los datos y metadatos se representan como valores en tablas.
+        Con un musmo lenguaje se debe acceder a ambos. 
+        2 → Acceso garantizado: Cualquier dato debe ser accesible indicando en qué tabla está, columna y fila. 
+        3 → Tratamiento de null: Se debe disponer de valores nulos para representar información no aplicable. 
+        4 → Catálogo dinámico en línea: Se debe usar modelo relacional y los metadatos se consultan usando el mismo lenguaje que para los datos normales.
+        5 → Sublenguaje de datos: Debe  existir  al  menos  un  lenguaje  cuyas  sentencias  sean  expresables,  mediante  una 
+        sintaxis bien definida, como cadenas de caracteres y que sea completo, soportando: 
+            • Definición de datos y estructuras. 
+            • Manipulación de datos. 
+            • Restricciones de integridad. 
+            • Control de datos. 
+        Estos lenguajes, además de poder tener interfaces más amigables para hacer 
+        consultas,  etc.,  deben  permitir  hacerlo  todo  de  manera  textual.  Un  lenguaje  que 
+        cumple esto en gran medida es el SQL.
+        6 → Actualización vistas: Todas las vistas actualizables se pueden actualizar también por sistema. 
+        7 → Inserción, actualización y borrado de alto nivel: No sólo un único registro se verá afectado sino varios. 
+        8 → Independencia física de datos: Aunque cambie el esquema físico, el conceptual no debe cambiar. 
+        La forma de almacenar datos no debe influir en su manipulación. 
+        9 → Independencia lógica de datos: Aunque se modifique el esquema conceptual, el externo no debe verse afectado.
+        10 → Independencia de integridad: Debe poder definir limitantes de integridad que se almacenan en la DB. 
+            se almacenan en la base de datos. 
+            Restricciones inherentes al modelo relacional: 
+            • Integridad de Entidad: Toda tabla debe tener una clave primaria para 
+            identificar inequívocamente cada registro. 
+            • Integridad de Dominio: Toda columna de una tabla contendrá exclusivamente 
+            un conjunto de valores válidos. 
+            • Integridad Referencial: Hay que asegurar que los registros de tablas 
+            relacionadas sean válidos, para ello se usan claves externas o foráneas  
+        11 → Independencia de distribución: Las mismas órdenes y programas deben ejecutarse en bases de datos centralizadas y distribuidas. 
+        12 → No subversión: Si un sistema relacional usa un lenguaje de bajo nivel, no puede ser usado para saltarse (subvertir) las reglas de los de alto nivel. 
+ 
+///Diseño de bases de datos relacionales\\\
+
+El proceso de creación de una base de datos relacional consta de varias fases:
+
+→ Análisis de requisitos: Recopilación de información sobre el contenido y uso previsto de la base de datos.
+→ Diseño conceptual: Creación del esquema conceptual de la base de datos utilizando el modelo de Entidad-Relación (E-R), sin depender del sistema gestor de base de datos.
+→ Elección de sistema gestor de base de datos: Selección del modelo de datos y del sistema gestor a utilizar.
+→ Diseño lógico: Elaboración del esquema lógico basado en el esquema conceptual, adaptado al modelo del sistema gestor elegido.
+→ Diseño físico: Creación de la base de datos mediante el lenguaje de definición de datos del sistema gestor.
+→ Fase de uso: Gestión de los datos mediante el lenguaje de manipulación de datos.
+→ Mantenimiento: Actualización, modificación o reparación de la base de datos según sea necesario.
+
+///Modelos de datos\\\
+
+Según nivel de abstracción: 
+    → Nivel conceptual
+    → Nivel lógico 
+    → Nivel físico 
+
+Según modelo teórico:
+    → Red
+    → Jerárquico
+    → Relacional
+    → Orientado a Objetos
+    → Objeto-relacional 
+
+///Tipos de BD\\\
+    → Texto plano 
+    → Hojas de cálculo (Excel)
+    → B.D.Jerárquicas
+    → B.D.Red 
+    → B.D. relacionales. 
+    → B.D. objeto-relacionales. 
+    → Bases XML, bases que tienen datos semiestructurados. 
+    → Bases No SQL. 
+    → Otras B.D.: B.D. documentales, B.D. temporales, B.D. analíticas, etcétera.
 
 
 
----------¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PÁGINA 6 APUNTES !!!!!!!!!!!!!!!!!!!----------------
+
+
+        ---------¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡PÁGINA 6 APUNTES !!!!!!!!!!!!!!!!!!!----------------
 
 
 
@@ -132,6 +257,7 @@ Conjunto de operaciones que realiza un SGBD para llevar a cabo una unidad lógic
 
 
 -->
-    
+
 </body>
+
 </html>
