@@ -282,16 +282,15 @@ Formas Normales Principales:
             Ejemplo: DNI → NOMBRE (solo depende de DNI, no del conjunto completo).
 
 
-→   Segunda Forma Normal (2FN)
+→   Segunda Forma Normal (2FN) Debe cumplir: 
 
-Una relación está en Segunda Forma Normal (2FN) si cumple con dos condiciones:
-
-→ Está en Primera Forma Normal (1FN) (es decir, los valores de los atributos son atómicos).
-→ No existen dependencias parciales entre los atributos no clave y la clave primaria. Es decir, todos los atributos no clave deben depender completamente de la clave primaria.
-Eliminación de dependencias parciales:
-→ Identificamos qué atributos no clave dependen solo de una parte de la clave primaria (en lugar de depender completamente de ella).
-→ Luego, movemos estos atributos a una nueva tabla, incluyendo las partes relevantes de la clave primaria en esa nueva tabla.
-→ Aseguramos que las relaciones entre tablas se mantengan, añadiendo las claves primarias necesarias.
+    → Estar en 1FN (Sus valores son atómicos)
+    → Todos los atributos no clave deben depender completamente de la clave primaria.
+    
+    Eliminación de dependencias parciales:
+    → Identificamos qué atributos no clave dependen solo de una parte de la clave primaria (en lugar de depender completamente de ella).
+    → Movemos estos atributos a una nueva tabla, incluyendo las partes relevantes de la clave primaria en esa nueva tabla.
+    → Aseguramos que las relaciones entre tablas se mantengan, añadiendo las claves primarias necesarias.
 
 Ejemplo de 2FN:
 Consideremos una tabla con los siguientes atributos: DNI, CÓDIGO PROYECTO, HORAS, NOMBRE ALUMNO, y NOMBRE PROYECTO.

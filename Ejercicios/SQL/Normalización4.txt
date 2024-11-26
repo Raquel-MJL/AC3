@@ -1,0 +1,9 @@
+Sin fechas repetidas para el mismo lector. Un préstamo sólo tiene una
+fecha.
+o Con fechas repetidas para el mismo lector. Se puede prestar el mismo libro
+al mismo lector, en otra fecha.
+CodLector → CodLibro → Titulo → Autor → Editorial → Nombre → Apellido1 → Apellido2 → Fecha_préstamo
+
+CodLector (PK) → Nombre → Apellido1 → Apellido2
+CodLibro (PK) → Título → Autor → Editorial 
+Fecha préstamo (PK)→ Código Libro(PK)

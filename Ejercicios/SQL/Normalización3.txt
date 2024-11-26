@@ -1,0 +1,12 @@
+
+Título → Año → Duración → Técnica → Estudio → Dirección Estudio → Actor
+
+
+
+Título PK → Año → Duración 
+
+Título PK → Estudio PK
+
+Estudio PK → Técnica → Dirección del estudio 
+
+Título PK → Actor PK 
