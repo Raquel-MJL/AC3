@@ -1,7 +1,6 @@
 SHOW DATABASES;
 
 
-
 -- 1. Mostrar sólo la región de cada país
 SELECT region FROM paises;
 
