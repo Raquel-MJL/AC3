@@ -1,23 +1,28 @@
 *{
     margin:0;
     padding:0;
+    font-family:'Lucida Sans', Verdana, sans-serif;
 }
 
-
-
-body{
-    background-color: rgb(115, 153, 158);
-}
 
 header{
     display:flex;
     justify-content: center;
-    color:rgb(40, 51, 51)
+    color:rgb(40, 51, 51);
+    margin:30px;
 }
+
+.irrigadorTitulo{
+    font-weight:bold;
+    color:rgb(56, 56, 56);
+
+}
+
 #container {
     display:flex;
     justify-content: space-around;
     gap:20px;
+    padding:5px;
 }
 #container > div{
     background-color:rgb(178, 214, 219);
@@ -25,7 +30,8 @@ header{
     height:180px;
     border-radius:20%;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
+    align-items:center;  
     padding: 10px; 
 }
 
@@ -33,6 +39,7 @@ header{
     display: flex;
     justify-content: center;
     gap: 5px;
+    
 }
 
 #divBoton {
@@ -44,12 +51,13 @@ header{
 #containerTipos{
     display:flex;
     justify-content: center;
-    gap:60px;
+    gap:38px;
 }
 
 #tipoTrigo{
-    background-color:rgb(207, 197, 182);
-    width:150px;
+    background-color:RGB(255, 200, 150);
+    width:170px;
+    height:50px;
     border-radius: 10px;
     display:flex;
     justify-content: center;
@@ -57,8 +65,8 @@ header{
 }
 
 #tipoMaiz{
-    background-color:rgb(236, 212, 177);
-    width:150px;
+    background-color:RGB(255, 255, 180);
+    width:170px;
     border-radius: 10px;
     display:flex;
     justify-content: center;
@@ -66,8 +74,8 @@ header{
 }
 
 #tipoGirasol{
-    background-color:rgb(245, 216, 138);
-    width:150px;
+    background-color:RGB(255, 170, 100);
+    width:170px;
     border-radius: 10px;
     display:flex;
     justify-content: center;
@@ -75,8 +83,8 @@ header{
 }
 
 #tipoSoja{
-    background-color:rgb(222, 233, 180);
-    width:150px;
+    background-color:RGB(255, 220, 140);
+    width:170px;
     border-radius: 10px;
     display:flex;
     justify-content: center;
@@ -84,8 +92,8 @@ header{
 }
 
 #tipoArroz{
-    background-color:rgb(185, 236, 181);
-    width:150px;
+    background-color: RGB(255, 255, 200);
+    width:170px;
     border-radius: 10px;
     display:flex;
     justify-content: center;

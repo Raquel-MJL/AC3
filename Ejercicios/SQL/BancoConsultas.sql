@@ -156,25 +156,76 @@ WHERE Saldo < (SELECT MAX(Cantidad)
                FROM Movimientos 
                WHERE Tipo = 'Retirada Efectivo');  -- Muestra cuentas con saldo menor al máximo de las retiradas de efectivo
 
--- 26. Crear la tabla Clientes2 a partir de Clientes.
+--OTRAS CONSULTAS--
+
+-- 1. Crear la tabla Clientes2 a partir de Clientes.
 CREATE TABLE Clientes2 AS SELECT * FROM Clientes;  -- Crea una tabla duplicada de la tabla Clientes
 
--- 27. Introducir un nuevo cliente en Clientes2.
+-- 2. Introducir un nuevo cliente en Clientes2.
 INSERT INTO Clientes2 VALUES ('45M99', 'Carlos', 'López', 'Martínez', 'Calle Nuevo 10', 'Madrid', '123456789');  -- Inserta un nuevo cliente en la tabla Clientes2
 
--- 28. Transferir el registro nuevo de Clientes2 a Clientes.
+-- 3. Transferir el registro nuevo de Clientes2 a Clientes.
 INSERT INTO Clientes SELECT * FROM Clientes2 WHERE IDCliente = '45M99';  -- Inserta el nuevo cliente de Clientes2 a Clientes
 
--- 29. Cambiar, en la tabla Clientes, el código de cliente a Luis Pérez Sánchez, que pasa de ser el 45A67 al nuevo de 45M22. Confirmar actualización en cascada.
+-- 4. Cambiar, en la tabla Clientes, el código de cliente a Luis Pérez Sánchez, que pasa de ser el 45A67 al nuevo de 45M22. Confirmar actualización en cascada.
 UPDATE Clientes 
 SET IDCliente = '45M22' 
 WHERE IDCliente = '45A67';  -- Actualiza el código de cliente de '45A67' a '45M22'
 
--- 30. Eliminar la cuenta 754456 de Eva Álvarez García. Confirmar eliminación en cascada.
+-- 5. Eliminar la cuenta 754456 de Eva Álvarez García. Confirmar eliminación en cascada.
 DELETE FROM Cuentas 
 WHERE IDCuenta = 754456;  -- Elimina la cuenta con ID 754456 y la eliminación se propaga a la tabla Movimientos
 
--- 31. Crear una vista para cada tabla.
+--VISTAS--
+-- 1. Crear una vista para cada tabla.
 CREATE VIEW VistaClientes AS SELECT * FROM Clientes;
 CREATE VIEW VistaCuentas AS SELECT * FROM Cuentas;
 CREATE VIEW VistaMovimientos
+
+-- 2. Crear una vista que muestre el nombre del cliente, el número de su cuenta, su localidad y su saldo.
+CREATE VIEW VistaClienteCuenta AS
+SELECT c.Nombre, cu.IDCuenta, c.Localidad, cu.Saldo
+FROM Clientes c
+JOIN Cuentas cu ON c.IDCliente = cu.IDCliente;  -- Muestra la información del cliente y su cuenta asociada.
+
+-- 3. Crear una vista que muestre el código del cliente, su nombre, su número de cuenta, el tipo de operación, cantidad y las fechas de todos sus movimientos.
+CREATE VIEW VistaMovimientosCliente AS
+SELECT c.IDCliente, c.Nombre, cu.IDCuenta, m.Tipo, m.Cantidad, m.FechaOperacion
+FROM Clientes c
+JOIN Cuentas cu ON c.IDCliente = cu.IDCliente
+JOIN Movimientos m ON cu.IDCuenta = m.IDCuenta;  -- Muestra el código de cliente, nombre, cuenta, tipo de movimiento, cantidad y fecha.
+
+-- 4. (Subconsulta). Si existen transferencias, crear una vista con los detalles de las cuentas donde se han realizado éstas.
+CREATE VIEW VistaCuentasTransferencias AS
+SELECT DISTINCT cu.*
+FROM Cuentas cu
+WHERE cu.IDCuenta IN (
+    SELECT IDCuenta
+    FROM Movimientos
+    WHERE Tipo = 'Transferencia'
+);  -- Muestra los detalles de las cuentas en las que se han realizado transferencias.
+
+-- 5. Consulta la vista del punto 2 y muestra sólo el nombre del cliente y el número de su cuenta, de aquellos clientes que sean de Madrid.
+SELECT Nombre, IDCuenta
+FROM VistaMovimientosCliente
+WHERE Localidad = 'Madrid';  -- Muestra el nombre del cliente y el número de cuenta para clientes de Madrid.
+
+-- 6. Consulta la vista del punto 3 y muestra las cuentas en las que se han hecho operaciones en febrero del 2022.
+SELECT *
+FROM VistaMovimientosCliente
+WHERE MONTH(FechaOperacion) = 2 AND YEAR(FechaOperacion) = 2022;  -- Muestra los detalles de los movimientos realizados en febrero de 2022.
+
+-- 7. Modificar la vista creada en el punto 1 para la tabla movimientos, de modo que sólo muestre operaciones de retirada de efectivo.
+CREATE OR REPLACE VIEW VistaClienteCuenta AS
+SELECT c.Nombre, cu.IDCuenta, c.Localidad, cu.Saldo
+FROM Clientes c
+JOIN Cuentas cu ON c.IDCliente = cu.IDCliente
+WHERE EXISTS (
+    SELECT 1
+    FROM Movimientos m
+    WHERE m.IDCuenta = cu.IDCuenta AND m.Tipo = 'Retirada Efectivo'
+);  -- Actualiza la vista para que solo incluya cuentas con movimientos de tipo 'Retirada Efectivo'.
+
+-- 8. Eliminar la vista creada en el punto 1.
+DROP VIEW IF EXISTS VistaClienteCuenta;  -- Elimina la vista 'VistaClienteCuenta' si existe.
+
