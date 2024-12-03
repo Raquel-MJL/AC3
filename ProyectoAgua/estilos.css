@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+
+body{
+    background-color: rgb(115, 153, 158);
+}
+
+header{
+    display:flex;
+    justify-content: center;
+    color:rgb(40, 51, 51)
+}
+#container {
+    display:flex;
+    justify-content: space-around;
+    gap:20px;
+}
+#container > div{
+    background-color:rgb(178, 214, 219);
+    width:150px;
+    height:180px;
+    border-radius:20%;
+    flex-direction: column;
+    justify-content: center;  
+    padding: 10px; 
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#divBoton {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+#containerTipos{
+    display:flex;
+    justify-content: center;
+    gap:60px;
+}
+
+#tipoTrigo{
+    background-color:rgb(207, 197, 182);
+    width:150px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tipoMaiz{
+    background-color:rgb(236, 212, 177);
+    width:150px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tipoGirasol{
+    background-color:rgb(245, 216, 138);
+    width:150px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tipoSoja{
+    background-color:rgb(222, 233, 180);
+    width:150px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tipoArroz{
+    background-color:rgb(185, 236, 181);
+    width:150px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.toggleButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(233, 88, 88); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggleButton.on {
+    background-color: rgb(111, 197, 111); 
+}
+
