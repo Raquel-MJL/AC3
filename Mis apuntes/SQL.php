@@ -463,6 +463,200 @@ Conclusión:
 
 PAG 32--->
 
+FUNCIONES TEXTO 
+-- Funciones de texto en SQL
+
+-- 1. TRIM
+-- Elimina los espacios en blanco al inicio y al final de una cadena de texto.
+SELECT TRIM('   ejemplo   '); -- Resultado: 'ejemplo'
+
+-- 2. LENGTH
+-- Devuelve la longitud de una cadena de texto (número de caracteres).
+SELECT LENGTH('ejemplo'); -- Resultado: 7
+
+-- 3. UPPER
+-- Convierte todos los caracteres de una cadena de texto a mayúsculas.
+SELECT UPPER('ejemplo'); -- Resultado: 'EJEMPLO'
+
+-- 4. LOWER
+-- Convierte todos los caracteres de una cadena de texto a minúsculas.
+SELECT LOWER('EJEMPLO'); -- Resultado: 'ejemplo'
+
+-- 5. SUBSTRING
+-- Extrae una subcadena de una cadena de texto, comenzando en una posición específica y con una longitud dada.
+SELECT SUBSTRING('ejemplo', 2, 4); -- Resultado: 'jemp'
+
+-- 6. REPLACE
+-- Reemplaza todas las apariciones de una subcadena específica dentro de una cadena de texto por otra subcadena.
+SELECT REPLACE('hola mundo', 'mundo', 'universo'); -- Resultado: 'hola universo'
+
+-- 7. CONCAT
+-- Concatena dos o más cadenas de texto en una sola.
+SELECT CONCAT('Hola', ' ', 'mundo'); -- Resultado: 'Hola mundo'
+
+-- 8. LEFT
+-- Devuelve los primeros N caracteres de una cadena de texto.
+SELECT LEFT('ejemplo', 3); -- Resultado: 'eje'
+
+-- 9. RIGHT
+-- Devuelve los últimos N caracteres de una cadena de texto.
+SELECT RIGHT('ejemplo', 3); -- Resultado: 'plo'
+
+-- 10. POSITION
+-- Devuelve la posición de la primera aparición de una subcadena dentro de una cadena de texto.
+SELECT POSITION('e' IN 'ejemplo'); -- Resultado: 1
+
+-- 11. CHARINDEX
+-- Devuelve la posición de la primera aparición de una subcadena en una cadena de texto. (Similar a POSITION en algunos SGBD).
+SELECT CHARINDEX('e', 'ejemplo'); -- Resultado: 1
+
+-- 12. REVERSE
+-- Invierte el orden de los caracteres en una cadena de texto.
+SELECT REVERSE('ejemplo'); -- Resultado: 'olpmje'
+
+
+--FUNCIONES FECHA--
+1. CURDATE()
+Descripción: Devuelve la fecha actual del sistema (sin la parte de la hora).
+Ejemplo: SELECT CURDATE(); → 2024-12-04
+
+2. NOW()
+Descripción: Devuelve la fecha y la hora actuales del sistema.
+Ejemplo: SELECT NOW(); → 2024-12-04 14:35:21
+
+3. DATE()
+Descripción: Extrae solo la parte de la fecha (sin la hora) de un valor de tipo DATETIME.
+Ejemplo: SELECT DATE(NOW()); → 2024-12-04
+
+4. DAY(date)
+Descripción: Devuelve el día del mes de una fecha (1 a 31).
+Ejemplo: SELECT DAY('2024-12-04'); → 4
+
+5. MONTH(date)
+Descripción: Devuelve el mes de una fecha (1 a 12).
+Ejemplo: SELECT MONTH('2024-12-04'); → 12
+
+6. YEAR(date)
+Descripción: Devuelve el año de una fecha.
+Ejemplo: SELECT YEAR('2024-12-04'); → 2024
+
+7. DAYNAME(date)
+Descripción: Devuelve el nombre completo del día de la semana (ej., "Monday").
+Ejemplo: SELECT DAYNAME('2024-12-04'); → Wednesday
+
+8. DAYOFWEEK(date)
+Descripción: Devuelve el día de la semana como un número (1 = Domingo, 2 = Lunes, ..., 7 = Sábado).
+Ejemplo: SELECT DAYOFWEEK('2024-12-04'); → 4 (Lunes)
+
+9. DAYOFYEAR(date)
+Descripción: Devuelve el número de día en el año (1 a 366).
+Ejemplo: SELECT DAYOFYEAR('2024-12-04'); → 339
+
+10. MONTHNAME(date)
+Descripción: Devuelve el nombre completo del mes (ej., "December").
+Ejemplo: SELECT MONTHNAME('2024-12-04'); → December
+
+11. DATEDIFF(date1, date2)
+Descripción: Devuelve la diferencia en días entre dos fechas.
+Ejemplo: SELECT DATEDIFF('2024-12-04', '2024-11-25'); → 9
+
+12. DATE_ADD(date, INTERVAL value unit)
+Descripción: Añade un intervalo de tiempo (días, meses, años, etc.) a una fecha.
+Ejemplo: SELECT DATE_ADD('2024-12-04', INTERVAL 10 DAY); → 2024-12-14
+
+13. DATE_SUB(date, INTERVAL value unit)
+Descripción: Resta un intervalo de tiempo de una fecha.
+Ejemplo: SELECT DATE_SUB('2024-12-04', INTERVAL 10 DAY); → 2024-11-24
+
+14. TIMESTAMPDIFF(unit, date1, date2)
+Descripción: Devuelve la diferencia entre dos fechas en la unidad especificada (segundos, minutos, horas, días, meses, años).
+Ejemplo: SELECT TIMESTAMPDIFF(DAY, '2024-12-01', '2024-12-04'); → 3
+
+15. TIMESTAMPADD(unit, value, date)
+Descripción: Añade un intervalo de tiempo a una fecha en una unidad de tiempo especificada.
+Ejemplo: SELECT TIMESTAMPADD(MONTH, 2, '2024-12-04'); → 2025-02-04
+
+16. STR_TO_DATE(str, format)
+Descripción: Convierte una cadena de texto en una fecha de acuerdo con un formato específico.
+Ejemplo: SELECT STR_TO_DATE('04/12/2024', '%d/%m/%Y'); → 2024-12-04
+
+17. DATE_FORMAT(date, format)
+Descripción: Formatea una fecha de acuerdo con el formato especificado.
+Ejemplo: SELECT DATE_FORMAT('2024-12-04', '%d-%m-%Y'); → 04-12-2024
+Parámetros de formato comunes:
+    %Y → Año con cuatro dígitos (ej., 2024)
+    %m → Mes con dos dígitos (ej., 12)
+    %d → Día con dos dígitos (ej., 04)
+    %a → Nombre corto del día (Wed)
+    %b → Nombre corto del mes (ej., Dec)
+    %M → Nombre completo del mes (ej., December)
+    %W → Nombre completo del día de la semana (ej., Wednesday)
+
+FUNCIONES MATEMÁTICAS 
+
+ABS()
+Descripción: Devuelve el valor absoluto de un número.
+Ejemplo: SELECT ABS(-25); → 25
+
+2. CEIL() o CEILING()
+Descripción: Redondea un número hacia el entero superior más cercano.
+Ejemplo: SELECT CEIL(4.2); → 5
+
+3. FLOOR()
+Descripción: Redondea un número hacia el entero inferior más cercano.
+Ejemplo: SELECT FLOOR(4.7); → 4
+
+4. ROUND()
+Descripción: Redondea un número a un número específico de decimales.
+Ejemplo: SELECT ROUND(15.678, 2); → 15.68
+
+5. POWER()
+Descripción: Eleva un número a una potencia especificada.
+Ejemplo: SELECT POWER(2, 3); → 8 (2 elevado a la 3)
+
+6. SQRT()
+Descripción: Devuelve la raíz cuadrada de un número.
+Ejemplo: SELECT SQRT(16); → 4
+
+7. EXP()
+Descripción: Devuelve el valor de 
+𝑒
+e (la base del logaritmo natural) elevado a la potencia especificada.
+Ejemplo: SELECT EXP(1); → 2.71828...
+
+8. LOG() o LN()
+Descripción: Devuelve el logaritmo natural de un número. Algunas bases pueden ser especificadas usando LOG(base, número).
+Ejemplo: SELECT LOG(10); → 2.30259...
+
+9. RANDOM() o RAND()
+Descripción: Devuelve un número decimal aleatorio entre 0 y 1.
+Ejemplo: SELECT RAND(); → 0.54729...
+
+10. MOD()
+Descripción: Devuelve el residuo de la división de dos números.
+Ejemplo: SELECT MOD(10, 3); → 1
+
+11. SIGN()
+Descripción: Devuelve el signo de un número: 1 si es positivo, -1 si es negativo, y 0 si es cero.
+Ejemplo: SELECT SIGN(-15); → -1
+
+12. DEGREES()
+Descripción: Convierte un valor en radianes a grados.
+Ejemplo: SELECT DEGREES(PI()); → 180
+
+13. RADIANS()
+Descripción: Convierte un valor en grados a radianes.
+Ejemplo: SELECT RADIANS(180); → 3.14159...
+
+14. PI()
+Descripción: Devuelve el valor de 
+𝜋
+π (aproximadamente 3.14159).
+Ejemplo: SELECT PI(); → 3.14159...
+
+15. TRUNCATE()
+Descripción: Redondea un número hacia abajo y elimina los decimales especificados.
+Ejemplo: SELECT TRUNCATE(15.678, 1); → 15.6
 
 </body>
 
