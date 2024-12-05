@@ -658,6 +658,187 @@ Ejemplo: SELECT PI(); → 3.14159...
 Descripción: Redondea un número hacia abajo y elimina los decimales especificados.
 Ejemplo: SELECT TRUNCATE(15.678, 1); → 15.6
 
+
+
+-- Funciones de control de flujo de SQL
+
+-- 1. IF
+-- Se utiliza para ejecutar un bloque de código si se cumple una condición específica.
+-- Ejemplo:
+IF (SELECT COUNT(*) FROM empleados WHERE departamento = 'Ventas') > 0
+BEGIN
+    PRINT 'Hay empleados en el departamento de ventas.';
+END
+ELSE
+BEGIN
+    PRINT 'No hay empleados en el departamento de ventas.';
+END
+
+-- 2. CASE
+-- Permite ejecutar diferentes bloques de código o devolver diferentes valores según las condiciones especificadas.
+-- Ejemplo:
+SELECT nombre,
+       CASE 
+           WHEN salario > 50000 THEN 'Alto'
+           WHEN salario BETWEEN 30000 AND 50000 THEN 'Medio'
+           ELSE 'Bajo'
+       END AS nivel_salario
+FROM empleados;
+
+-- 3. WHILE
+-- Permite ejecutar un bloque de código repetidamente mientras se cumpla una condición.
+-- Ejemplo:
+DECLARE @contador INT = 1;
+WHILE @contador <= 10
+BEGIN
+    PRINT 'El contador es: ' + CAST(@contador AS VARCHAR);
+    SET @contador = @contador + 1;
+END
+
+-- 4. BREAK
+-- Se utiliza para salir de un bucle WHILE de forma anticipada.
+-- Ejemplo:
+DECLARE @contador INT = 1;
+WHILE @contador <= 10
+BEGIN
+    IF @contador = 5
+    BEGIN
+        BREAK;
+    END
+    PRINT 'El contador es: ' + CAST(@contador AS VARCHAR);
+    SET @contador = @contador + 1;
+END
+
+-- 5. CONTINUE
+-- Se utiliza para omitir el resto del código en una iteración de un bucle WHILE y pasar a la siguiente iteración.
+-- Ejemplo:
+DECLARE @contador INT = 1;
+WHILE @contador <= 10
+BEGIN
+    IF @contador % 2 = 0
+    BEGIN
+        SET @contador = @contador + 1;
+        CONTINUE;
+    END
+    PRINT 'El contador impar es: ' + CAST(@contador AS VARCHAR);
+    SET @contador = @contador + 1;
+END
+
+-- 6. RETURN
+-- Se utiliza en funciones y procedimientos almacenados para salir de la ejecución y devolver un valor.
+-- Ejemplo:
+CREATE PROCEDURE CheckEmployeeCount
+AS
+BEGIN
+    DECLARE @count INT;
+    SELECT @count = COUNT(*) FROM empleados;
+    IF @count > 100
+    BEGIN
+        RETURN 1; -- Indica que hay más de 100 empleados
+    END
+    RETURN 0; -- Indica que hay 100 o menos empleados
+END
+
+-- 7. GOTO
+-- Permite redirigir el flujo de ejecución a una etiqueta específica en el mismo bloque de código.
+-- Ejemplo:
+DECLARE @valor INT = 10;
+IF @valor > 5
+BEGIN
+    GOTO Etiqueta1;
+END
+PRINT 'Esto no se imprimirá si @valor > 5';
+
+Etiqueta1:
+PRINT 'Se ha ido a la etiqueta 1';
+
+-- 8. TRY...CATCH
+-- Se utiliza para capturar y manejar errores en SQL Server.
+-- Ejemplo:
+BEGIN TRY
+    -- Intentar ejecutar un bloque de código que podría fallar
+    INSERT INTO empleados (id, nombre) VALUES (NULL, 'Juan');
+END TRY
+BEGIN CATCH
+    PRINT 'Se produjo un error: ' + ERROR_MESSAGE();
+END CATCH
+
+-- 9. WAITFOR
+-- Se utiliza para pausar la ejecución de una consulta o procedimiento almacenado por un período de tiempo específico o hasta un momento específico.
+-- Ejemplo:
+WAITFOR DELAY '00:00:10'; -- Pausa la ejecución por 10 segundos
+PRINT 'La espera ha terminado';
+
+Transacciones1. BEGIN TRANSACTION / START TRANSACTION
+Descripción: Inicia una nueva transacción. Esto marca el inicio de un bloque de operaciones que se ejecutarán de forma conjunta.
+Uso: BEGIN TRANSACTION o START TRANSACTION se utiliza para comenzar una transacción antes de realizar operaciones de modificación de datos.
+2. COMMIT
+Descripción: Confirma y guarda de forma permanente todas las operaciones realizadas en la transacción desde el BEGIN TRANSACTION. Una vez ejecutado COMMIT, los cambios son visibles para otros usuarios.
+Uso: Se usa después de realizar una serie de operaciones de inserción, actualización o eliminación que deben aplicarse de forma definitiva.
+sql
+Copiar código
+BEGIN TRANSACTION;
+UPDATE cuentas SET saldo = saldo - 100 WHERE id_cuenta = 1;
+UPDATE cuentas SET saldo = saldo + 100 WHERE id_cuenta = 2;
+COMMIT;
+3. ROLLBACK
+Descripción: Revierte todas las operaciones realizadas desde el BEGIN TRANSACTION. Esto se utiliza si ocurre un error o si las condiciones de la transacción no se cumplen. Los cambios realizados no se guardan en la base de datos.
+Uso: Se usa para deshacer los cambios realizados si algo sale mal durante la transacción.
+sql
+Copiar código
+BEGIN TRANSACTION;
+UPDATE cuentas SET saldo = saldo - 100 WHERE id_cuenta = 1;
+-- Supongamos que ocurre un error aquí
+ROLLBACK;
+4. SAVEPOINT
+Descripción: Crea un punto de guardado dentro de una transacción. Esto permite retroceder a un punto específico sin deshacer toda la transacción.
+Uso: Es útil cuando se desean deshacer solo ciertas partes de una transacción y no la totalidad.
+sql
+Copiar código
+BEGIN TRANSACTION;
+UPDATE cuentas SET saldo = saldo - 100 WHERE id_cuenta = 1;
+SAVEPOINT punto_guardado;
+UPDATE cuentas SET saldo = saldo + 50 WHERE id_cuenta = 2;
+-- Si hay un error, se puede deshacer solo hasta el punto guardado
+ROLLBACK TO punto_guardado;
+COMMIT;
+5. RELEASE SAVEPOINT
+Descripción: Elimina un punto de guardado previamente creado. Esto indica que ya no se necesita retroceder a ese punto.
+Uso: Se usa después de que se confirma que un conjunto de operaciones fue exitoso y ya no se requiere la capacidad de deshacer hasta ese punto.
+sql
+Copiar código
+SAVEPOINT punto_guardado;
+-- Operaciones...
+RELEASE SAVEPOINT punto_guardado;
+6. SET TRANSACTION
+Descripción: Establece las propiedades de la transacción, como el nivel de aislamiento.
+Uso: Se usa para definir cómo deben ejecutarse las operaciones en la transacción, por ejemplo, si se deben bloquear otras transacciones que accedan a los mismos datos.
+sql
+Copiar código
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+BEGIN TRANSACTION;
+-- Operaciones...
+COMMIT;
+Propiedades ACID de las Transacciones:
+Atomicidad: Todas las operaciones en la transacción se ejecutan como una sola unidad. Si alguna operación falla, toda la transacción se deshace.
+Consistencia: La transacción lleva la base de datos de un estado válido a otro estado válido.
+Aislamiento: Las transacciones se ejecutan de forma independiente y no interfieren entre sí.
+Durabilidad: Una vez que la transacción se ha confirmado, los cambios son permanentes, incluso en caso de fallos del sistema.
+Ejemplo Completo de Transacción:
+sql
+Copiar código
+BEGIN TRANSACTION;
+
+UPDATE cuentas SET saldo = saldo - 100 WHERE id_cuenta = 1;
+SAVEPOINT punto_guardado;
+
+UPDATE cuentas SET saldo = saldo + 100 WHERE id_cuenta = 2;
+
+-- Si algo sale mal, deshacemos solo hasta el punto guardado
+-- ROLLBACK TO punto_guardado;
+
+COMMIT;  -- Si todo sale bien, confirmamos la transacción.
+
 </body>
 
 </html>
