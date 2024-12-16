@@ -1,0 +1,24 @@
+<!ELEMENT Concesionario (Coche+)>
+<!ELEMENT Coche (Marca, Modelo, Tipo, Color, Año, Precio)>
+
+<!ELEMENT Marca (#PCDATA)>
+<!ATTLIST Marca
+  comentario CDATA #IMPLIED
+  >
+  
+<!ELEMENT Modelo (#PCDATA)>
+<!ATTLIST Modelo
+  motor (eléctrico | diésel | gasolina | híbrido) #REQUIRED
+  >
+  
+<!ELEMENT Tipo (#PCDATA)>
+  
+<!ELEMENT Color (#PCDATA)>
+  
+<!ELEMENT Año (#PCDATA)>
+  
+<!ELEMENT Precio (#PCDATA)>
+<!ATTLIST Precio
+  moneda (EUR | USD | GBP) #REQUIRED
+  sistemaPago (contado | financiado | transferencia | metálico) #IMPLIED
+  >

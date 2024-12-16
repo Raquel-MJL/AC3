@@ -1,0 +1,14 @@
+<!ELEMENT agenda (persona+)>
+<!ELEMENT persona (nombre, direccion, telefono, email)>
+<!ATTLIST persona
+    codigo ID #REQUIRED
+>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ATTLIST telefono
+    tipo (fijo | movil) #REQUIRED
+>
+
+<!ELEMENT email (#PCDATA)>

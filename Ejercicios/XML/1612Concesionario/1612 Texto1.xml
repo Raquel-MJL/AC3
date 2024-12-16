@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido>
+    <destinatario>Ana Sánchez Ruiz</destinatario>
+    <articulo>
+        <nombre>Estantería</nombre>
+        <modelo>45AVB</modelo>
+    </articulo>
+    <direccionEnvio>Calle Gijón, 12 2º B, Madrid</direccionEnvio>
+    <fechaEntrega>2018-04-07</fechaEntrega>
+</pedido>
+
+<!--Ejercicio 2 -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concesionario SYSTEM "Texto1DTD.dtd">
+<concesionario>
+    <coche>
+        <marca>FIAT</marca>
+        <modelo>500</modelo>
+        <tipo>Urbano</tipo>
+        <color>Azul</color>
+        <año>2014</año>
+        <precio>6000.00</precio>
+    </coche>
+    <coche>
+        <marca>Volkswagen</marca>
+        <modelo>Passat</modelo>
+        <tipo>Berlina</tipo>
+        <color>Gris metalizada</color>
+        <año>2017</año>
+        <precio>16000.00</precio>
+    </coche>
+    <coche>
+        <marca>Renault</marca>
+        <modelo>Captur</modelo>
+        <tipo>SUV</tipo>
+        <color>Blanco</color>
+        <antiguedad>3 años</antiguedad>
+        <precio>20000.00</precio>
+    </coche>
+</concesionario>
+
+<!--Ejercicio 3-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<concesionario>
+    <coche marca="FIAT" modelo="500" tipo="Urbano" color="Azul" año="2014" precio="6000.00" />
+    <coche marca="Volkswagen" modelo="Passat" tipo="Berlina" color="Gris metalizada" año="2017" precio="16000.00" />
+    <coche marca="Renault" modelo="Captur" tipo="SUV" color="Blanco" antiguedad="3 años" precio="20000.00" />
+</concesionario>

@@ -1,0 +1,29 @@
+<!--
+
+Resumen de las principales declaraciones:
+
+
+ELEMENT: Define los elementos que pueden estar en el documento.
+    EMPTY: El elemento debe estar vacío.
+    #PCDATA: El elemento puede contener solo texto.
+    ANY: El elemento puede contener cualquier contenido.
+Elementos anidados: Se pueden definir con otros elementos que deben aparecer en un orden específico o con modificadores.
+
+
+Conectores y modificadores:
+    Coma (,): Los elementos deben aparecer en el orden exacto.
+    O lógico (|): Uno de varios elementos puede aparecer.
+    Interrogación (?): El elemento puede aparecer una o ninguna vez.
+    Asterisco (*): El elemento puede aparecer cero o más veces.
+    Signo más (+): El elemento debe aparecer al menos una vez.
+
+Atributos ATTLIST: Define los atributos de un elemento.
+    CDATA: Contiene cualquier tipo de datos de texto.
+    NMTOKEN: Atributo que solo permite caracteres alfanuméricos y ciertos símbolos.
+    ID/IDREF: ID único o referencia a otro elemento con un ID.
+    Valores iniciales: Se pueden definir atributos como obligatorios (#REQUIRED), opcionales (#IMPLIED), o con valor fijo (#FIXED).
+
+
+
+
+-->

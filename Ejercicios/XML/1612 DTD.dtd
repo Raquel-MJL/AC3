@@ -1,0 +1,61 @@
+<!--Ejercicio1-->
+
+<!DOCTYPE números [
+  <!ELEMENT números (numero)>
+  <!ELEMENT numero (#PCDATA)>
+]>
+
+<!--Ejercicio 2-->
+
+<!DOCTYPE colores [
+  <!ELEMENT colores (color+)>
+  <!ELEMENT color (#PCDATA)>
+]>
+
+<!--Ejercicio 3-->
+
+<!DOCTYPE coches [
+  <!ELEMENT coches EMPTY>
+]>
+
+<!--Ejercicio 4-->
+
+<!DOCTYPE escritores [
+  <!ELEMENT escritores (escritor+)>
+  <!ELEMENT escritor (nombre, genero_literario)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT genero_literario (#PCDATA)>
+]>
+
+<!--Ejercicio 5-->
+<!DOCTYPE musica [
+  <!ELEMENT musica (musico+)>
+  <!ELEMENT musico (artista?, grupo?, estilo, año_formación?)>
+  <!ELEMENT artista (#PCDATA)>
+  <!ELEMENT grupo (#PCDATA)>
+  <!ELEMENT estilo (#PCDATA)>
+  <!ELEMENT año_formación (#PCDATA)>
+]>
+
+<!--Ejercicio 6-->
+<!DOCTYPE directorio_emergencias [
+  <!ELEMENT directorio_emergencias (contacto+)>
+  <!ELEMENT contacto (nombre, telefono_fijo+, movil?)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT telefono_fijo (#PCDATA)>
+  <!ELEMENT movil EMPTY>
+]>
+
+
+<!--Ejercicio 7-->
+
+<!DOCTYPE astronomia [
+  <!ELEMENT astronomia (objeto_astronomico+)>
+  <!ELEMENT objeto_astronomico (planeta | satelite | asteroide | estrella | nebulosa | agujeroNegro)>
+  <!ELEMENT planeta (#PCDATA)>
+  <!ELEMENT satelite (#PCDATA)>
+  <!ELEMENT asteroide (#PCDATA)>
+  <!ELEMENT estrella (#PCDATA)>
+  <!ELEMENT nebulosa (#PCDATA)>
+  <!ELEMENT agujeroNegro (#PCDATA)>
+]>

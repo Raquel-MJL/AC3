@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda SYSTEM "dtd.dtd">
+<agenda>
+    <persona codigo="001">
+        <nombre>Juan</nombre>
+        <direccion>C/ Orión, 10 5ºA</direccion>
+        <telefono tipo="móvil">634393833</telefono>
+        <email>juan@gmail.com</email>
+    </persona>
+    <persona codigo="002">
+        <nombre>Carmen</nombre>
+        <direccion>C/ Sirio, 24 2º D</direccion>
+        <telefono tipo="móvil">634590247</telefono>
+        <email>carmen@yahoo.es</email>
+    </persona>
+</agenda>
