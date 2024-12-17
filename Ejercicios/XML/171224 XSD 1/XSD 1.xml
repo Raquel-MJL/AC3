@@ -1,0 +1,42 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!-- Ejercicio 1.-->
+
+	<datos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xsd1a.xsd">
+		<nombre>Eva</nombre>
+		<direccion>C/ Valencia 8</direccion>
+		<telefono>123456789</telefono>
+		<email>eva@gmail.com </email>
+	</datos>
+
+<!-- Ejercicio 2.-->
+
+<pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xsd1b.xsd">
+	<cliente>
+		<cod_cliente>ERT56DE</cod_cliente>
+		<nombre>Antonio</nombre>
+		<id_pedido>1235BG</id_pedido>
+	</cliente>
+	<cliente>
+		<cod_cliente>AZXCD1</cod_cliente>
+		<nombre>Esperanza</nombre>
+		<id_pedido>BG340P</id_pedido>
+	</cliente>
+</pedidos>
+
+<!-- Ejercicio 3.-->
+
+<reparaciones xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="xsd1c.xsd">
+	<componente>
+		<id_componente >12345</id_componente>
+		<pieza codigo="ZZ3">Tornillo</pieza>
+		<pieza codigo="34A">Válvula</pieza>
+	</componente>
+	<componente>
+		<id_componente>34567</id_componente>
+		<pieza codigo="CHR">Engranaje</pieza>
+	</componente>
+</reparaciones>

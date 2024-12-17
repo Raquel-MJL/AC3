@@ -1,0 +1,105 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!-- Ejercicio 1.-->
+
+	<!-- XML -->
+	
+	<localidad>Valencia</localidad>
+	<titulo>El Señor de los Anillos</titulo>
+	<fecha-de-nacimiento>2002-10-09</fecha-de-nacimiento>
+	<hora_primera_sesion>16:30:00</hora_primera_sesion >
+	<temperatura>-20</temperatura>
+	<edad>24</edad>
+	<nota>8.45</nota>
+	<precio>280.99</precio>
+	<prestado>false</prestado>
+	<apto>true</apto>
+	<sitio-web>https://www.misitio.com</sitio-web>
+
+	<!-- XSD -->
+	
+	<xs:element name="localidad" type="xs:string"/>
+	<xs:element name="titulo" type="xs:string"/>
+	<xs:element name="fecha-de-nacimiento" type="xs:date"/>
+	<xs:element name="hora_primera_sesion" type="xs:time"/>
+	<xs:element name="temperatura" type="xs:negativeInteger"/>	<xs:element name="temperatura" type="xs:int"/> <xs:element name="temperatura" type="xs:integer"/> 
+	<xs:element name="edad" type="xs:positiveInteger"/> <xs:element name="edad" type="xs:int"/> <xs:element name="edad" type="xs:integer"/> 
+	<xs:element name="nota" type="xs:decimal"/>
+	<xs:element name="precio" type="xs:decimal"/>
+	<xs:element name="prestado" type="xs:boolean"/>
+	<xs:element name="apto" type="xs:boolean"/>
+	<xs:element name="sitio-web" type="xs:anyURI"/>
+
+<!-- Ejercicio 2.-->
+
+	<!-- Elemento color -->
+	
+		<xs:element name="color" type="xs:string" minOccurs = "1" maxOccurs = "unbounded"/>
+	
+	<!-- Elemento color -->
+	
+		<xs:element name="telefono" type="xs:string" minOccurs = "1" maxOccurs = "3"/>
+	
+	<!-- Elemento color -->
+	
+		<xs:element name="correo-electronico" type="xs:string" minOccurs = "0"/>
+	
+	<!-- Elemento luzEncendida -->	
+	
+		<xs:element name="luzEncendida" type="xs:boolean" default = "false"/>
+	
+	<!-- Elemento horno-Abierto -->	
+	
+		<xs:element name="horno-Abierto" type="xs:boolean" fixed = "true"/>
+		
+		
+<!-- Ejercicio 3.-->
+
+	<!-- Elemento apellidos -->
+	
+		<xs:length value = "40"/> 
+		
+	<!-- Elemento contraseña -->
+	
+		<xs:minLength value = "8"/>
+		<xs:maxLength value = "20"/>
+	
+	<!-- Elemento edad -->
+	
+		<xs:minExclusive value = "15"/>
+        <xs:maxExclusive value = "66"/>
+		
+		<xs:minInclusive value = "16"/>
+        <xs:maxInclusive value = "65"/>
+		
+	<!-- Elemento precio -->	
+	
+		<xs:totalDigits value="6"/>
+			
+	<!-- Elemento precio con patrón-->
+	
+		<xs:pattern value = "[0-9]{6}"/> <!-- Menos preciso ya que no incluye decimales, pero si 6 dígitos totales. -->
+		
+	<!-- Elemento saldo -->	
+		
+       	<xs:fractionDigits value = "2"/>	
+		
+	<!-- Elemento IdCliente -->
+	
+		<xs:pattern value = "[a-z]{3}"/> <xs:pattern value = "[a-z][a-z][a-z]"/>
+	
+	<!-- Elemento palabra -->
+	
+		<xs:pattern value = "[A-Z]([a-z]){3}"/> <xs:pattern value = "[A-Z][a-z][a-z][a-z]"/>
+	
+	<!-- Elemento código-postal -->
+
+		<xs:pattern value = "[0-9]{5}"/> <xs:pattern value = "[0-9][0-9][0-9][0-9][0-9]"/>
+		
+	<!-- Elemento sugerencias -->
+
+		<xs:pattern value = "[A-Za-z]+"/>
+	
+	<!-- Elemento contraseña -->
+
+		<xs:pattern value = "[a-zA-Z0-9#-_]*"/> <xs:pattern value = "[a-zA-Z0-9#-_]+"/>

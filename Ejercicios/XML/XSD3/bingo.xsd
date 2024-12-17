@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Definición del tipo bolaNumero como un entero positivo entre 1 y 89 -->
+  <xs:simpleType name="bolaNumero">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="89"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Definición del elemento principal bingo -->
+  <xs:element name="bingo">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Definición del elemento bola, que puede ocurrir un número indefinido de veces -->
+        <xs:element name="bola" maxOccurs="unbounded">
+          <xs:complexType>
+            <!-- Atributo numero de tipo bolaNumero -->
+            <xs:attribute name="numero" type="bolaNumero" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
