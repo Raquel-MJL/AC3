@@ -112,7 +112,6 @@ ESTRUCTURA DE UN ARCHIVO XML.
         </datos_cliente>
 
 
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 DOCUMENTO XML BIEN FORMADO
 
@@ -124,945 +123,231 @@ Reglas:
     → El resto de caracteres pueden ser también números, guiones (-) o puntos (.).
     → Se pueden usar tildes en las etiquetas si el juego de caracteres lo permite.
     → Los caracteres "<" y "&" sólo se utilizan como comienzo de marcas (si no hay que escaparlos) 
-   
-▪ Entidades de carácter o internas:
-Referencia a entidad Carácter
-&lt; <
-&gt; >
-&amp; &
-&apos; '
-&quot; "
-o Las etiquetas no pueden contener caracteres especiales, no pueden empezar por
-caracteres especiales, no pueden empezar por xml o XML y no pueden contener
-espacios en blanco.
-o Las etiquetas de apertura, de cierre y vacías están correctamente anidadas.
-o No falta ni sobra ninguna etiqueta de apertura o cierre.
-o Las etiquetas de cierre coinciden con las de apertura, incluso en mayúsculasminúsculas.
-o Las etiquetas de cierre no contienen atributos.
-o No puede haber dos atributos con el mismo nombre en la misma etiqueta.
-o Los atributos deben tener un valor.
-o Los valores de los atributos están entre están escritos ente comillas simples o
-dobles.
-o No existen referencias en los valores de los atributos.
+        &lt → <
+        &gt → >
+        &amp → &
+        &apos → '
+        &quot → "
+    → Las etiquetas no pueden contener caracteres especiales ni empezar por xml o XML 
+    y no pueden contener espacios en blanco.
+    → Las etiquetas de apertura, de cierre y vacías están correctamente anidadas.
+    → No falta ni sobra ninguna etiqueta de apertura o cierre.
+    → Las etiquetas de cierre coinciden con las de apertura, incluso en mayúsculasminúsculas.
+    → Las etiquetas de cierre no contienen atributos.
+    → No puede haber dos atributos con el mismo nombre en la misma etiqueta.
+    → Los atributos deben tener un valor.
+    → Los valores de los atributos están entre están escritos ente comillas simples o dobles.
+    → No existen referencias en los valores de los atributos.
 
-• Ejemplos Incorrectos:
-<error>
-<nombre>
-Luis <Gómez> Sánchez. (El apellido no puede escribirse entre <> si no
-es una etiqueta. Correcto sería &lt;Gómez&gt;)
-</nombre>
-</error>
-<error>
-<precio divisa = Euros>200,00</precio> (Faltan comillas en el valor el atributo)
-</error>
-<error>
-<nombre#>
-Luis (Carácter # no permitido en el nombre de una etiqueta)
-</nombre#>
-</error>
-<error>
-<nombre>
-Luis (No distinción mayúsculas-minúsculas en etiqueta)
-</NOMBRE>
-</error>
-<error>
-<nombre>Luis </nombre>
-<teléfono>123456789 (Falta etiqueta de cierre <teléfono>)
-</error>
-<error>
-<nombre>Luis
-<teléfono>123456789</teléfono>
-</nombre> (Etiqueta mal anidada.)
-</error>
-DOCUMENTO XML VÁLIDO.
-• Un documento XML puede estar bien formado, pero no ser valido.
-• Para que sea válido de incluir lo siguiente:
-o Una referencia a una gramática.
-o Incluir sólo elementos y atributos definidos en esa gramática.
-o Cumplir las reglas gramaticales especificadas en la gramática.
-• Existen varias formas de definir la gramática para documentos XML, las más utilizadas son:
-o DTD (Document Type Definition - Definición de Tipo de Documento).
-o XML Schema.
-DTD.
-Concepto y características.
-• Documento que define la estructura de un documento XML.
-• Se guarda en un archivo de texto con extensión dtd.
-• Permite especificar las reglas sobre lo que se va, o no, a permitir a un documento XML.
-• Indica qué elementos, atributos, entidades, notaciones, etc., pueden aparecer, así como su
-orden y número de veces en que pueden aparecer, cuáles pueden ser hijos de cuáles, etc.
-• El procesador XML usa el documento DTD para comprobar si un documento XML es válido,
-es decir, si cumple las reglas especificadas en el DTD.
-• Es el modelo antiguo, heredado del lenguaje SGML.
-• El DTD describe:
-o Elementos:
-▪ Qué etiquetas están permitidas y cuál es su contenido.
-o Estructura:
-▪ Cuál es el orden de las etiquetas.
-o Anidamiento:
-▪ Qué etiquetas van incluidas dentro de otras etiquetas.
-Ubicación.
-• Interna.
-o El DTD está incluido en el documento XML.
-o Sintaxis:
-▪ <!DOCTYPE nombre [declaraciones]>
-▪ "nombre" debe coincidir con el nombre del elemento raíz del documento
-XML.
-• Externa.
-o El DTD está incluido en un archivo independiente con la extensión .DTD.
-o En el archivo externo DTD no se incluye la sentencia <!DOCTYPE nombre…>
-o Sintaxis:
-▪ En el propio equipo:
-• <!DOCTYPE nombre SYSTEM “Ruta de Acceso/archivo.dtd”>
-• La ruta de acceso hasta el archivo puede ser absoluta o relativa.
-▪ Ejemplo:
-• <!DOCTYPE ventas SYSTEM "datos.dtd">
-o En un equipo remoto con DTD publica:
-• <!DOCTYPE nombre PUBLIC “URL/Ruta de Acceso/archivo.dtd”>
-▪ Ejemplo:
-• <!DOCTYPE ventas PUBLIC
-"https://www.tienda.es/archivos/datos.dtd">
-• Híbrida.
-o Combinación interna-externa.
-o Sintaxis:
-▪ <!DOCTYPE nombre SYSTEM “Ruta de Acceso /archivo.dtd” [declaraciones]>
-Declaraciones.
-• ELEMENTOS.
-• Los elementos del documento se especifican con la declaración ELEMENT.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Contenido)>
-• Contenido:
-o Expresión que define el contenido del elemento.
-o Contenidos posibles:
-o EMPTY.
-▪ El elemento debe estar vacío, no debe tener ningún contenido.
-▪ Sintaxis:
-• <!ELEMENT Nombre del elemento EMPTY>
-▪ Ejemplos:
-• DTD.
-o <!DOCTYPE agenda [<!ELEMENT teléfono EMPTY>]>
-• XML.
-o <teléfono> 345678922</teléfono> // Error.
-o <teléfono></teléfono> // Correcto.
-o <teléfono/> // Correcto.
-o (#PCDATA).
-▪ El elemento puede contener texto.
-▪ Sintaxis:
-• <!ELEMENT Nombre del elemento (#PCDATA)>
-▪ Ejemplos:
-• DTD.
-o <!DOCTYPE agenda [<!ELEMENT nombre (#PCDATA)>]>
-• XML.
-o <nombre> Virginia</nombre> // Correcto.
-o <nombre> <teléfono></teléfono> </nombre> // Error.
-o ANY.
-▪ El elemento puede contener texto u otros elementos.
-▪ Sintaxis:
-• <!ELEMENT Nombre del elemento ANY>
-▪ Ejemplos:
-• DTD.
-o <!DOCTYPE agenda [<!ELEMENT nombre ANY>]>
-• XML.
-o <nombre> Virginia</nombre> // Correcto.
-o <nombre> <teléfono></teléfono> </nombre> //Correcto.
-o <nombre/> // Correcto.
-o Elementos.
-▪ Pueden incluirse elementos indicando que éstos aparecerán anidados al
-que los incluye.
-▪ Sintaxis:
-• <!ELEMENT Nombre del elemento (Elemento1, Elemento2, …,
-ElementoN)>
-▪ Ejemplos:
-• DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código, nombre)
->
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-• XML.
-o <cliente>
-<código> 2785NT6</código>
-<nombre>Juan</nombre>
-</cliente>
-o <cliente>
-<nombre>Juan</nombre>
-<código> 2785NT6</código> // (Incorrecto. No
-están el mismo orden que en la declaración).
-</cliente>
-▪ Conectores y Modificadores para elementos.
-▪ Coma (,).
-• Separador de elementos.
-• El elemento contiene otros elementos en el orden especificado.
-• Sintaxis y ejemplo anterior.
-▪ O lógico (|).
-• El elemento contiene uno de los elementos especificados.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Elemento1 |
-Elemento2)>
-• Ejemplos:
-o DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código |
-nombre) >
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-o XML.
-o <cliente>
-<nombre>Juan</nombre>
-</cliente>
-o <cliente>
-<codigo>HYU789</codigo>
-</cliente>
-▪ Interrogación (?).
-• El elemento puede aparecer una o ninguna vez.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Elemento1,
-Elemento2?)>
-• Ejemplos:
-o DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código?,
-nombre) >
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-o XML.
-o <cliente> //Correcto.
-<nombre>Juan</nombre>
-</cliente>
-o <cliente>
- <código> 2785NT6</código>
- <nombre>Juan</nombre>
- </cliente> // Correcto.
-▪ Asterisco (*).
-• El elemento puede aparecer ninguna, una o varias veces.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Elemento1*,
-Elemento2)>
-• Ejemplos:
-o DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código,
-nombre*) >
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-o XML.
-o <cliente>.
-<código> 2785NT6</código>
-<nombre>Juan</nombre>
-</cliente> //Correcto
-o <cliente>
- <código> 2785NT6</código>
- </cliente> // Correcto.
-▪ Signo más (+).
-• El elemento puede aparecer una o varias veces.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Elemento1+,
-Elemento2)>
-• Ejemplos:
-o DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código,
-nombre+) >
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-o XML.
-o <cliente>.
-<código> 2785NT6</código>
-<nombre>Juan</nombre>
-</cliente> //Correcto
-o <cliente>
- <código> 2785NT6</código>
- </cliente> // Incorrecto.
-o <cliente>
- <código> 2785NT6</código>
-<nombre>Juan</nombre>
-<nombre>Juanito</nombre>
- </cliente> // Correcto.
-▪ Paréntesis ().
-• Sirve para agrupar expresiones.
-• Sintaxis:
-o <!ELEMENT Nombre del elemento (Elemento1,
-(Elemento2, Elemento3))>
-• Ejemplos:
-o DTD.
-o <!DOCTYPE agenda [<!ELEMENT cliente (código,
-(cuenta | nombre)) >
-<!ELEMENT código (#PCDATA)>
-<!ELEMENT nombre(#PCDATA)>
-]>
-o XML.
-o <cliente>.
-<código> 2785NT6 </cuenta>
-<cuenta> 1234 56 78 9378235 </cuenta>
-</cliente> //Correcto
-o <cliente>
- <código> 2785NT6</código>
-<nombre>Juan</nombre>
- </cliente> // Correcto.
-• ATRIBUTOS.
-o Sintaxis:
-o Un atributo para un elemento:
-▪ <!ATTLIST Nombre del Elemento Nombre del Atributo Tipo de Atributo
-Valor Inicial del Atributo >
-o Varios atributos para un elemento:
-▪ Opción 1:
-• <!ATTLIST Nombre del Elemento Nombre del Atributo1 Tipo de
-Atributo1 Valor Inicial del Atributo1 >
-• <!ATTLIST Nombre del Elemento Nombre del Atributo2 Tipo de
-Atributo2 Valor Inicial del Atributo2 >
-▪ Opción 2:
-• <!ATTLIST Nombre del Elemento
-Nombre del Atributo1 Tipo de Atributo1 Valor Inicial del Atributo1
-Nombre del Atributo1 Tipo de Atributo1 Valor Inicial del Atributo1>
-o Componentes:
-▪ Nombre del elemento.
-• Elemento para el cual se crea el atributo.
-▪ Nombre del atributo.
-• Nombre que llevará el atributo.
-▪ Tipo de atributo.
-• A continuación.
-▪ Valor inicial del atributo.
-• Valor predeterminado del atributo.
-o Ejemplo:
-• <!ATTLIST nombre alias CDATA “” >
-o Tipos de Atributos.
-▪ Valores.
-• El valor del atributo solo puede ser uno de los incluidos en una lista.
-• Los valores se incluyen ente paréntesis usando el modificador O
-Lógico (|).
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE letras [
-<!ELEMENT letra EMPTY>
-<!ATTLIST letra mayus (A| B |C) #REQUIRED >
-]>
-o XML.
-▪ <letra mayus = “B” /> // Correcto.
-▪ <letra mayus = “T” /> // Incorrecto.
-▪ CDATA.
-• El atributo contiene cualquier carácter.
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE agenda [
-<!ELEMENT nombre EMPTY>
-<!ATTLIST nombre alias CDATA “” >
-]>
-o XML.
-▪ <nombre alias = “Luismi” /> // Correcto.
-▪ <nombre alias = “Luismi #321” /> // Correcto.
-▪ <nombre/> // Incorrecto.
-▪ NMTOKEN.
-• El atributo sólo puede contener letras, números y los caracteres
-punto (.), guion medio (-), guion de subrayado (_) y dos puntos (:).
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE agenda [
-<!ELEMENT nombre EMPTY>
-<!ATTLIST nombre alias NMTOKEN “” >
-]>
-o XML.
-▪ <nombre alias = “Luismi” /> // Correcto.
-▪ <nombre alias = “Luismi-321” /> // Correcto.
-▪ <nombre alias = “Luismi 321” /> // Incorrecto. Hay un
-espacio en blanco no permitido.
-▪ NMTOKENS.
-• Igual que NMTOKEN incluyendo espacios en blanco.
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE agenda [
-<!ELEMENT nombre EMPTY>
-<!ATTLIST nombre alias NMTOKENS “” >
-]>
-o XML.
-▪ <nombre alias = “Luismi” /> // Correcto.
-▪ <nombre alias = “Luismi-321” /> // Correcto.
-▪ <nombre alias = “Luismi 321” /> // Correcto.
-▪ ID.
-• El valor del atributo debe ser único.
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE colores [
-<!ELEMENT color (#PCDATA)>
-<!ATTLIST color tipo ID #REQUIRED>
-]>
-o XML.
-▪ <color tipo = “Cálido”>Rojo</color> // Correcto.
-▪ <color tipo = “Cálido”>Azul</color> // Incorrecto.
-▪ IDREF.
-• El valor del atributo debe coincidir con el valor de otro atributo.
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE colores [
-<!ELEMENT color (#PCDATA)>
-<!ATTLIST color tipo ID #REQUIRED >
-<!ELEMENT tonalidad (#PCDATA)>
-<!ATTLIST tonalidad matiz IDREF #REQUIRED >
-]>
-o XML.
-▪ <color tipo = “Cálido”>Rojo</color> // Correcto.
-▪ <tonalidad matiz = “Cálido”> Anaranjada
-</tonalidad> // Correcto.
-▪ IDREFS.
-• El valor del atributo es un conjunto de valores que coinciden con el
-valor ID de otros elementos.
-• Ejemplo:
-o DTD.
-▪ <!DOCTYPE colores [
-<!ELEMENT color (#PCDATA)>
-<!ATTLIST color tipo ID #REQUIRED>
-<!ELEMENT tonalidad (#PCDATA)>
-<!ATTLIST tonalidad matiz IDREFS #REQUIRED>
-]>
-o XML.
-▪ <color tipo = “Cálido”>Rojo</color> // Correcto.
-▪ <color tipo = “Templado”>Amarillo</color> //
-Correcto.
-▪ <tonalidad matiz = “Cálido Templado”> Anaranjada
-</tonalidad> // Correcto.
-• VALORES INICIALES.
-o Valor.
-▪ Atributo con un valor predeterminado.
-▪ Sintaxis:
-• Tipo de Atributo "Valor predeterminado".
-▪ Ejemplo:
-• <!ATTLIST teléfono internacional CDATA “Desconocido”>
-o #REQUIRED.
-▪ Atributo obligatorio.
-▪ No se especifica ningún valor predeterminado.
-▪ Sintaxis:
-• Tipo de Atributo #REQUIRED.
-▪ Ejemplo:
-• <!ATTLIST teléfono internacional CDATA #REQUIRED>
-o #IMPLIED.
-▪ Atributo opcional.
-▪ No se especifica ningún valor predeterminado.
-▪ Sintaxis:
-• Tipo de Atributo #IMPLIED.
-▪ Ejemplo:
-• <!ATTLIST teléfono internacional CDATA #IMPLIED>
-o #FIXED.
-▪ Atributo con un valor fijo.
-▪ Sintaxis:
-• #FIXED "Valor fijo"
-▪ Ejemplo:
-• <!ATTLIST teléfono internacional CDATA #FIXED “34”>
-XML SCHEMA.
-Concepto y características.
-• Es un modelo creado por el W3C como sucesor de DTD.
-• Utiliza el XSD (XML Schema Definition) como lenguaje para describir la estructura y las
-restricciones de un documento XML.
-• Con el lenguaje XSD se puede comprobar la validez de un documento XML, es decir, definir
-su estructura: qué elementos, qué tipos de datos, que atributos, en qué orden, cuántas
-veces se repiten, etc.
-DOCUMENTO XML SCHEMA.
-• Contiene los componentes y elementos que va a servir para validar un documento XML.
-• Se guarda en un archivo con la extensión .xsd.
-Elemento raíz del documento XML Schema.
-• Todo esquema XML incluye el elemento raíz schema.
-• Sintaxis:
-o <xs:schema>…</xs:schema>
-• Esta etiqueta está definida en el estándar XSD y es la que permite definir esquemas
-siguiendo el estándar W3C.
-• Atributos.
-o xmlns (XML NameSpace).
-▪ Especifica el espacio de nombres para el esquema.
-▪ Espacio de nombres:
-• Un espacio de nombres XML es un conjunto de nombres
-identificados mediante una URL.
-• Proporciona elementos y atributos con nombre único para
-resolver la ambigüedad entre elementos o atributos que se
-llamen igual.
-▪ Sintaxis:
-• xmlns:prefijo = URL el espacio de nombres.
-▪ Ejemplo:
-• <xs:schema xmlns:xs="http://www.w3c.org/2001/XMLSchema">
-• Esto indica que los elementos y tipos de datos utilizados en el
-esquema provienen del espacio de nombres
-'http://www.w3.org/2001/XMLSchema'
-o targetNamespace.
-▪ Especifica un espacio de nombres propio.
-▪ Sintaxis:
-• targetNamespace: URL del espacio de nombres propio.
-▪ Ejemplo:
-• targetNamesapace:"http://www.miWeb.es/Esquema">
-o elementFormDefault.
-▪ Indica si los elementos deben o no estar certificados por el espacio de
-nombre cuando se utilicen en el documento instancia XML.
-▪ Sintaxis:
-• elementFormDefault = “Valores”.
-• Valores:
-o qualified
-▪ Los elementos de los documentos XML que
-apunten a un espacio de nombres determinado,
-deben estar cualificados con un prefijo.
-o unqualified.
-▪ Los elementos no deben estar cualificados con un
-prefijo.
-▪ Valor por defecto.
-o attributeFormDefault.
-▪ Indica si los atributos deben o no estar certificados por el espacio de
-nombre cuando se utilicen en el documento instancia XML.
-▪ Sintaxis:
-• attributeFormDefault = “Valores”.
-• Valores:
-o qualified
-▪ Los atributos de los documentos XML que
-apunten a un espacio de nombres determinado,
-deben estar cualificados con un prefijo.
-o unqualified.
-▪ Los atributos no deben estar cualificados con un
-prefijo.
-▪ Valor por defecto.
-DOCUMENTO INSTANCIA XML.
-• Es el documento XML que llama o referencia al esquema XSD que va a servir para validarlo.
-• Dicho documento tiene la siguiente estructura: cabecera y cuerpo.
-CABECERA.
-• Declaración XML.
-o Deben empezar por una declaración XML:
-o Sintaxis:
-▪ <?xml version="versión" encoding="JUEGO DE CARACTERES?>
-o Ejemplo:
-▪ <?xml version="1.0" encoding="UTF-8"?>
-• Elemento raíz.
-o Elemento que engloba al resto de elemento del documento y que debe aparecer
-también en el XSD.
-o Sintaxis:
-▪ <elemento raíz atributos> … </elemento raíz>
-o Atributos:
-▪ xmlns:xsi.
-• Atributo que permite declarar el espacio de nombres del esquema
-XSD.
-• Indica que queremos utilizar los elementos definidos en un
-determinado esquema.
-• Sintaxis:
-o xmlns:xsi = “URL”.
-• Ejemplo:
-o xmlns:xsi = http://www.w3.org/2001/XMLSchema-instance
-o indica que se van a los elementos definidos en
-http://www.w3.org/2001/XMLSchema-instance.
-▪ noNamespaceSchemaLocation.
-• Atributo que permite vincular el documento XML con el esquema
-local XSD.
-• Especifica el nombre del archivo XSD que contiene las reglas de
-validación.
-• Sintaxis:
-o “xsi:noNamespaceSchemaLocation = "Ruta de
-acceso/Nombre del archivo.xsd".
-• Ejemplo:
-o “xsi:noNamespaceSchemaLocation = "clientes.xsd".
-•
-CUERPO.
-• Contiene los elementos y atributos junto con los datos o información asociada a ellos.
-• Incluye distintos tipos de declaraciones y componentes:
-ELEMENTOS COMPLEJOS. (Complex Types).
-• Elemento que contiene otros elementos o atributos anidados.
-• Los elementos del documento XML se especifican con la declaración element.
-• Sintaxis:
-o <xs:element name="Nombre del Elemento"/> (Elementos simples)
-o <xs:element name="Nombre del Elemento"> … </xs:element> (Elementos
-complejos)
-• Ejemplo:
-o <xs:element name="Libro"/>
-o <xs:element name="Libro"> … </xs:element>
-• Si, además, incluye otros elementos anidados, se dice que es un elemento complejo e
-incluye la declaración complexType para especificar los elementos que lo componen, así
-como, otro tipo de características.
-• Sintaxis:
-o <xs:complexType> Declaración de elementos anidados </xs:complexType>
-• Ejemplo:
-<xs:element name="Libro">
-<xs:complexType>
- <xs:sequence>
-<xs:element name="Título" type="xsd:string"/>
-<xs:element name="Autor" type="xsd:string" />
- </xs:sequence>
-</xs:complexType>
-</xs:element>
-• Indicadores de orden.
-o Especifican el orden de aparición de los elementos anidados.
-o Tipos:
-▪ Secuencia.
-• Define el orden exacto de aparición de los elementos.
-• Deben aparecer todos, y en el mismo orden en que se especifican.
-• Sintaxis:
-o <xs:sequence>…</xs:sequence>
-▪ Alternativa.
-• Define una serie de elementos entre los cuales sólo se puede elegir o
-debe aparecer uno de ellos.
-• El elemento que define la selección, así como sus elementos
-contenidos deben ser opcionales, es decir, deben incluir el atributo
-minOccurs con valor igual a 0, mientras que el valor de maxOccurs
-puede ser cualquiera que se necesite.
-• Sintaxis:
-o <xs:choice>…<xs:choice>
-• Ejemplo:
- <xs:choice minOccurs = “0” maxOccurs = “5”>
- <xs:element name="Título" type="xsd:string" minOccurs = “0”/>
- <xs:element name="Autor" type="xsd:string" minOccurs = “0”/>
- </xs:choice>
-▪ Todos.
-• No es obligatorio que aparezcan todos los elementos y además
-pueden hacerlo en cualquier orden.
-• Sintaxis:
-o <xs:all>…</xs:all>
-ELEMENTOS SIMPLES. (Simple Types).
-• Elementos que no contienen otros elementos.
-• Los elementos del documento se especifican con la declaración xs:element.
-• Incluyen un nombre, un tipo de datos y otros ajustes, como si son obligatorios o tienen
-valores por defecto.
-• Sintaxis:
-o <xs:element name =”Nombre del elemento” type = “Tipo de datos” Otros
-ajustes/>
-o Tipos de datos. (Más comunes).
-▪ xs:string.
-▪ xs:decimal.
-▪ xs:int.
-▪ xs:integer.
-▪ xs:boolean (Valores true / false).
-▪ xs:date (Formato Año-Mes-Dia).
-▪ xs:time (Formato Hora : Minutos : Segundos).
-▪ Otros.
-• xs:positiveInteger.
-• xs:negativeInteger.
-• xs:datetime (Formato Año-Mes-Dia Hora : Minutos : Segundos).
-• xs:anyURI (Indicar una URL).
-o Otros ajustes.
-▪ Valores por defecto (opcional).
-• Valor que se asigna automáticamente al elemento si no se especifica
-otro.
-• Sintaxis:
-o <xs:element name =”Nombre del elemento” type = “Tipo de
-datos” default “Valor por defecto”>
-• Ejemplo:
-o <xs:element name =”email” type = “xs:string” default
-“Desconocido”>
-▪ Valor fijo. (opcional).
-• Valor que se asigna automáticamente al elemento y que no se puede
-cambiar por otro.
-• Sintaxis:
-o <xs:element name =”Nombre del elemento” type = “Tipo de
-datos” fixed “Valor fijo”>
-• Ejemplo:
-o <xs:element name =”idioma” type = “xs:string” fixed
-“Español”>
-▪ Ocurrencias. (opcional).
-• Se puede especificar el mínimo y máximo número de ocurrencia que
-pueden darse para un elemento.
-• Valores máximo y mínimo por defecto: 1.
-• Si se quiere que el máximo valor sea indefinido, el valor de
-maxOccurs debe ser unbounded.
-• minOccurs = 0 indica que el elemento es opcional y puede no
-aparecer.
-• Sintaxis:
-o <xs:element name =”Nombre del elemento” type = “Tipo de
-datos” minOccurs =”Valor” maxOccurs =”Valor”>
-• Ejemplo:
-o <xs:element name =”hora” type = “xs:time” minOccurs =”1”
-maxOccurs =”50”>
-• Ejemplos:
-o XSD.
-▪ <xs:element name="nombre" type="xs:string" maxOccurs=”4”/>
-<xs:element name="edad" type="xs:integer" default “00”/>
-<xs:element name="fecha_nacimiento" type="xs:date"/>
-o XML.
-<nombre>Luis</nombre>
-<edad>24</edad>
-<fecha_nacimiento>1997-09-10</fecha_nacimiento>
-• ATRIBUTOS.
-o Se declaran igual que un elemento simple.
-o Un elemento simple no puede llevar atributos y si los lleva, se considera un
-elemento complejo.
-o Los elementos del documento se especifican con la declaración xs:attribute.
-o Incluyen un nombre, un tipo de datos y otros ajustes, como si son obligatorios o
-tienen valores por defecto.
-o Tipos de datos.
-▪ xs:string.
-▪ xs:decimal.
-▪ xs:int.
-▪ xs:integer.
-▪ xs:positiveInteger.
-▪ xs:negativeInteger.
-▪ xs:boolean (Valores true / false).
-▪ xs:date (Formato Año-Mes-Dia)
-▪ xs:datetime (Formato Año-Mes-Dia Hora : Minutos : Segundos).
-▪ xs:time (Formato Hora : Minutos : Segundos).
-▪ xs:anyURI (Indicar una URL).
-o Sintaxis:
-▪ <xs:attribute name =”Nombre del atributo” type = “Tipo de datos” Otros
-ajustes>
-▪ Ejemplos:
-▪ XSD.
-• <xs:attribute name="idioma" type="xs:string"/>
-▪ XML.
-• <título idoma = “inglés”>Hamlet</título>
-o Otros ajustes.
-▪ Valores por defecto.
-• Valor que se asigna automáticamente al atributo si no se especifica
-otro.
-• Sintaxis:
-o <xs:attribute name =”Nombre del atributo” type = “Tipo de
-datos” default “Valor por defecto”>
-• Ejemplo:
-o <xs:attribute name =”Idioma” type = “xs:string” default “ES”>
-▪ Valor fijo.
-• Valor que se asigna automáticamente al atributo y que no se puede
-cambiar por otro.
-• Sintaxis:
-o <xs: attribute name =” Nombre del atributo” type = “Tipo de
-datos” fixed “Valor por defecto”>
-• Ejemplo:
-o <xs:attribute name =”Idioma” type = “xs:string” default “ES”>
-▪ use.
-• Un atributo puede ser opcional, obligatorio o no parecer en el elemento.
-• Valores:
-o Optional.
-▪ Atributo opcional.
-▪ Valor por defecto.
-o Required.
-▪ El atributo es obligatorio.
-o Prohibited.
-▪ El atributo no debe aparecer en el documento XML.
-• Sintaxis:
-o <xs: attribute name =” Nombre del atributo” type = “Tipo de
-datos” use “Valor”>
-• Ejemplo:
-o <xs:attribute name =”Idioma” type = “xs:string” use
-=”required”>
-• EXTENSIONES XSD.
-o Sirven para extender y por tanto ampliar las características de un elemento simple
-o complejo.
-o Por ejemplo, se puede usar para añadir un atributo a un elemento simple.
-o Sintaxis:
-<xs: extensión base = “Tipo de datos del elemento que se extiende”>
-<características extendidas o añadidas con su propio tipo de datos>
-</xs: extensión>
-o Ejemplo:
-<xs:extension base="xs:decimal">
-<xs:attribute name="divisa” type="xs:string"/>
-</xs:extension>
-• simpleContent.
-o Permite definir restricciones o extensiones a elementos que solo contienen datos,
-es decir, no contienen a otros elementos.
-o Si a un elemento simple, que solo contienen datos, se le añade o extiende por
-ejemplo un atributo, se convierte en un elemento complejo, por lo que hay que
-utilizar la etiqueta <complexType> también.
-o Sintaxis:
-<xs:element elemento simple>
- <xs:complexType>
- <xs:simpleContent>
- <xs:extension>
- <Características añadidas o extendidas>
- </xs:extension>
- </xs:simpleContent>
- </xs:complexType>
- </xs:element>
-o Ejemplo:
-<xs:element name="saldo" maxOccurs="unbounded">
- <xs:complexType>
- <xs:simpleContent>
- <xs:extension base="xs:decimal"> // tipo de dato del elemento saldo
- <xs:attribute name="divisa" type="xs:string"/> // tipo de dato del
-atributo divisa.
- </xs:extension>
- </xs:simpleContent>
- </xs:complexType>
- </xs:element>
-• simpleType.
-o Además de los tipos de datos predefinidos incorporados a XSD, se pueden definir tipos para
-elementos o atributos definidos por el usuario y también para crear restricciones (ver más
-adelante para estas últimas).
-o Sintaxis para tipos nuevos:
-<xs:element name="Nombre del elemento" type = “Nuevo tipo a crear”>
- <xs:simpleType name = “Nombre del nuevo tipo a crear”>
- <xs:restriction base=" Tipo de datos para el nuevo tipo a crear">
- <xs:tipo de restricción value = “valor”/> // Opcional.
- </xs:restriction>
- </xs:simpleType>
-o Ejemplo:
-<xs:element name="bonoloto" type = “numerosPermitidos”>
- <xs:simpleType name = “numeroPermitidos”>
- <xs:restriction base="xs:integer">
- <xs:minInclusive = “1”/>
- <xs:maxInclusive = “49”/>
- </xs:restriction>
- </xs:simpleType>
-• RESTRICCIONES o FACETAS XSD.
-o Especifican las condiciones que deben cumplir los datos.
-o Las restricciones se establen para distintos aspectos denominados facetas.
-o Sintaxis:
-<xs:restriction base=" Tipo de datos del elemento al que se le aplica la
-restricción">
-<xs:tipo de restricción value = “valor”/>
-</xs:restriction>
-o Para crear una restricción, dentro de la etiqueta simpleType y para el elemento al
-cual se le aplica la restricción, se incluye una etiqueta restriction con las
-restricciones.
-o Sintaxis:
-<xs:element name="Nombre del elemento">
- <xs:simpleType>
-<xs:restriction base=" Tipo de datos del elemento al que se le aplica la
-restricción">
- <xs:tipo de restricción value = “valor”/>
- </xs:restriction>
- </xs:simpleType>
-</xs:element>
-o Ejemplo:
-<xs:element name ="valores">
- <xs:simpleType>
-<xs:restriction base="xs:integer">
-<xs:minInclusive value="20"/>
- <xs:maxInclusive value="100"/>
- </xs:restriction>
- </xs:simpleType>
-</xs:element>
-• Tipos de restricciones.
-o Patrones.
-▪ Permiten el uso de expresiones y caracteres especiales para crear un patrón
-que especifica qué caracteres están permitidos.
-▪ Expresiones y caracteres especiales para crear patrones:
-• []:
-o Especifica que valores son permitidos.
-o Se pueden incluir los valores permitidos exactos o, si son
-consecutivos, establecer un intervalo entre 2 valores extremos
-separados con un guion.
-o Varios juegos de corchetes representan a varios caracteres
-distintos.
-o Ejemplos:
-▪ [abc] Permitido a, b o c. Equivaldría a [a-c].
-▪ [35689] Permitido 3, 5, 6, 8 o 9.
-▪ [A-Z] Permitidas todas las letras mayúsculas.
-▪ [A-L] Permitidas todas las letras mayúsculas entre la A y la
-L.
-▪ [0-9] Sólo números.
-▪ [A-Za-z] Todas las letras mayúsculas y minúsculas.
-▪ [A-Z][149][a-m] 3 caracteres, el primero una letra
-mayúscula cualquiera, el segundo un dígito de entre los
-mostrados y el tercero, una minúscula entre las letras a y
-m.
-▪ C9e
-▪ D2a
-• {}:
-o Especifica el total de caracteres o dígitos a incluir.
-o Sintaxis:
-▪ {número}
-▪ {número inicial, número final}
-o Ejemplo:
-▪ [0-9] {9} // El número 823542352 es correcto ya que el
-número total son 9 dígitos.
-▪ [0-9] {3,9} // El valor 98375 es correcto ya que el número
-mínimo son 3 dígitos.
-▪ [a-z] {5,20} // Por ejemplo, ana no es válido por tener
-menos de 5 caracteres, mientras que antonio si, por tener
-más de 5 caracteres y no pasarse de 20.
-▪ [0-9]{5} < = > [0-9] [0-9] [0-9] [0-9] [0-9] // Equivalentes
-para un código postal.
-• ():
-o Permiten agrupar caracteres para indicar a cuáles les afecta
-un determinado cuantificador.
-• Cuantificadores.
-o Para expresar el número de ocurrencias de un valor se usan
-los siguientes caracteres:
-▪ *:
-• Indica que los valores introducidos pueden
-aparecer ninguna, una o varias veces.
-▪ +:
-• Indica que los valores introducidos pueden
-aparecer una o varias veces.
-▪ ?:
-• Indica que los valores introducidos pueden
-aparecer ninguna o una vez.
-o Ejemplos:
-▪ [A-Z]*// El dato introducido puede tener ninguna, una
-o varias letras mayúsculas.
-▪ [1-9]([a-z])+ // El dato introducido debe empezar por
-un número comprendido entre el 3 y el 9, e ir seguido
-por un número variable de letras minúsculas. Una
-minúscula al menos.
-▪ (-)?[0-9]+ // Número con al menos un digito que
-puede ser positivo o negativo.
-▪ Sintaxis:
-• <xs:pattern value="patrón"/>
-▪ Ejemplo:
-• Restricción para especificar con un patrón que un DNI debe contener
-9 caracteres, siendo los 8 primeros dígitos y el último, una letra
-mayúscula.
-<xs:element name="dni">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:pattern value="[0-9]{8}[A-Z]{1}"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-o minExclusive.
-▪ Especifica el mínimo valor no incluido que admite un elemento.
-▪ Sintaxis:
-• <xs:minExclusive = “valor”/>
-▪ Ejemplo:
-• <xs:minExclusive = “10”/> El valor 11 está permitido, pero no el 10.
-o maxExclusive.
-▪ Especifica el máximo valor no incluido que admite un elemento.
-▪ Sintaxis:
-• <xs:maxExclusive = “valor”/>
-▪ Ejemplo:
-• <xs:maxExclusive = “100”/> El valor 99 está permitido, pero no el
-1100.
-o minInclusive.
-▪ Especifica el mínimo valor incluido que admite un elemento.
-▪ Sintaxis:
-• <xs:minInclusive = “valor”/>
-▪ Ejemplo:
-• <xs:minInclusive = “10”/> El valor 10 está permitido.
-o maxInclusive.
-▪ Especifica el máximo valor incluido que admite un elemento.
-▪ Sintaxis:
-• <xs:maxInclusive = “valor”/>
-▪ Ejemplo:
-• <xs:maxInclusive = “100”/> El valor 100 está permitido.
-o totalDigits.
-▪ Especifica el número máximo de dígitos que puede tener una cifra.
-▪ Sintaxis:
-• <xs:totalDigits = “valor”/>
-▪ Ejemplo:
-• <xs:totalDigits = “4”/> El valor 450 es válido, pero no el número
-12560.
-o fractionDigits.
-▪ Especifica el número máximo de decimales que puede tener una cifra.
-▪ Sintaxis:
-• <xs:fractionDigits = “valor”/>
-▪ Ejemplo:
-• <xs:fractionDigits = “2”/> El valor 45,23 es válido, pero no el número
-45,9823.
-o length.
-▪ Especifica el número exacto de caracteres. Puede usarse con textos y
-números.
-▪ Sintaxis:
-• <xs:length = “valor”/>
-▪ Ejemplo:
-• <xs:length = “6”/> Toledo es correcto, Ávila o Zaragoza no.
-o minLength.
-▪ Especifica el mínimo número de caracteres. Puede usarse con textos y
-números.
-▪ Sintaxis:
-• <xs:minLength = “valor”/>
-▪ Ejemplo:
-• <xs:minLength = “6”/> Toledo y Zaragoza son correctos, Ávila no.
-o maxLength.
-▪ Especifica el máximo número de caracteres. Puede usarse con textos y
-números.
-▪ Sintaxis:
-• <xs:maxLength = “valor”/>
-▪ Ejemplo:
-• <xs:maxLength = “6”/> Zaragoza no es correcto, Ávila sí.
-o enumeration.
-▪ Permite crear una lista de valores permitidos.
-▪ Sintaxis:
-• <xs:enumeration = “valor 1”/>
-• <xs:enumeration = “valor 2”/>
-• <xs:enumeration = “valor N”/>
-▪ Ejemplo:
-• <xs:enumeration = “rojo”/>
-• <xs:enumeration = “verde”/>
-• <xs:enumeration = “azul”/> 
+DOCUMENTO XML VÁLIDO (Un documento XML puede estar bien formado y no ser válido) Debe incluir:
+
+→ Referencia a una gramática.
+→ Incluir sólo elementos y atributos definidos en esa gramática.
+→ Cumplir las reglas gramaticales especificadas en la gramática.
+
+A través de DTD (Document Type Definition, definición de tipo de documento) o XML Schema.
+
+DTD 
+    Archivos.dtd que definen estructura del XML y especifica las reglas de validación. 
+    El procesador XML usa el DTD para comprobar si un documento XML es válido.
+    Es el modelo antiguo, heredado del lenguaje SGML.
+    Describe: 
+        Elementos → Qué etiquetas están permitidas y cuál es su contenido. 
+        Estructura → Orden de las etiquetas 
+        Anidamiento → Cuáles van incluidas en otras etiquetas. 
+    Ubicación:
+        Interna → DTD incluido en el XML 
+            <!DOCTYPE nombre [declaraciones]>
+                "nombre" debe coincidir con el nombre del elemento raíz del documento XML.
+        Externa → Archivo independiente de extensión .DTD (en él no se incluye DOCTYPE)
+            <!DOCTYPE nombre SYSTEM "Ruta de Acceso/archivo.dtd">
+
+        Híbrida:
+            <!DOCTYPE nombre SYSTEM “Ruta de Acceso /archivo.dtd” [declaraciones]>
+
+    DECLARACIONES 
+
+        ELEMENTOS → <!ELEMENT Nombre del elemento (Contenido)>
+            Contenido: 
+                EMPTY → Debe estar vacío 
+                #PCDATA → Puede contener texto 
+                ANY → Puede contener texto u otros elementos. 
+                Elementos → Pueden incluirse elementos anidados con estos conectores:
+                    (,) → Separador de elementos
+                    (|) → O 
+                    (?) → Puede aparecer una o ninguna vez 
+                    (*) → Ninguna, una o varias veces
+                    (+) → Una o varias
+                    ( ) → Los paréntesis agrupan expresiones
+        ATRIBUTOS 
+            Dos formas de declararlo: 
+                Un atributo para un elemento → <!ATTLIST NombreElemento NombreAtributo TipoAtributo ValorInicialAtt>
+                Varios att para un elemento → 
+                <!ATTLIST NombreDelElemento  
+                NombreDelAtributo1 TipoDeAtributo1 ValorPredeterminado1  
+                NombreDelAtributo2 TipoDeAtributo2 ValorPredeterminado2>
+            
+            Componentes:
+                NombreDelElemento (para el cual se crea el atributo)
+                NombreDelAtributo 
+                Tipo de Atributo 
+                Valor inicial Atributo (valor predeterminado)
+
+            Tipos de Atributo: 
+                CDATA → El att contiene cualquier carácter. 
+                NMTOKEN → Sólo puede contener letras, nº, (.  - _ :)
+                NMTOKENS → Igual que el anterior pero con espacios en blanco. 
+                ID → El valor del atributo debe ser único 
+                IDREF → El valor del atributo debe coincidir con el valor de otro atributo.
+                IDREFS → Conjunto de valores que coinciden con el valor ID de otro elemento. 
+
+            Valor Inicial: 
+                Valor → Un valor concreto predeterminado 
+                #REQUIRED → Att obligatorio. No se especifica valor. 
+                #IMPLIED → Att opcional
+                #Fixed → Un valor fijo 
+
+XML SCHEMA 
+    Creado por W3C como sucesor de DTD, se puede comprobar la validez del documento.
+    Se guarda en un archivo.xsd y su elemento raíz es schema. <xs:schema>...</xs:schema>  
+    Atributos: 
+        xmlns → (XML NameSpace) Especifica el espacio de nombres:   
+            Un espacio de nombres XML es un conjunto de nombres identificados mediante una URL.
+            Proporciona elementos y atributos con nombre único para resolver la ambigüedad 
+            entre elementos o atributos que se llamen igual.
+        targetNamespace → Espacio de nombres propio 
+        elementFormDefault → Indica si los elementos deben o no estar certificados por el espacio de nombre.
+            → qualified: Deben estar cualificados con prefijo. 
+            → unqualified: No deben estar cualificados con un prefijo. 
+        attributeFormDefault: Indica si los atributos deben o no estar certificados por el espacio de nombre.
+            → qualified: Deben estar cualificados por un prefijo. 
+            → unqualified: No deben estar cualificados con un prefijo. (Por defecto)
 
 
+DOCUMENTO INSTANCIA XML (Referencia al esquema XSD)
+    Cabecera 
+        Declaración XML → <?xml version="1.0" encoding="UTF-8"?> 
+        Elemento raíz → <elemento raíz atributos> ... </elemento raíz>
+            Atributos
+            xmlns:xsi → (Indica que queremos utilizar los elementos definidos en el esquema)
+                xmlns:xsi = http://www.w3.org/2001/XMLSchema-instance 
+            noNamespaceSchemaLocation → (Vincula el nombre del archivo XSD) 
+                xsi:noNamespaceSchemaLocation = "clientes.xsd".
+    Cuerpo (Contiene elementos, atributos y datos)
+        → Elementos complejos: Anidación complexType para especificar sus subelementos.
+            Indicadores del orden de aparición de los elementos anidados. 
+            Secuencia → <xs:sequence>...</xs:sequence> → Deben aparecer todos, y en el mismo orden en que se especifican
+            Alternativa → <xs:choice>...<xs:choice> → Deben ser opcionales, es decir, incluir el atributo minOccurs = 0
+            Todos → <xs:all>...</xs:all> No  es  obligatorio  que  aparezcan  todos  los  elementos  y  además 
+            pueden hacerlo en cualquier orden.
+                Ejemplo: 
+                <xs:element name="Libro"> 
+                    <xs:complexType> 
+                        <xs:sequence> 
+                            <xs:element name="Título" type="xsd:string"/> 
+                            <xs:element name="Autor" type="xsd:string" /> 
+                        </xs:sequence> 
+                    </xs:complexType> 
+                </xs:element>
+        → Elementos simples: No contienen otros elementos. (Nombre, tipo de dato y otros ajustes)
+            Tipos de datos. (Más comunes).
+                →xs:string.
+                →xs:decimal.
+                →xs:int.
+                →xs:integer.
+                →xs:boolean (Valores true / false).
+                →xs:date (Formato Año-Mes-Dia).
+                →xs:time (Formato Hora : Minutos : Segundos).
+                →xs:positiveInteger.
+                →xs:negativeInteger.
+                →xs:datetime (Formato Año-Mes-Dia Hora : Minutos : Segundos).
+                →xs:anyURI (Indicar una URL)
+            Otros ajustes: 
+                → Valores por defecto (Se asigna automáticamente al elemento si no se especifica otro)
+                → Valor fijo (Se asigna automáticamente al elemento y que no se puede cambiar por otro)
+                → Ocurrencia (Min y Max por defecto 1) Si máx indefinido maxOccurs unbounded. minOccurs=0 (es opcional y puede o no aparecer)
+            
+            Ejemplos: 
+            XSD 
+                <xs:element name="nombre" type="xs:string" maxOccurs=”4”/> 
+                <xs:element name="edad" type="xs:integer" default “00”/> 
+                <xs:element name="fecha_nacimiento" type="xs:date"/>  
+            XML
+                <nombre>Luis</nombre> 
+                <edad>24</edad> 
+                <fecha_nacimiento>1997-09-10</fecha_nacimiento>               
+ 
+        → Atributos: Se declaran como un simple. Un elemento simple no puede llevar atributos (Se considera complejo) 
+        Incluyen un nombre, un tipo de datos y otros ajustes.
+        Tipos de datos.
+            xs:string.
+            xs:decimal.
+            xs:int.
+            xs:integer.
+            xs:positiveInteger.
+            xs:negativeInteger.
+            xs:boolean (Valores true / false).
+            xs:date (Formato Año-Mes-Dia)
+            xs:datetime (Formato Año-Mes-Dia Hora : Minutos : Segundos).
+            xs:time (Formato Hora : Minutos : Segundos).
+            xs:anyURI (Indicar una URL).
+            Ejemplo: 
+            XSD
+            <xs:attribute name="idioma" type="xs:string"/>
+            XML
+            <título idoma = “inglés”>Hamlet</título>
 
--->
+            Otros ajustes
+                → Valores por defecto
+                → Valor fijo 
+                → Use: Un atributo puede ser opcional, obligatorio o no parecer en el elemento
+                    Optional
+                    Required
+                    Prohibited (El att no debe aparecer en el documento XML.)
+
+        Extensiones XSD: Extienden y amplian las características de un elemento
+        simpleContent → Elementos que solo contienen datos (no otros elementos)
+        simpleType → Define tipos para elementos o atributos. 
+
+        Restricciones XSD → Especifican las condiciones que deben cumplir los datos. 
+            Etiqueta restriction con las condiciones. 
+            Ejemplo: 
+            <xs:element name ="valores"> 
+                <xs:simpleType> 
+                    <xs:restriction base="xs:integer"> 
+                        <xs:minInclusive value="20"/> 
+                        <xs:maxInclusive value="100"/> 
+                    </xs:restriction> 
+                </xs:simpleType> 
+            </xs:element>
+
+            Tipos: 
+            Patrones → <xs:pattern value="patrón"/>
+                [valores permitidos] {Valores incluidos} (Agrupación Caracteres)
+                * Una, ninguna o varias veces
+                + Una o varias 
+                ? Ninguna o una 
+
+            minExclusive → Mínimo no incluido que admite un elemento 
+                <xs:minExclusive = "10"/> El valor 11 está permitido, pero no el 10. 
+            maxExclusive → Máximo no incluido. 
+                <xs:maxExclusive = "100"/> El valor 99 está permitido, pero no el 1100. 
+            minInclusive → Mínimo incluido 
+                <xs:minInclusive = "10"/> El valor 10 está permitido. 
+            maxInclusive → Máximo incluido 
+                <xs:maxInclusive = "100"/> El valor 100 está permitido. 
+            totalDigits → Nº máx dígitos que puede tener una cifra.  
+                <xs:totalDigits = "4"/> El valor 450 es válido, pero no el número 12560. 
+            fractionDigits → Nº máximo decimales  
+                <xs:fractionDigits = "2"/> El valor 45,23 es válido, pero no el número 45,9823. 
+            length → Nº exacto caracteres. Textos y números. 
+                <xs:length = "6"/> Toledo es correcto, Ávila o Zaragoza no. 
+            minLength → Min nº caracteres. 
+                <xs:minLength = "6"/> Toledo y Zaragoza son correctos, Ávila no. 
+            maxLength → Max nº caracteres. 
+                <xs:maxLength = "6"/> Zaragoza no es correcto, Ávila sí. 
+            enumeration → Crea lista de valores permitidos 
+                → <xs:enumeration = "rojo">  
+                → <xs:enumeration = "verde"/>  
+                → <xs:enumeration = "azul">  
+ -->
