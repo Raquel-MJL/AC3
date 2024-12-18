@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<vehiculos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="vehiculos.xsd">
+
+		<vehiculo> 
+			<nombre>KIA</nombre> 
+			<modelo motor = "Diesel-Eléctrico">MPV Carnival 2023</modelo> 
+			<fabricacion> 
+				<inicio> 
+					<dia>5</dia> 
+					<mes>5</mes> 
+					<año>2022</año> 
+				</inicio> 
+				<fin> 
+					<dia>20</dia> 
+					<mes>Julio</mes> 
+					<año>2022</año> 
+				</fin> 
+			</fabricacion> 
+			<modificaciones codigo = "KIA231HJN"> 
+				<modificacion>Cambio de motor</modificacion> 
+				<modificacion>Cambio de sistema de frenado</modificacion> 
+				<modificacion>Cambio caja de cambios</modificacion> 
+				<modificacion>Ajuste iluminación</modificacion> 
+			</modificaciones> 
+		</vehiculo> 
+	
+	</vehiculos>
+

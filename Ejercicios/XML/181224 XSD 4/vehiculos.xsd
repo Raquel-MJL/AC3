@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="vehiculos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vehiculo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nombre" type="xs:string"/>
+							<xs:element name="modelo">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="motor" type="xs:string" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fabricacion">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="inicio">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dia" type="xs:string"/>
+													<xs:element name="mes" type="xs:string"/>
+													<xs:element name="año" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="fin">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="dia" type="xs:string"/>
+													<xs:element name="mes" type="xs:string"/>
+													<xs:element name="año" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="modificaciones">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="1" maxOccurs="unbounded" name="modificacion" type="xs:string"/>
+									</xs:sequence>
+									<!--<xs:simpleContent>
+										<xs:extension>
+											<xs:attribute name="motor" type="xs:string" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>-->
+									<xs:attribute name="codigo" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

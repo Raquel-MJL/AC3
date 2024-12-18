@@ -1,0 +1,60 @@
+Ejercicio 1 
+
+/libreria/* → Visualizar todos los elementos hijos del elemento raíz librería.
+/libreria/libro[1]/titulo → Mostrar el título del primer libro.
+/libreria/libro/autor → Nombres de todos los autores.
+/libreria/libro[1]/* → Mostrar todos los nodos hijos del primer libro.
+/libreria/libro[año="1997"]/autor → Nombre del autor que escribió un libro en 1997
+/libreria/libro[last()]/genero → Género literario del último libro.
+
+
+
+
+Ejercicio 2 
+
+/tienda/producto[1]/nombre  →  Nombre del primer producto
+
+/tienda/producto/fecha_venta → Mostar el nodo completo de las fechas de venta
+
+/tienda/producto[cantidad_vendida < 7]/codigo → Código del producto del que se vendieron menos de 7 unidades
+
+/tienda/producto[nombre='Impresora' and fecha_venta='2022-03-10']/precio → Precio de las impresoras vendidas el 2022-03-10
+
+Cantidad vendida de monitores LCD o de productos vendidos el 2022-03-10
+/tienda/producto[(nombre='Monitor LCD' or fecha_venta='2022-03-10')]/cantidad_vendida  
+
+count(/tienda/producto) → ¿Cuántos productos hay en la tienda?
+
+sum(/tienda/producto/cantidad_vendida) → ¿Cuántos productos se han vendido?
+
+
+
+
+Ejercicio 3  
+
+Apellidos del segundo empleado
+/oficina/empleado[2]/apellidos
+
+Sueldo de todos los empleados
+/oficina/empleado/sueldo
+
+Nombre y fecha de alta de todos los empleados
+/oficina/empleado/nombre | /oficina/empleado/fecha_alta
+
+Nombre y apellidos de los empleados con sueldos menores a 2000.00 euros
+/oficina/empleado[sueldo < 2000]/nombre | /oficina/empleado[sueldo < 2000]/apellidos
+
+Nombre de los empleados inactivos que entraban a trabajar a las 8 de la mañana
+/oficina/empleado[activo='false' and inicio_jornada='08:00:00']/nombre
+
+Muestra el sueldo del tercer empleado incrementado un 2%
+/oficina/empleado[3]/sueldo * 1.02
+
+Total pagado en sueldos
+sum(/oficina/empleado/sueldo)
+
+¿Cuántos empleados hay?
+count(/oficina/empleado)
+
+¿Cuántos empleados hay en activo?
+count(/oficina/empleado[activo='true'])

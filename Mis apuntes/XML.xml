@@ -91,8 +91,8 @@ ESTRUCTURA DE UN ARCHIVO XML.
     Cuerpo (Contiene los datos y el marcado)
         → Etiquetas, elementos, datos...
         → Atributos <nombre alias = "Pepito" >Pepe</nombre>
-    Ejemplo de un mismo contenido XML usado etiquetas o atributos:
     
+    Ejemplo de un mismo contenido XML usado etiquetas o atributos:
     → Con etiquetas:
         <datos_cliente>
             <cliente>
