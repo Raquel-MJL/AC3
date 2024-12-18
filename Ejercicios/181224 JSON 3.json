@@ -1,0 +1,87 @@
+{
+    "peliculas": [
+      {
+        "titulo": "Barbie",
+        "precio": 2.00
+      },
+      {
+        "titulo": "Matrix",
+        "precio": 4.00
+      },
+      {
+        "titulo": "Titanic",
+        "precio": 3.00
+      },
+      {
+        "titulo": "Star Wars – Una Nueva Esperanza",
+        "precio": 3.00
+      },
+      {
+        "titulo": "Mi Vecino Totoro",
+        "precio": 3.00
+      },
+      {
+        "titulo": "El Nombre de la Rosa",
+        "precio": 2.00
+      },
+      {
+        "titulo": "La Monja",
+        "precio": 3.00
+      }
+    ]
+  }
+
+  /*Ejercicio 2*/
+
+  {
+    "correo_electronico": {
+      "remitente": {
+        "nombre": "Luis Miguel",
+        "email": "lusimi@gmail.com"
+      },
+      "destinatario": {
+        "nombre": "Rosa",
+        "email": "rosa@gmail.com"
+      },
+      "asunto": "Entradas",
+      "mensaje": {
+        "texto": "Ya he comprado las entradas para el concierto, S2."
+      }
+    }
+  }
+
+  /*Ejercicio 3*/
+  
+  {
+	"Informática": [
+        {
+            "Hardware": [
+                "Procesador",
+                {
+                    "Memoria": {
+                        "interna": [
+                            "ROM",
+                            "RAM"
+                        ],
+                        "externa": []
+                    }
+                },
+                {
+                    "Periféricos": [
+                        "entrada",
+                        "salida",
+                        "E/S"
+                    ]
+                }
+            ]
+        },
+        {
+            "Software": [
+                "Sistemas Operativos",
+                "Lenguajes de Programación",
+                "Programas de Aplicación"
+            ]
+        }
+    ]
+}
+  

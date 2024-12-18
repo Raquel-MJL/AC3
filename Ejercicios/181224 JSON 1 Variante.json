@@ -1,0 +1,34 @@
+
+
+
+
+	/* Ejercicios JSON 1 Minificados*/
+		
+	/* Ejercicio 1*/
+
+{"nombre_planeta":"Júpiter","tipo":"Gaseoso","numero_satelites":95,"años_duracion_orbita_solar":11.86}
+	
+	/* Ejercicio 2*/
+	
+{[{"nombreUsuario":"lobo","contraseña":"1234"},{"nombreUsuario":"gato","contraseña":"abcd"}]}
+
+	/* Ejercicio 3*/
+	
+{"direccion":{"calle":"Avenida de América","numero":"120","puerta":"B","localidad":"Denia","comarca":"La Marina Alta","provincia":"Alicante","codigo_postal":"03700","pais":"España"}}
+	
+	/* Ejercicio 4*/
+	
+{"cine":[{"titulo":"Insidious","genero":"Terror","tipo":"Película","duracion":103},{"titulo": "True Crime","genero":"Policiaco","tipo":"Serie","duracion": 50}]}
+ 
+	/* Ejercicio 5.A*/
+	
+{"titulo":"Fallout 3","tipo":9924.12,"genero":"Postapocalíptico","año_salida":2008,"dlc's":{"dlc1":"Broken Steel","dlc2":"The Pitt","dlc3":"Mothership Zeta","dlc4":"Point Lookout","dlc5":"Operation: Anchorage"}}
+			
+	/* Ejercicio 5.B*/		
+			
+			
+{"titulo":"Fallout 3","tipo":9924.12,"genero":"Postapocalíptico","año_salida": 2008,"dlc's":["Broken Steel", "The Pitt","Mothership Zeta","Point Lookout","Operation: Anchorage"]}
+			
+			
+			
+			
