@@ -1,14 +1,14 @@
 <libreria>
- <libro>
-<titulo>Harry Potter y la piedra filosofal</titulo>
-<autor>J. K. Rowling</autor>
-<año>1997</año>
-<genero>Fantasía - Magia</genero>
- </libro>
- <libro>
-<titulo>Sueñan los androides con ovejas eléctricas</titulo>
-<autor>Philip K. Dick</autor>
-<año>1968</año>
-<genero>Ciencia Ficción</genero>
- </libro>
+    <libro>
+        <titulo>Harry Potter y la piedra filosofal</titulo>
+        <autor>J. K. Rowling</autor>
+        <año>1997</año>
+        <genero>Fantasía - Magia</genero>
+    </libro>
+    <libro>
+        <titulo>Sueñan los androides con ovejas eléctricas</titulo>
+        <autor>Philip K. Dick</autor>
+        <año>1968</año>
+        <genero>Ciencia Ficción</genero>
+    </libro>
 </libreria>

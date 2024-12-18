@@ -350,4 +350,8 @@ DOCUMENTO INSTANCIA XML (Referencia al esquema XSD)
                 → <xs:enumeration = "rojo">  
                 → <xs:enumeration = "verde"/>  
                 → <xs:enumeration = "azul">  
- -->
+ 
+ Asociados a XML existen otros lenguajes: 
+    Xpath → para navegar los documentos XML 
+    XQuery → Consultas a documentos XML 
+    XSLT → Aplica transformación a los datos de un doc XML.-->

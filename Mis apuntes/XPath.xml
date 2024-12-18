@@ -1,0 +1,100 @@
+<!--
+
+Se suele usar combinado con XSLT
+
+En Google Crhome interactua: 
+Elementos → Buscador html ctrl+F y escribir XPATH en la búsqueda 
+Elementos → Click derecho para copiar el path  
+
+ÁRBOL DE UN DOCUMENTO XML. 
+    Nodo raíz → Contiene al elemento raíz del documento.
+        Todos  los documentos  XML tienen uno  que indica el inicio del 
+        documento  y fin del documento y todos  los demás nodos  dependes  de él. 
+    Nodo Elemento → Representa a una etiqueta XML y puede  tener descendientes. 
+    Nodo Atributo → Representa a un atributo asociado a una etiqueta XML, es como una etiqueta
+        asociada más que un elemento en sí, no tiene descendientes. 
+    Nodo Texto → Contenido de elemento XML o etiqueta. Descendiente de un elemento. No puede tener descendientes. 
+    Otros nodos → Comentario, Instrucciones de procesamiento, espacio de nombres...
+
+
+EXPRESIONES Y NOTACIONES XPath. 
+Cadena  de texto que representa una ruta por el  árbol del documento  XML. 
+Se  pueden  usar  las  propias  etiquetas  HTML  para  buscar  elementos 
+dentro  de una página web a través de la consola. Sigue la estructura:
+    EJE → PREDICADO → NODOS
+
+SINTAXIS ABREVIADA 
+EJE → Los recorridos por el árbol y selecciona subconjuntos de nodos de tipo nombre y @atributo
+
+    / → Nodo raíz o nodo hijo 
+    /Nombre → Nodo elemento 
+    // → Todos los descendientes desde el raíz 
+    Text() → Nodo texto 
+    @Nombre → Nodo atributo 
+    | → Varios recorridos a la vez 
+    . → Nodo actual 
+    .. → Nodo anterior o padre
+    * → Todos los nodos.   
+
+    Sintaxis: 
+    /nodo elemento 1/ nodo elemento 2/ .../ nodo elemento N. 
+    /nodo elemento 1/ nodo elemento 2/ .../ @atributo. 
+    /nodo elemento 1/ nodo elemento 2/ .../ text(). 
+    //nodo elemento
+
+    Ejemplos: 
+    /biblioteca/libros → Todos los nodos libros de la ruta especificada. 
+    //editorial → Todos los nodos editoriales desde la raíz.
+    /biblioteca/libros/titulo/text() → El texto del elemento título de todos los libros de la ruta 
+    /biblioteca/libros/titulo/@codigo → Los atributos código de la ruta especificada.
+    //títulos  | // precios → Todos los títulos y precios desde el directorio raíz.
+
+[PREDICADOS] → Establecer condiciones para la selección de nodos. Hay tipos: 
+
+[@atributo] → Selecciona los elementos que tengan el atributo especificado. 
+    //libros[@idioma] → Nodos de tipo libros desde la raíz, que contengan el att idioma
+[número] → El nodo que tenga el número de orden especificado.
+    (//libros)[1] → Primer nodo de tipo libros. 
+    (//libros)[1]/titulo/text() → Título del primer libro desde el directorio raíz. 
+[last()] → Último en la ruta especificada
+    (//libros)[last()] → Último nodo de tipo libros 
+    (//libros)[last()]/titulo/text() → Título del último libro. 
+[last() - número] → El nodo que tenga Nº de orden empezando por el último.  
+    (//libros)[last()-1] → Penúltimo nodo de tipo libros. 
+    (//libros)[last()-1]/titulo/text() → Título del penúltimo libro desde la raíz. 
+[condición] → Selecciona los nodos que cumplen lo estipulado. Se usan operadores: 
+    Relacionales: =, >, <, >=, <=, ¡= 
+    Lógicos: o and, or y not() 
+    Aritméticos: +, -, *, div, mod. 
+        
+        //libros[@idioma ="klingonés"] → Nodos tipo libros desde la raíz que tengan el atributo idioma con el valor Klingonés 
+        //libros/[autor ="Lope de Vega"] → Nodos tipo libros donde subelemento autor tenga el valor Lope de Vega   
+        //libros/autor[. ="Lope de Vega"] → Igual que el anterior. El punto representa el elemento actual que es autor. 
+        //libros/[autor  ="J.  K.  Rowling" and año_publicación="1997"] → Libros cuyo autor sea rowling y publicados en 1997
+        //libros/[autor  ="J.  K.  Rowling"]  [año_publicación=”1997”] → Igual a la anterior 
+
+SELECCIÓN DE NODOS → Permite seleccionar elementos, el texto que contienen, ambos o atributos.  
+
+/node()  → todos los hijos (elementos, texto, atributos, etc.) de un nodo. 
+    //libros/node() → todos los elementos hijos de libros (autor,  editorial, titulo,  etc.)
+    Con textos y atributos. Si autor incluye los elementos nombre y pseudónimo, no son seleccionados. 
+    //libros/editorial/node() → Si  editorial  no  tiene  descendientes ni  atributos, muestra nombre de las editoriales.  
+//node() → Todos los descendientes de un nodo. 
+    //libros//node() → Todos los elementos hijos de libros y toda la descendencia incluyendo textos y atributos. 
+/text() → Sólo el texto del contenido en un nodo (si lo tiene, si no, no muestra nada)
+    //titulo/text() → Todos los textos de los títulos. 
+//text() → Sólo el texto contenido en un nodo y su descendencia. 
+    //libros//text() → Todos los textos de los elementos hijos de libros y toda la descendencia. 
+/* → Todos los hijos 
+    //biblioteca/* → Todos los elementos hijos de biblioteca (es decir, libros)
+//* → Todos los elementos desdendientes de un nodo. 
+    //biblioteca//* → Todos los elementos hijos de una biblioteca 
+
+FUNCIONES → Xpath incluye una librería de funciones para realizar operaciones: 
+https://www.data2type.de/es/xml-xslt-xslfo/xslt/referencia-xslt-y-xpath 
+String: concat(), substring(), contains(), substring -before(), substring-after(), translate(), normalize-space(), string-length() 
+Numéricas: sum(), count(),  round(), floor(), ceiling(), max(), min(), avg(), abs(). 
+Propiedades: name(). 
+Conversión: string(), number(), boolean(). 
+ 
+ 

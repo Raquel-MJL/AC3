@@ -1,16 +1,16 @@
 <tienda>
-<producto>
-<codigo>23AZXD4</codigo>
-<nombre>Impresora</nombre>
-<precio>80.50</precio>
-<cantidad_vendida>9</cantidad_vendida>
-<fecha_venta>2022-03-10</fecha_venta>
- </producto>
- <producto>
-<codigo>TTG56C2</codigo>
-<nombre>Monitor LCD</nombre>
-<precio>200.99</precio>
-<cantidad_vendida>6</cantidad_vendida>
-<fecha_venta>2022-03-12</fecha_venta>
-</producto>
+    <producto>
+        <codigo>23AZXD4</codigo>
+        <nombre>Impresora</nombre>
+        <precio>80.50</precio>
+        <cantidad_vendida>9</cantidad_vendida>
+        <fecha_venta>2022-03-10</fecha_venta>
+    </producto>
+    <producto>
+        <codigo>TTG56C2</codigo>
+        <nombre>Monitor LCD</nombre>
+        <precio>200.99</precio>
+        <cantidad_vendida>6</cantidad_vendida>
+        <fecha_venta>2022-03-12</fecha_venta>
+    </producto>
 </tienda>

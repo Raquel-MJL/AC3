@@ -1,26 +1,26 @@
 <oficina>
-<empleado id = "045">
-<nombre>Juan</nombre>
-<apellidos>Nadie</apellidos>
-<fecha_alta>1999-02-30</fecha_alta>
-<sueldo>2500.00</sueldo>
-<activo>true</activo>
-<inicio_jornada>08:30:00</inicio_jornada>
- </empleado>
- <empleado id = "046">
-<nombre>Cristina</nombre>
-<apellidos>Aurora González</apellidos>
-<fecha_alta>2002-09-12</fecha_alta>
-<sueldo>1500.00</sueldo>
-<activo>true</activo>
-<inicio_jornada>08:00:00</inicio_jornada>
- </empleado>
- <empleado id = "047">
-<nombre>Rosa</nombre>
-<apellidos>Pérez Gómez</apellidos>
-<fecha_alta>2005-11-05</fecha_alta>
-<sueldo>1300.00</sueldo>
-<activo>false</activo>
-<inicio_jornada>08:00:00</inicio_jornada>
- </empleado>
+    <empleado id = "045">
+        <nombre>Juan</nombre>
+        <apellidos>Nadie</apellidos>
+        <fecha_alta>1999-02-30</fecha_alta>
+        <sueldo>2500.00</sueldo>
+        <activo>true</activo>
+        <inicio_jornada>08:30:00</inicio_jornada>
+    </empleado>
+    <empleado id = "046">
+        <nombre>Cristina</nombre>
+        <apellidos>Aurora González</apellidos>
+        <fecha_alta>2002-09-12</fecha_alta>
+        <sueldo>1500.00</sueldo>
+        <activo>true</activo>
+        <inicio_jornada>08:00:00</inicio_jornada>
+    </empleado>
+    <empleado id = "047">
+        <nombre>Rosa</nombre>
+        <apellidos>Pérez Gómez</apellidos>
+        <fecha_alta>2005-11-05</fecha_alta>
+        <sueldo>1300.00</sueldo>
+        <activo>false</activo>
+        <inicio_jornada>08:00:00</inicio_jornada>
+    </empleado>
 </oficina>
