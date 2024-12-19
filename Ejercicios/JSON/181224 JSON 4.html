@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JSON 4 | JSON y JavaScript</title>
+		<meta charset="UTF-8">
+		
+				
+		<script>
+
+		
+		/* Ejercicio 1*/
+				
+		document.write("<br><br>");
+		document.write("Ejercicio 1.<br><br>");
+		
+		let planetas = '["Mercurio","Venus","Tierra","Marte","Júpiter","Saturno","Neptuno","Urano"]';
+		let array_planetas = JSON.parse(planetas);
+		
+		console.log(array_planetas[0]);
+		console.log(array_planetas[1]);
+		console.log(array_planetas[2]);
+		
+		document.write("Planeta rocoso del sistema solar: " + array_planetas[0] +"<br>");
+		document.write("Planeta rocoso del sistema solar: " + array_planetas[1] +"<br>");
+		document.write("Planeta rocoso del sistema solar: " + array_planetas[2] +"<br>");
+		
+		for(i in array_planetas){
+			document.write("Planeta " + i + ":" + array_planetas[i] +"<br><br>")
+		}
+		
+		document.write("Planetas en orden alfabético:<br> " + array_planetas.sort().join("<br>") +"<br><br>");
+		
+		
+		/* Ejercicio 2*/
+	
+		document.write("<br><br>");
+		document.write("Ejercicio 2.<br><br>");
+		
+		let navesJSON = '{"star_trek":"Enterprise","alien":"Nostromo", "the_expanse":"Rocinante", "star_wars":["Halcón Milenario","Tantive IV","Caza TIE","Ala X"]}';
+		let naves = JSON.parse(navesJSON);
+		
+		document.write("Nave de Star Trek:" + naves.star_trek + "<br>");
+		
+		document.write("Total de naves de Star Wars: " + naves.star_wars.length + "<br>");
+		
+		for (let i = 0; i < naves.star_wars.length; i++) {
+			let nave = naves.star_wars[i];
+			document.write("Nave de Star Wars " + i + ":" + nave + "<br>");
+		} 
+		
+		
+		/* Ejercicio 3*/
+		
+		
+		document.write("<br><br>");
+		document.write("Ejercicio 3.<br><br>");
+		
+		let movil =
+			{
+				marca: "Samsung",
+				modelo: "A 34",
+				precio: 300.99,
+				mostrarDatos: function()
+				{
+					document.write("Teléfono modelo " + movil.modelo + " de la marca " + movil.marca + " con un precio de " + movil.precio + " euros.");
+				}
+			};
+		
+		movil.mostrarDatos();
+		
+		let movilJSON = JSON.stringify(movil); 
+		
+		// Muestra las propiedades de objeto movil convertido en una cadena JSON, sin incluir la función mostarDatos().
+		document.write("<br>Contenido de movil sin función: "+ movilJSON +"<br>"); 
+		console.log(movilJSON);
+	
+		
+		</script>
+		
+		
+	</head>
+	<body>
+				
+	</body>
+	
+</html>

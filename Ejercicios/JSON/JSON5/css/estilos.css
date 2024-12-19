@@ -1,0 +1,45 @@
+
+/* Archivo de estilos para el ejercicio Arrays 9. */
+
+
+			
+			body{				
+				background-color:orange;
+				font-family:calibri,sans-serif;
+				font-size:20px;
+			}
+			#contenedor{
+				display:flex;
+				justify-content:center;
+				margin:10px;
+				gap:20px;
+			}
+			.tablas{
+				border:1px solid #000;
+				border-radius:5px;
+				box-shadow:5px 5px 2px #333;
+				background-color:#ccc;
+				padding:10px;
+			}
+			h2 {
+				text-align:center;
+			}
+		
+			table, td, th {
+				border: 1px solid navy;
+			}
+			caption{
+				font-weight:bold;
+				color: navy;
+				font-size:24px;
+			}
+			
+			td{
+				width:300px;
+			}				
+			
+			tr{
+				text-align:center;
+			}
+						
+			
