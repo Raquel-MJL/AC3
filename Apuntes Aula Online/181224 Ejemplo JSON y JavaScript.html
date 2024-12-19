@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>JSON y JavaScript</title>
+		<meta charset="UTF-8">
+		<script>
+		
+		// CREACIÓN DE OBJETOS JSON.
+		
+		//1.A. Objeto literal Javascript y carga de datos y salida de éstos por consola o documento web.
+		/*
+			let cliente ={
+				codigoCliente = "CH1234C",
+				nombre = "Rosa Sánchez Fernández",
+			};
+			
+			console.log(cliente.codigoCliente);
+			console.log(cliente.nombre);
+			
+			document.write("Código del cliente: " + cliente.codigoCliente + "<br>");
+			document.write("Nombre del cliente: " + cliente.nombre + "<br>");
+		*/
+		
+		//1.B. Objeto JSON.
+		
+			// Definición no válida para un archivo de JavaScript.
+		/*
+				{
+					"codigoCliente" = "CH1234C",
+					"nombre" = "Rosa Sánchez Fernández"
+				}
+		*/	
+			// Definición válida si el string JSON se carga en una variable y luego se convierte en un objeto JavaScript.		
+		/*
+				let cliente = '{
+					"codigoCliente" = "CH1234C",
+					"nombre" = "Rosa Sánchez Fernández",
+				}';
+		*/		
+		
+		//2. Objeto JSON con datos cargados en la variable coches y salida de éstos por consola o documento web.
+		
+		/*
+			let coches = '{"marca":"Seat", "modelo":"Ibiza", "precio":14000.50}';
+		
+			document.write("Marca del coche: " + coches.marca + "<br>"); // Resultado "undefined", porque el objeto JSON no se ha formateado o convertido a objeto JavaScript.
+		*/		
+				
+		// Método stringify(). Objeto JavaScript convertido a string JSON.
+		/*
+			//Objeto JavaScript.
+			
+				let objeto2 = {nombre:"Cristina", password:1234};
+			
+			// Muestra de las propiedades del objeto Javascript.
+			
+				console.log(objeto2.nombre); 
+				console.log(objeto2.password);
+		
+			// Conversión a string JSON.
+			
+			// Con todas las propiedades del objeto.	
+			
+				let cadena2A = JSON.stringify(objeto2);
+				document.write("Objeto completo: " + cadena2A + "<br>"); // Se muestra el objeto JSON completo como una cadena de caracteres. No es necesario especificar que valor asociado a una clave se quiere visualizar usando el operador punto.
+				console.log(cadena2A);
+				
+			// Sólo con las propiedades que se especifiquen en la conversión.
+			
+				let cadena2B = JSON.stringify(objeto2,["password"]);
+				document.write("Objeto con solo una propiedad: " + cadena2B + "<br>");// Se muestra sólo del objeto JSON creado, la propiedad password y su valor del objeto JSON.
+				console.log(cadena2B);
+			
+			// Con todas las propiedades del objeto distribuidas en varias líneas. (Sólo para mostrar en consola).
+			
+				let cadena2C = JSON.stringify(objeto2, null, 2);
+				document.write("Objeto completo en una línea: " + cadena2C + "<br>"); // Se muestra el objeto JSON completo como una cadena de caracteres.
+				console.log(cadena2C); // Se muestra el objeto JSON completo con sus propiedades en varias líneas.
+			
+			// Objeto JavaScript con función que no se incluye en el string JSON.
+
+				let objeto3 = {
+					nombre:"Cristina",
+					password:1234,
+					saludo: function () {
+						return "¡Hola!";
+					},
+				}; 
+				
+				let saludar = objeto3.saludo(); // Llamada a la función saludo() a través de objeto3.
+				
+				document.write(objeto3.nombre + "<br>");
+				document.write(objeto3.password + "<br>");
+				document.write(saludar + "<br>"); 
+				
+				let cadena3 = JSON.stringify(objeto3); // Conversión del objeto objeto3 a un string JSON.
+				
+				document.write("Contenido de objeto3 sin función: "+ cadena3+"<br>"); // Muestra las propiedades de objeto usuario convertido en una cadena JSON, sin incluir la función saludo.
+				console.log(cadena3);
+	
+		*/
+		
+		//DECODIFICACIÓN.
+		
+		// Método parse(). Objeto o string JSON convertido a objeto JavaScript.
+		
+			// Ejemplo String JSON cargado en una variable.
+			
+				let cadena1 = '{"nombre":"Cristina", "password":"1234"}';
+				
+				console.log(cadena1.nombre); // Undefined, cadena1 no es un objeto, luego no se puede mostrar sus propiedades usando el operador punto.
+				console.log(cadena1.password); // Undefined.
+				document.write("Nombre: " + cadena1.nombre + "<br>"); // Undefined.
+				document.write("Contraseña: " + cadena1.password + "<br>"); // Undefined.
+				document.write("Texto: " + cadena1 + "<br>"); 
+				
+				
+				let objeto1 = JSON.parse(cadena1); // Conversión a objeto JavaScript.
+				console.log(objeto1.nombre); // Cada valor va asociado a su clave por lo que al convertir a objeto debe usarse el operador punto para mostrar cada dato particular.
+				console.log(objeto1.password);
+				document.write("Nombre: " + objeto1.nombre + "<br>"); 
+				document.write("Contraseña: " + objeto1.password + "<br>"); 
+			
+			// Ejemplo String JSON complejo con arrays y otros objetos contenidos cargado en una variable.
+			
+				let alumno = '{ "codigoAlumno":"234SP",  "nombre": "Eugenia Pascual Martín",  "telefono": "1234567892", "edad": 24,  "idiomas": ["Español", "Inglés", "Francés"],  "notas": {"estadistica": 5.1,"algebra": 7.5,	"fisica": 6.45,	"quimica": 8.25	}}';
+				
+				document.write("Alumno: " + alumno + "<br>");
+				let objetoAlumno = JSON.parse(alumno);
+				document.write("Código de alumno: " + objetoAlumno.codigoAlumno + "<br>");
+				document.write("Nombre: " + objetoAlumno.nombre + "<br>");
+				document.write("Idiomas conocidos: " + objetoAlumno.idiomas[1] + "<br>");
+				document.write("Nota en asignatura álgebra: " + objetoAlumno.notas.algebra + "<br>");
+				document.write("Nota en asignatura álgebra: " + objetoAlumno.notas["algebra"] + "<br>");
+		
+		
+		</script>
+	
+	</head>
+	<body>
+		
+	</body>
+	
+</html>

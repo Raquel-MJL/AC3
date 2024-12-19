@@ -1,0 +1,203 @@
+
+
+	{
+		"comentario": "Ejemplo de JSON con 2 pares clave /valor de tipo cadena de caracteres.",
+		"nombre":"Cristina",
+		"password":"1234"
+	}
+	
+/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON con pares clave /valor de tipo numérico.",
+		"nota1":9.87,
+		"nota2":10,
+		"nota3":6.23,
+		"nota4":4
+	}
+
+/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON pares clave / valor de diverso tipo.",
+		"código":"AZ564",
+		"nombre":"Rosa",
+		"numero-cuenta":"4234 12 567890"
+		"apellidos":"Padilla Pascual",
+		"edad":24,
+		"saldo":null,
+		"cliente-nuevo":true
+	}
+/*----------------------------------------------------------------------------*/
+	{
+		"comentario": "Ejemplo de JSON con un objeto.",
+		"cliente":
+			{
+				"código":"56acma",
+				"nombre": "María Rosa",
+				"saldo": 5923.00
+			}
+	}
+/*----------------------------------------------------------------------------*/
+	{
+		"comentario": "Ejemplo de JSON con varios objetos.",
+		"cliente1":
+		
+			{
+				"código":"ab24",
+				"nombre": "Eugenia Pascual",
+				"saldo": 2000.87
+			},
+		
+		"cliente2":	
+			{
+				"código":"efw4",
+				"nombre": "Rosi Aurora",
+				"saldo": 5983.00
+			},
+		
+		"cliente3":	
+			{
+				"código":"la55",
+				"nombre": "Luis Miguel",
+				"saldo": 1965.50
+			}
+	}
+	
+/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON con un array y pares clave / valor.",
+		"código":"ab24",
+		"identificación":["Alberto","Pérez","Martínez",26,4500.00]
+	}
+/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo anterior de JSON con un array asociativo y pares clave / valor.",
+		"código":"ab24",
+		"identificación":[
+							"nombre":"Alberto",
+							"apellido1":"Pérez",
+							"apellido2":"Martínez",
+							"edad":26,
+							"saldo":4500.00
+						 ]
+	}
+	
+/*----------------------------------------------------------------------------*/
+	{
+		"comentario": "Ejemplo de JSON con un array y objetos con varios pares clave / valor de diversos tipos.",
+		"clientes":
+		[
+			{
+				"código":"ab24",
+				"nombre": "Eugenia Pascual",
+				"saldo": 2000.87
+			},
+			{
+				"código":"efw4",
+				"nombre": "Rosi Aurora",
+				"saldo": 5983.00
+			},
+			{
+				"código":"la55",
+				"nombre": "Luis Miguel",
+				"saldo": 1965.50
+			}
+		]
+	}
+/*----------------------------------------------------------------------------*/
+	
+	/*Ejemplo de array como JSON equivalente al anterior. */
+		
+		[
+			{
+				"código":"ab24",
+				"nombre": "Eugenia Pascual",
+				"saldo": 2000.87
+			},
+			{
+				"código":"efw4",
+				"nombre": "Rosi Aurora",
+				"saldo": 5983.00
+			},
+			{
+				"código":"la55",
+				"nombre": "Luis Miguel",
+				"saldo": 1965.50
+			}
+		]
+
+/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON con objetos anidados.",
+		"cliente":	
+			{	"código":"cchb69",
+				"nombre": "Cristina Fernández",
+				"saldo": 9924.12,
+				"dirección": {
+								"calle":"Cuenca",
+								"piso":"3",
+								"puerta":"C",
+								"código-postal":"28282",
+								"localidad":"Teruel"
+							  }
+							
+			}
+	}
+	
+	/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON con objetos anidados.",
+		"cliente":	
+			{	"código":"cchb69",
+				"nombre": "Cristina Fernández",
+				"saldo": 9924.12,
+				"datos-cliente": {
+								"calle":"Cuenca",
+								"piso":"3",
+								"puerta":"C",
+								"código-postal":"28282",
+								"localidad":"Teruel",
+								"teléfonos":["911234567","661234567"],
+								"correos-electrónicos":
+														{
+															"correo1":"cristina@yahoo.es",
+															"correo2":"cristina@hotmail.com",
+															"correo3":"cristina@gmail.com"
+														}
+											
+							  }
+							
+			}
+	}
+	
+	/*----------------------------------------------------------------------------*/
+	
+	{
+		"comentario": "Ejemplo de JSON con objetos y arrays anidados.",
+		"cliente":	
+			{	"código":"cchb69",
+				"nombre": "Cristina Fernández",
+				"saldo": 9924.12,
+				"datos-cliente": {
+								"calle":"Cuenca",
+								"piso":"3",
+								"puerta":"C",
+								"código-postal":"28282",
+								"localidad":"Teruel",
+								"teléfonos":["911234567","661234567"],
+								"correos-electrónicos":
+													  [
+														"cristina@yahoo.es",
+														"cristina@hotmail.com",
+														"cristina@gmail.com"
+													  ]
+											
+							  }
+							
+			}
+	}

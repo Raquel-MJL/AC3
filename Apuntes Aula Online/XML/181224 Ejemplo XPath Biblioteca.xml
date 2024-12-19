@@ -1,0 +1,152 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>	
+		
+	<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="biblioteca.xsd">	
+		
+		<catalogo>Clásicos de la Literatura</catalogo>
+		<web>https://www.bibliotecas.com</web>
+		<libro idioma="español">
+			<titulo>El Quijote</titulo>
+			<autor id ="1">Miguel de Cervantes</autor>
+			<editorial>Aguilar</editorial>
+			<año>1605</año>
+			<precio>35.0</precio>
+		</libro>
+		<libro idioma="español">
+			<titulo>La Celestina</titulo>
+			<autor id ="2">Fernando de Rojas</autor>
+			<editorial>Grijalbo</editorial>
+			<año>1499</año>
+			<precio>24.99</precio>
+		</libro>
+		<libro idioma="español">
+			<titulo >Rimas y Leyendas</titulo>
+			<autor id ="3">Gustavo Adolfo Bécquer</autor>
+			<editorial>Aguilar</editorial>
+			<año>1871</año>
+			<precio>12.0</precio>
+		</libro>
+		
+		<libro idioma="inglés">
+			<titulo >Hamlet</titulo>
+			<autor id ="4">William Shakespeare</autor>
+			<editorial>Alma Books</editorial>
+			<año>1603</año>
+			<precio>15.50</precio>
+		</libro>
+		<libro idioma="español">
+			<titulo >Desde mi celda</titulo>
+			<autor id ="5">Gustavo Adolfo Bécquer</autor>
+			<editorial>Aguilar</editorial>
+			<año>1864</año>
+			<precio>20.0</precio>
+		</libro>
+	</biblioteca>
+	
+	
+	
+	<!-- ====== XPath ===== -->	
+	<!--   -->
+	 
+	<!-- Mostrar el nodo elemento del catálogo.-->
+	
+		//catalogo
+		
+		/biblioteca/catalogo
+		
+	<!-- Mostrar el nombre o texto del catálogo.-->
+	  	
+		//catalogo/text()
+	
+	<!-- Mostrar la página web de la biblioteca.-->
+	
+		//web/text()
+		
+	<!-- Mostrar todos los nodos hijos del nodo biblioteca.-->	
+	
+		//biblioteca/node()
+		
+	<!-- Mostrar todos los descendientes del nodo biblioteca.-->	
+	
+		//biblioteca//node()	
+		
+	<!-- Mostrar todos los nodos hijos del nodo autor.-->	
+	
+		//biblioteca/node()
+		
+	<!-- Mostrar todos los descendientes del nodo autor.-->	
+	
+		//biblioteca//node()	
+		
+	<!-- Mostrar el título del segundo libro.-->
+	
+		(//titulo)[2]/text()
+	
+	<!-- Último libro en la biblioteca. -->
+	
+		(//titulo)[last()]/text()
+		
+	<!-- Mostrar los identificadores de los autores. -->
+	
+		//autor/@id
+		
+		//@id
+		
+		//autor/@*
+	
+	<!-- Mostrar el título del libro "Desde mi celda". -->
+	
+		//titulo[.="Desde mi celda"]/node()
+		//titulo[.="Desde mi celda"]/text()
+					
+	<!-- Mostrar los libros de Miguel de Cervantes. -->
+	
+		//titulo[../autor = "Miguel de Cervantes"]/text()
+	
+	<!-- Mostrar los autores cuyo nombre incluye la palabra "de". -->
+		
+		//autor[contains(., "de")]/text()
+	
+	<!-- Libros de la editorial Aguilar. -->
+	
+		//titulo[../editorial = "Aguilar"]/text()
+	
+	<!-- Mostrar las editoriales cuyo nombre empieza por "A". -->
+		
+		//editorial[starts-with(., "A")]/text()
+	
+	<!-- Mostrar las editoriales cuyo nombre termina en "o". -->
+		
+		//editorial[ends-with(., "o")]/text()
+		
+	<!-- Mostrar los libros de Gustavo Adolfo Bécquer publicadso a partir de 1865. -->
+	
+		//titulo[../autor = "Gustavo Adolfo Bécquer" and ../año > 1865]/text()
+	
+	<!-- Años en los que se publicaron los libros. -->	
+	
+		//año/text()
+	
+	<!-- Años en los que se publicaron los libros en español. -->
+	
+		//libro[@idioma ="español"]/año/text()
+	
+	<!--Libros publicados antes de 1800. -->	
+	
+		//titulo[../año < "1800"]/text()
+	
+	<!-- Años de publicación de libros editados entre 1600 y 1700. -->	
+	
+		//año[.>="1600" and .<="1700"]/text()
+		
+	<!-- Libros que cuestan entree 20.0 y 40.0 euros. -->	
+	
+		//titulo[../precio >=20.0 and ../precio<=40.0]/text()	
+	
+	<!-- ¿Cuántos libros hay?-->
+
+		count(//libro)
+		
+	<!-- Sumar todos los precios. -->
+
+		sum(//precio)

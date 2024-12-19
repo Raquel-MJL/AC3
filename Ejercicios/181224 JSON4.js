@@ -6,7 +6,7 @@ let planetasRocosos = ["Mercurio", "Venus", "Tierra", "Marte"];
 console.log("Planetas Rocosos:");
 console.log(planetasRocosos);
 
-// 2. Muestrear todos los planetas con un bucle for ... in
+// 2. Mostrar todos los planetas con un bucle for ... in
 console.log("Todos los planetas usando for...in:");
 for (let indice in planetas) {
     console.log(planetas[indice]);
