@@ -1,0 +1,16 @@
+C:\Users\VORPC\source\repos\ventana2\ventana2\bin\Debug\net8.0-windows\ventana2.exe
+C:\Users\VORPC\source\repos\ventana2\ventana2\bin\Debug\net8.0-windows\ventana2.deps.json
+C:\Users\VORPC\source\repos\ventana2\ventana2\bin\Debug\net8.0-windows\ventana2.runtimeconfig.json
+C:\Users\VORPC\source\repos\ventana2\ventana2\bin\Debug\net8.0-windows\ventana2.dll
+C:\Users\VORPC\source\repos\ventana2\ventana2\bin\Debug\net8.0-windows\ventana2.pdb
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.Form1.resources
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.csproj.GenerateResource.cache
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.AssemblyInfoInputs.cache
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.AssemblyInfo.cs
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.csproj.CoreCompileInputs.cache
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.dll
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\refint\ventana2.dll
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.pdb
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ventana2.genruntimeconfig.cache
+C:\Users\VORPC\source\repos\ventana2\ventana2\obj\Debug\net8.0-windows\ref\ventana2.dll

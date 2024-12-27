@@ -1,0 +1,65 @@
+C:\Users\angel\source\repos\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.exe
+C:\Users\angel\source\repos\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.deps.json
+C:\Users\angel\source\repos\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.runtimeconfig.json
+C:\Users\angel\source\repos\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.dll
+C:\Users\angel\source\repos\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.pdb
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.AssemblyReference.cache
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles_1.Form1.resources
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.GenerateResource.cache
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfoInputs.cache
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfo.cs
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.CoreCompileInputs.cache
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.dll
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\refint\controles 1.dll
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.pdb
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.genruntimeconfig.cache
+C:\Users\angel\source\repos\controles 1\controles 1\obj\Debug\net6.0-windows\ref\controles 1.dll
+C:\ServiciosWeb\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.exe
+C:\ServiciosWeb\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.deps.json
+C:\ServiciosWeb\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.runtimeconfig.json
+C:\ServiciosWeb\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.dll
+C:\ServiciosWeb\controles 1\controles 1\bin\Debug\net6.0-windows\controles 1.pdb
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles_1.Form1.resources
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.GenerateResource.cache
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfoInputs.cache
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfo.cs
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.CoreCompileInputs.cache
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.dll
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\refint\controles 1.dll
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.pdb
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\controles 1.genruntimeconfig.cache
+C:\ServiciosWeb\controles 1\controles 1\obj\Debug\net6.0-windows\ref\controles 1.dll
+C:\Ejercicios\VS\otros\controles\controles 1\bin\Debug\net6.0-windows\controles 1.exe
+C:\Ejercicios\VS\otros\controles\controles 1\bin\Debug\net6.0-windows\controles 1.deps.json
+C:\Ejercicios\VS\otros\controles\controles 1\bin\Debug\net6.0-windows\controles 1.runtimeconfig.json
+C:\Ejercicios\VS\otros\controles\controles 1\bin\Debug\net6.0-windows\controles 1.dll
+C:\Ejercicios\VS\otros\controles\controles 1\bin\Debug\net6.0-windows\controles 1.pdb
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles_1.Form1.resources
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.GenerateResource.cache
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfoInputs.cache
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfo.cs
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.CoreCompileInputs.cache
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.dll
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\refint\controles 1.dll
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.pdb
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\controles 1.genruntimeconfig.cache
+C:\Ejercicios\VS\otros\controles\controles 1\obj\Debug\net6.0-windows\ref\controles 1.dll
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\bin\Debug\net6.0-windows\controles 1.exe
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\bin\Debug\net6.0-windows\controles 1.deps.json
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\bin\Debug\net6.0-windows\controles 1.runtimeconfig.json
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\bin\Debug\net6.0-windows\controles 1.dll
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\bin\Debug\net6.0-windows\controles 1.pdb
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles_1.Form1.resources
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.GenerateResource.cache
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfoInputs.cache
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.AssemblyInfo.cs
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.csproj.CoreCompileInputs.cache
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.dll
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\refint\controles 1.dll
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.pdb
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\controles 1.genruntimeconfig.cache
+C:\Users\angel\source\repos\ejemplos-controles\Controles\controles\controles 1\obj\Debug\net6.0-windows\ref\controles 1.dll

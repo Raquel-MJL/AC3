@@ -1,0 +1,7 @@
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\ventana4.Form1.resources
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.Properties.Resources.resources
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.csproj.GenerateResource.cache
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.AssemblyInfoInputs.cache
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.AssemblyInfo.cs
+C:\Users\VORPC\source\repos\ventana4\ventana4\obj\Debug\net8.0-windows\tiposControles.csproj.CoreCompileInputs.cache
