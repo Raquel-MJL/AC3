@@ -1,0 +1,20 @@
+Conversión Binario-Decimal.
+o 11000101 → 197
+o 0110 → 6
+o 111011 → 55
+o 100001 → 33
+o 110001 → 49
+o 1110001101 → 909
+o 100010110011110 → 17822
+
+
+• ¿Qué número binario se corresponde con el número decimal?
+o 63 → 00111111
+o 198 → 11000110   
+o 310 → 100110110
+
+
+• Muestra en decimal, las siguientes direcciones IP expresadas en binario.
+o 11001001.00000110.10000000.00000111 → 201.6.128.7  
+o 00000111.01100011.00111101.10101001 → 7.99.61.169
+o 10111100.00100110.00101011.00000101 → 188.38.43.5
