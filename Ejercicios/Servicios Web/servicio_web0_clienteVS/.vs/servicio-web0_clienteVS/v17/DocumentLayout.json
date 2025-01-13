@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|c:\\users\\angel\\source\\repos\\servicio-web0_clientevs\\servicio-web0_clientevs\\webform0.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|solutionrelative:servicio-web0_clientevs\\webform0.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|c:\\users\\angel\\source\\repos\\servicio-web0_clientevs\\servicio-web0_clientevs\\webform0.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|solutionrelative:servicio-web0_clientevs\\webform0.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clientevs\\css\\estilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C76F6797-2079-4998-928E-5CE84B5B77D3}|servicio-web0_clienteVS\\servicio-web0_clienteVS.csproj|solutionrelative:servicio-web0_clientevs\\css\\estilos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebForm0.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\WebForm0.aspx.cs",
+              "RelativeDocumentMoniker": "servicio-web0_clienteVS\\WebForm0.aspx.cs",
+              "ToolTip": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\WebForm0.aspx.cs",
+              "RelativeToolTip": "servicio-web0_clienteVS\\WebForm0.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T05:59:09.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "estilos.css",
+              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\css\\estilos.css",
+              "RelativeDocumentMoniker": "servicio-web0_clienteVS\\css\\estilos.css",
+              "ToolTip": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\css\\estilos.css",
+              "RelativeToolTip": "servicio-web0_clienteVS\\css\\estilos.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-07T05:44:57.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebForm0.aspx",
+              "DocumentMoniker": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\WebForm0.aspx",
+              "RelativeDocumentMoniker": "servicio-web0_clienteVS\\WebForm0.aspx",
+              "ToolTip": "C:\\Users\\angel\\source\\repos\\servicio-web0_clienteVS\\servicio-web0_clienteVS\\WebForm0.aspx",
+              "RelativeToolTip": "servicio-web0_clienteVS\\WebForm0.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-01-07T05:40:31.166Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 193,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
