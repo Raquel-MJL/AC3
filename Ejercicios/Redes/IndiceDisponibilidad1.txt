@@ -1,0 +1,29 @@
+Ejercicio 1 
+Detenido:4.860 minutos 
+Estimado: 525.600 (1 año) 
+Real: 520.740
+Operación: 99.07 %
+
+Ejercicio2 
+Detenido: 420 minutos 
+Estimado: 7.200 minutos la semana
+Real: 6.780
+Operación: 94.17 %
+
+Ejercicio 3 
+Detenido: 90 min 
+Estimado: 720 min
+Real: 630
+Operación:87.5%
+
+Ejercicio 4
+Detenido: 4.560
+Estimado: 48.600 
+Real: 44.040
+Operación: 90.62%
+
+Ejercicio 5
+Detenido: 7.200
+Estimado: 525.600
+Real: 518.400
+Operación: 98.63
