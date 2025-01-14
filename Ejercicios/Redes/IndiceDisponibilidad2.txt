@@ -1,0 +1,17 @@
+Ejercicio 1 
+Estimado: 525.600
+Detenido: 5100
+Real: 520.500
+Operación: 99.03%
+
+Ejercicio 2
+Estimado:10.080
+Detenido: 197
+Real: 9.883
+Operación: 98.05
+
+Ejercicio 3
+Estimado:120  
+Detenido: 77
+Real: 43
+Operación: 35.83%
