@@ -8,7 +8,8 @@ Ejercicio 2
 Estimado:10.080
 Detenido: 197
 Real: 9.883
-Operación: 98.05
+Operación semanal: 98.05 %
+Operacion anual: 99.96%
 
 Ejercicio 3
 Estimado:120  
