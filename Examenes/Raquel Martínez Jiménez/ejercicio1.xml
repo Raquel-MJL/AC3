@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Morosos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="ejercicio2.xsd">
+
+
+         
+<Morosos>
+    <Vecino Registro="1">
+        <Nombre Estado="Desempleado">Antonio</Nombre>
+        <Direccion>C/Orión, 10 5ºA</Direccion>
+        <Cantidad>220,50</Cantidad>
+        <Fecha>01-08-2024</Fecha>
+        <ConceptoDebido>Piscina</ConceptoDebido>
+    </Vecino>
+    <Vecino Registro="2">
+        <Nombre Estado="Trabajador">Eva</Nombre>
+        <Direccion>C/Sirio 24 2ºD</Direccion>
+        <Cantidad>140,00</Cantidad>
+        <Fecha>01-07-2024</Fecha>
+        <ConceptoDebido>Comunidad</ConceptoDebido>
+    </Vecino>
+    <Vecino Registro="3">
+        <Nombre Estado="Pensionista">Juan</Nombre>
+        <Direccion>C/Bellatrix 32 6ºA</Direccion>
+        <Cantidad>180,40</Cantidad>
+        <Fecha>01-08-2024</Fecha>
+        <ConceptoDebido>Piscina</ConceptoDebido>
+    </Vecino>
+    <Vecino Registro="4">
+        <Nombre Estado="Desempleado">Rosa</Nombre>
+        <Direccion>C/Vega 14 2ºC</Direccion>
+        <Cantidad>200,00</Cantidad>
+        <Fecha>01-07-2024</Fecha>
+        <ConceptoDebido>Piscina</ConceptoDebido>
+    </Vecino>
+    <Vecino Registro="5">
+        <Nombre Estado="Trabajador">Luis Miguel</Nombre>
+        <Direccion>C/Deneb 37 1ºD</Direccion>
+        <Cantidad>84,90</Cantidad>
+        <Fecha>01-07-2024</Fecha>
+        <ConceptoDebido>Ascensor</ConceptoDebido>
+    </Vecino>
+</Morosos>
